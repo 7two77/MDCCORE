@@ -1,0 +1,493 @@
+{
+  "schema_version": 1,
+  "fixture_id": "MDC-E2E-CONFORMANCE-001",
+  "kind": "readiness_manifest_not_execution_report",
+  "normative_source": {
+    "document": "One MDC.md",
+    "specification": "STP-MDC v0.1 DRAFT / NORMATIVE",
+    "assertion_matrix_lines": [
+      15118,
+      15130
+    ],
+    "negative_suite_lines": [
+      15153,
+      15177
+    ]
+  },
+  "profile": "MDC-SCALAR-001",
+  "harness_status": "NOT_EXECUTED",
+  "acceptance": "BLOCKED",
+  "blockers": [
+    {
+      "id": "FULL_RUNNER_MISSING",
+      "reason": "No single fixture executes and records all mandatory assertions/negative cases over O/M/R/C/S/T/E."
+    },
+    {
+      "id": "PROJECTION_SURFACE_MISSING",
+      "reason": "Registered projection profile/mapping and its non-interference operation are not implemented."
+    },
+    {
+      "id": "NEGATIVE_BINDINGS_PENDING",
+      "reason": "Freeze executable public API procedures and declared contracts for every N01–N11 case before running the gate."
+    }
+  ],
+  "input_contract": {
+    "fixture_version": 1,
+    "input_policy": "Explicit deterministic source records, acquisition coordinates and horizon; no wall clock, UUID or creation counter in semantic inputs.",
+    "contracts_policy": "Register and resolve exact source/schema/operator/relation/composition/state/transition/conformance criterion/contract versions through production Registry; fixture cannot supply missing calculus rules.",
+    "version_metadata_required": [
+      "fixture",
+      "calculus",
+      "domain",
+      "contracts",
+      "representation_schema",
+      "implementation_source_fingerprint",
+      "rust_toolchain",
+      "features",
+      "target_triple"
+    ],
+    "graph_required": [
+      "Observation",
+      "Measurement",
+      "Relation",
+      "Composition",
+      "State",
+      "Transition",
+      "Evaluation"
+    ],
+    "run_policy": "Two independent Pipelines with equivalent declared inputs/context/contracts; additionally permute admissible insertion order.",
+    "identity_policy": "Use actual production identity APIs. Compare canonical bytes and semantic references; do not replace hash or assume u64 collision freedom."
+  },
+  "assertions": [
+    {
+      "id": "E2E-A01",
+      "name": "Contract explicitness",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_semantic_results": null,
+      "implementation_surface": [
+        "Registry exact-version registration/resolution",
+        "Pipeline admission/construction/evaluation APIs"
+      ],
+      "component_coverage": [
+        "tests/source_measurement.rs::operators_must_be_registered_at_the_requested_version",
+        "tests/conformance_boundary.rs::registry_rejects_incomplete_or_inapplicable_definitions_and_overwrites"
+      ],
+      "expected_assertion_outcome": "Declared invariant holds; do not fabricate a ConformanceResult for a harness-only assertion."
+    },
+    {
+      "id": "E2E-A02",
+      "name": "Deterministic identity",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_semantic_results": null,
+      "implementation_surface": [
+        "CanonicalSemanticBasis",
+        "IdentityAdapter",
+        "all O/M/R/C/S/T/E getters"
+      ],
+      "component_coverage": [
+        "tests/state_transition.rs::equivalent_graphs_are_deterministic_under_creation_and_unordered_contract_permutations",
+        "tests/conformance_boundary.rs::unordered_contract_permutation_is_stable_and_ordered_permutation_is_semantic"
+      ],
+      "expected_assertion_outcome": "Declared invariant holds; do not fabricate a ConformanceResult for a harness-only assertion."
+    },
+    {
+      "id": "E2E-A03",
+      "name": "Full lineage",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_semantic_results": null,
+      "implementation_surface": [
+        "Pipeline::trace",
+        "Pipeline::lineage_report (006 captured invalid closure)"
+      ],
+      "component_coverage": [
+        "tests/state_transition.rs::real_state_transition_chain_reaches_sources_and_preserves_upstream_content",
+        "tests/conformance_boundary.rs::evaluates_all_six_types_and_keeps_the_entire_target_graph_unchanged"
+      ],
+      "expected_assertion_outcome": "Declared invariant holds; do not fabricate a ConformanceResult for a harness-only assertion."
+    },
+    {
+      "id": "E2E-A04",
+      "name": "Upstream identity preservation",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_semantic_results": null,
+      "implementation_surface": [
+        "canonical::snapshot::snapshot before/after every downstream operation"
+      ],
+      "component_coverage": [
+        "tests/relation_composition.rs::full_scalar_slice_reaches_sources_and_preserves_all_upstream_snapshots",
+        "tests/state_transition.rs::real_state_transition_chain_reaches_sources_and_preserves_upstream_content"
+      ],
+      "expected_assertion_outcome": "Declared invariant holds; do not fabricate a ConformanceResult for a harness-only assertion."
+    },
+    {
+      "id": "E2E-A05",
+      "name": "PASS aggregation",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_semantic_results": [
+        "PASS"
+      ],
+      "implementation_surface": [
+        "contract::evaluation::aggregate_results",
+        "Pipeline::evaluate"
+      ],
+      "component_coverage": [
+        "tests/conformance_boundary.rs::evaluates_all_six_types_and_keeps_the_entire_target_graph_unchanged"
+      ]
+    },
+    {
+      "id": "E2E-A06",
+      "name": "UNRESOLVED aggregation",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_semantic_results": [
+        "UNRESOLVED"
+      ],
+      "implementation_surface": [
+        "Pipeline::derive_state",
+        "Pipeline::transition",
+        "Pipeline::evaluate"
+      ],
+      "component_coverage": [
+        "tests/state_transition.rs::unresolved_state_results_propagate_to_transition_conditions",
+        "tests/conformance_boundary.rs::real_fail_and_unresolved_are_retained_without_promoting_targets"
+      ]
+    },
+    {
+      "id": "E2E-A07",
+      "name": "FAIL precedence",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_semantic_results": [
+        "FAIL"
+      ],
+      "implementation_surface": [
+        "contract::evaluation::aggregate_results",
+        "State/Transition actual result vectors"
+      ],
+      "component_coverage": [
+        "tests/state_transition.rs::a_failed_temporal_condition_takes_precedence_over_unresolved_states"
+      ]
+    },
+    {
+      "id": "E2E-A08",
+      "name": "Invalidity preservation",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_semantic_results": null,
+      "implementation_surface": [
+        "Pipeline::resolve_invalid / RejectedAttempt::invalid_reference (006)",
+        "InvalidSemanticObject typed body, status and captured lineage"
+      ],
+      "component_coverage": [
+        "tests/invalid_semantic.rs (006: execution evidence pending)"
+      ],
+      "expected_observations": [
+        "status INVALID",
+        "typed semantic body retained and resolvable",
+        "actual failed results and creation-time snapshots preserved",
+        "invalid ref cannot be used as an admitted input"
+      ],
+      "expected_assertion_outcome": "Declared invariant holds; do not fabricate a ConformanceResult for a harness-only assertion.",
+      "expected_lifecycle_status": "INVALID"
+    },
+    {
+      "id": "E2E-A09",
+      "name": "Missing future object",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_semantic_results": null,
+      "implementation_surface": [
+        "Pipeline::transition lookup-only target resolution",
+        "object counts and unresolved refs"
+      ],
+      "component_coverage": [
+        "tests/state_transition.rs::missing_references_versions_and_wrong_input_types_never_synthesize_targets"
+      ],
+      "expected_observations": [
+        "no synthetic target or source lineage",
+        "contract-declared failure/unresolved behavior",
+        "invalid artifact retained without new admitted object"
+      ],
+      "expected_assertion_outcome": "Declared invariant holds; do not fabricate a ConformanceResult for a harness-only assertion."
+    },
+    {
+      "id": "E2E-A10",
+      "name": "No semantic inflation",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_semantic_results": null,
+      "implementation_surface": [
+        "inspect semantic artifact types/labels of O/M/R/C/S/T/E"
+      ],
+      "component_coverage": [],
+      "remaining_work": "Dedicated full-gate assertion; current component evidence is insufficient.",
+      "expected_assertion_outcome": "Declared invariant holds; do not fabricate a ConformanceResult for a harness-only assertion."
+    },
+    {
+      "id": "E2E-A11",
+      "name": "No semantic backflow",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_semantic_results": null,
+      "implementation_surface": [
+        "real downstream construction/evaluation plus external representation attempt",
+        "full upstream snapshots"
+      ],
+      "component_coverage": [
+        "tests/conformance_boundary.rs::evaluates_all_six_types_and_keeps_the_entire_target_graph_unchanged"
+      ],
+      "remaining_work": "Dedicated full-gate assertion; current component evidence is insufficient.",
+      "expected_assertion_outcome": "Declared invariant holds; do not fabricate a ConformanceResult for a harness-only assertion."
+    },
+    {
+      "id": "E2E-A12",
+      "name": "Projection non-interference",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_semantic_results": null,
+      "implementation_surface": [
+        "registered TEST-REP-01 projection boundary (not implemented)"
+      ],
+      "component_coverage": [],
+      "remaining_work": "Dedicated full-gate assertion; current component evidence is insufficient.",
+      "blockers": [
+        "PROJECTION_SURFACE_MISSING"
+      ],
+      "expected_assertion_outcome": "Declared invariant holds; do not fabricate a ConformanceResult for a harness-only assertion."
+    }
+  ],
+  "negative_cases": [
+    {
+      "id": "N01",
+      "name": "Missing contract",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_observation": "Unknown exact version is not replaced; preserve invalid diagnostic artifact with no invented criterion results.",
+      "semantic_expectation": "Contract lookup failure; unknown contract means semantic evaluation may be absent.",
+      "actual_result_policy": "Record observed semantic result only if a semantic evaluation actually executed; otherwise null plus explicit diagnostic."
+    },
+    {
+      "id": "N02",
+      "name": "Unresolved composition",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_observation": "State derivation rejects missing Composition; no fallback Composition/State is created.",
+      "semantic_expectation": "Construction failure; retain typed invalid State and unresolved input.",
+      "actual_result_policy": "Record observed semantic result only if a semantic evaluation actually executed; otherwise null plus explicit diagnostic."
+    },
+    {
+      "id": "N03",
+      "name": "Missing criterion",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_observation": "Registry rejects an incomplete contract definition; no default-pass criterion is fabricated.",
+      "semantic_expectation": "Configuration rejection; no semantic evaluation is implied.",
+      "actual_result_policy": "Record observed semantic result only if a semantic evaluation actually executed; otherwise null plus explicit diagnostic."
+    },
+    {
+      "id": "N04",
+      "name": "Unresolved criterion",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_observation": "Real unavailable witness under a declared horizon produces explicit UNRESOLVED.",
+      "semantic_expectation": "UNRESOLVED",
+      "actual_result_policy": "Record observed semantic result only if a semantic evaluation actually executed; otherwise null plus explicit diagnostic."
+    },
+    {
+      "id": "N05",
+      "name": "Failed criterion",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_observation": "Actual failed local criterion is preserved; FAIL dominates an accompanying UNRESOLVED.",
+      "semantic_expectation": "FAIL",
+      "actual_result_policy": "Record observed semantic result only if a semantic evaluation actually executed; otherwise null plus explicit diagnostic."
+    },
+    {
+      "id": "N06",
+      "name": "Missing target state",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_observation": "Transition lookup fails without manufacturing target State.",
+      "semantic_expectation": "Construction failure; typed invalid Transition retained.",
+      "actual_result_policy": "Record observed semantic result only if a semantic evaluation actually executed; otherwise null plus explicit diagnostic."
+    },
+    {
+      "id": "N07",
+      "name": "Invalid temporal ordering",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_observation": "Reverse/overlap is checked against the declared strict/non-strict contract.",
+      "semantic_expectation": "FAIL",
+      "actual_result_policy": "Record observed semantic result only if a semantic evaluation actually executed; otherwise null plus explicit diagnostic."
+    },
+    {
+      "id": "N08",
+      "name": "Incomplete provenance",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_observation": "Missing object/definition is reported explicitly; a partial captured closure cannot be called complete.",
+      "semantic_expectation": "Fixture procedure must select a real public invalid-input path; no invented valid graph.",
+      "actual_result_policy": "Record observed semantic result only if a semantic evaluation actually executed; otherwise null plus explicit diagnostic."
+    },
+    {
+      "id": "N09",
+      "name": "Nondeterministic identity basis",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_observation": "Reverse runtime admission/construction order for equivalent semantic inputs; compare full canonical graph and identities.",
+      "semantic_expectation": "Canonical outputs must match; fixture does not replace kernel identity.",
+      "actual_result_policy": "Record observed semantic result only if a semantic evaluation actually executed; otherwise null plus explicit diagnostic."
+    },
+    {
+      "id": "N10",
+      "name": "Attempted semantic backflow",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_observation": "Attempt external representation influence through the declared boundary, compare all upstream semantic snapshots.",
+      "semantic_expectation": "Representation operation/boundary is not yet implemented.",
+      "actual_result_policy": "Record observed semantic result only if a semantic evaluation actually executed; otherwise null plus explicit diagnostic."
+    },
+    {
+      "id": "N11",
+      "name": "Attempted future synthesis",
+      "mandatory": true,
+      "harness_status": "NOT_EXECUTED",
+      "expected_harness_status": "PASS",
+      "expected_observation": "Remove required target/source facts; validate counts, unresolved refs and retained invalid objects.",
+      "semantic_expectation": "No invented State, Observation or synthetic lineage; response is contract-dependent.",
+      "actual_result_policy": "Record observed semantic result only if a semantic evaluation actually executed; otherwise null plus explicit diagnostic."
+    }
+  ],
+  "forbidden_semantic_artifacts": [
+    "WAVE",
+    "TREND",
+    "IMPULSE",
+    "FIBONACCI",
+    "ELLIOTT",
+    "SIGNAL",
+    "BUY",
+    "SELL",
+    "CAUSE",
+    "PREDICTION"
+  ],
+  "forbidden_terms_scope": "semantic artifact types/labels only; ordinary diagnostics and external representations are not semantic namespace violations",
+  "acceptance_predicate": [
+    "Every mandatory assertion and negative case actually executed and has harness_status PASS.",
+    "Every actual result matches its declared expectation; expected FAIL/UNRESOLVED can yield harness PASS.",
+    "Canon(run_1 graph O/M/R/C/S/T/E) equals Canon(run_2 graph).",
+    "Every affected upstream semantic snapshot equals its before-operation snapshot.",
+    "No forbidden semantic artifact is introduced.",
+    "Projection non-interference is executed under an explicit registered profile.",
+    "No mandatory case is skipped, silently assumed, NOT_EXECUTED or BLOCKED."
+  ],
+  "execution_report_contract": {
+    "required_top_level_fields": [
+      "fixture_id",
+      "fixture_version",
+      "implementation_fingerprint",
+      "toolchain",
+      "features",
+      "target_triple",
+      "contracts",
+      "input_fingerprint",
+      "runs",
+      "cases",
+      "blockers",
+      "acceptance"
+    ],
+    "required_case_fields": [
+      "id",
+      "mandatory",
+      "executed",
+      "harness_status",
+      "expected",
+      "actual",
+      "diagnostics",
+      "evidence_refs"
+    ],
+    "harness_status_values": [
+      "PASS",
+      "FAIL",
+      "UNRESOLVED",
+      "NOT_EXECUTED",
+      "BLOCKED"
+    ],
+    "semantic_result_values": [
+      "PASS",
+      "FAIL",
+      "UNRESOLVED"
+    ],
+    "no_evaluation_policy": "semantic_result=null when evaluation did not execute or no contract resolved; NOT_EXECUTED is never a semantic result",
+    "required_run_evidence": [
+      "canonical_graph_bytes_or_artifact_ref",
+      "semantic_object_references",
+      "full_lineage_report",
+      "before_after_snapshots",
+      "evaluation_results",
+      "invalid_artifacts_and_unresolved_references"
+    ],
+    "required_case_ids": [
+      "E2E-A01",
+      "E2E-A02",
+      "E2E-A03",
+      "E2E-A04",
+      "E2E-A05",
+      "E2E-A06",
+      "E2E-A07",
+      "E2E-A08",
+      "E2E-A09",
+      "E2E-A10",
+      "E2E-A11",
+      "E2E-A12",
+      "N01",
+      "N02",
+      "N03",
+      "N04",
+      "N05",
+      "N06",
+      "N07",
+      "N08",
+      "N09",
+      "N10",
+      "N11"
+    ],
+    "acceptance_values": [
+      "PASS",
+      "FAIL",
+      "BLOCKED"
+    ]
+  },
+  "scope_limits": [
+    "Component tests and old two smoke E2E tests do not certify this gate.",
+    "006 failed-construction invalid object retention does not imply retrospective invalidation of already admitted objects or descendant propagation.",
+    "Horizon filters declared source timestamps, not ingestion/available_at/decision_at or general historical as-of knowledge.",
+    "Context/source/version references are declared contracts, not external authentication or causal truth."
+  ]
+}

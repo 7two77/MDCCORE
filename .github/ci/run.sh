@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+# The same checks run in GitHub Actions and a local hosted environment.
+set -euo pipefail
+
+MDC_CI_ROOT=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.." && pwd)
+cd "$MDC_CI_ROOT"
+MDC_CI_PROFILE=${1:-default}
+case "$MDC_CI_PROFILE" in
+  default) MDC_CI_FEATURES=() ;;
+  std-alloc) MDC_CI_FEATURES=(--features std,alloc) ;;
+  alloc) MDC_CI_FEATURES=(--no-default-features --features alloc) ;;
+  *) printf 'Unknown CI profile: %s\n' "$MDC_CI_PROFILE" >&2; exit 2 ;;
+esac
+export MDC_CI_REPORT_DIR=${MDC_CI_REPORT_DIR:-"$MDC_CI_ROOT/ci-evidence/$MDC_CI_PROFILE"}
+export MDC_CI_PROFILE
+mkdir -p "$MDC_CI_REPORT_DIR"
+MDC_CI_SAVED_REPORT=$(mktemp)
+cp docs/evidence/mdc-e2e-conformance-001.json "$MDC_CI_SAVED_REPORT"
+MDC_CI_STEP=metadata
+finish() {
+  MDC_CI_EXIT=$?
+  set +e
+  cp "$MDC_CI_SAVED_REPORT" docs/evidence/mdc-e2e-conformance-001.json
+  MDC_CI_RESTORE_EXIT=$?
+  rm -f "$MDC_CI_SAVED_REPORT"
+  if (( MDC_CI_RESTORE_EXIT != 0 )); then MDC_CI_EXIT=1; fi
+  python3 .github/ci/record.py "$MDC_CI_EXIT" "$MDC_CI_STEP"
+  MDC_CI_RECORD_EXIT=$?
+  if (( MDC_CI_RECORD_EXIT != 0 )); then MDC_CI_EXIT=1; fi
+  exit "$MDC_CI_EXIT"
+}
+trap finish EXIT
+
+run_check() {
+  MDC_CI_STEP=$1
+  shift
+  "$@" 2>&1 | tee "$MDC_CI_REPORT_DIR/$MDC_CI_STEP.log"
+}
+
+python3 .github/ci/record.py running metadata
+run_check format cargo fmt --all -- --check
+run_check tests cargo test --locked --offline "${MDC_CI_FEATURES[@]}"
+run_check library-check cargo check --locked --offline "${MDC_CI_FEATURES[@]}"
+run_check clippy cargo clippy --locked --offline "${MDC_CI_FEATURES[@]}" --all-targets -- -D warnings
+
+if [[ "$MDC_CI_PROFILE" == default ]]; then
+  MDC_CI_STEP=no-alloc-rejection
+  if cargo check --locked --offline --no-default-features >"$MDC_CI_REPORT_DIR/$MDC_CI_STEP.log" 2>&1; then
+    printf 'Unexpected success without alloc\n' >&2
+    exit 1
+  fi
+  if ! grep -Fq 'mdc_core requires allocation:' "$MDC_CI_REPORT_DIR/$MDC_CI_STEP.log"; then
+    cat "$MDC_CI_REPORT_DIR/$MDC_CI_STEP.log"
+    exit 1
+  fi
+fi
+
+for MDC_CI_EXAMPLE in source_measurement relation_composition state_transition conformance invalid_artifacts; do
+  run_check "example-$MDC_CI_EXAMPLE" cargo run --quiet --locked --offline "${MDC_CI_FEATURES[@]}" --example "$MDC_CI_EXAMPLE"
+done
+run_check e2e python3 scripts/run_e2e.py "${MDC_CI_FEATURES[@]}" --output "$MDC_CI_REPORT_DIR/execution.json"
+run_check evidence-check python3 scripts/check_gate_readiness.py --report "$MDC_CI_REPORT_DIR/execution.json"
+# The legacy Python suite reads a fixed path. Supply fresh output for this run,
+# then restore the historical tracked bundle on both success and failure.
+cp "$MDC_CI_REPORT_DIR/execution.json" docs/evidence/mdc-e2e-conformance-001.json
+run_check validator-tests python3 -m unittest discover -s tests -p test_e2e_report.py
+MDC_CI_STEP=complete
+printf 'MDC_CI_VERIFY=PASS profile=%s reports=%s\n' "$MDC_CI_PROFILE" "$MDC_CI_REPORT_DIR"

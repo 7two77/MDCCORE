@@ -1,0 +1,194 @@
+{
+  "package": "MDC-IMPL-003",
+  "date": "2026-11-02",
+  "root": "/workspace/mdc-core",
+  "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)",
+  "cargo": "cargo 1.85.1 (d73d2caf9 2024-12-31)",
+  "checks": [
+    {
+      "name": "default",
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "expected_outcome_observed": true,
+      "tests_passed": 65,
+      "stdout": "\nrunning 27 tests\ntest contract::encoding::tests::adjacent_variable_fields_preserve_their_boundaries ... ok\ntest contract::encoding::tests::reference_types_are_part_of_the_encoding ... ok\ntest contract::evaluation::tests::aggregation_covers_all_pairs_and_is_order_independent ... ok\ntest contract::evaluation::tests::aggregation_does_not_treat_an_empty_set_as_pass ... ok\ntest contract::registry::tests::composition_registration_requires_resolved_unique_constraints ... ok\ntest contract::registry::tests::constraint_registration_resolves_exact_relation_versions_and_direction ... ok\ntest contract::registry::tests::invalid_cardinality_and_constraint_replacement_are_rejected ... ok\ntest contract::registry::tests::operator_registration_does_not_replace_existing_behavior ... ok\ntest contract::registry::tests::ordered_chain_cannot_be_assigned_to_unordered_composition_members ... ok\ntest contract::registry::tests::references_and_contexts_require_explicit_nonempty_values ... ok\ntest contract::registry::tests::relation_registration_preserves_versions_and_validates_adjacency ... ok\ntest contract::registry::tests::source_registration_checks_units_and_preserves_the_registered_contract ... ok\ntest contract::registry::tests::temporal_scope_checks_boundaries_and_rejects_inverted_intervals ... ok\ntest contract::registry::tests::unresolved_versions_do_not_fall_back_to_another_registered_version ... ok\ntest model::measurement::tests::difference_preserves_order_in_value_identity_and_lineage ... ok\ntest model::measurement::tests::difference_rejects_overflow_instead_of_wrapping ... ok\ntest model::relation::tests::exact_signed_ratio_and_temporal_distance_avoid_lossy_or_overflowing_math ... ok\ntest model::relation::tests::precedence_checks_real_time_order_and_preserves_references ... ok\ntest model::relation::tests::proportion_preserves_numeric_order_without_creating_directed_topology ... ok\ntest model::relation::tests::symmetric_adjacency_normalizes_both_endpoints_and_lineage ... ok\ntest pipeline::tests::collision_guard_rejects_different_content_without_replacing_the_object ... ok\ntest tests::test_deterministic_identity ... ok\ntest tests::test_distinct_identity ... ok\ntest tests::test_invalid_source_returns_error ... ok\ntest tests::test_positive_chain ... ok\ntest tests::test_semantic_snapshot_preserves_content ... ok\ntest tests::test_snapshot_preserves_identity ... ok\n\ntest result: ok. 27 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 1 test\ntest repeated_canonicalization_identity_and_snapshots_release_their_allocations ... ok\n\ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s\n\n\nrunning 2 tests\ntest test_e2e_no_backflow ... ok\ntest test_e2e_deterministic_double_run ... ok\n\ntest result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 18 tests\ntest acyclic_constraint_detects_a_cycle_of_admissible_directed_relations ... ok\ntest composition_context_includes_frame_causal_descriptor_and_scope ... ok\ntest composition_requires_direct_membership_not_merely_transitive_lineage ... ok\ntest connected_constraint_detects_an_isolated_declared_member ... ok\ntest extreme_temporal_distances_are_signed_without_overflow ... ok\ntest duplicate_or_wrongly_typed_composition_inputs_are_rejected_atomically ... ok\ntest missing_contract_versions_and_references_never_fall_back_or_synthesize ... ok\ntest full_scalar_slice_reaches_sources_and_preserves_all_upstream_snapshots ... ok\ntest ordered_member_permutation_changes_content_when_the_rule_preserves_order ... ok\ntest ordered_chain_requires_the_declared_relation_contract_for_each_pair ... ok\ntest ordered_ratios_retain_exact_operands_without_creating_directed_arcs ... ok\ntest parallel_directed_edges_do_not_create_a_false_cycle ... ok\ntest raw_legacy_relation_ids_do_not_bypass_the_admitted_store ... ok\ntest precedence_and_directed_adjacency_enforce_real_temporal_conditions ... ok\ntest relation_scope_covers_every_source_observation_of_prior_measurements ... ok\ntest relation_kinds_reject_wrong_types_zero_denominators_and_incompatible_units ... ok\ntest symmetric_adjacency_deduplicates_endpoints_and_provenance_together ... ok\ntest unordered_compositions_normalize_members_relations_results_and_provenance ... ok\n\ntest result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 14 tests\ntest admission_records_resolved_source_schema_context_and_provenance ... ok\ntest equivalent_graphs_are_independent_of_admission_and_construction_order ... ok\ntest incompatible_units_domains_and_temporal_contexts_are_rejected ... ok\ntest legacy_unadmitted_observations_do_not_bypass_admission ... ok\ntest malformed_or_incomplete_admissions_are_retained_with_exact_reasons ... ok\ntest missing_or_wrongly_typed_inputs_are_not_synthesized ... ok\ntest missing_source_or_source_version_is_rejected_without_fallback ... ok\ntest noncommutative_inputs_preserve_order_in_results_and_canonical_content ... ok\ntest operators_must_be_registered_at_the_requested_version ... ok\ntest registered_measurements_compute_values_and_recursive_lineage_to_source ... ok\ntest repeated_requests_reuse_objects_without_changing_upstream_snapshots ... ok\ntest source_schema_versions_units_and_context_are_in_the_observation_basis ... ok\ntest wrong_arity_is_rejected_without_a_default_or_fallback_value ... ok\ntest arithmetic_overflow_is_retained_without_mutating_the_admitted_graph ... ok\n\ntest result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s\n\n\nrunning 3 tests\ntest observation_basis_remains_owned_after_observation_is_dropped ... ok\ntest observation_preserves_the_existing_bytes_and_native_hash_protocol ... ok\ntest snapshot_captures_one_basis_even_if_successive_calls_differ ... ok\n\ntest result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n",
+      "stderr": "   Compiling mdc_core v0.1.0 (/workspace/mdc-core)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.59s\n     Running unittests src/lib.rs (/tmp/mdc-impl-003-verification-target/debug/deps/mdc_core-70b18af433677d86)\n     Running tests/allocation_regression.rs (/tmp/mdc-impl-003-verification-target/debug/deps/allocation_regression-d2740d3baa31e565)\n     Running tests/mdc_e2e_conformance_001.rs (/tmp/mdc-impl-003-verification-target/debug/deps/mdc_e2e_conformance_001-290bfa6432586c6f)\n     Running tests/relation_composition.rs (/tmp/mdc-impl-003-verification-target/debug/deps/relation_composition-b14d36b46fec3e5b)\n     Running tests/source_measurement.rs (/tmp/mdc-impl-003-verification-target/debug/deps/source_measurement-39f70fa5504e52ac)\n     Running tests/technical_foundation.rs (/tmp/mdc-impl-003-verification-target/debug/deps/technical_foundation-3bee644a896fe020)\n   Doc-tests mdc_core\n"
+    },
+    {
+      "name": "std_alloc",
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "--features",
+        "std,alloc"
+      ],
+      "exit_code": 0,
+      "expected_outcome_observed": true,
+      "tests_passed": 65,
+      "stdout": "\nrunning 27 tests\ntest contract::encoding::tests::adjacent_variable_fields_preserve_their_boundaries ... ok\ntest contract::encoding::tests::reference_types_are_part_of_the_encoding ... ok\ntest contract::evaluation::tests::aggregation_covers_all_pairs_and_is_order_independent ... ok\ntest contract::evaluation::tests::aggregation_does_not_treat_an_empty_set_as_pass ... ok\ntest contract::registry::tests::composition_registration_requires_resolved_unique_constraints ... ok\ntest contract::registry::tests::constraint_registration_resolves_exact_relation_versions_and_direction ... ok\ntest contract::registry::tests::invalid_cardinality_and_constraint_replacement_are_rejected ... ok\ntest contract::registry::tests::operator_registration_does_not_replace_existing_behavior ... ok\ntest contract::registry::tests::ordered_chain_cannot_be_assigned_to_unordered_composition_members ... ok\ntest contract::registry::tests::references_and_contexts_require_explicit_nonempty_values ... ok\ntest contract::registry::tests::relation_registration_preserves_versions_and_validates_adjacency ... ok\ntest contract::registry::tests::source_registration_checks_units_and_preserves_the_registered_contract ... ok\ntest contract::registry::tests::temporal_scope_checks_boundaries_and_rejects_inverted_intervals ... ok\ntest contract::registry::tests::unresolved_versions_do_not_fall_back_to_another_registered_version ... ok\ntest model::measurement::tests::difference_preserves_order_in_value_identity_and_lineage ... ok\ntest model::measurement::tests::difference_rejects_overflow_instead_of_wrapping ... ok\ntest model::relation::tests::exact_signed_ratio_and_temporal_distance_avoid_lossy_or_overflowing_math ... ok\ntest model::relation::tests::precedence_checks_real_time_order_and_preserves_references ... ok\ntest model::relation::tests::proportion_preserves_numeric_order_without_creating_directed_topology ... ok\ntest model::relation::tests::symmetric_adjacency_normalizes_both_endpoints_and_lineage ... ok\ntest pipeline::tests::collision_guard_rejects_different_content_without_replacing_the_object ... ok\ntest tests::test_deterministic_identity ... ok\ntest tests::test_distinct_identity ... ok\ntest tests::test_invalid_source_returns_error ... ok\ntest tests::test_positive_chain ... ok\ntest tests::test_semantic_snapshot_preserves_content ... ok\ntest tests::test_snapshot_preserves_identity ... ok\n\ntest result: ok. 27 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 1 test\ntest repeated_canonicalization_identity_and_snapshots_release_their_allocations ... ok\n\ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s\n\n\nrunning 2 tests\ntest test_e2e_deterministic_double_run ... ok\ntest test_e2e_no_backflow ... ok\n\ntest result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 18 tests\ntest acyclic_constraint_detects_a_cycle_of_admissible_directed_relations ... ok\ntest composition_context_includes_frame_causal_descriptor_and_scope ... ok\ntest composition_requires_direct_membership_not_merely_transitive_lineage ... ok\ntest connected_constraint_detects_an_isolated_declared_member ... ok\ntest extreme_temporal_distances_are_signed_without_overflow ... ok\ntest duplicate_or_wrongly_typed_composition_inputs_are_rejected_atomically ... ok\ntest missing_contract_versions_and_references_never_fall_back_or_synthesize ... ok\ntest full_scalar_slice_reaches_sources_and_preserves_all_upstream_snapshots ... ok\ntest ordered_member_permutation_changes_content_when_the_rule_preserves_order ... ok\ntest ordered_chain_requires_the_declared_relation_contract_for_each_pair ... ok\ntest ordered_ratios_retain_exact_operands_without_creating_directed_arcs ... ok\ntest parallel_directed_edges_do_not_create_a_false_cycle ... ok\ntest precedence_and_directed_adjacency_enforce_real_temporal_conditions ... ok\ntest raw_legacy_relation_ids_do_not_bypass_the_admitted_store ... ok\ntest relation_kinds_reject_wrong_types_zero_denominators_and_incompatible_units ... ok\ntest relation_scope_covers_every_source_observation_of_prior_measurements ... ok\ntest symmetric_adjacency_deduplicates_endpoints_and_provenance_together ... ok\ntest unordered_compositions_normalize_members_relations_results_and_provenance ... ok\n\ntest result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 14 tests\ntest admission_records_resolved_source_schema_context_and_provenance ... ok\ntest equivalent_graphs_are_independent_of_admission_and_construction_order ... ok\ntest incompatible_units_domains_and_temporal_contexts_are_rejected ... ok\ntest legacy_unadmitted_observations_do_not_bypass_admission ... ok\ntest malformed_or_incomplete_admissions_are_retained_with_exact_reasons ... ok\ntest missing_or_wrongly_typed_inputs_are_not_synthesized ... ok\ntest missing_source_or_source_version_is_rejected_without_fallback ... ok\ntest noncommutative_inputs_preserve_order_in_results_and_canonical_content ... ok\ntest operators_must_be_registered_at_the_requested_version ... ok\ntest registered_measurements_compute_values_and_recursive_lineage_to_source ... ok\ntest repeated_requests_reuse_objects_without_changing_upstream_snapshots ... ok\ntest source_schema_versions_units_and_context_are_in_the_observation_basis ... ok\ntest wrong_arity_is_rejected_without_a_default_or_fallback_value ... ok\ntest arithmetic_overflow_is_retained_without_mutating_the_admitted_graph ... ok\n\ntest result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s\n\n\nrunning 3 tests\ntest observation_basis_remains_owned_after_observation_is_dropped ... ok\ntest observation_preserves_the_existing_bytes_and_native_hash_protocol ... ok\ntest snapshot_captures_one_basis_even_if_successive_calls_differ ... ok\n\ntest result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n",
+      "stderr": "    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.00s\n     Running unittests src/lib.rs (/tmp/mdc-impl-003-verification-target/debug/deps/mdc_core-70b18af433677d86)\n     Running tests/allocation_regression.rs (/tmp/mdc-impl-003-verification-target/debug/deps/allocation_regression-d2740d3baa31e565)\n     Running tests/mdc_e2e_conformance_001.rs (/tmp/mdc-impl-003-verification-target/debug/deps/mdc_e2e_conformance_001-290bfa6432586c6f)\n     Running tests/relation_composition.rs (/tmp/mdc-impl-003-verification-target/debug/deps/relation_composition-b14d36b46fec3e5b)\n     Running tests/source_measurement.rs (/tmp/mdc-impl-003-verification-target/debug/deps/source_measurement-39f70fa5504e52ac)\n     Running tests/technical_foundation.rs (/tmp/mdc-impl-003-verification-target/debug/deps/technical_foundation-3bee644a896fe020)\n   Doc-tests mdc_core\n"
+    },
+    {
+      "name": "alloc_only",
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "--no-default-features",
+        "--features",
+        "alloc"
+      ],
+      "exit_code": 0,
+      "expected_outcome_observed": true,
+      "tests_passed": 65,
+      "stdout": "\nrunning 27 tests\ntest contract::encoding::tests::adjacent_variable_fields_preserve_their_boundaries ... ok\ntest contract::encoding::tests::reference_types_are_part_of_the_encoding ... ok\ntest contract::evaluation::tests::aggregation_covers_all_pairs_and_is_order_independent ... ok\ntest contract::evaluation::tests::aggregation_does_not_treat_an_empty_set_as_pass ... ok\ntest contract::registry::tests::composition_registration_requires_resolved_unique_constraints ... ok\ntest contract::registry::tests::constraint_registration_resolves_exact_relation_versions_and_direction ... ok\ntest contract::registry::tests::invalid_cardinality_and_constraint_replacement_are_rejected ... ok\ntest contract::registry::tests::operator_registration_does_not_replace_existing_behavior ... ok\ntest contract::registry::tests::ordered_chain_cannot_be_assigned_to_unordered_composition_members ... ok\ntest contract::registry::tests::references_and_contexts_require_explicit_nonempty_values ... ok\ntest contract::registry::tests::relation_registration_preserves_versions_and_validates_adjacency ... ok\ntest contract::registry::tests::source_registration_checks_units_and_preserves_the_registered_contract ... ok\ntest contract::registry::tests::temporal_scope_checks_boundaries_and_rejects_inverted_intervals ... ok\ntest contract::registry::tests::unresolved_versions_do_not_fall_back_to_another_registered_version ... ok\ntest model::measurement::tests::difference_preserves_order_in_value_identity_and_lineage ... ok\ntest model::measurement::tests::difference_rejects_overflow_instead_of_wrapping ... ok\ntest model::relation::tests::exact_signed_ratio_and_temporal_distance_avoid_lossy_or_overflowing_math ... ok\ntest model::relation::tests::precedence_checks_real_time_order_and_preserves_references ... ok\ntest model::relation::tests::proportion_preserves_numeric_order_without_creating_directed_topology ... ok\ntest model::relation::tests::symmetric_adjacency_normalizes_both_endpoints_and_lineage ... ok\ntest tests::test_deterministic_identity ... ok\ntest pipeline::tests::collision_guard_rejects_different_content_without_replacing_the_object ... ok\ntest tests::test_distinct_identity ... ok\ntest tests::test_invalid_source_returns_error ... ok\ntest tests::test_positive_chain ... ok\ntest tests::test_semantic_snapshot_preserves_content ... ok\ntest tests::test_snapshot_preserves_identity ... ok\n\ntest result: ok. 27 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 1 test\ntest repeated_canonicalization_identity_and_snapshots_release_their_allocations ... ok\n\ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s\n\n\nrunning 2 tests\ntest test_e2e_deterministic_double_run ... ok\ntest test_e2e_no_backflow ... ok\n\ntest result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 18 tests\ntest acyclic_constraint_detects_a_cycle_of_admissible_directed_relations ... ok\ntest composition_context_includes_frame_causal_descriptor_and_scope ... ok\ntest composition_requires_direct_membership_not_merely_transitive_lineage ... ok\ntest connected_constraint_detects_an_isolated_declared_member ... ok\ntest extreme_temporal_distances_are_signed_without_overflow ... ok\ntest duplicate_or_wrongly_typed_composition_inputs_are_rejected_atomically ... ok\ntest missing_contract_versions_and_references_never_fall_back_or_synthesize ... ok\ntest full_scalar_slice_reaches_sources_and_preserves_all_upstream_snapshots ... ok\ntest ordered_chain_requires_the_declared_relation_contract_for_each_pair ... ok\ntest ordered_member_permutation_changes_content_when_the_rule_preserves_order ... ok\ntest ordered_ratios_retain_exact_operands_without_creating_directed_arcs ... ok\ntest parallel_directed_edges_do_not_create_a_false_cycle ... ok\ntest precedence_and_directed_adjacency_enforce_real_temporal_conditions ... ok\ntest raw_legacy_relation_ids_do_not_bypass_the_admitted_store ... ok\ntest relation_kinds_reject_wrong_types_zero_denominators_and_incompatible_units ... ok\ntest relation_scope_covers_every_source_observation_of_prior_measurements ... ok\ntest symmetric_adjacency_deduplicates_endpoints_and_provenance_together ... ok\ntest unordered_compositions_normalize_members_relations_results_and_provenance ... ok\n\ntest result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 14 tests\ntest admission_records_resolved_source_schema_context_and_provenance ... ok\ntest equivalent_graphs_are_independent_of_admission_and_construction_order ... ok\ntest incompatible_units_domains_and_temporal_contexts_are_rejected ... ok\ntest legacy_unadmitted_observations_do_not_bypass_admission ... ok\ntest malformed_or_incomplete_admissions_are_retained_with_exact_reasons ... ok\ntest missing_or_wrongly_typed_inputs_are_not_synthesized ... ok\ntest missing_source_or_source_version_is_rejected_without_fallback ... ok\ntest noncommutative_inputs_preserve_order_in_results_and_canonical_content ... ok\ntest operators_must_be_registered_at_the_requested_version ... ok\ntest registered_measurements_compute_values_and_recursive_lineage_to_source ... ok\ntest repeated_requests_reuse_objects_without_changing_upstream_snapshots ... ok\ntest source_schema_versions_units_and_context_are_in_the_observation_basis ... ok\ntest wrong_arity_is_rejected_without_a_default_or_fallback_value ... ok\ntest arithmetic_overflow_is_retained_without_mutating_the_admitted_graph ... ok\n\ntest result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s\n\n\nrunning 3 tests\ntest observation_basis_remains_owned_after_observation_is_dropped ... ok\ntest observation_preserves_the_existing_bytes_and_native_hash_protocol ... ok\ntest snapshot_captures_one_basis_even_if_successive_calls_differ ... ok\n\ntest result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n",
+      "stderr": "   Compiling mdc_core v0.1.0 (/workspace/mdc-core)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.58s\n     Running unittests src/lib.rs (/tmp/mdc-impl-003-verification-target/debug/deps/mdc_core-bffe8fb955d3e8d2)\n     Running tests/allocation_regression.rs (/tmp/mdc-impl-003-verification-target/debug/deps/allocation_regression-e1dc2aa6df0ccee9)\n     Running tests/mdc_e2e_conformance_001.rs (/tmp/mdc-impl-003-verification-target/debug/deps/mdc_e2e_conformance_001-131d03ca6f9fca97)\n     Running tests/relation_composition.rs (/tmp/mdc-impl-003-verification-target/debug/deps/relation_composition-f602e3a4ed0c0fec)\n     Running tests/source_measurement.rs (/tmp/mdc-impl-003-verification-target/debug/deps/source_measurement-88bb4fad61159009)\n     Running tests/technical_foundation.rs (/tmp/mdc-impl-003-verification-target/debug/deps/technical_foundation-8cf1cb30bf5f28cd)\n   Doc-tests mdc_core\n"
+    },
+    {
+      "name": "alloc_library_check",
+      "command": [
+        "cargo",
+        "check",
+        "--locked",
+        "--offline",
+        "--no-default-features",
+        "--features",
+        "alloc"
+      ],
+      "exit_code": 0,
+      "expected_outcome_observed": true,
+      "tests_passed": 0,
+      "stdout": "",
+      "stderr": "    Checking mdc_core v0.1.0 (/workspace/mdc-core)\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.19s\n"
+    },
+    {
+      "name": "no_features",
+      "command": [
+        "cargo",
+        "check",
+        "--locked",
+        "--offline",
+        "--no-default-features"
+      ],
+      "exit_code": 101,
+      "expected_outcome_observed": true,
+      "tests_passed": 0,
+      "stdout": "",
+      "stderr": "    Checking mdc_core v0.1.0 (/workspace/mdc-core)\nerror: mdc_core requires allocation: enable the `alloc` feature or the default `std` feature\n --> src/lib.rs:7:1\n  |\n7 | / compile_error!(\n8 | |     \"mdc_core requires allocation: enable the `alloc` feature or the default `std` feature\"\n9 | | );\n  | |_^\n\nerror: could not compile `mdc_core` (lib) due to 1 previous error\n"
+    },
+    {
+      "name": "format",
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "expected_outcome_observed": true,
+      "tests_passed": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "clippy_default",
+      "command": [
+        "cargo",
+        "clippy",
+        "--locked",
+        "--offline",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "expected_outcome_observed": true,
+      "tests_passed": 0,
+      "stdout": "",
+      "stderr": "    Checking mdc_core v0.1.0 (/workspace/mdc-core)\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.63s\n"
+    },
+    {
+      "name": "clippy_alloc",
+      "command": [
+        "cargo",
+        "clippy",
+        "--locked",
+        "--offline",
+        "--no-default-features",
+        "--features",
+        "alloc",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "expected_outcome_observed": true,
+      "tests_passed": 0,
+      "stdout": "",
+      "stderr": "    Checking mdc_core v0.1.0 (/workspace/mdc-core)\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.60s\n"
+    },
+    {
+      "name": "example_default",
+      "command": [
+        "cargo",
+        "run",
+        "--locked",
+        "--offline",
+        "--example",
+        "relation_composition"
+      ],
+      "exit_code": 0,
+      "expected_outcome_observed": true,
+      "tests_passed": 0,
+      "stdout": "members=2 relations=1 status=Candidate lineage_nodes=7\n",
+      "stderr": "    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.02s\n     Running `/tmp/mdc-impl-003-verification-target/debug/examples/relation_composition`\n"
+    },
+    {
+      "name": "example_alloc",
+      "command": [
+        "cargo",
+        "run",
+        "--locked",
+        "--offline",
+        "--no-default-features",
+        "--features",
+        "alloc",
+        "--example",
+        "relation_composition"
+      ],
+      "exit_code": 0,
+      "expected_outcome_observed": true,
+      "tests_passed": 0,
+      "stdout": "members=2 relations=1 status=Candidate lineage_nodes=7\n",
+      "stderr": "    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.00s\n     Running `/tmp/mdc-impl-003-verification-target/debug/examples/relation_composition`\n"
+    },
+    {
+      "name": "example_002",
+      "command": [
+        "cargo",
+        "run",
+        "--locked",
+        "--offline",
+        "--example",
+        "source_measurement"
+      ],
+      "exit_code": 0,
+      "expected_outcome_observed": true,
+      "tests_passed": 0,
+      "stdout": "value=12 unit=count lineage_nodes=4\n",
+      "stderr": "    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.00s\n     Running `/tmp/mdc-impl-003-verification-target/debug/examples/source_measurement`\n"
+    }
+  ],
+  "full_mdc_e2e": "NOT_EXECUTED / BLOCKED"
+}
