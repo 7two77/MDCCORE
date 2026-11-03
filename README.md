@@ -3,7 +3,7 @@
 История объединения исходной main и проверенного стека baseline → 008 → 009 → 010,
 сохранённые материалы и правила сопровождения описаны в
 [MDC-INTEGRATION-001](docs/MDC-INTEGRATION-v0.1.md).
-Актуальная [матрица v0.6](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.6.md)
+Актуальная [матрица v0.7](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.7.md)
 учитывает опубликованные hosted CI receipts. Подготовка первого Git commit
 сохранена в [MDC-OPS-001](docs/MDC-OPS-001.md).
 
@@ -11,13 +11,20 @@
 `Cargo.toml`, `src/`, `tests/`. Вложенный каталог `mdc_core/` сохранён как исходный
 материал для сравнения; он не подключён как workspace member.
 
-Последний функциональный пакет — **MDC-IMPL-010: Portable identity**.
-Следующий этап подготовки — [MDC-OPS-002: решения и сценарии](docs/MDC-OPS-002-NEXT-STAGE-v0.1.md).
-В нём выбирается первый потребитель и необходимость persistence/temporal profile;
-новые требования остаются открытыми до этих решений.
-[Контракт](docs/MDC-PORTABLE-IDENTITY-CONTRACT-v0.1.md),
-[реализация и проверки](docs/MDC-IMPL-010.md),
-[матрица v0.4](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.4.md).
+Последний функциональный пакет — **MDC-IMPL-011: recorded session snapshot roundtrip**.
+Первым потребителем выбран исторический replay с переходом к сервису;
+[решения владельца](docs/MDC-DECISIONS-2026-11-03-v0.1.md) и
+[эксплуатационные вопросы](docs/MDC-OPS-002-NEXT-STAGE-v0.1.md) сохранены отдельно.
+`SnapshotSession` записывает все изменяющие calls с создания пустого Pipeline.
+Self-contained export сохраняет frozen Registry, requests/outcomes и полный
+state manifest. Restore выполняет исходные операции по порядку в новом Pipeline
+и требует exact bytes каждого outcome и состояния:
+[контракт](docs/MDC-SNAPSHOT-CONTRACT-v0.1.md),
+[реализация и ограничения](docs/MDC-IMPL-011.md).
+Произвольный ранее созданный незаписанный Pipeline этим API не экспортируется.
+Durable commit и историческая доступность данных остаются отдельными механизмами.
+
+Portable identity добавлена в [MDC-IMPL-010](docs/MDC-IMPL-010.md).
 `Pipeline::new()` сохраняет legacy identity; portable graph явно выбирается через
 `Pipeline::with_identity_protocol(registry, IdentityProtocol::PortableV1)`.
 Профиль применяется ко всей цепочке, включая invalid artifacts и lifecycle journal.
@@ -25,7 +32,7 @@
 
 **MDC-E2E-CONFORMANCE-001: PASS для объявленного fixture MDC-SCALAR-001.**
 Все 12 assertions E2E-A01…A12 и 11 negative cases N01…N11 выполнены в двух
-раздельных OS-процессах. [Execution evidence](docs/evidence/mdc-e2e-conformance-001-impl-010.json)
+раздельных OS-процессах. [Execution evidence](docs/evidence/mdc-e2e-conformance-001-impl-011.json)
 содержит фактические результаты, canonical bytes, lineage и snapshots. PASS
 применим к записанным source fingerprint, toolchain, features и target; текущую
 применимость отчёта проверяет `check_gate_readiness.py`.
@@ -64,19 +71,23 @@ cargo run --locked --offline --example lifecycle
 cargo run --locked --offline --example evaluation_retention
 cargo run --locked --offline --example portable_identity
 cargo run --locked --offline --example identity_migration
+cargo run --locked --offline --example snapshot_roundtrip -- produce /tmp/mdc-snapshot.bin
+cargo run --locked --offline --example snapshot_roundtrip -- consume /tmp/mdc-snapshot.bin
 python3 scripts/run_e2e.py
 python3 scripts/check_gate_readiness.py
 python3 -m unittest discover -s tests -p 'test_e2e_report.py'
 ```
 
 Матрица команд, результатов и compatibility checks записана в
-[evidence MDC-IMPL-010](docs/evidence/impl-010-local-verification.json).
-Подтверждены 176/176 Rust tests и 21/21 Python checks (17 E2E + 4 comparison) в каждом из шести локальных
+[evidence MDC-IMPL-011](docs/evidence/impl-011-local-verification.json).
+Подтверждены 209/209 Rust tests и 25/25 Python checks (17 E2E + 4 identity comparison + 4 snapshot) в каждом из шести локальных
 запусков: Rust 1.85.1 / 1.98.0 × default, `std,alloc`, `no_std + alloc`.
-Format, Clippy, прежний E2E, lifecycle, keyed-reference и portable примеры проходят.
+Format, Clippy, прежний E2E, lifecycle, keyed-reference, portable и snapshot примеры проходят.
 [Hosted CI 009](https://github.com/7two77/MDCCORE/actions/runs/41614270848) прошёл
 для d33bb97. CI ветки 010 дополнительно исполняет portable tests/graph на i686
 и s390x/QEMU и требует совпадения всех десяти matrix configurations.
+011 добавляет 15 snapshot tests для cross targets, producer и два отдельных
+consumer process, frozen archive/manifest vectors и их сравнение между targets.
 Runner исполняется на std-хосте; библиотека сохраняет конфигурацию no_std+alloc.
 Python validator независимо проверяет покрытие cases, ожидаемые semantic
 results, graph/snapshot evidence, projection isolation и fingerprint реализации.
@@ -116,7 +127,11 @@ Technical projection использует зарегистрированный v
 PASS fixture не устанавливает универсальное соответствие MDC для любых данных,
 контрактов, платформ или будущих изменений. Профиль scalar не реализует
 произвольные schemas, units conversion, рыночную интерпретацию, общие external
-evidence contracts, reinstatement или durable lifecycle recovery. Native Rust
+evidence contracts, reinstatement или durable lifecycle recovery. Recorded snapshots
+сохраняют core context, но не позиции/ордера внешнего торгового adapter. Нет WAL,
+fsync, crash recovery, history compaction или available_at/decision_at semantics.
+Restore имеет стоимость replay истории; import limits не ограничивают рост live recording.
+Native Rust
 Hash остаётся непереносимым legacy protocol. Новый opt-in portable v1 имеет
 явные bytes/hash rules и отдельный cross-target gate; гарантия ограничена
 заявленными profiles, inputs и targets. Глобальная уникальность u64 не доказана.

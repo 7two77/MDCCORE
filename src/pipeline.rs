@@ -19,6 +19,9 @@ use crate::model::state::{AdmittedState, StateError};
 use crate::model::transition::{AdmittedTransition, TransitionError};
 use crate::provenance::{EvaluationId, ObjectRef};
 
+pub(crate) mod snapshot;
+pub use snapshot::{SnapshotError, SnapshotLimits, SnapshotSession};
+
 mod lifecycle;
 mod projection;
 pub use projection::{ProjectionError, ProjectionRequest};
