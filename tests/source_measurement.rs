@@ -94,6 +94,7 @@ fn capture(pipeline: &Pipeline, references: &[ObjectRef]) -> CapturedGraph {
                 | ObjectRef::State(_)
                 | ObjectRef::Transition(_)
                 | ObjectRef::Evaluation(_)
+                | ObjectRef::EvaluationKey(_)
                 | ObjectRef::InvalidObservation(_)
                 | ObjectRef::InvalidMeasurement(_)
                 | ObjectRef::InvalidRelation(_)

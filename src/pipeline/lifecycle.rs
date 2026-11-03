@@ -31,6 +31,8 @@ impl Pipeline {
         reference: &ObjectRef,
         revision: u64,
     ) -> Result<LifecycleView, LifecycleError> {
+        let primary = self.normalize_evaluation_reference(reference);
+        let reference = &primary;
         if revision > self.lifecycle_revision() {
             return Err(LifecycleError::FutureRevision);
         }
@@ -254,7 +256,7 @@ impl Pipeline {
         );
         refs.extend(self.states.keys().copied().map(ObjectRef::State));
         refs.extend(self.transitions.keys().copied().map(ObjectRef::Transition));
-        refs.extend(self.evaluations.keys().copied().map(ObjectRef::Evaluation));
+        refs.extend(self.evaluation_references());
         refs.sort();
         refs
     }
@@ -265,7 +267,10 @@ impl Pipeline {
             .or_insert(revision);
     }
     pub(super) fn ensure_usable(&self, reference: &ObjectRef) -> Result<(), PipelineError> {
-        if self.lifecycle_invalid.contains(reference) {
+        if self
+            .lifecycle_invalid
+            .contains(&self.normalize_evaluation_reference(reference))
+        {
             Err(PipelineError::InputInvalidated {
                 reference: reference.clone(),
                 revision: self.lifecycle_revision(),

@@ -11,7 +11,7 @@ pub use crate::model::evaluation::EvaluationRequest;
 use crate::model::evaluation::{
     ConformanceEvaluation, CriterionAssessment, EvaluationData, EvaluationDiagnostic as D,
 };
-use crate::provenance::ObjectRef;
+use crate::provenance::{EvaluationId, ObjectRef};
 use alloc::vec::Vec;
 
 pub(super) struct Subject {
@@ -38,8 +38,23 @@ impl Subject {
     }
 }
 impl Pipeline {
-    /// Always retains invalid evaluations, except a local identity collision.
+    /// Preserve existing numeric aliases when available; collisions use a full key.
     pub fn evaluate(&mut self, request: EvaluationRequest) -> Result<ObjectRef, PipelineError> {
+        self.evaluate_with_reference_policy(request, false)
+    }
+    /// Use canonical full-key references from the first insertion, independently
+    /// of numeric alias availability or insertion order of colliding evaluations.
+    pub fn evaluate_keyed(
+        &mut self,
+        request: EvaluationRequest,
+    ) -> Result<ObjectRef, PipelineError> {
+        self.evaluate_with_reference_policy(request, true)
+    }
+    fn evaluate_with_reference_policy(
+        &mut self,
+        request: EvaluationRequest,
+        keyed: bool,
+    ) -> Result<ObjectRef, PipelineError> {
         let subject = self.evaluation_subject(&request.target);
         let definition = self.registry.conformance(&request.contract).cloned();
         let lifecycle = self
@@ -224,22 +239,100 @@ impl Pipeline {
             data.diagnostics.push(D::ContractUnresolved);
         }
         let artifact = ConformanceEvaluation::new(data);
-        let id = artifact.id();
-        self.check_identity(id, &artifact.canonical_basis())?;
-        self.evaluations.entry(id).or_insert(artifact);
-        let reference = ObjectRef::Evaluation(id);
-        self.track_lifecycle_birth(&reference);
-        Ok(reference)
+        #[cfg(test)]
+        let artifact = {
+            let mut artifact = artifact;
+            if let Some(digest) = self.evaluation_digest_override {
+                artifact.force_digest_for_test(digest);
+            }
+            artifact
+        };
+        self.retain_evaluation(artifact, keyed)
+    }
+    fn retain_evaluation(
+        &mut self,
+        artifact: ConformanceEvaluation,
+        keyed: bool,
+    ) -> Result<ObjectRef, PipelineError> {
+        let key = artifact.key();
+        let canonical = ObjectRef::EvaluationKey(key.clone());
+        if self.evaluations.contains_key(&key) {
+            let primary = self.preferred_evaluation_reference(&key);
+            self.ensure_usable(&primary)?;
+            return Ok(if keyed { canonical } else { primary });
+        }
+        let alias_available = if keyed {
+            false
+        } else {
+            match self.check_identity(artifact.id(), key.canonical_key()) {
+                Ok(()) => true,
+                Err(
+                    PipelineError::IdentityCollision(_) | PipelineError::InputInvalidated { .. },
+                ) => false,
+                Err(error) => return Err(error),
+            }
+        };
+        if alias_available {
+            // This reservation is never reassigned, including after invalidation.
+            self.evaluation_aliases.insert(artifact.id(), key.clone());
+        }
+        self.evaluations.insert(key.clone(), artifact);
+        let primary = self.preferred_evaluation_reference(&key);
+        self.track_lifecycle_birth(&primary);
+        Ok(if keyed { canonical } else { primary })
     }
     pub fn resolve_evaluation(&self, reference: &ObjectRef) -> Option<&ConformanceEvaluation> {
-        if let ObjectRef::Evaluation(id) = reference {
-            self.evaluations.get(id)
-        } else {
-            None
+        self.evaluation_key(reference)
+            .and_then(|key| self.evaluations.get(key))
+    }
+    pub fn evaluation_key(&self, reference: &ObjectRef) -> Option<&EvaluationId> {
+        match reference {
+            ObjectRef::Evaluation(id) => self.evaluation_aliases.get(id),
+            ObjectRef::EvaluationKey(key) => {
+                self.evaluations.get_key_value(key).map(|(key, _)| key)
+            }
+            _ => None,
         }
+    }
+    pub fn canonical_evaluation_reference(&self, reference: &ObjectRef) -> Option<ObjectRef> {
+        self.evaluation_key(reference)
+            .cloned()
+            .map(ObjectRef::EvaluationKey)
+    }
+    /// One primary reference per retained Evaluation, including diagnostics-only results.
+    pub fn evaluation_references(&self) -> Vec<ObjectRef> {
+        let mut refs: Vec<_> = self
+            .evaluations
+            .keys()
+            .map(|key| self.preferred_evaluation_reference(key))
+            .collect();
+        refs.sort();
+        refs
+    }
+    /// Return every member, always with its canonical full key. No arbitrary
+    /// choice of a bucket member is exposed as digest-only resolution.
+    pub fn evaluations_with_digest(&self, digest: u64) -> Vec<ObjectRef> {
+        self.evaluations
+            .keys()
+            .filter(|key| key.digest() == digest)
+            .cloned()
+            .map(ObjectRef::EvaluationKey)
+            .collect()
     }
     pub fn evaluation_count(&self) -> usize {
         self.evaluations.len()
+    }
+    pub(super) fn preferred_evaluation_reference(&self, key: &EvaluationId) -> ObjectRef {
+        if self.evaluation_aliases.get(&key.digest()) == Some(key) {
+            ObjectRef::Evaluation(key.digest())
+        } else {
+            ObjectRef::EvaluationKey(key.clone())
+        }
+    }
+    pub(super) fn normalize_evaluation_reference(&self, reference: &ObjectRef) -> ObjectRef {
+        self.evaluation_key(reference)
+            .map(|key| self.preferred_evaluation_reference(key))
+            .unwrap_or_else(|| reference.clone())
     }
     pub(super) fn evaluation_subject(&self, reference: &ObjectRef) -> Option<Subject> {
         let (kind, id, basis, domain, frame, dynamics, result, count) = match reference {

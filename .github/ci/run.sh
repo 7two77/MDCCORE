@@ -63,6 +63,10 @@ for MDC_CI_LIFECYCLE_RUN in 1 2; do
   run_check "lifecycle-$MDC_CI_LIFECYCLE_RUN" cargo run --quiet --locked --offline "${MDC_CI_FEATURES[@]}" --example lifecycle
 done
 run_check lifecycle-determinism cmp "$MDC_CI_REPORT_DIR/lifecycle-1.log" "$MDC_CI_REPORT_DIR/lifecycle-2.log"
+for MDC_CI_RETENTION_RUN in 1 2; do
+  run_check "evaluation-retention-$MDC_CI_RETENTION_RUN" cargo run --quiet --locked --offline "${MDC_CI_FEATURES[@]}" --example evaluation_retention
+done
+run_check evaluation-retention-determinism cmp "$MDC_CI_REPORT_DIR/evaluation-retention-1.log" "$MDC_CI_REPORT_DIR/evaluation-retention-2.log"
 run_check e2e python3 scripts/run_e2e.py "${MDC_CI_FEATURES[@]}" --output "$MDC_CI_REPORT_DIR/execution.json"
 run_check evidence-check python3 scripts/check_gate_readiness.py --report "$MDC_CI_REPORT_DIR/execution.json"
 # The legacy Python suite reads a fixed path. Supply fresh output for this run,

@@ -6,15 +6,15 @@
 `Cargo.toml`, `src/`, `tests/`. Вложенный каталог `mdc_core/` сохранён как исходный
 материал для сравнения; он не подключён как workspace member.
 
-Текущий рабочий пакет — **MDC-IMPL-008: Lifecycle invalidation и зависимости**.
-[Контракт MDC-LIFECYCLE-001/1](docs/MDC-LIFECYCLE-CONTRACT-v0.1.md),
-[реализация и проверки](docs/MDC-IMPL-008.md),
-[матрица v0.2](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.2.md).
-Исторические решения и результаты MDC-IMPL-001…007/OPS-001 сохранены в `docs/`.
+Текущий рабочий пакет — **MDC-IMPL-009: Evaluation collision retention**.
+[Контракт](docs/MDC-EVALUATION-RETENTION-CONTRACT-v0.1.md),
+[реализация и проверки](docs/MDC-IMPL-009.md),
+[матрица v0.3](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.3.md).
+Исторические решения 001…008/OPS-001 сохранены в `docs/`.
 
 **MDC-E2E-CONFORMANCE-001: PASS для объявленного fixture MDC-SCALAR-001.**
 Все 12 assertions E2E-A01…A12 и 11 negative cases N01…N11 выполнены в двух
-раздельных OS-процессах. [Execution evidence](docs/evidence/mdc-e2e-conformance-001-impl-008.json)
+раздельных OS-процессах. [Execution evidence](docs/evidence/mdc-e2e-conformance-001-impl-009.json)
 содержит фактические результаты, canonical bytes, lineage и snapshots. PASS
 применим к записанным source fingerprint, toolchain, features и target; текущую
 применимость отчёта проверяет `check_gate_readiness.py`.
@@ -50,17 +50,18 @@ cargo run --locked --offline --example relation_composition
 cargo run --locked --offline --example state_transition
 cargo run --locked --offline --example invalid_artifacts
 cargo run --locked --offline --example lifecycle
+cargo run --locked --offline --example evaluation_retention
 python3 scripts/run_e2e.py
 python3 scripts/check_gate_readiness.py
 python3 -m unittest discover -s tests -p 'test_e2e_report.py'
 ```
 
 Полная матрица команд, результатов и compatibility checks записывается в
-[evidence MDC-IMPL-008](docs/evidence/impl-008.json).
-Подтверждены 145/145 Rust tests и 17/17 Python checks в каждом из шести локальных
+[evidence MDC-IMPL-009](docs/evidence/impl-009.json).
+Подтверждены 168/168 Rust tests и 17/17 Python checks в каждом из шести локальных
 запусков: Rust 1.85.1 / 1.98.0 × default, `std,alloc`, `no_std + alloc`.
-Format, Clippy, старый E2E и два прогона lifecycle example проходят.
-Hosted CI пакета 008 ещё NOT_EXECUTED; опубликованный CI baseline проверял a8c15c7.
+Format, Clippy, прежний E2E, lifecycle и keyed-reference примеры проходят.
+Hosted CI пакета 009 ещё NOT_EXECUTED; опубликованный CI 008 проверял 70f37fc.
 Runner исполняется на std-хосте; библиотека сохраняет конфигурацию no_std+alloc.
 Python validator независимо проверяет покрытие cases, ожидаемые semantic
 results, graph/snapshot evidence, projection isolation и fingerprint реализации.
@@ -102,7 +103,11 @@ PASS fixture не устанавливает универсальное соот
 произвольные schemas, units conversion, рыночную интерпретацию, общие external
 evidence contracts, reinstatement или durable lifecycle recovery. Native Rust
 Hash и локальная политика коллизий не дают межплатформенной гарантии identity.
-Отдельная retention коллизий Evaluation остаётся ограничением MDC-IMPL-005/006.
+Evaluation хранится по полному canonical key; коллизия digest не перезаписывает
+другие результаты. Для новых consumers доступны `evaluate_keyed()` и
+`ObjectRef::EvaluationKey`. Numeric aliases закреплены за первым reservation;
+canonical keyed references следует использовать для collision-independent naming.
+Внешние exhaustive match ObjectRef требуют обработки нового variant.
 
 VAIXLNS-Builder и STSA-MC не входят в текущую область работ.
 

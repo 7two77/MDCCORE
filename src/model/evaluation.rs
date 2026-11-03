@@ -5,7 +5,7 @@ use crate::contract::encoding::{put_bytes, put_dynamics_context, put_object_ref,
 use crate::contract::evaluation::{ConformanceResult, LifecycleStatus};
 use crate::contract::registry::VersionedId;
 use crate::identity::{CanonicalSemanticBasis, IdentityAdapter};
-use crate::provenance::{DerivationProvenance, ObjectRef};
+use crate::provenance::{DerivationProvenance, EvaluationId, ObjectRef};
 use alloc::vec::Vec;
 
 #[derive(Clone, Debug, Eq, PartialEq)]
@@ -87,6 +87,13 @@ impl ConformanceEvaluation {
     }
     pub fn id(&self) -> u64 {
         self.id
+    }
+    pub fn key(&self) -> EvaluationId {
+        EvaluationId::for_artifact(self.id, self.canonical_basis())
+    }
+    #[cfg(test)]
+    pub(crate) fn force_digest_for_test(&mut self, digest: u64) {
+        self.id = digest;
     }
     pub fn request(&self) -> &EvaluationRequest {
         &self.request

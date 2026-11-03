@@ -17,7 +17,7 @@ use crate::model::observation::{AdmissionError, AdmittedObservation};
 use crate::model::relation::{AdmittedRelation, RelationError};
 use crate::model::state::{AdmittedState, StateError};
 use crate::model::transition::{AdmittedTransition, TransitionError};
-use crate::provenance::ObjectRef;
+use crate::provenance::{EvaluationId, ObjectRef};
 
 mod lifecycle;
 mod projection;
@@ -121,7 +121,10 @@ pub struct Pipeline {
     compositions: BTreeMap<u64, AdmittedComposition>,
     states: BTreeMap<u64, AdmittedState>,
     transitions: BTreeMap<u64, AdmittedTransition>,
-    evaluations: BTreeMap<u64, crate::model::evaluation::ConformanceEvaluation>,
+    evaluations: BTreeMap<EvaluationId, crate::model::evaluation::ConformanceEvaluation>,
+    evaluation_aliases: BTreeMap<u64, EvaluationId>,
+    #[cfg(test)]
+    evaluation_digest_override: Option<u64>,
     failed_candidate: Option<alloc::boxed::Box<invalid::ComputedCandidate>>,
     invalid_objects: BTreeMap<ObjectRef, crate::model::invalid::InvalidSemanticObject>,
     rejections: Vec<RejectedAttempt>,
@@ -142,6 +145,9 @@ impl Pipeline {
             states: BTreeMap::new(),
             transitions: BTreeMap::new(),
             evaluations: BTreeMap::new(),
+            evaluation_aliases: BTreeMap::new(),
+            #[cfg(test)]
+            evaluation_digest_override: None,
             failed_candidate: None,
             invalid_objects: BTreeMap::new(),
             rejections: Vec::new(),
@@ -257,6 +263,7 @@ impl Pipeline {
             | ObjectRef::State(_)
             | ObjectRef::Transition(_)
             | ObjectRef::Evaluation(_)
+            | ObjectRef::EvaluationKey(_)
             | ObjectRef::InvalidObservation(_)
             | ObjectRef::InvalidMeasurement(_)
             | ObjectRef::InvalidRelation(_)
@@ -297,8 +304,9 @@ impl Pipeline {
                     .map(|object| object.canonical_basis())
             });
         let existing = existing.or_else(|| {
-            self.evaluations
+            self.evaluation_aliases
                 .get(&id)
+                .and_then(|key| self.evaluations.get(key))
                 .map(|object| object.canonical_basis())
         });
         if existing.is_some_and(|existing| existing != basis) {
@@ -436,7 +444,7 @@ impl Pipeline {
                     }
                     pending.extend(state.provenance().inputs().iter().cloned());
                 }
-                ObjectRef::Evaluation(_) => {
+                ObjectRef::Evaluation(_) | ObjectRef::EvaluationKey(_) => {
                     let evaluation = self
                         .resolve_evaluation(&reference)
                         .ok_or_else(|| PipelineError::InputUnresolved(reference.clone()))?;
@@ -597,3 +605,6 @@ mod tests {
         assert_eq!(pipeline.observation_count(), 1);
     }
 }
+
+#[cfg(test)]
+mod evaluation_retention_tests;

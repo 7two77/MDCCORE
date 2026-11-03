@@ -366,15 +366,17 @@ impl Pipeline {
                 ObjectRef::Transition(_) => self
                     .resolve_transition(&reference)
                     .map(|o| (o.canonical_basis(), o.provenance().inputs().to_vec())),
-                ObjectRef::Evaluation(_) => self.resolve_evaluation(&reference).map(|o| {
-                    if self.registry.conformance(o.contract()).is_none() {
-                        result.definitions.push(UnresolvedDefinition {
-                            kind: DefinitionKind::Conformance,
-                            reference: o.contract().clone(),
-                        });
-                    }
-                    (o.canonical_basis(), o.provenance().inputs().to_vec())
-                }),
+                ObjectRef::Evaluation(_) | ObjectRef::EvaluationKey(_) => {
+                    self.resolve_evaluation(&reference).map(|o| {
+                        if self.registry.conformance(o.contract()).is_none() {
+                            result.definitions.push(UnresolvedDefinition {
+                                kind: DefinitionKind::Conformance,
+                                reference: o.contract().clone(),
+                            });
+                        }
+                        (o.canonical_basis(), o.provenance().inputs().to_vec())
+                    })
+                }
                 _ => None,
             };
             if let Some((basis, inputs)) = resolved {

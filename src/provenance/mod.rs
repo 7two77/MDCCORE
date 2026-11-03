@@ -24,6 +24,37 @@ pub enum ObjectRef {
     InvalidComposition(InvalidId),
     InvalidState(InvalidId),
     InvalidTransition(InvalidId),
+    /// Canonical Evaluation reference. Numeric aliases remain pinned to their
+    /// first reservation; the full key never selects a different bucket member.
+    EvaluationKey(EvaluationId),
+}
+
+#[derive(Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+pub struct EvaluationId {
+    digest: u64,
+    canonical_key: Vec<u8>,
+}
+impl EvaluationId {
+    /// Construct a lookup reference, not an admitted Evaluation artifact.
+    pub fn from_canonical_basis(canonical_key: Vec<u8>) -> Self {
+        let digest = crate::identity::IdentityAdapter::derive_identity_from_basis(&canonical_key);
+        Self {
+            digest,
+            canonical_key,
+        }
+    }
+    pub(crate) fn for_artifact(digest: u64, canonical_key: Vec<u8>) -> Self {
+        Self {
+            digest,
+            canonical_key,
+        }
+    }
+    pub fn digest(&self) -> u64 {
+        self.digest
+    }
+    pub fn canonical_key(&self) -> &[u8] {
+        &self.canonical_key
+    }
 }
 
 /// Immutable lineage recorded by a production construction operation.

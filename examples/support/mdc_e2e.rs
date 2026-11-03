@@ -464,7 +464,7 @@ impl Run {
   }))
     }
     fn json(&self) -> String {
-        let evaluations=self.refs.iter().filter_map(|r|self.p.resolve_evaluation(r)).map(|e|format!("{{\"reference\":{},\"target\":{},\"result\":{},\"status\":{},\"criteria\":{},\"diagnostics\":{}}}",ref_json(&ObjectRef::Evaluation(e.id())),ref_json(e.target()),semantic(e.result()),q(&format!("{:?}",e.status())),array(e.criteria().iter().map(|c|format!("{{\"id\":{},\"result\":{}}}",q(&format!("{:?}",c.reference())),semantic(Some(c.result()))))),q(&format!("{:?}",e.diagnostics()))));
+        let evaluations=self.refs.iter().filter_map(|r|self.p.resolve_evaluation(r).map(|e|(r,e))).map(|(reference,e)|format!("{{\"reference\":{},\"target\":{},\"result\":{},\"status\":{},\"criteria\":{},\"diagnostics\":{}}}",ref_json(reference),ref_json(e.target()),semantic(e.result()),q(&format!("{:?}",e.status())),array(e.criteria().iter().map(|c|format!("{{\"id\":{},\"result\":{}}}",q(&format!("{:?}",c.reference())),semantic(Some(c.result()))))),q(&format!("{:?}",e.diagnostics()))));
         let lineage = self.evaluation.as_ref().map_or("[]".into(), |r| {
             array(self.p.trace(r).unwrap().iter().map(ref_json))
         });

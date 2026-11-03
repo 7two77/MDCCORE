@@ -166,7 +166,7 @@ fn capture(pipeline: &Pipeline, refs: &[ObjectRef]) -> Vec<Vec<u8>> {
                     .unwrap()
                     .canonical_basis(),
             ),
-            ObjectRef::Evaluation(_) => Some(
+            ObjectRef::Evaluation(_) | ObjectRef::EvaluationKey(_) => Some(
                 pipeline
                     .resolve_evaluation(reference)
                     .unwrap()
