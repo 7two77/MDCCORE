@@ -63,7 +63,7 @@ python3 -m unittest discover -s tests -p 'test_e2e_report.py'
 
 Матрица команд, результатов и compatibility checks записана в
 [evidence MDC-IMPL-010](docs/evidence/impl-010-local-verification.json).
-Подтверждены 176/176 Rust tests и 17/17 Python checks в каждом из шести локальных
+Подтверждены 176/176 Rust tests и 21/21 Python checks (17 E2E + 4 comparison) в каждом из шести локальных
 запусков: Rust 1.85.1 / 1.98.0 × default, `std,alloc`, `no_std + alloc`.
 Format, Clippy, прежний E2E, lifecycle, keyed-reference и portable примеры проходят.
 [Hosted CI 009](https://github.com/7two77/MDCCORE/actions/runs/41614270848) прошёл

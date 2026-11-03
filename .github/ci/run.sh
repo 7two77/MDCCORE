@@ -73,6 +73,7 @@ done
 run_check portable-determinism cmp "$MDC_CI_REPORT_DIR/portable-1.log" "$MDC_CI_REPORT_DIR/portable-2.log"
 cargo run --quiet --locked --offline "${MDC_CI_FEATURES[@]}" --example identity_target > "$MDC_CI_REPORT_DIR/target.json"
 run_check portable-check python3 -B scripts/check_portable_identity.py --log "$MDC_CI_REPORT_DIR/portable-1.log" --output "$MDC_CI_REPORT_DIR/portable-verification.json"
+run_check portable-validator-tests env MDC_PORTABLE_LOG="$MDC_CI_REPORT_DIR/portable-1.log" python3 -B -m unittest discover -s tests -p test_portable_identity.py
 run_check e2e python3 scripts/run_e2e.py "${MDC_CI_FEATURES[@]}" --output "$MDC_CI_REPORT_DIR/execution.json"
 run_check evidence-check python3 scripts/check_gate_readiness.py --report "$MDC_CI_REPORT_DIR/execution.json"
 # The legacy Python suite reads a fixed path. Supply fresh output for this run,

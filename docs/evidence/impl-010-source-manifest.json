@@ -1,7 +1,7 @@
 {
   "package": "MDC-IMPL-010",
   "base_commit": "d33bb979c0b8b6a69126fd79544d3f43e5df9d3b",
-  "implementation_source_sha256": "1f97ed76a45601eba46c42688140fb28d8a59d67536be2fdbca5349c7da58ecc",
+  "implementation_source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b",
   "base_file_sha256": {
     ".github/ci/record.py": "4ff8ce3cd2b94598c9bbe45e6f9c789f169924f15ad98823795c69b27890d122",
     ".github/ci/run.sh": "d2a6dd70690697af53a516ffd2c854ef063f5302202c72ad032c00b6f16b56c0",
@@ -192,10 +192,11 @@
     "src/identity/portable.rs",
     "tests/fixtures/portable-graph-v1.sha256",
     "tests/fixtures/portable-identity-v1.tsv",
-    "tests/portable_identity.rs"
+    "tests/portable_identity.rs",
+    "tests/test_portable_identity.py"
   ],
   "base_files": 141,
-  "candidate_files": 158,
+  "candidate_files": 159,
   "nested_copy_unchanged": true,
   "previous_docs_and_evidence_unchanged": true,
   "dependencies_added": false,

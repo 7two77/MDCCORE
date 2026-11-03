@@ -6,7 +6,7 @@
   "acceptance": "PASS",
   "harness_status": "PASS",
   "metadata": {
-    "implementation_source_sha256": "1f97ed76a45601eba46c42688140fb28d8a59d67536be2fdbca5349c7da58ecc",
+    "implementation_source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b",
     "source_files": {
       "Cargo.lock": "db212ada28cd71fe46f25450b036900db1ba8cacaa224f6f5b11b0364cd02aa4",
       "Cargo.toml": "c6e3c003ddff0ed5716ab252c94bbf23fb0155ccd862f7d278c331a47698cf0e",
@@ -24,7 +24,7 @@
       "examples/support/mdc_e2e.rs": "dbb47af9b057265a230c70a11a58eedba6adf51a0a5bb890eb31fef5daa0f457",
       "examples/support/portable_identity.rs": "83e607e7f26e7f7f1d48763f55b1590b0aa1211609e25cd8c0b24c53f35a008b",
       "scripts/check_gate_readiness.py": "ee61ac4019c9d84be1aadd6b7286c62d0e84c0c6198cfa3741b364de78003956",
-      "scripts/check_portable_identity.py": "1d657b1ce55ee5ae738054370e578d7a516e25be0c543834ab23db0f659c29a3",
+      "scripts/check_portable_identity.py": "3610a958c57f97b0ab26cf8a6a0a138fe302697bf716c5b8197aa3adb7cf0bc9",
       "scripts/e2e_report.py": "0f3aabf67a4148ee9f8b4e9ef9d9928accd5276a0528e3c8ec9ee73ac505fcc9",
       "scripts/run_e2e.py": "0a16f77b330a7315d9144ddd9ef25f17755ed9f9259b3e14169f93f4cad9e0f8",
       "src/canonical/mod.rs": "0d85becf8224ac40ae8c2f606f002bc857657d74e90276cb6db5af778d370e9b",
@@ -78,7 +78,8 @@
       "tests/source_measurement.rs": "291de00e6a20de4c25b0c7e66e0ff594dffc5ca250b6d3d1f75a02f395d78e4c",
       "tests/state_transition.rs": "ad94af7bbd7d00a8d50e7b9f1dd319c1294d5610d0a24e54e224534c5b428fdb",
       "tests/technical_foundation.rs": "09b6099f3c4a4aff5b12751f5dea68bc19c8c55adb555963793be04cb25ee1db",
-      "tests/test_e2e_report.py": "403469fe28187566395abe60c997926322296a0499425e24d1a26019c3ec9889"
+      "tests/test_e2e_report.py": "403469fe28187566395abe60c997926322296a0499425e24d1a26019c3ec9889",
+      "tests/test_portable_identity.py": "d431c3009d85a015b0ac4fb8bf650fd92be5623fe6cd0adf8b755ea432f94134"
     },
     "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7\n",
     "cargo": "cargo 1.85.1 (d73d2caf9 2024-12-31)",
@@ -102,11 +103,11 @@
   },
   "processes": [
     {
-      "launcher_pid": 66030,
+      "launcher_pid": 68519,
       "exit_code": 0,
       "report": {
         "schema_version": 1,
-        "process_id": 66030,
+        "process_id": 68519,
         "fixture_id": "MDC-E2E-CONFORMANCE-001",
         "fixture_version": 1,
         "profile": "MDC-SCALAR-001",
@@ -47011,11 +47012,11 @@
       "timed_out": false
     },
     {
-      "launcher_pid": 66034,
+      "launcher_pid": 68523,
       "exit_code": 0,
       "report": {
         "schema_version": 1,
-        "process_id": 66034,
+        "process_id": 68523,
         "fixture_id": "MDC-E2E-CONFORMANCE-001",
         "fixture_version": 1,
         "profile": "MDC-SCALAR-001",

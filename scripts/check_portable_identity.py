@@ -107,8 +107,8 @@ def compare(root):
         check_target(target, metadata["profile"])
         if metadata["source_files"] != files:
             raise ValueError("source manifest mismatch")
-        for name, digest in metadata["ci_file_sha256"].items():
-            if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != digest:
+        for name, ci_digest in metadata["ci_file_sha256"].items():
+            if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != ci_digest:
                 raise ValueError("CI configuration mismatch")
         if not expected_commit or not expected_run or metadata["commit_sha"] != expected_commit or metadata["github_run_id"] != expected_run:
             raise ValueError("mixed or unidentified checkouts/runs")

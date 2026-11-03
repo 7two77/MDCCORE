@@ -20,7 +20,7 @@
 ## Проверки и evidence
 
 Local matrix Rust 1.85.1/1.98.0 × default/std-alloc/alloc:
-**176 Rust tests**, **17 Python validator tests** в каждой конфигурации,
+**176 Rust tests**, **21 Python validator tests (17 E2E + 4 comparison)** в каждой конфигурации,
 Format, Clippy, checks, examples и прежний E2E 23/23 в двух процессах — PASS.
 Восемь новых Rust tests: семь public protocol/migration/graph cases и один
 private portable collision + lifecycle scenario.
@@ -29,6 +29,8 @@ private portable collision + lifecycle scenario.
 `tests/fixtures/portable-identity-v1.tsv`. Python validator независимо вычисляет
 FNV и проверяет каждый digest всего portable graph. Его семь negative controls
 отклоняют неполное исполнение, другой protocol, повреждённые/лишние records и lineage.
+Четыре comparison-validator tests проверяют правильный digest итогового JSON,
+missing/duplicate configurations и неверные checkout/run/source/target metadata.
 Frozen portable graph/lineage SHA-256:
 `b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160`.
 

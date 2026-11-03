@@ -14,7 +14,7 @@ MDC-IMPL-010, 2026-11-03, parent d33bb97. Scoped значения статусо
 | Legacy byte artifact migration | IMPLEMENTED | Verified native legacy capture → tagged portable digest тех же bytes |
 | General persistent graph migration | PARTIAL | Explicit fixture replay и mapping; общего importer/durable replayer нет |
 | Legacy compatibility | IMPLEMENTED | Контрольный graph/lineage/lifecycle event сравниваются с 009, старые snapshots не меняются |
-| Local native CI matrix | IMPLEMENTED | 176 Rust + 17 Python × 6; separate portable validator negative controls |
+| Local native CI matrix | IMPLEMENTED | 176 Rust + 21 Python × 6; separate portable validator negative controls |
 | Cross-target portability verification | UNVERIFIED | В подготовленной копии hosted i686/s390x NOT_EXECUTED; workflow и comparison gate добавлены |
 | Legacy 23-case E2E | IMPLEMENTED | Старый gate выполняется; portable scenario имеет собственную область проверки |
 | Global digest uniqueness | UNVERIFIED | FNV64 не инъективен; действуют collision guards/full canonical keys |

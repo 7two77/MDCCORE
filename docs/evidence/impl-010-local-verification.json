@@ -1,8 +1,9 @@
 {
   "package": "MDC-IMPL-010",
   "status": "PASS",
-  "scope": "local x86_64 native only; hosted cross-target not yet executed",
-  "source_sha256": "1f97ed76a45601eba46c42688140fb28d8a59d67536be2fdbca5349c7da58ecc",
+  "scope": "local native x86_64; final hosted execution separate",
+  "source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b",
+  "pre_fix_comparison_regression": "DETECTED_FAILURE; corrected implementation passes",
   "records": [
     {
       "rust": "1.85.1",
@@ -14,13 +15,13 @@
         "exit_code": 0,
         "last_step": "complete",
         "profile": "alloc",
-        "commit_sha": "d33bb979c0b8b6a69126fd79544d3f43e5df9d3b",
+        "commit_sha": "257f3909aa3cf8b332428d76e27c4671c7fee5e8",
         "worktree_dirty": true,
         "github_run_id": null,
         "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7",
         "cargo": "cargo 1.85.1 (d73d2caf9 2024-12-31)",
         "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
-        "implementation_source_sha256": "1f97ed76a45601eba46c42688140fb28d8a59d67536be2fdbca5349c7da58ecc",
+        "implementation_source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b",
         "source_files": {
           "Cargo.lock": "db212ada28cd71fe46f25450b036900db1ba8cacaa224f6f5b11b0364cd02aa4",
           "Cargo.toml": "c6e3c003ddff0ed5716ab252c94bbf23fb0155ccd862f7d278c331a47698cf0e",
@@ -38,7 +39,7 @@
           "examples/support/mdc_e2e.rs": "dbb47af9b057265a230c70a11a58eedba6adf51a0a5bb890eb31fef5daa0f457",
           "examples/support/portable_identity.rs": "83e607e7f26e7f7f1d48763f55b1590b0aa1211609e25cd8c0b24c53f35a008b",
           "scripts/check_gate_readiness.py": "ee61ac4019c9d84be1aadd6b7286c62d0e84c0c6198cfa3741b364de78003956",
-          "scripts/check_portable_identity.py": "1d657b1ce55ee5ae738054370e578d7a516e25be0c543834ab23db0f659c29a3",
+          "scripts/check_portable_identity.py": "3610a958c57f97b0ab26cf8a6a0a138fe302697bf716c5b8197aa3adb7cf0bc9",
           "scripts/e2e_report.py": "0f3aabf67a4148ee9f8b4e9ef9d9928accd5276a0528e3c8ec9ee73ac505fcc9",
           "scripts/run_e2e.py": "0a16f77b330a7315d9144ddd9ef25f17755ed9f9259b3e14169f93f4cad9e0f8",
           "src/canonical/mod.rs": "0d85becf8224ac40ae8c2f606f002bc857657d74e90276cb6db5af778d370e9b",
@@ -92,17 +93,20 @@
           "tests/source_measurement.rs": "291de00e6a20de4c25b0c7e66e0ff594dffc5ca250b6d3d1f75a02f395d78e4c",
           "tests/state_transition.rs": "ad94af7bbd7d00a8d50e7b9f1dd319c1294d5610d0a24e54e224534c5b428fdb",
           "tests/technical_foundation.rs": "09b6099f3c4a4aff5b12751f5dea68bc19c8c55adb555963793be04cb25ee1db",
-          "tests/test_e2e_report.py": "403469fe28187566395abe60c997926322296a0499425e24d1a26019c3ec9889"
+          "tests/test_e2e_report.py": "403469fe28187566395abe60c997926322296a0499425e24d1a26019c3ec9889",
+          "tests/test_portable_identity.py": "d431c3009d85a015b0ac4fb8bf650fd92be5623fe6cd0adf8b755ea432f94134"
         },
         "ci_file_sha256": {
           ".github/workflows/ci.yml": "58b18b5e1ebccd74d7e4a7e8de439b8a5e15489edd7b33a74d9f8373674f4894",
           ".github/ci/portable.sh": "3bc4013b494e3635bccf6cfbf48d4d42583cffaad52aabef82112cf64a306945",
           ".github/ci/record.py": "4ff8ce3cd2b94598c9bbe45e6f9c789f169924f15ad98823795c69b27890d122",
-          ".github/ci/run.sh": "e6fdc765625598555d5ba5e330aa454076b0cc1943fc6852d46830bc03747be1"
+          ".github/ci/run.sh": "99d550a306c2eb4524638f63a3536486578a5980373032bc8d0c84cc5bbfb0be"
         }
       },
       "rust_tests_passed": 176,
-      "python_checks_passed": 17,
+      "python_checks_passed": 21,
+      "python_e2e_checks": 17,
+      "python_comparison_checks": 4,
       "portable_validator": {
         "acceptance": "PASS",
         "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
@@ -110,10 +114,9 @@
       },
       "legacy_009_graph_lineage": "MATCH",
       "legacy_009_lifecycle_event": "MATCH",
-      "legacy_009_keyed_example": "MATCH",
       "log_sha256": {
-        "clippy.log": "47d1ebe904a90b00c5b9e4f31a52db52e92ee8caeaa47e1a29a4a65b6baf0c9d",
-        "driver.log": "500f5cd61ac3f3bef9ebda7b514f24f3d2398f44d7e5619adcc5c937ad3f0484",
+        "clippy.log": "492249c9f550482a9a491739745144c5a474b15b27fd7de5717f8cd83c68916d",
+        "driver.log": "5cfc56a199c34319c50f5cd2e9edb1bff9d6bcea95da1354c94b8e5f71d7d473",
         "e2e.log": "62e76e9c42120a56682097ffc85d60dd92db662bcb340a65bdd7c6f9871db707",
         "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
         "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
@@ -134,8 +137,9 @@
         "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
         "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
         "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "tests.log": "47dc11d99f7b0826856ba0db9ade441d41685732a830f55574b71359c490e05d",
-        "validator-tests.log": "13f82dbfd318dcdb07182e113b685defcea8741edea3f53d7d93f6ffb4a46a18"
+        "portable-validator-tests.log": "a10ce7ce806bdda1db421dc4816a178ad5663ee77764c171bbefe37b28a14af0",
+        "tests.log": "98440dbfba7b4abcce6055bedb03045b2debc598d3c141e3cca9242235f9959b",
+        "validator-tests.log": "f6be23d7af1a4d48aec8ce278e428a5d24b7d2c6244f9aee509c396285be0d15"
       }
     },
     {
@@ -148,13 +152,13 @@
         "exit_code": 0,
         "last_step": "complete",
         "profile": "default",
-        "commit_sha": "d33bb979c0b8b6a69126fd79544d3f43e5df9d3b",
+        "commit_sha": "257f3909aa3cf8b332428d76e27c4671c7fee5e8",
         "worktree_dirty": true,
         "github_run_id": null,
         "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7",
         "cargo": "cargo 1.85.1 (d73d2caf9 2024-12-31)",
         "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
-        "implementation_source_sha256": "1f97ed76a45601eba46c42688140fb28d8a59d67536be2fdbca5349c7da58ecc",
+        "implementation_source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b",
         "source_files": {
           "Cargo.lock": "db212ada28cd71fe46f25450b036900db1ba8cacaa224f6f5b11b0364cd02aa4",
           "Cargo.toml": "c6e3c003ddff0ed5716ab252c94bbf23fb0155ccd862f7d278c331a47698cf0e",
@@ -172,7 +176,7 @@
           "examples/support/mdc_e2e.rs": "dbb47af9b057265a230c70a11a58eedba6adf51a0a5bb890eb31fef5daa0f457",
           "examples/support/portable_identity.rs": "83e607e7f26e7f7f1d48763f55b1590b0aa1211609e25cd8c0b24c53f35a008b",
           "scripts/check_gate_readiness.py": "ee61ac4019c9d84be1aadd6b7286c62d0e84c0c6198cfa3741b364de78003956",
-          "scripts/check_portable_identity.py": "1d657b1ce55ee5ae738054370e578d7a516e25be0c543834ab23db0f659c29a3",
+          "scripts/check_portable_identity.py": "3610a958c57f97b0ab26cf8a6a0a138fe302697bf716c5b8197aa3adb7cf0bc9",
           "scripts/e2e_report.py": "0f3aabf67a4148ee9f8b4e9ef9d9928accd5276a0528e3c8ec9ee73ac505fcc9",
           "scripts/run_e2e.py": "0a16f77b330a7315d9144ddd9ef25f17755ed9f9259b3e14169f93f4cad9e0f8",
           "src/canonical/mod.rs": "0d85becf8224ac40ae8c2f606f002bc857657d74e90276cb6db5af778d370e9b",
@@ -226,17 +230,20 @@
           "tests/source_measurement.rs": "291de00e6a20de4c25b0c7e66e0ff594dffc5ca250b6d3d1f75a02f395d78e4c",
           "tests/state_transition.rs": "ad94af7bbd7d00a8d50e7b9f1dd319c1294d5610d0a24e54e224534c5b428fdb",
           "tests/technical_foundation.rs": "09b6099f3c4a4aff5b12751f5dea68bc19c8c55adb555963793be04cb25ee1db",
-          "tests/test_e2e_report.py": "403469fe28187566395abe60c997926322296a0499425e24d1a26019c3ec9889"
+          "tests/test_e2e_report.py": "403469fe28187566395abe60c997926322296a0499425e24d1a26019c3ec9889",
+          "tests/test_portable_identity.py": "d431c3009d85a015b0ac4fb8bf650fd92be5623fe6cd0adf8b755ea432f94134"
         },
         "ci_file_sha256": {
           ".github/workflows/ci.yml": "58b18b5e1ebccd74d7e4a7e8de439b8a5e15489edd7b33a74d9f8373674f4894",
           ".github/ci/portable.sh": "3bc4013b494e3635bccf6cfbf48d4d42583cffaad52aabef82112cf64a306945",
           ".github/ci/record.py": "4ff8ce3cd2b94598c9bbe45e6f9c789f169924f15ad98823795c69b27890d122",
-          ".github/ci/run.sh": "e6fdc765625598555d5ba5e330aa454076b0cc1943fc6852d46830bc03747be1"
+          ".github/ci/run.sh": "99d550a306c2eb4524638f63a3536486578a5980373032bc8d0c84cc5bbfb0be"
         }
       },
       "rust_tests_passed": 176,
-      "python_checks_passed": 17,
+      "python_checks_passed": 21,
+      "python_e2e_checks": 17,
+      "python_comparison_checks": 4,
       "portable_validator": {
         "acceptance": "PASS",
         "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
@@ -244,10 +251,9 @@
       },
       "legacy_009_graph_lineage": "MATCH",
       "legacy_009_lifecycle_event": "MATCH",
-      "legacy_009_keyed_example": "MATCH",
       "log_sha256": {
         "clippy.log": "47d1ebe904a90b00c5b9e4f31a52db52e92ee8caeaa47e1a29a4a65b6baf0c9d",
-        "driver.log": "d22a4dfedd16191d553e890b1e9367d6a8f460adb5f2faf7aa528f2bdd0ce154",
+        "driver.log": "5b0ce6ff7f46533d218120d1416c0670d994e93c9c21af21c2f32ded7a8926c9",
         "e2e.log": "e78f925c588ded196dd75f126ff026dd59a67002743e9b06b4c00b2a04fe4a41",
         "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
         "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
@@ -269,8 +275,9 @@
         "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
         "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
         "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "tests.log": "7f58785b6338e6bfa2c9461eca8885dddad988ce4e2d38565f83f3b57d3dbc32",
-        "validator-tests.log": "d5d4cee19815e4b9181d316f2f57569010097580c591eb7fe581f6f96d30dcdf"
+        "portable-validator-tests.log": "1649fb93af3f2c03c574fc121815c90ad67f11dba8e72705624937025bc09735",
+        "tests.log": "f6b04fa3df8daab6b2461b9be559743f1b00d660cc3cc10c06367e2e415c66de",
+        "validator-tests.log": "04af973d8b83968551d011e89ec3544ed20f2ee4270da05c498ed611bf7c919f"
       }
     },
     {
@@ -283,13 +290,13 @@
         "exit_code": 0,
         "last_step": "complete",
         "profile": "std-alloc",
-        "commit_sha": "d33bb979c0b8b6a69126fd79544d3f43e5df9d3b",
+        "commit_sha": "257f3909aa3cf8b332428d76e27c4671c7fee5e8",
         "worktree_dirty": true,
         "github_run_id": null,
         "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7",
         "cargo": "cargo 1.85.1 (d73d2caf9 2024-12-31)",
         "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
-        "implementation_source_sha256": "1f97ed76a45601eba46c42688140fb28d8a59d67536be2fdbca5349c7da58ecc",
+        "implementation_source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b",
         "source_files": {
           "Cargo.lock": "db212ada28cd71fe46f25450b036900db1ba8cacaa224f6f5b11b0364cd02aa4",
           "Cargo.toml": "c6e3c003ddff0ed5716ab252c94bbf23fb0155ccd862f7d278c331a47698cf0e",
@@ -307,7 +314,7 @@
           "examples/support/mdc_e2e.rs": "dbb47af9b057265a230c70a11a58eedba6adf51a0a5bb890eb31fef5daa0f457",
           "examples/support/portable_identity.rs": "83e607e7f26e7f7f1d48763f55b1590b0aa1211609e25cd8c0b24c53f35a008b",
           "scripts/check_gate_readiness.py": "ee61ac4019c9d84be1aadd6b7286c62d0e84c0c6198cfa3741b364de78003956",
-          "scripts/check_portable_identity.py": "1d657b1ce55ee5ae738054370e578d7a516e25be0c543834ab23db0f659c29a3",
+          "scripts/check_portable_identity.py": "3610a958c57f97b0ab26cf8a6a0a138fe302697bf716c5b8197aa3adb7cf0bc9",
           "scripts/e2e_report.py": "0f3aabf67a4148ee9f8b4e9ef9d9928accd5276a0528e3c8ec9ee73ac505fcc9",
           "scripts/run_e2e.py": "0a16f77b330a7315d9144ddd9ef25f17755ed9f9259b3e14169f93f4cad9e0f8",
           "src/canonical/mod.rs": "0d85becf8224ac40ae8c2f606f002bc857657d74e90276cb6db5af778d370e9b",
@@ -361,17 +368,20 @@
           "tests/source_measurement.rs": "291de00e6a20de4c25b0c7e66e0ff594dffc5ca250b6d3d1f75a02f395d78e4c",
           "tests/state_transition.rs": "ad94af7bbd7d00a8d50e7b9f1dd319c1294d5610d0a24e54e224534c5b428fdb",
           "tests/technical_foundation.rs": "09b6099f3c4a4aff5b12751f5dea68bc19c8c55adb555963793be04cb25ee1db",
-          "tests/test_e2e_report.py": "403469fe28187566395abe60c997926322296a0499425e24d1a26019c3ec9889"
+          "tests/test_e2e_report.py": "403469fe28187566395abe60c997926322296a0499425e24d1a26019c3ec9889",
+          "tests/test_portable_identity.py": "d431c3009d85a015b0ac4fb8bf650fd92be5623fe6cd0adf8b755ea432f94134"
         },
         "ci_file_sha256": {
           ".github/workflows/ci.yml": "58b18b5e1ebccd74d7e4a7e8de439b8a5e15489edd7b33a74d9f8373674f4894",
           ".github/ci/portable.sh": "3bc4013b494e3635bccf6cfbf48d4d42583cffaad52aabef82112cf64a306945",
           ".github/ci/record.py": "4ff8ce3cd2b94598c9bbe45e6f9c789f169924f15ad98823795c69b27890d122",
-          ".github/ci/run.sh": "e6fdc765625598555d5ba5e330aa454076b0cc1943fc6852d46830bc03747be1"
+          ".github/ci/run.sh": "99d550a306c2eb4524638f63a3536486578a5980373032bc8d0c84cc5bbfb0be"
         }
       },
       "rust_tests_passed": 176,
-      "python_checks_passed": 17,
+      "python_checks_passed": 21,
+      "python_e2e_checks": 17,
+      "python_comparison_checks": 4,
       "portable_validator": {
         "acceptance": "PASS",
         "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
@@ -379,10 +389,9 @@
       },
       "legacy_009_graph_lineage": "MATCH",
       "legacy_009_lifecycle_event": "MATCH",
-      "legacy_009_keyed_example": "MATCH",
       "log_sha256": {
         "clippy.log": "47d1ebe904a90b00c5b9e4f31a52db52e92ee8caeaa47e1a29a4a65b6baf0c9d",
-        "driver.log": "fb19dec79af131e560c9d14a1afd0fbf5d6a1b966f915292c8a940b4d3845812",
+        "driver.log": "15a677ae1aa3a9e7b6a935431919033f8de140e38fcf04033a90aff226e33d65",
         "e2e.log": "5bef9e7f6404a77d8ec5d837d3343983e5090017e971a77a0cfa02763d442f7d",
         "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
         "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
@@ -403,7 +412,8 @@
         "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
         "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
         "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "tests.log": "3a23d9ba62c4ee7f4d1379a80f0fd20ab0fb81156e2416b5b457f564f233f87c",
+        "portable-validator-tests.log": "48c06f56e9f05b43f0647402ef4b1d7d0f3a1a30218e6e7f5412441907d6cf4e",
+        "tests.log": "13ba7e8f04e9878e3b6f12826ee6df8966486d9902ad9286f2a736faf5f76963",
         "validator-tests.log": "0800194eebfc6a30d4725677a6dd38698e051f1d49a82c9c0b939dac666419d5"
       }
     },
@@ -417,13 +427,13 @@
         "exit_code": 0,
         "last_step": "complete",
         "profile": "alloc",
-        "commit_sha": "d33bb979c0b8b6a69126fd79544d3f43e5df9d3b",
+        "commit_sha": "257f3909aa3cf8b332428d76e27c4671c7fee5e8",
         "worktree_dirty": true,
         "github_run_id": null,
         "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)\nbinary: rustc\ncommit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea\ncommit-date: 2026-08-18\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.0\nLLVM version: 22.1.8",
         "cargo": "cargo 1.98.0 (797e8a9bc 2026-08-05)",
         "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
-        "implementation_source_sha256": "1f97ed76a45601eba46c42688140fb28d8a59d67536be2fdbca5349c7da58ecc",
+        "implementation_source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b",
         "source_files": {
           "Cargo.lock": "db212ada28cd71fe46f25450b036900db1ba8cacaa224f6f5b11b0364cd02aa4",
           "Cargo.toml": "c6e3c003ddff0ed5716ab252c94bbf23fb0155ccd862f7d278c331a47698cf0e",
@@ -441,7 +451,7 @@
           "examples/support/mdc_e2e.rs": "dbb47af9b057265a230c70a11a58eedba6adf51a0a5bb890eb31fef5daa0f457",
           "examples/support/portable_identity.rs": "83e607e7f26e7f7f1d48763f55b1590b0aa1211609e25cd8c0b24c53f35a008b",
           "scripts/check_gate_readiness.py": "ee61ac4019c9d84be1aadd6b7286c62d0e84c0c6198cfa3741b364de78003956",
-          "scripts/check_portable_identity.py": "1d657b1ce55ee5ae738054370e578d7a516e25be0c543834ab23db0f659c29a3",
+          "scripts/check_portable_identity.py": "3610a958c57f97b0ab26cf8a6a0a138fe302697bf716c5b8197aa3adb7cf0bc9",
           "scripts/e2e_report.py": "0f3aabf67a4148ee9f8b4e9ef9d9928accd5276a0528e3c8ec9ee73ac505fcc9",
           "scripts/run_e2e.py": "0a16f77b330a7315d9144ddd9ef25f17755ed9f9259b3e14169f93f4cad9e0f8",
           "src/canonical/mod.rs": "0d85becf8224ac40ae8c2f606f002bc857657d74e90276cb6db5af778d370e9b",
@@ -495,17 +505,20 @@
           "tests/source_measurement.rs": "291de00e6a20de4c25b0c7e66e0ff594dffc5ca250b6d3d1f75a02f395d78e4c",
           "tests/state_transition.rs": "ad94af7bbd7d00a8d50e7b9f1dd319c1294d5610d0a24e54e224534c5b428fdb",
           "tests/technical_foundation.rs": "09b6099f3c4a4aff5b12751f5dea68bc19c8c55adb555963793be04cb25ee1db",
-          "tests/test_e2e_report.py": "403469fe28187566395abe60c997926322296a0499425e24d1a26019c3ec9889"
+          "tests/test_e2e_report.py": "403469fe28187566395abe60c997926322296a0499425e24d1a26019c3ec9889",
+          "tests/test_portable_identity.py": "d431c3009d85a015b0ac4fb8bf650fd92be5623fe6cd0adf8b755ea432f94134"
         },
         "ci_file_sha256": {
           ".github/workflows/ci.yml": "58b18b5e1ebccd74d7e4a7e8de439b8a5e15489edd7b33a74d9f8373674f4894",
           ".github/ci/portable.sh": "3bc4013b494e3635bccf6cfbf48d4d42583cffaad52aabef82112cf64a306945",
           ".github/ci/record.py": "4ff8ce3cd2b94598c9bbe45e6f9c789f169924f15ad98823795c69b27890d122",
-          ".github/ci/run.sh": "e6fdc765625598555d5ba5e330aa454076b0cc1943fc6852d46830bc03747be1"
+          ".github/ci/run.sh": "99d550a306c2eb4524638f63a3536486578a5980373032bc8d0c84cc5bbfb0be"
         }
       },
       "rust_tests_passed": 176,
-      "python_checks_passed": 17,
+      "python_checks_passed": 21,
+      "python_e2e_checks": 17,
+      "python_comparison_checks": 4,
       "portable_validator": {
         "acceptance": "PASS",
         "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
@@ -513,10 +526,9 @@
       },
       "legacy_009_graph_lineage": "MATCH",
       "legacy_009_lifecycle_event": "MATCH",
-      "legacy_009_keyed_example": "MATCH",
       "log_sha256": {
         "clippy.log": "492249c9f550482a9a491739745144c5a474b15b27fd7de5717f8cd83c68916d",
-        "driver.log": "e444a63024b9cd9860e871f025f62570fc86be8e0bba296824d9080b61373a6e",
+        "driver.log": "295410ce619a4a71e956b07e96af0ed4c431228add7fb5ca5628a312c49cf33b",
         "e2e.log": "a69536a7287d8c333263a081287aa43de702f3f9ae731d465b20bebcb2d65c96",
         "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
         "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
@@ -537,8 +549,9 @@
         "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
         "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
         "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "tests.log": "e172fbcb2a03271fcbf77614b1827e7462fa11ec2afb8b95e3a81aed78bc4d98",
-        "validator-tests.log": "3f3dde1b316905e48b70b3f9a159b2844d230470d0ad76bf672745566b4e0472"
+        "portable-validator-tests.log": "a10ce7ce806bdda1db421dc4816a178ad5663ee77764c171bbefe37b28a14af0",
+        "tests.log": "5544a7173f00f91a9824790158c74a274a19f165571e64bf3ff0e1cd63cc6ae3",
+        "validator-tests.log": "32c266879cadd28f90ae21733f9da5a9f001e26ac3b193e60d8fbe389e36f720"
       }
     },
     {
@@ -551,13 +564,13 @@
         "exit_code": 0,
         "last_step": "complete",
         "profile": "default",
-        "commit_sha": "d33bb979c0b8b6a69126fd79544d3f43e5df9d3b",
+        "commit_sha": "257f3909aa3cf8b332428d76e27c4671c7fee5e8",
         "worktree_dirty": true,
         "github_run_id": null,
         "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)\nbinary: rustc\ncommit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea\ncommit-date: 2026-08-18\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.0\nLLVM version: 22.1.8",
         "cargo": "cargo 1.98.0 (797e8a9bc 2026-08-05)",
         "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
-        "implementation_source_sha256": "1f97ed76a45601eba46c42688140fb28d8a59d67536be2fdbca5349c7da58ecc",
+        "implementation_source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b",
         "source_files": {
           "Cargo.lock": "db212ada28cd71fe46f25450b036900db1ba8cacaa224f6f5b11b0364cd02aa4",
           "Cargo.toml": "c6e3c003ddff0ed5716ab252c94bbf23fb0155ccd862f7d278c331a47698cf0e",
@@ -575,7 +588,7 @@
           "examples/support/mdc_e2e.rs": "dbb47af9b057265a230c70a11a58eedba6adf51a0a5bb890eb31fef5daa0f457",
           "examples/support/portable_identity.rs": "83e607e7f26e7f7f1d48763f55b1590b0aa1211609e25cd8c0b24c53f35a008b",
           "scripts/check_gate_readiness.py": "ee61ac4019c9d84be1aadd6b7286c62d0e84c0c6198cfa3741b364de78003956",
-          "scripts/check_portable_identity.py": "1d657b1ce55ee5ae738054370e578d7a516e25be0c543834ab23db0f659c29a3",
+          "scripts/check_portable_identity.py": "3610a958c57f97b0ab26cf8a6a0a138fe302697bf716c5b8197aa3adb7cf0bc9",
           "scripts/e2e_report.py": "0f3aabf67a4148ee9f8b4e9ef9d9928accd5276a0528e3c8ec9ee73ac505fcc9",
           "scripts/run_e2e.py": "0a16f77b330a7315d9144ddd9ef25f17755ed9f9259b3e14169f93f4cad9e0f8",
           "src/canonical/mod.rs": "0d85becf8224ac40ae8c2f606f002bc857657d74e90276cb6db5af778d370e9b",
@@ -629,17 +642,20 @@
           "tests/source_measurement.rs": "291de00e6a20de4c25b0c7e66e0ff594dffc5ca250b6d3d1f75a02f395d78e4c",
           "tests/state_transition.rs": "ad94af7bbd7d00a8d50e7b9f1dd319c1294d5610d0a24e54e224534c5b428fdb",
           "tests/technical_foundation.rs": "09b6099f3c4a4aff5b12751f5dea68bc19c8c55adb555963793be04cb25ee1db",
-          "tests/test_e2e_report.py": "403469fe28187566395abe60c997926322296a0499425e24d1a26019c3ec9889"
+          "tests/test_e2e_report.py": "403469fe28187566395abe60c997926322296a0499425e24d1a26019c3ec9889",
+          "tests/test_portable_identity.py": "d431c3009d85a015b0ac4fb8bf650fd92be5623fe6cd0adf8b755ea432f94134"
         },
         "ci_file_sha256": {
           ".github/workflows/ci.yml": "58b18b5e1ebccd74d7e4a7e8de439b8a5e15489edd7b33a74d9f8373674f4894",
           ".github/ci/portable.sh": "3bc4013b494e3635bccf6cfbf48d4d42583cffaad52aabef82112cf64a306945",
           ".github/ci/record.py": "4ff8ce3cd2b94598c9bbe45e6f9c789f169924f15ad98823795c69b27890d122",
-          ".github/ci/run.sh": "e6fdc765625598555d5ba5e330aa454076b0cc1943fc6852d46830bc03747be1"
+          ".github/ci/run.sh": "99d550a306c2eb4524638f63a3536486578a5980373032bc8d0c84cc5bbfb0be"
         }
       },
       "rust_tests_passed": 176,
-      "python_checks_passed": 17,
+      "python_checks_passed": 21,
+      "python_e2e_checks": 17,
+      "python_comparison_checks": 4,
       "portable_validator": {
         "acceptance": "PASS",
         "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
@@ -647,10 +663,9 @@
       },
       "legacy_009_graph_lineage": "MATCH",
       "legacy_009_lifecycle_event": "MATCH",
-      "legacy_009_keyed_example": "MATCH",
       "log_sha256": {
-        "clippy.log": "492249c9f550482a9a491739745144c5a474b15b27fd7de5717f8cd83c68916d",
-        "driver.log": "2833e7e6ec2697b3e013b6cff93aeae246534d0f8476399ec80fc9eaf06961a8",
+        "clippy.log": "47d1ebe904a90b00c5b9e4f31a52db52e92ee8caeaa47e1a29a4a65b6baf0c9d",
+        "driver.log": "b38722697f02e01e3174a3b0cff9c82c4f67215ee7a319546d1d62b785766430",
         "e2e.log": "e3bbc8ad480778d09f4b2d146df4131feae55a45afdeae3bd3b40f147e1abeae",
         "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
         "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
@@ -672,8 +687,9 @@
         "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
         "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
         "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "tests.log": "1fefefed18ce4d1e6e011ebef169ac58b9086f110879b95bbd3f795a122be12a",
-        "validator-tests.log": "0985f532a93d51b878defdc4d1cae4daffe9b70759824ad81ded2a943eaa92df"
+        "portable-validator-tests.log": "38a2fa7c5e63715d377d54375c07c6ff4b1e4fb3bc3f0f2c9562caee741764ba",
+        "tests.log": "8d825c6697f8b1c0083ff2dd9e9d25b4d483ab2fe20409a763db79ff508958bc",
+        "validator-tests.log": "d5d4cee19815e4b9181d316f2f57569010097580c591eb7fe581f6f96d30dcdf"
       }
     },
     {
@@ -686,13 +702,13 @@
         "exit_code": 0,
         "last_step": "complete",
         "profile": "std-alloc",
-        "commit_sha": "d33bb979c0b8b6a69126fd79544d3f43e5df9d3b",
+        "commit_sha": "257f3909aa3cf8b332428d76e27c4671c7fee5e8",
         "worktree_dirty": true,
         "github_run_id": null,
         "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)\nbinary: rustc\ncommit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea\ncommit-date: 2026-08-18\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.0\nLLVM version: 22.1.8",
         "cargo": "cargo 1.98.0 (797e8a9bc 2026-08-05)",
         "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
-        "implementation_source_sha256": "1f97ed76a45601eba46c42688140fb28d8a59d67536be2fdbca5349c7da58ecc",
+        "implementation_source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b",
         "source_files": {
           "Cargo.lock": "db212ada28cd71fe46f25450b036900db1ba8cacaa224f6f5b11b0364cd02aa4",
           "Cargo.toml": "c6e3c003ddff0ed5716ab252c94bbf23fb0155ccd862f7d278c331a47698cf0e",
@@ -710,7 +726,7 @@
           "examples/support/mdc_e2e.rs": "dbb47af9b057265a230c70a11a58eedba6adf51a0a5bb890eb31fef5daa0f457",
           "examples/support/portable_identity.rs": "83e607e7f26e7f7f1d48763f55b1590b0aa1211609e25cd8c0b24c53f35a008b",
           "scripts/check_gate_readiness.py": "ee61ac4019c9d84be1aadd6b7286c62d0e84c0c6198cfa3741b364de78003956",
-          "scripts/check_portable_identity.py": "1d657b1ce55ee5ae738054370e578d7a516e25be0c543834ab23db0f659c29a3",
+          "scripts/check_portable_identity.py": "3610a958c57f97b0ab26cf8a6a0a138fe302697bf716c5b8197aa3adb7cf0bc9",
           "scripts/e2e_report.py": "0f3aabf67a4148ee9f8b4e9ef9d9928accd5276a0528e3c8ec9ee73ac505fcc9",
           "scripts/run_e2e.py": "0a16f77b330a7315d9144ddd9ef25f17755ed9f9259b3e14169f93f4cad9e0f8",
           "src/canonical/mod.rs": "0d85becf8224ac40ae8c2f606f002bc857657d74e90276cb6db5af778d370e9b",
@@ -764,17 +780,20 @@
           "tests/source_measurement.rs": "291de00e6a20de4c25b0c7e66e0ff594dffc5ca250b6d3d1f75a02f395d78e4c",
           "tests/state_transition.rs": "ad94af7bbd7d00a8d50e7b9f1dd319c1294d5610d0a24e54e224534c5b428fdb",
           "tests/technical_foundation.rs": "09b6099f3c4a4aff5b12751f5dea68bc19c8c55adb555963793be04cb25ee1db",
-          "tests/test_e2e_report.py": "403469fe28187566395abe60c997926322296a0499425e24d1a26019c3ec9889"
+          "tests/test_e2e_report.py": "403469fe28187566395abe60c997926322296a0499425e24d1a26019c3ec9889",
+          "tests/test_portable_identity.py": "d431c3009d85a015b0ac4fb8bf650fd92be5623fe6cd0adf8b755ea432f94134"
         },
         "ci_file_sha256": {
           ".github/workflows/ci.yml": "58b18b5e1ebccd74d7e4a7e8de439b8a5e15489edd7b33a74d9f8373674f4894",
           ".github/ci/portable.sh": "3bc4013b494e3635bccf6cfbf48d4d42583cffaad52aabef82112cf64a306945",
           ".github/ci/record.py": "4ff8ce3cd2b94598c9bbe45e6f9c789f169924f15ad98823795c69b27890d122",
-          ".github/ci/run.sh": "e6fdc765625598555d5ba5e330aa454076b0cc1943fc6852d46830bc03747be1"
+          ".github/ci/run.sh": "99d550a306c2eb4524638f63a3536486578a5980373032bc8d0c84cc5bbfb0be"
         }
       },
       "rust_tests_passed": 176,
-      "python_checks_passed": 17,
+      "python_checks_passed": 21,
+      "python_e2e_checks": 17,
+      "python_comparison_checks": 4,
       "portable_validator": {
         "acceptance": "PASS",
         "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
@@ -782,10 +801,9 @@
       },
       "legacy_009_graph_lineage": "MATCH",
       "legacy_009_lifecycle_event": "MATCH",
-      "legacy_009_keyed_example": "MATCH",
       "log_sha256": {
-        "clippy.log": "47d1ebe904a90b00c5b9e4f31a52db52e92ee8caeaa47e1a29a4a65b6baf0c9d",
-        "driver.log": "4e7c19f7a7bebc7f2e6b1ff41c3da91fd50d961672ccdc99431abf32240fa658",
+        "clippy.log": "492249c9f550482a9a491739745144c5a474b15b27fd7de5717f8cd83c68916d",
+        "driver.log": "ed3919ce3b53a98a430c34a1310a2afcea8b7a1e59fd56a3ff494fc2c2179a90",
         "e2e.log": "0bb2a2be506d326db217efe471f51862dc7ac47d3761147adce437f0dd845797",
         "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
         "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
@@ -806,8 +824,9 @@
         "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
         "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
         "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "tests.log": "ebecd2bc9a42fd257170eb66489daaf3c56c6e3e0c2180a1eae907dcb5903fe4",
-        "validator-tests.log": "10c7c63eff824fe226c3eefa4ac6a86ed7938dc288db5ec16614979c7c0312f9"
+        "portable-validator-tests.log": "08de03281ac2efba5e76457f824e81f376a60431fdfe597fab9dd31fdd774d93",
+        "tests.log": "d8af414d2de3272e72dd95fe2f4ea8f4349ce75f7c09170c652b341c47990b68",
+        "validator-tests.log": "3a4d9db94b7d6789d3945f4b368088623b8c04cf00dc9cd506712af2366ab79a"
       }
     }
   ]
