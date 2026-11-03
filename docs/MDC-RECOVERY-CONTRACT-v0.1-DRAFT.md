@@ -1,131 +1,184 @@
-# MDC-RECOVERY-001 — Durable recovery contract v0.1 DRAFT
+# MDC-RECOVERY-001 — Snapshot + WAL recovery contract v0.1 DRAFT
 
-2026-11-03. Статус: PROPOSED / OWNER DECISIONS PENDING / NOT IMPLEMENTED.
-Основание: потребитель historical replay → long-running service и exact restart
-restoration; MDC-IMPL-011 merged в main `27fbc0a` через PR #5.
+2026-11-03. Статус: OWNER DIRECTION RECORDED / ENGINEERING DRAFT / NOT IMPLEMENTED.
+Основание: historical replay → long-running service, snapshot MDC-IMPL-011
+в main 27fbc0a и предложение владельца использовать local files + WAL с hybrid sync.
+Этот документ — новый host contract; он не переопределяет исходные STP-MDC.
 
-## Что уже есть
+## Зафиксированное направление и границы решений
 
-`SnapshotSession` экспортирует self-contained recorded history и восстанавливает
-её через production APIs с exact outcome/state checks. Это codec и in-memory
-replay. Обычный write в примере 011 не задаёт durable commit, ACK или crash recovery.
-Пакет не сохраняет broker orders, позиции или внешний strategy state.
-
-Ниже предложены host storage semantics. Это новый проектный контракт; он не
-переопределяет исходные STP-MDC требования и не заявляет уже реализованную гарантию.
-
-## Два решения владельца
-
-| Решение | Предлагаемая граница | Альтернатива / влияние |
+| ID | Направление владельца | Что ещё требуется зафиксировать |
 |---|---|---|
-| R-D01: platform/backend/writers | Linux, local filesystem, один writer | Remote DB, NFS, object store и несколько writers требуют других commit/locking semantics |
-| R-D02: durable boundary | Каждая подтверждённая приложению операция сохранена до ответа | Explicit checkpoint допускает потерю/повтор операций после последнего подтверждённого checkpoint |
+| R-D01 | Local snapshot + append-only WAL, без embedded DB в первом профиле | Linux/local filesystem/single writer — предлагаемая первая область поддержки; lock mechanism и filesystem prerequisites |
+| R-D02 | Snapshot и критические решения sync; streaming events допускают buffered batch | Typed ACK, critical barrier, batch limits и recovery suffix policy |
 
-Оба ответа запрошены у владельца. До получения ответов они остаются PROPOSED.
-Выбор checkpoint не эквивалентен обещанию сохранности каждого успешного mutator.
-Для первого bounded профиля предлагается сохранять полный snapshot. WAL, pruning
-и compaction — отдельная оптимизация после измерения стоимости этого решения.
+Одна секунда либо N событий приведены владельцем как примеры batch policy,
+а не утверждённые численные SLA. Максимальная скорость или сохранность последних
+streaming events этим выбором не гарантируются. Проект использует минимум зависимостей;
+это не доказательство, что собственный WAL безопаснее проверенной embedded DB.
 
-## Предлагаемые общие инварианты
+`SnapshotSession` 011 уже сохраняет recorded core history, frozen Registry,
+requests/outcomes, aliases, lineage, lifecycle и audit. Его файловый пример не
+добавляет durable ACK. WAL и durable host adapter пока отсутствуют.
 
-1. Core остаётся std/no_std+alloc и без filesystem/clock side effects. Host adapter
-   отвечает за files, synchronization, writer exclusion и storage diagnostics.
-2. Durable generation содержит immutable snapshot 011, storage format version,
-   generation number, parent identity и полную проверку целостности контейнера.
-   Алгоритм checksum и exact container layout фиксируются перед реализацией.
-   u64 semantic identity не заменяет integrity check; authentication не заявляется.
-3. Один session directory относится к одному frozen Registry/profile/engine.
-   Неизвестная version, foreign history или нарушенная последовательность generation
-   отклоняются. Подмена legacy profile на portable при recovery запрещена.
-4. Startup сначала проверяет весь committed container и вызывает restore в свежем
-   candidate. Active state публикуется только после полного успеха. Восстановление
-   corrupted/unsupported committed state не создаёт молча пустой Pipeline.
-5. Успешный durable ACK означает exact committed generation. После restart должны
-   совпасть bytes, references, numeric aliases, captured lineage, historical
-   Evaluation, lifecycle views/events и обе audit histories.
-6. Semantic failure и storage failure различаются. Отклонённый semantic request
-   может добавить invalid artifact/audit и потому тоже требует сохранения при
-   режиме per-operation. Он не исключается из истории как «неуспешный вызов».
-7. Нельзя подтвердить live result, затем пытаться сохранить его best-effort.
-   Candidate isolation и правила publication должны исключить использование
-   graph, который приложение считает committed, а storage ещё не сохранил.
-8. После неоднозначной ошибки commit adapter блокирует новые записи до recovery.
-   Не объявляет ни rollback, ни успешный commit без достаточного свидетельства.
+## Термины и подтверждения
 
-## Предлагаемый local commit protocol при R-D01 = Linux/files
+Каждому host request назначаются session ID, sequence и stable request ID.
+Есть две разные границы: last accepted sequence и durable sequence D.
+D — непрерывный префикс истории; durable holes запрещены.
 
-Разрешены только документированные local filesystem semantics с atomic rename
-в пределах одного directory/filesystem и работающим sync. Общая гарантия для
-любого mount, storage hardware, NFS или отключённого write cache не заявляется.
-
-1. Получить удерживаемую процессом writer lock. Второй writer получает явный
-   отказ до любых изменений. Stale lock после crash не удаляется по одному PID:
-   конкретный механизм lock/release нужно выбрать и проверить на целевой OS.
-2. Подготовить изолированный candidate и его bounded export. Ошибка export или
-   semantic replay не меняет последнюю committed generation.
-3. Создать новый temporary file в том же directory с exclusive creation; записать
-   весь container, проверить write results, выполнить file sync.
-4. Атомарно заменить committed path через rename. Выполнить directory sync.
-5. Только после успешных sync опубликовать candidate как active и выдать ACK с
-   generation/identity. Последовательность ACK и in-memory publication фиксируется
-   API contract до кода; ошибка storage не маскируется под semantic Fail.
-
-Если crash случился до ACK, caller не может заключить, что операция не committed:
-recovery может обнаружить предыдущую или новую полную generation согласно crash
-point. Нужен стабильный request ID и способ узнать outcome, прежде чем повторять
-неидемпотентный вызов. Invalidation request_id ядра не является общим host request ID.
-
-Temporary files не считаются committed. Recovery не выбирает «самый новый по mtime»
-и не promotes orphan автоматически. Missing store отличим от corrupted store:
-создание новой сессии требует explicit create; open существующей не заменяет её
-пустой. Retention предыдущих generations и cleanup задаются до удаления файлов.
-
-## Дополнительный контракт при per-operation ACK
-
-Host request ID, ordered operation и outcome должны участвовать в durable receipt.
-Повтор того же ID с тем же request возвращает прежний outcome; тот же ID с другим
-request отклоняется. Проверяется crash после commit до доставки ответа: клиент
-повторяет запрос и не создаёт второй artifact, audit receipt или lifecycle event.
-Host deduplication не переписывает существующие core identities или историю 011.
-
-Для корректной первой реализации допустима дорогая candidate copy/replay и полный
-snapshot на каждый commit в пределах явных budgets. Throughput такого варианта не
-объявляется достаточным для trading service без измерений. Durable receipt, core
-snapshot и generation должны публиковаться атомарно как одно committed состояние.
-
-При explicit checkpoint caller получает отдельный checkpoint ACK. Обычные core
-mutators не обещают durability. External input cursor должен быть согласован с
-checkpoint либо повтор данных должен быть детерминированным и явно поддержанным.
-Это не exactly-once координация с биржей, брокером или внешней очередью.
-
-## Acceptance scenarios для будущей реализации
-
-| ID | Сценарий и ожидаемое наблюдение |
+| Receipt, предлагаемые имена | Значение |
 |---|---|
-| R01 | Новый store → commit → другой процесс open: полное exact restoration и continuation |
-| R02 | Failure при write/file sync до rename: прежняя committed generation читается |
-| R03 | Terminate producer до/после write, file sync, rename и directory sync: recovery допускает только документированные полные generations |
-| R04 | Успешный ACK → немедленный restart: именно подтверждённая generation сохраняется |
-| R05 | Rename выполнен, ACK не доставлен: resolve/retry request ID не создаёт повторного semantic эффекта в per-operation режиме |
-| R06 | Ошибка после rename/directory sync: indeterminate outcome, запрет новых writes до recovery |
-| R07 | Truncated/corrupted/unknown-version committed file: отказ с диагностикой, без silent fallback/reset |
-| R08 | Orphan temporary file и неполный container игнорируются как committed; cleanup безопасен |
-| R09 | Второй writer отклоняется; после реального termination lock освобождается по контракту OS |
-| R10 | Неуспешные semantic calls, invalid objects, idempotent invalidation и pinned aliases переживают recovery |
-| R11 | Budget exhaustion/export failure не подтверждают новую generation и не меняют прежнее durable состояние |
-| R12 | Explicit-checkpoint профиль, если выбран: cursor/replay и допустимый suffix loss проверяются отдельно |
+| AcceptedVolatile(seq, outcome) | Запрос принят live session; storage durability не подтверждена |
+| DurableThrough(D) | Все requests/outcomes/host receipts до D включительно прошли commit protocol |
+| CriticalCommit(seq, outcome, D) | Критическая операция и весь её предшествующий префикс durable; D >= seq |
+| StorageError / Indeterminate | Нельзя выдать durable ACK; при неопределённом commit новые записи блокируются до recovery |
 
-Fault injection с simulated I/O errors и kill процесса доказывает лишь описанные
-software/process-crash сценарии. Реальная power-loss durability требует отдельной
-проверки целевой filesystem/storage среды. Таблица выше — план, не execution evidence.
+Это проект API, не добавленные Rust types. Semantic Pass/Fail/Unresolved и storage
+receipt ортогональны. Ошибка derivation может создать invalid artifact и audit;
+такой request тоже входит в WAL. Outcome не заменяется storage success/failure.
 
-## Следующие рабочие результаты
+Buffered admission может публиковать provisional live state, но consumer должен
+видеть его durability. Использование результата как окончательного торгового
+решения требует explicit critical barrier. Сам по себе Pass Evaluation не делает
+его durable и не означает отправку заявки. Read-only pipeline view нельзя
+документировать как durable view, если в нём есть volatile suffix.
 
-После R-D01/R-D02: заморозить storage layout, ACK/error state machine, request-ID
-semantics, lock mechanism, limits и retention. Затем реализовать отдельный host
-adapter, fault-injection tests, fresh-process recovery и CI receipts. До этого
-изменения runtime APIs и новый durable PASS не объявляются.
+## Главный инвариант hybrid режима
 
-Temporal availability (`available_at`, `decision_at`, late evidence eligibility)
-остаётся отдельным обязательным контрактом до заявления о причинно корректном
-historical trading replay. Snapshot/recovery его не заменяют.
+Критический barrier сохраняет ВЕСЬ предшествующий WAL prefix, включая streaming
+inputs, invalid artifacts и audit, от которых решение зависит. Запись только
+Evaluation или decision marker при несохранённых inputs запрещена. Сортировка
+или повторная оценка истории против финального графа вместо ordered replay запрещена.
+
+Предлагаемая safety policy: explicit commit_decision barrier перед внешним
+использованием Evaluation; lifecycle invalidation и изменения host control state
+также требуют strict barrier. Классификация критических действий и exact API
+замораживаются перед реализацией. Buffered означает возможную потерю suffix после D.
+Прежнее требование exact restore теперь относится к committed prefix; обещание
+сохранить любой когда-либо наблюдавшийся volatile result не вводится.
+
+## Компоненты и формат
+
+Core остаётся std/no_std+alloc без filesystem, clock и network side effects.
+Host adapter отвечает за файлы, writer exclusion, flush scheduling, commit state,
+request deduplication и storage errors. Первый профиль предлагается ограничить Linux,
+local filesystem и одним writer. Remote storage, NFS и multi-writer не включаются
+по совпадению интерфейса File. Lock API должен учитывать MSRV 1.85.1.
+
+Storage container должен иметь version, session/profile/engine identity, generation,
+sequence boundaries, bounded lengths, record type и corruption detection.
+WAL записывает original typed request, exact outcome и host deduplication receipt,
+включая отказы и повторы. Контроль префикса и связь с snapshot обязательны.
+Algorithm checksum, exact byte layout, commit marker и integrity chain пока не
+зафиксированы. Semantic u64 digest не заменяет storage integrity; MAC не заявлен.
+
+Предпочтительно переиспользовать fixed-width codec 011 и явно версионировать WAL
+framing. Сейчас operation codec private: для отдельного adapter нужен узкий
+проверяемый API, а не доступ к private Pipeline fields. bincode является внешней
+зависимостью и сам по себе не доказывает переносимость, стабильность или максимум
+скорости. Автоматическая сериализация Rust layout и новый dependency этим draft
+не принимаются; решение по codec/dependencies фиксируется отдельным изменением.
+
+Snapshot 011 содержит всю recorded history; физическое удаление WAL prefix не
+означает compaction истории внутри snapshot. Pruning менял бы отдельный контракт.
+
+## Предлагаемый порядок WAL commit
+
+1. Получить исключительную writer lock до изменения store. Explicit create и open
+   различаются; повреждённый store нельзя молча заменить пустой сессией.
+2. Проверить bounded request и создать candidate/outcome. Append complete framed
+   request/outcome/receipt в WAL по sequence; обработать partial write и error.
+3. Для buffered вызова разрешён только AcceptedVolatile. Pending bytes и задержка
+   ограничены host policy; превышение budget создаёт backpressure либо error.
+4. Для batch/critical barrier завершить commit protocol непрерывного префикса,
+   выполнить WAL sync и только после его успеха продвинуть D и выдать durable ACK.
+   Exact порядок marker/write/sync и проверка crash points фиксируются в wire contract.
+5. После неоднозначной I/O ошибки не выдавать fictitious success/rollback. Перейти
+   в recovery-required state; запретить новые writes и внешнюю публикацию решения.
+
+Для нового WAL segment недостаточно sync его содержимого: создание/rename и
+соответствующие directory entries должны быть синхронизированы по контракту.
+Ни таймер, ни достижение N записей не доказывают sync до фактического успеха.
+При остановленном scheduler flush может задержаться; SLO проверяется измерениями.
+
+## Snapshot publication и ротация
+
+Checkpoint фиксирует состояние на durable D. Если live session имеет suffix > D,
+нельзя экспортировать её целиком и назвать результат checkpoint D: нужно выбрать
+согласованную границу (например, сначала durable flush всей live history), либо
+получить изолированный candidate на D.
+
+1. Создать complete snapshot + host receipt/cursor state на одной durable границе.
+2. Записать temporary file в том же filesystem, проверить bytes и выполнить file sync.
+3. Publish через atomic rename; выполнить directory sync. Согласовать manifest,
+   generation pointer и новый WAL segment так, чтобы любой crash оставлял допустимый
+   snapshot/WAL pair. Exact publication state machine обязателен до удаления файлов.
+4. Только после durable publication удалить покрытые WAL segments; cleanup также
+   должен сохранять recovery invariant. Mtime и orphan temp не выбирают committed state.
+
+Atomic rename не равен durability. WAL rotation не может уничтожить единственное
+свидетельство durable prefix. Нельзя отключать integrity checks как fallback.
+
+## Recovery и потерянный ответ
+
+Recovery выбирает проверенный snapshot и matching WAL history по version/session/
+sequence, проверяет integrity и восстанавливает новый candidate до последнего
+доказуемого committed prefix. Каждый core outcome и итоговое состояние должны
+проверяться средствами 011. Несовпадение не чинится пересчётом against current graph.
+
+Requests после D могут быть потеряны или отброшены как uncommitted; они не считаются
+durable только потому, что bytes остались после process crash. Полный commit до
+недоставленного ACK может быть восстановлен. Caller узнаёт outcome по stable host
+request ID перед повтором. Тот же ID с иным request отклоняется; повтор committed
+request не создаёт новый artifact/audit/event. Invalidation request_id ядра не
+заменяет общий host deduplication protocol.
+
+Torn tail можно отбросить только когда формат доказывает, что он uncommitted.
+Corruption committed range, conflicting history или неразличимая неоднозначность
+требуют hard error и диагностики, без silent reset/fallback. Конкретная схема
+commit markers должна различать эти случаи; она ещё не реализована.
+
+External input cursor должен быть согласован с durable boundary для replay.
+Это не exactly-once delivery бирже/брокеру и не atomic transaction с торговой
+позицией: внешний state и side effects требуют собственного контракта.
+
+## Границы fsync
+
+sync_all запрашивает у OS синхронизацию данных/metadata. Возврат успеха не является
+универсальным доказательством сохранения при любой потере питания: влияют filesystem,
+mount settings, драйвер/controller, volatile device cache и соблюдение flush накопителем.
+Гарантия требует заявленных storage prerequisites и их проверки. Software fault
+injection и kill процесса не равны испытанию реальной power loss.
+
+## Acceptance scenarios для будущего кода
+
+| ID | Проверяемое наблюдение |
+|---|---|
+| R01 | Snapshot + WAL → другой процесс: exact committed state и continuation |
+| R02 | Buffered suffix после D: потеря допустима и явно наблюдаема; durable prefix сохранён |
+| R03 | Critical barrier сохраняет все предыдущие inputs и semantic failures, а не только решение |
+| R04 | Успешный durable ACK → restart: весь подтверждённый prefix существует |
+| R05 | Commit состоялся, ответ потерян: retry ID возвращает outcome без повторного эффекта |
+| R06 | Partial write/sync failure: нет durable ACK; indeterminate state блокирует новые writes |
+| R07 | Kill на write/marker/sync/rename/rotation/cleanup boundaries: допустим только документированный prefix |
+| R08 | Committed corruption/unknown version/foreign WAL: fail closed; torn uncommitted tail — только по доказуемому правилу |
+| R09 | Второй writer отклонён; stale-lock recovery соответствует OS contract |
+| R10 | Lifecycle, Evaluation aliases, captured missing inputs и audit multiplicity сохраняются |
+| R11 | Batch/backpressure/resource limits: error не подменяет semantic result и не повреждает D |
+| R12 | Snapshot publication с volatile suffix, WAL rotation и source cursor не теряют committed inputs |
+
+Это acceptance plan, не execution evidence. Throughput, fsync latency, размер WAL
+и restore time должны быть измерены; low dependency count не заменяет эти проверки.
+
+## Порядок реализации
+
+1. Заморозить WAL framing/version/integrity, typed receipts, D/commit state machine,
+   request-ID conflict rules, lock и budgets; проверить их на crash-point модели.
+2. Реализовать host storage adapter и необходимый узкий API к 011. Сначала strict
+   prefix commit/recovery с fault injection, затем buffered batch с теми же invariants.
+3. Добавить checkpoint/rotation, fresh-process tests и CI receipts R01…R12.
+4. Измерить throughput/latency/restore budgets перед подключением торгового consumer.
+
+Temporal availability available_at/decision_at остаётся отдельным обязательным
+контрактом до заявления о причинно корректном historical trading replay.

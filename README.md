@@ -28,8 +28,9 @@ Portable identity добавлена в [MDC-IMPL-010](docs/MDC-IMPL-010.md).
 После объединения snapshot-пакета подготовлены
 [post-merge checkpoint](docs/MDC-OPS-003-POST-SNAPSHOT-v0.1.md) и
 [проект recovery contract](docs/MDC-RECOVERY-CONTRACT-v0.1-DRAFT.md).
-Durable backend и граница ACK пока требуют решения владельца; runtime recovery
-этим проектом документа не добавляется.
+Владелец предложил local snapshot + WAL и hybrid sync. Draft разделяет
+volatile/durable ACK и фиксирует требования к сохранению полного префикса решения.
+Wire/commit protocol ещё проектируется; runtime WAL/recovery пока отсутствует.
 `Pipeline::new()` сохраняет legacy identity; portable graph явно выбирается через
 `Pipeline::with_identity_protocol(registry, IdentityProtocol::PortableV1)`.
 Профиль применяется ко всей цепочке, включая invalid artifacts и lifecycle journal.

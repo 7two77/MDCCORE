@@ -20,11 +20,16 @@ snapshot bytes на всех десяти configurations, history guard и artif
 проверенные log counts, оба comparison results, history guard и 12 artifacts.
 
 Следующий этап — [MDC-RECOVERY-001 contract draft](MDC-RECOVERY-CONTRACT-v0.1-DRAFT.md).
-Он отделяет exact snapshot roundtrip от durable ACK и восстановления после
-прерванной записи. Запрошены два решения владельца: storage/writer model и
-per-operation versus explicit-checkpoint durability boundary.
+Владелец предложил local snapshot + WAL и hybrid durability: streaming events
+буферизуются, snapshot/critical decisions синхронизируются. Это заменяет прежний
+выбор между только per-operation sync и только explicit checkpoint.
 
-Это подготовка контракта. Durable adapter, host request deduplication, atomic
-publication и fault-injection scenarios ещё не реализованы. До ответа владельца
-предлагаемые Linux/files/single-writer и per-operation ACK не считаются принятыми.
-Temporal profile и внешний trading state остаются отдельными требованиями.
+Draft разделяет AcceptedVolatile и DurableThrough, требует durable полного
+префикса перед публикацией решения, описывает rotation и recovery tail policy.
+Linux/local filesystem/single writer — предлагаемая первая область поддержки;
+exact wire format, lock, API критических barriers, N/timeout и budgets ещё
+должны быть зафиксированы. Одна секунда/N — примеры, не утверждённые SLA.
+
+Runtime WAL/recovery отсутствует. Следующий результат — frozen wire/commit
+contract, затем host adapter и crash-point acceptance R01…R12. Temporal profile
+и внешний trading state остаются отдельными требованиями.
