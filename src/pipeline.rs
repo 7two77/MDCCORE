@@ -10,7 +10,7 @@ use alloc::vec::Vec;
 
 use crate::contract::evaluation::LifecycleStatus;
 use crate::contract::registry::{Registry, VersionedId};
-use crate::identity::CanonicalSemanticBasis;
+use crate::identity::{CanonicalSemanticBasis, IdentityProtocol};
 use crate::model::composition::{AdmittedComposition, CompositionError};
 use crate::model::measurement::{Measurement, MeasurementError, ResolvedInput};
 use crate::model::observation::{AdmissionError, AdmittedObservation};
@@ -110,6 +110,7 @@ impl RejectedAttempt {
 }
 
 pub struct Pipeline {
+    identity_protocol: IdentityProtocol,
     lifecycle_events: Vec<crate::model::lifecycle::LifecycleEvent>,
     lifecycle_rejections: Vec<crate::model::lifecycle::LifecycleRejection>,
     lifecycle_invalid: BTreeSet<ObjectRef>,
@@ -132,7 +133,13 @@ pub struct Pipeline {
 
 impl Pipeline {
     pub fn new(registry: Registry) -> Self {
+        Self::with_identity_protocol(registry, IdentityProtocol::LegacyRustHashFnv64)
+    }
+
+    /// A graph uses one immutable protocol; migration requires a new Pipeline.
+    pub fn with_identity_protocol(registry: Registry, identity_protocol: IdentityProtocol) -> Self {
         Self {
+            identity_protocol,
             lifecycle_events: Vec::new(),
             lifecycle_rejections: Vec::new(),
             lifecycle_invalid: BTreeSet::new(),
@@ -152,6 +159,10 @@ impl Pipeline {
             invalid_objects: BTreeMap::new(),
             rejections: Vec::new(),
         }
+    }
+
+    pub fn identity_protocol(&self) -> IdentityProtocol {
+        self.identity_protocol
     }
 
     pub fn registry(&self) -> &Registry {
@@ -180,7 +191,7 @@ impl Pipeline {
             .registry
             .schema(&source.schema)
             .ok_or_else(|| PipelineError::SchemaUnresolved(source.schema.clone()))?;
-        let observation = AdmittedObservation::admit(
+        let mut observation = AdmittedObservation::admit(
             source,
             schema,
             request.timestamp,
@@ -188,6 +199,7 @@ impl Pipeline {
             request.acquisition_context.clone(),
         )
         .map_err(PipelineError::Admission)?;
+        observation.seal_identity(self.identity_protocol);
         let id = observation.id();
         self.check_identity(id, &observation.canonical_basis())?;
         self.observations.entry(id).or_insert(observation);
@@ -217,8 +229,9 @@ impl Pipeline {
             .iter()
             .map(|reference| self.resolve_input(reference))
             .collect::<Result<_, _>>()?;
-        let measurement =
+        let mut measurement =
             Measurement::derive(operator, &inputs).map_err(PipelineError::Measurement)?;
+        measurement.seal_identity(self.identity_protocol);
         let id = measurement.id();
         if let Err(error) = self.check_identity(id, &measurement.canonical_basis()) {
             self.failed_candidate = Some(alloc::boxed::Box::new(

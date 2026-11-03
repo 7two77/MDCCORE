@@ -36,9 +36,10 @@ impl DynamicsContext {
 }
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
+#[repr(u8)]
 pub enum CriterionOrder {
-    Ordered,
-    Unordered,
+    Ordered = 0,
+    Unordered = 1,
 }
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]

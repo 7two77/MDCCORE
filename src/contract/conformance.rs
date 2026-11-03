@@ -4,13 +4,14 @@ use super::registry::VersionedId;
 use alloc::vec::Vec;
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
+#[repr(u8)]
 pub enum TargetType {
-    Observation,
-    Measurement,
-    Relation,
-    Composition,
-    State,
-    Transition,
+    Observation = 0,
+    Measurement = 1,
+    Relation = 2,
+    Composition = 3,
+    State = 4,
+    Transition = 5,
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
@@ -29,9 +30,10 @@ pub struct ConformanceCriterionContract {
 }
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
+#[repr(u8)]
 pub enum MissingTargetPolicy {
-    Fail,
-    Unresolved,
+    Fail = 0,
+    Unresolved = 1,
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]

@@ -48,3 +48,69 @@ jobs:
           path: ${{ env.MDC_CI_REPORT_DIR }}
           if-no-files-found: warn
           retention-days: 14
+
+  portable:
+    name: Portable Rust ${{ matrix.rust }} / ${{ matrix.target }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        rust: ["1.85.1", "1.98.0"]
+        target: [i686-unknown-linux-gnu, s390x-unknown-linux-gnu]
+    env:
+      RUSTUP_TOOLCHAIN: ${{ matrix.rust }}
+      CARGO_INCREMENTAL: "0"
+      CARGO_TERM_COLOR: never
+      MDC_CI_REPORT_DIR: ci-evidence
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install cross target and runtime
+        shell: bash
+        run: |
+          rustup toolchain install "$RUSTUP_TOOLCHAIN" --profile minimal --target "${{ matrix.target }}"
+          sudo apt-get update
+          case "${{ matrix.target }}" in
+            i686-unknown-linux-gnu)
+              sudo apt-get install -y gcc-multilib
+              ;;
+            s390x-unknown-linux-gnu)
+              sudo apt-get install -y gcc-s390x-linux-gnu qemu-user
+              echo 'CARGO_TARGET_S390X_UNKNOWN_LINUX_GNU_LINKER=s390x-linux-gnu-gcc' >> "$GITHUB_ENV"
+              echo 'CARGO_TARGET_S390X_UNKNOWN_LINUX_GNU_RUNNER=qemu-s390x -L /usr/s390x-linux-gnu' >> "$GITHUB_ENV"
+              ;;
+          esac
+      - name: Execute target tests and full portable graph twice
+        run: bash .github/ci/portable.sh "${{ matrix.target }}"
+      - name: Retain portable verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mdc-portable-${{ matrix.rust }}-${{ matrix.target }}
+          path: ci-evidence
+          if-no-files-found: warn
+          retention-days: 14
+
+  portable-comparison:
+    name: Compare portable bytes across toolchains and targets
+    needs: [verify, portable]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          path: portable-artifacts
+      - name: Require all ten executions to match the frozen control
+        run: python3 -B scripts/check_portable_identity.py --compare-root portable-artifacts --output portable-comparison.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mdc-portable-comparison
+          path: portable-comparison.json
+          retention-days: 14

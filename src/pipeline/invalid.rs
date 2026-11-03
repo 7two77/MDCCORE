@@ -258,13 +258,14 @@ impl Pipeline {
         }
         let capture = self.capture_closure(&roots);
         definitions.extend(capture.definitions);
-        let artifact = InvalidSemanticObject::new(InvalidArtifactData {
+        let mut artifact = InvalidSemanticObject::new(InvalidArtifactData {
             body,
             error: error.clone(),
             captured_inputs: capture.inputs,
             unresolved: capture.missing,
             unresolved_definitions: definitions,
         });
+        artifact.seal_identity(self.identity_protocol);
         let reference = artifact.reference();
         // Full canonical keys distinguish digest collisions without losing either
         // failure or replacing its original error with a retention error.

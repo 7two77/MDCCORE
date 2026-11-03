@@ -43,6 +43,16 @@ impl EvaluationId {
             canonical_key,
         }
     }
+    /// Lookup only. Select the producing Pipeline protocol explicitly.
+    pub fn from_canonical_basis_with_protocol(
+        canonical_key: Vec<u8>,
+        protocol: crate::identity::IdentityProtocol,
+    ) -> Self {
+        Self {
+            digest: protocol.derive_from_basis(&canonical_key),
+            canonical_key,
+        }
+    }
     pub(crate) fn for_artifact(digest: u64, canonical_key: Vec<u8>) -> Self {
         Self {
             digest,
@@ -86,6 +96,15 @@ pub struct InvalidId {
     canonical_key: Vec<u8>,
 }
 impl InvalidId {
+    pub(crate) fn with_protocol(
+        canonical_key: Vec<u8>,
+        protocol: crate::identity::IdentityProtocol,
+    ) -> Self {
+        Self {
+            digest: protocol.derive_from_basis(&canonical_key),
+            canonical_key,
+        }
+    }
     pub(crate) fn new(canonical_key: Vec<u8>) -> Self {
         let digest = crate::identity::IdentityAdapter::derive_identity_from_basis(&canonical_key);
         Self {

@@ -42,8 +42,9 @@ impl Pipeline {
             .ok_or_else(|| PipelineError::RelationContractUnresolved(request.contract.clone()))?;
         let left = self.resolve_structure_input(&request.left)?;
         let right = self.resolve_structure_input(&request.right)?;
-        let relation =
+        let mut relation =
             AdmittedRelation::derive(contract, left, right).map_err(PipelineError::Relation)?;
+        relation.seal_identity(self.identity_protocol);
         let id = relation.id();
         if let Err(error) = self.check_identity(id, &relation.canonical_basis()) {
             self.failed_candidate = Some(alloc::boxed::Box::new(
@@ -105,8 +106,10 @@ impl Pipeline {
                 Ok(relation.clone())
             })
             .collect::<Result<Vec<_>, _>>()?;
-        let composition = AdmittedComposition::derive(contract, members, relations, constraints)
-            .map_err(PipelineError::Composition)?;
+        let mut composition =
+            AdmittedComposition::derive(contract, members, relations, constraints)
+                .map_err(PipelineError::Composition)?;
+        composition.seal_identity(self.identity_protocol);
         let id = composition.id();
         if let Err(error) = self.check_identity(id, &composition.canonical_basis()) {
             self.failed_candidate = Some(alloc::boxed::Box::new(

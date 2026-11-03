@@ -186,7 +186,7 @@ impl Pipeline {
             unresolved: unresolved.into_iter().collect(),
             unresolved_definitions: unresolved_definitions.into_iter().collect(),
         };
-        event.seal();
+        event.seal(self.identity_protocol);
         let id = event.id().clone();
         for snapshot in event.affected() {
             self.lifecycle_invalid.insert(snapshot.reference().clone());

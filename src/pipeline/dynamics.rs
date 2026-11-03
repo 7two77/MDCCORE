@@ -74,7 +74,7 @@ impl Pipeline {
                     .ok_or_else(|| PipelineError::StateCriterionUnresolved(reference.clone()))
             })
             .collect::<Result<Vec<_>, _>>()?;
-        let state = AdmittedState::derive(
+        let mut state = AdmittedState::derive(
             contract,
             &input,
             request.observation_horizon,
@@ -82,6 +82,7 @@ impl Pipeline {
             &self.observation_facts(),
         )
         .map_err(PipelineError::State)?;
+        state.seal_identity(self.identity_protocol);
         let id = state.id();
         if let Err(error) = self.check_identity(id, &state.canonical_basis()) {
             self.failed_candidate = Some(alloc::boxed::Box::new(
@@ -140,7 +141,7 @@ impl Pipeline {
                     .ok_or_else(|| PipelineError::TransitionConditionUnresolved(reference.clone()))
             })
             .collect::<Result<Vec<_>, _>>()?;
-        let transition = AdmittedTransition::derive(
+        let mut transition = AdmittedTransition::derive(
             contract,
             &input,
             request.observation_horizon,
@@ -148,6 +149,7 @@ impl Pipeline {
             &self.observation_facts(),
         )
         .map_err(PipelineError::Transition)?;
+        transition.seal_identity(self.identity_protocol);
         let id = transition.id();
         if let Err(error) = self.check_identity(id, &transition.canonical_basis()) {
             self.failed_candidate = Some(alloc::boxed::Box::new(

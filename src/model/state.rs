@@ -190,6 +190,10 @@ impl AdmittedState {
         Ok(state)
     }
 
+    pub(crate) fn seal_identity(&mut self, protocol: crate::identity::IdentityProtocol) {
+        self.id = protocol.derive_from_basis(&self.canonical_basis());
+    }
+
     pub fn id(&self) -> u64 {
         self.id
     }

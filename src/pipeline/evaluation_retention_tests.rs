@@ -15,6 +15,9 @@ fn id(name: &str) -> VersionedId {
     VersionedId::new(name, 1).unwrap()
 }
 fn fixture() -> (Pipeline, [ObjectRef; 3]) {
+    fixture_with_protocol(IdentityProtocol::LegacyRustHashFnv64)
+}
+fn fixture_with_protocol(protocol: IdentityProtocol) -> (Pipeline, [ObjectRef; 3]) {
     let mut registry = Registry::new();
     let domain = DomainContext::new("retention/fixture", id("ticks")).unwrap();
     let frame = RelationContext::new(
@@ -92,7 +95,7 @@ fn fixture() -> (Pipeline, [ObjectRef; 3]) {
             })
             .unwrap();
     }
-    let mut p = Pipeline::new(registry);
+    let mut p = Pipeline::with_identity_protocol(registry, protocol);
     let refs: Vec<_> = [3_i64, 4, 5]
         .into_iter()
         .enumerate()
@@ -456,4 +459,34 @@ fn a_mismatching_digest_does_not_resolve_an_existing_full_body() {
     assert!(p.resolve_evaluation(&wrong).is_none());
     assert!(p.evaluations_with_digest(8).is_empty());
     assert_eq!(p.evaluation_count(), 1);
+}
+
+#[test]
+fn portable_collision_retention_and_revocation_keep_the_exact_result() {
+    let (mut p, inputs) = fixture_with_protocol(IdentityProtocol::PortableV1);
+    p.evaluation_digest_override = Some(7);
+    let first = eval(&mut p, "O", &inputs[0]);
+    let second = eval_keyed(&mut p, "O", &inputs[1]);
+    let first_basis = p.resolve_evaluation(&first).unwrap().canonical_basis();
+    let second_basis = p.resolve_evaluation(&second).unwrap().canonical_basis();
+    assert_ne!(first_basis, second_basis);
+    assert_eq!(p.evaluations_with_digest(7).len(), 2);
+    revoke(&mut p, &inputs[0], &inputs[2]);
+    assert_eq!(
+        p.lifecycle_view(&first).unwrap().status,
+        LifecycleStatus::Invalid
+    );
+    assert_ne!(
+        p.lifecycle_view(&second).unwrap().status,
+        LifecycleStatus::Invalid
+    );
+    assert_eq!(
+        p.resolve_evaluation(&first).unwrap().canonical_basis(),
+        first_basis
+    );
+    assert_eq!(
+        p.resolve_evaluation(&second).unwrap().canonical_basis(),
+        second_basis
+    );
+    assert!(project(&p, &inputs[1], &second).is_ok());
 }

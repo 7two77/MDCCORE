@@ -1,6 +1,12 @@
 use alloc::vec::Vec;
 use core::hash::{Hash, Hasher};
 
+mod portable;
+pub use portable::{
+    canonical_reference_v1, portable_v1_preimage, IdentityProtocol, ProfiledIdentity,
+    PORTABLE_V1_HEADER,
+};
+
 /// Supplies an owned copy of the object's current semantic identity basis.
 ///
 /// Implementations must return equivalent bytes for equivalent semantic input.

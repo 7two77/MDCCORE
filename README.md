@@ -6,15 +6,18 @@
 `Cargo.toml`, `src/`, `tests/`. Вложенный каталог `mdc_core/` сохранён как исходный
 материал для сравнения; он не подключён как workspace member.
 
-Текущий рабочий пакет — **MDC-IMPL-009: Evaluation collision retention**.
-[Контракт](docs/MDC-EVALUATION-RETENTION-CONTRACT-v0.1.md),
-[реализация и проверки](docs/MDC-IMPL-009.md),
-[матрица v0.3](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.3.md).
-Исторические решения 001…008/OPS-001 сохранены в `docs/`.
+Текущий рабочий пакет — **MDC-IMPL-010: Portable identity**.
+[Контракт](docs/MDC-PORTABLE-IDENTITY-CONTRACT-v0.1.md),
+[реализация и проверки](docs/MDC-IMPL-010.md),
+[матрица v0.4](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.4.md).
+`Pipeline::new()` сохраняет legacy identity; portable graph явно выбирается через
+`Pipeline::with_identity_protocol(registry, IdentityProtocol::PortableV1)`.
+Профиль применяется ко всей цепочке, включая invalid artifacts и lifecycle journal.
+Прежние решения 001…009/OPS-001 сохранены в `docs/`.
 
 **MDC-E2E-CONFORMANCE-001: PASS для объявленного fixture MDC-SCALAR-001.**
 Все 12 assertions E2E-A01…A12 и 11 negative cases N01…N11 выполнены в двух
-раздельных OS-процессах. [Execution evidence](docs/evidence/mdc-e2e-conformance-001-impl-009.json)
+раздельных OS-процессах. [Execution evidence](docs/evidence/mdc-e2e-conformance-001-impl-010.json)
 содержит фактические результаты, canonical bytes, lineage и snapshots. PASS
 применим к записанным source fingerprint, toolchain, features и target; текущую
 применимость отчёта проверяет `check_gate_readiness.py`.
