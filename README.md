@@ -3,15 +3,18 @@
 История объединения исходной main и проверенного стека baseline → 008 → 009 → 010,
 сохранённые материалы и правила сопровождения описаны в
 [MDC-INTEGRATION-001](docs/MDC-INTEGRATION-v0.1.md).
-Актуальная [матрица v0.5](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.5.md)
+Актуальная [матрица v0.6](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.6.md)
 учитывает опубликованные hosted CI receipts. Подготовка первого Git commit
 сохранена в [MDC-OPS-001](docs/MDC-OPS-001.md).
 
-Восстанавливаемый Rust-пакет `mdc_core v0.1.0`. Активный пакет расположен в корне:
+Восстановленный Rust-пакет `mdc_core v0.1.0`. Активный пакет расположен в корне:
 `Cargo.toml`, `src/`, `tests/`. Вложенный каталог `mdc_core/` сохранён как исходный
 материал для сравнения; он не подключён как workspace member.
 
-Текущий рабочий пакет — **MDC-IMPL-010: Portable identity**.
+Последний функциональный пакет — **MDC-IMPL-010: Portable identity**.
+Следующий этап подготовки — [MDC-OPS-002: решения и сценарии](docs/MDC-OPS-002-NEXT-STAGE-v0.1.md).
+В нём выбирается первый потребитель и необходимость persistence/temporal profile;
+новые требования остаются открытыми до этих решений.
 [Контракт](docs/MDC-PORTABLE-IDENTITY-CONTRACT-v0.1.md),
 [реализация и проверки](docs/MDC-IMPL-010.md),
 [матрица v0.4](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.4.md).

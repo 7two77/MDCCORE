@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "package": "MDC-OPS-002",
+  "kind": "post_merge_checkpoint",
+  "repository": "7two77/MDCCORE",
+  "commit": "6177277f12bc7a67861dc365e96340409bed8d34",
+  "tree": "fdd875fa11a5068bf5da53740f5c66b752909bca",
+  "parents": [
+    "5bd25557aed4a6dcb08b7fb1bc2d14e91ca81dbf",
+    "a0c2883f213390e91390dc0dedeae1b03608df22"
+  ],
+  "reviewed_candidate": "a0c2883f213390e91390dc0dedeae1b03608df22",
+  "tree_equals_reviewed_candidate": true,
+  "merged_pr": 3,
+  "source_fingerprint": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b",
+  "ci": {
+    "run_id": 41626673525,
+    "url": "https://github.com/7two77/MDCCORE/actions/runs/41626673525",
+    "status": "completed",
+    "conclusion": "success",
+    "jobs_passed": 12,
+    "jobs": [
+      {
+        "id": 125885652582,
+        "name": "Preserve integration ancestry and the 010 source",
+        "conclusion": "success",
+        "rust_passed": 0,
+        "rust_failed": 0,
+        "python_suites": []
+      },
+      {
+        "id": 125885652749,
+        "name": "Rust 1.98.0 / alloc",
+        "conclusion": "success",
+        "rust_passed": 176,
+        "rust_failed": 0,
+        "python_suites": [
+          4,
+          17
+        ]
+      },
+      {
+        "id": 125885652848,
+        "name": "Portable Rust 1.98.0 / i686-unknown-linux-gnu",
+        "conclusion": "success",
+        "rust_passed": 7,
+        "rust_failed": 0,
+        "python_suites": []
+      },
+      {
+        "id": 125885652849,
+        "name": "Rust 1.85.1 / default",
+        "conclusion": "success",
+        "rust_passed": 176,
+        "rust_failed": 0,
+        "python_suites": [
+          4,
+          17
+        ]
+      },
+      {
+        "id": 125885652892,
+        "name": "Portable Rust 1.85.1 / i686-unknown-linux-gnu",
+        "conclusion": "success",
+        "rust_passed": 7,
+        "rust_failed": 0,
+        "python_suites": []
+      },
+      {
+        "id": 125885652905,
+        "name": "Rust 1.98.0 / default",
+        "conclusion": "success",
+        "rust_passed": 176,
+        "rust_failed": 0,
+        "python_suites": [
+          4,
+          17
+        ]
+      },
+      {
+        "id": 125885652924,
+        "name": "Rust 1.85.1 / alloc",
+        "conclusion": "success",
+        "rust_passed": 176,
+        "rust_failed": 0,
+        "python_suites": [
+          4,
+          17
+        ]
+      },
+      {
+        "id": 125885652991,
+        "name": "Rust 1.98.0 / std-alloc",
+        "conclusion": "success",
+        "rust_passed": 176,
+        "rust_failed": 0,
+        "python_suites": [
+          4,
+          17
+        ]
+      },
+      {
+        "id": 125885653013,
+        "name": "Portable Rust 1.98.0 / s390x-unknown-linux-gnu",
+        "conclusion": "success",
+        "rust_passed": 7,
+        "rust_failed": 0,
+        "python_suites": []
+      },
+      {
+        "id": 125885653087,
+        "name": "Rust 1.85.1 / std-alloc",
+        "conclusion": "success",
+        "rust_passed": 176,
+        "rust_failed": 0,
+        "python_suites": [
+          4,
+          17
+        ]
+      },
+      {
+        "id": 125885653093,
+        "name": "Portable Rust 1.85.1 / s390x-unknown-linux-gnu",
+        "conclusion": "success",
+        "rust_passed": 7,
+        "rust_failed": 0,
+        "python_suites": []
+      },
+      {
+        "id": 125885956352,
+        "name": "Compare portable bytes across toolchains and targets",
+        "conclusion": "success",
+        "rust_passed": 0,
+        "rust_failed": 0,
+        "python_suites": []
+      }
+    ]
+  },
+  "history": {
+    "acceptance": "PASS",
+    "revision": "6177277f12bc7a67861dc365e96340409bed8d34",
+    "mode": "history",
+    "bridge_commit": "c53279a4a76fe342e3e2469aa9457b36906f9c0a",
+    "verified_tree_commit": "c53279a4a76fe342e3e2469aa9457b36906f9c0a",
+    "main_before": "5bd25557aed4a6dcb08b7fb1bc2d14e91ca81dbf",
+    "implementation_tip": "b54b30febb7a63adfb12e23bd20ca030b71700da",
+    "preserved_milestones": [
+      {
+        "name": "baseline-v0.1",
+        "commit": "a8c15c7ffbbe48993e97142f6842da044bda4162"
+      },
+      {
+        "name": "MDC-IMPL-008",
+        "commit": "70f37fc2b510f9436f1208ee378017dec444537e"
+      },
+      {
+        "name": "MDC-IMPL-009",
+        "commit": "d33bb979c0b8b6a69126fd79544d3f43e5df9d3b"
+      },
+      {
+        "name": "MDC-IMPL-010",
+        "commit": "b54b30febb7a63adfb12e23bd20ca030b71700da"
+      }
+    ],
+    "roots": [
+      "a8c15c7ffbbe48993e97142f6842da044bda4162",
+      "2dca7f93450d0766dd334d03d8b71487b15d0ea0"
+    ],
+    "protected_implementation_files": 157,
+    "original_main_files_preserved": 2,
+    "implementation_source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b"
+  },
+  "portable_comparison": {
+    "acceptance": "PASS",
+    "implementation_source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b",
+    "commit_sha": "6177277f12bc7a67861dc365e96340409bed8d34",
+    "github_run_id": "41626673525",
+    "configurations": [
+      {
+        "rust": "1.85.1",
+        "profile": "alloc",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.85.1",
+        "profile": "default",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.85.1",
+        "profile": "std-alloc",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "alloc",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "default",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "std-alloc",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.85.1",
+        "profile": "portable-i686-unknown-linux-gnu",
+        "target": {
+          "arch": "x86",
+          "pointer_width": 32,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.85.1",
+        "profile": "portable-s390x-unknown-linux-gnu",
+        "target": {
+          "arch": "s390x",
+          "pointer_width": 64,
+          "endian": "big"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "portable-i686-unknown-linux-gnu",
+        "target": {
+          "arch": "x86",
+          "pointer_width": 32,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "portable-s390x-unknown-linux-gnu",
+        "target": {
+          "arch": "s390x",
+          "pointer_width": 64,
+          "endian": "big"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      }
+    ]
+  },
+  "codespaces": {
+    "evidence_kind": "user_provided_terminal_output",
+    "head": "6177277f12bc7a67861dc365e96340409bed8d34",
+    "origin_main": "6177277f12bc7a67861dc365e96340409bed8d34",
+    "upstream": "origin/main",
+    "history_check": "PASS",
+    "gate_readiness": "PASS",
+    "worktree": "CLEAN",
+    "agent_local_test_run_claimed": false
+  },
+  "open_decisions": [
+    "First concrete consumer and input/output acceptance",
+    "Exact restart recovery versus rebuilding"
+  ],
+  "scope": "Read-only checkpoint of integrated scalar core; subsequent documentation work does not extend semantic guarantees."
+}
