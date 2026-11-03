@@ -3,7 +3,7 @@
 История объединения исходной main и проверенного стека baseline → 008 → 009 → 010,
 сохранённые материалы и правила сопровождения описаны в
 [MDC-INTEGRATION-001](docs/MDC-INTEGRATION-v0.1.md).
-Актуальная [матрица v0.7](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.7.md)
+Актуальная [матрица v0.8](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.8.md)
 учитывает опубликованные hosted CI receipts. Подготовка первого Git commit
 сохранена в [MDC-OPS-001](docs/MDC-OPS-001.md).
 
@@ -25,6 +25,11 @@ state manifest. Restore выполняет исходные операции п�
 Durable commit и историческая доступность данных остаются отдельными механизмами.
 
 Portable identity добавлена в [MDC-IMPL-010](docs/MDC-IMPL-010.md).
+После объединения snapshot-пакета подготовлены
+[post-merge checkpoint](docs/MDC-OPS-003-POST-SNAPSHOT-v0.1.md) и
+[проект recovery contract](docs/MDC-RECOVERY-CONTRACT-v0.1-DRAFT.md).
+Durable backend и граница ACK пока требуют решения владельца; runtime recovery
+этим проектом документа не добавляется.
 `Pipeline::new()` сохраняет legacy identity; portable graph явно выбирается через
 `Pipeline::with_identity_protocol(registry, IdentityProtocol::PortableV1)`.
 Профиль применяется ко всей цепочке, включая invalid artifacts и lifecycle journal.

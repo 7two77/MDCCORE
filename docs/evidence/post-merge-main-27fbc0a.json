@@ -1,0 +1,700 @@
+{
+  "acceptance": "PASS",
+  "kind": "post_merge_checkpoint",
+  "commit": "27fbc0a7c83378fdcc303732cc76cdd8f81fe40c",
+  "tree": "552dc38dcd5edeffe9427a63ef6df89b7827c411",
+  "parents": [
+    "ea22cda835ee1b9d677f1976938cff2c0a69696e",
+    "21a61e7df653697d510cf8d8fac1bf809d066b5e"
+  ],
+  "implementation_tree_matches_verified_011": true,
+  "implementation_source_sha256": "570f62581a6c3e64dda6b293201a585f25590c7743d50d130eee77df15cdb3b4",
+  "workflow_run": {
+    "conclusion": "success",
+    "databaseId": 41716728041,
+    "event": "push",
+    "headSha": "27fbc0a7c83378fdcc303732cc76cdd8f81fe40c",
+    "status": "completed",
+    "url": "https://github.com/7two77/MDCCORE/actions/runs/41716728041"
+  },
+  "jobs": [
+    {
+      "completedAt": "2026-11-03T20:54:35Z",
+      "conclusion": "success",
+      "databaseId": 126198560774,
+      "name": "Portable Rust 1.98.0 / s390x-unknown-linux-gnu",
+      "startedAt": "2026-11-03T20:53:38Z",
+      "status": "completed",
+      "url": "https://github.com/7two77/MDCCORE/actions/runs/41716728041/job/126198560774"
+    },
+    {
+      "completedAt": "2026-11-03T20:53:47Z",
+      "conclusion": "success",
+      "databaseId": 126198560832,
+      "name": "Preserve integration ancestry and the 010 source",
+      "startedAt": "2026-11-03T20:53:38Z",
+      "status": "completed",
+      "url": "https://github.com/7two77/MDCCORE/actions/runs/41716728041/job/126198560832"
+    },
+    {
+      "completedAt": "2026-11-03T20:54:12Z",
+      "conclusion": "success",
+      "databaseId": 126198560877,
+      "name": "Rust 1.98.0 / std-alloc",
+      "startedAt": "2026-11-03T20:53:38Z",
+      "status": "completed",
+      "url": "https://github.com/7two77/MDCCORE/actions/runs/41716728041/job/126198560877"
+    },
+    {
+      "completedAt": "2026-11-03T20:54:21Z",
+      "conclusion": "success",
+      "databaseId": 126198560966,
+      "name": "Portable Rust 1.85.1 / s390x-unknown-linux-gnu",
+      "startedAt": "2026-11-03T20:53:38Z",
+      "status": "completed",
+      "url": "https://github.com/7two77/MDCCORE/actions/runs/41716728041/job/126198560966"
+    },
+    {
+      "completedAt": "2026-11-03T20:54:20Z",
+      "conclusion": "success",
+      "databaseId": 126198560985,
+      "name": "Rust 1.85.1 / default",
+      "startedAt": "2026-11-03T20:53:38Z",
+      "status": "completed",
+      "url": "https://github.com/7two77/MDCCORE/actions/runs/41716728041/job/126198560985"
+    },
+    {
+      "completedAt": "2026-11-03T20:54:18Z",
+      "conclusion": "success",
+      "databaseId": 126198561011,
+      "name": "Rust 1.85.1 / alloc",
+      "startedAt": "2026-11-03T20:53:38Z",
+      "status": "completed",
+      "url": "https://github.com/7two77/MDCCORE/actions/runs/41716728041/job/126198561011"
+    },
+    {
+      "completedAt": "2026-11-03T20:54:08Z",
+      "conclusion": "success",
+      "databaseId": 126198561013,
+      "name": "Rust 1.98.0 / alloc",
+      "startedAt": "2026-11-03T20:53:38Z",
+      "status": "completed",
+      "url": "https://github.com/7two77/MDCCORE/actions/runs/41716728041/job/126198561013"
+    },
+    {
+      "completedAt": "2026-11-03T20:54:26Z",
+      "conclusion": "success",
+      "databaseId": 126198561068,
+      "name": "Portable Rust 1.98.0 / i686-unknown-linux-gnu",
+      "startedAt": "2026-11-03T20:53:38Z",
+      "status": "completed",
+      "url": "https://github.com/7two77/MDCCORE/actions/runs/41716728041/job/126198561068"
+    },
+    {
+      "completedAt": "2026-11-03T20:54:14Z",
+      "conclusion": "success",
+      "databaseId": 126198561156,
+      "name": "Rust 1.85.1 / std-alloc",
+      "startedAt": "2026-11-03T20:53:38Z",
+      "status": "completed",
+      "url": "https://github.com/7two77/MDCCORE/actions/runs/41716728041/job/126198561156"
+    },
+    {
+      "completedAt": "2026-11-03T20:54:19Z",
+      "conclusion": "success",
+      "databaseId": 126198561184,
+      "name": "Portable Rust 1.85.1 / i686-unknown-linux-gnu",
+      "startedAt": "2026-11-03T20:53:38Z",
+      "status": "completed",
+      "url": "https://github.com/7two77/MDCCORE/actions/runs/41716728041/job/126198561184"
+    },
+    {
+      "completedAt": "2026-11-03T20:54:16Z",
+      "conclusion": "success",
+      "databaseId": 126198561233,
+      "name": "Rust 1.98.0 / default",
+      "startedAt": "2026-11-03T20:53:38Z",
+      "status": "completed",
+      "url": "https://github.com/7two77/MDCCORE/actions/runs/41716728041/job/126198561233"
+    },
+    {
+      "completedAt": "2026-11-03T20:54:54Z",
+      "conclusion": "success",
+      "databaseId": 126199086784,
+      "name": "Compare portable bytes across toolchains and targets",
+      "startedAt": "2026-11-03T20:54:38Z",
+      "status": "completed",
+      "url": "https://github.com/7two77/MDCCORE/actions/runs/41716728041/job/126199086784"
+    }
+  ],
+  "job_log_checks": [
+    {
+      "id": 126198560774,
+      "rust_tests": 22,
+      "python_checks": 0,
+      "ci_pass": false,
+      "e2e": false,
+      "snapshots": true
+    },
+    {
+      "id": 126198560832,
+      "rust_tests": 0,
+      "python_checks": 0,
+      "ci_pass": false,
+      "e2e": false,
+      "snapshots": false
+    },
+    {
+      "id": 126198560877,
+      "rust_tests": 209,
+      "python_checks": 25,
+      "ci_pass": true,
+      "e2e": true,
+      "snapshots": true
+    },
+    {
+      "id": 126198560966,
+      "rust_tests": 22,
+      "python_checks": 0,
+      "ci_pass": false,
+      "e2e": false,
+      "snapshots": true
+    },
+    {
+      "id": 126198560985,
+      "rust_tests": 209,
+      "python_checks": 25,
+      "ci_pass": true,
+      "e2e": true,
+      "snapshots": true
+    },
+    {
+      "id": 126198561011,
+      "rust_tests": 209,
+      "python_checks": 25,
+      "ci_pass": true,
+      "e2e": true,
+      "snapshots": true
+    },
+    {
+      "id": 126198561013,
+      "rust_tests": 209,
+      "python_checks": 25,
+      "ci_pass": true,
+      "e2e": true,
+      "snapshots": true
+    },
+    {
+      "id": 126198561068,
+      "rust_tests": 22,
+      "python_checks": 0,
+      "ci_pass": false,
+      "e2e": false,
+      "snapshots": true
+    },
+    {
+      "id": 126198561156,
+      "rust_tests": 209,
+      "python_checks": 25,
+      "ci_pass": true,
+      "e2e": true,
+      "snapshots": true
+    },
+    {
+      "id": 126198561184,
+      "rust_tests": 22,
+      "python_checks": 0,
+      "ci_pass": false,
+      "e2e": false,
+      "snapshots": true
+    },
+    {
+      "id": 126198561233,
+      "rust_tests": 209,
+      "python_checks": 25,
+      "ci_pass": true,
+      "e2e": true,
+      "snapshots": true
+    },
+    {
+      "id": 126199086784,
+      "rust_tests": 0,
+      "python_checks": 0,
+      "ci_pass": false,
+      "e2e": false,
+      "snapshots": true
+    }
+  ],
+  "portable_comparison": {
+    "acceptance": "PASS",
+    "implementation_source_sha256": "570f62581a6c3e64dda6b293201a585f25590c7743d50d130eee77df15cdb3b4",
+    "commit_sha": "27fbc0a7c83378fdcc303732cc76cdd8f81fe40c",
+    "github_run_id": "41716728041",
+    "configurations": [
+      {
+        "rust": "1.85.1",
+        "profile": "alloc",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.85.1",
+        "profile": "default",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.85.1",
+        "profile": "std-alloc",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "alloc",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "default",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "std-alloc",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.85.1",
+        "profile": "portable-i686-unknown-linux-gnu",
+        "target": {
+          "arch": "x86",
+          "pointer_width": 32,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.85.1",
+        "profile": "portable-s390x-unknown-linux-gnu",
+        "target": {
+          "arch": "s390x",
+          "pointer_width": 64,
+          "endian": "big"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "portable-i686-unknown-linux-gnu",
+        "target": {
+          "arch": "x86",
+          "pointer_width": 32,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "portable-s390x-unknown-linux-gnu",
+        "target": {
+          "arch": "s390x",
+          "pointer_width": 64,
+          "endian": "big"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      }
+    ]
+  },
+  "snapshot_comparison": {
+    "acceptance": "PASS",
+    "commit_sha": "27fbc0a7c83378fdcc303732cc76cdd8f81fe40c",
+    "github_run_id": "41716728041",
+    "implementation_source_sha256": "570f62581a6c3e64dda6b293201a585f25590c7743d50d130eee77df15cdb3b4",
+    "configurations": [
+      {
+        "artifact_folder": "mdc-ci-1.85.1-alloc",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      },
+      {
+        "artifact_folder": "mdc-ci-1.85.1-default",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      },
+      {
+        "artifact_folder": "mdc-ci-1.85.1-std-alloc",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      },
+      {
+        "artifact_folder": "mdc-ci-1.98.0-alloc",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      },
+      {
+        "artifact_folder": "mdc-ci-1.98.0-default",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      },
+      {
+        "artifact_folder": "mdc-ci-1.98.0-std-alloc",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      },
+      {
+        "artifact_folder": "mdc-portable-1.85.1-i686-unknown-linux-gnu",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      },
+      {
+        "artifact_folder": "mdc-portable-1.85.1-s390x-unknown-linux-gnu",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      },
+      {
+        "artifact_folder": "mdc-portable-1.98.0-i686-unknown-linux-gnu",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      },
+      {
+        "artifact_folder": "mdc-portable-1.98.0-s390x-unknown-linux-gnu",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      }
+    ]
+  },
+  "history_guard": {
+    "acceptance": "PASS",
+    "revision": "27fbc0a7c83378fdcc303732cc76cdd8f81fe40c",
+    "mode": "history",
+    "bridge_commit": "c53279a4a76fe342e3e2469aa9457b36906f9c0a",
+    "verified_tree_commit": "c53279a4a76fe342e3e2469aa9457b36906f9c0a",
+    "main_before": "5bd25557aed4a6dcb08b7fb1bc2d14e91ca81dbf",
+    "implementation_tip": "b54b30febb7a63adfb12e23bd20ca030b71700da",
+    "preserved_milestones": [
+      {
+        "name": "baseline-v0.1",
+        "commit": "a8c15c7ffbbe48993e97142f6842da044bda4162"
+      },
+      {
+        "name": "MDC-IMPL-008",
+        "commit": "70f37fc2b510f9436f1208ee378017dec444537e"
+      },
+      {
+        "name": "MDC-IMPL-009",
+        "commit": "d33bb979c0b8b6a69126fd79544d3f43e5df9d3b"
+      },
+      {
+        "name": "MDC-IMPL-010",
+        "commit": "b54b30febb7a63adfb12e23bd20ca030b71700da"
+      }
+    ],
+    "roots": [
+      "a8c15c7ffbbe48993e97142f6842da044bda4162",
+      "2dca7f93450d0766dd334d03d8b71487b15d0ea0"
+    ],
+    "protected_implementation_files": 157,
+    "original_main_files_preserved": 2,
+    "implementation_source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b"
+  },
+  "artifacts": [
+    {
+      "id": 13271170405,
+      "node_id": "MDg6QXJ0aWZhY3QxMzI3MTE3MDQwNQ==",
+      "name": "mdc-portable-1.98.0-i686-unknown-linux-gnu",
+      "size_in_bytes": 32281,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13271170405",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13271170405/zip",
+      "expired": false,
+      "digest": "sha256:06920af16059b2f6a962202e96632cffb041c32bc541ef1fc90fc11c7293e45f",
+      "created_at": "2026-11-03T20:54:23Z",
+      "updated_at": "2026-11-03T20:54:23Z",
+      "expires_at": "2026-11-17T20:54:22Z",
+      "workflow_run": {
+        "id": 41716728041,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "27fbc0a7c83378fdcc303732cc76cdd8f81fe40c"
+      }
+    },
+    {
+      "id": 13271110379,
+      "node_id": "MDg6QXJ0aWZhY3QxMzI3MTExMDM3OQ==",
+      "name": "mdc-integration-history",
+      "size_in_bytes": 680,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13271110379",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13271110379/zip",
+      "expired": false,
+      "digest": "sha256:16ea3aae55bf667cb446b4ed14ca971f2af24697cce4c2554363439bacab9db1",
+      "created_at": "2026-11-03T20:53:44Z",
+      "updated_at": "2026-11-03T20:53:44Z",
+      "expires_at": "2026-11-17T20:53:43Z",
+      "workflow_run": {
+        "id": 41716728041,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "27fbc0a7c83378fdcc303732cc76cdd8f81fe40c"
+      }
+    },
+    {
+      "id": 13270970463,
+      "node_id": "MDg6QXJ0aWZhY3QxMzI3MDk3MDQ2Mw==",
+      "name": "mdc-ci-1.98.0-alloc",
+      "size_in_bytes": 288778,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13270970463",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13270970463/zip",
+      "expired": false,
+      "digest": "sha256:db5d33f54d876dd97737265c0a650edc547b54a586f7e143c10c45faf28373f4",
+      "created_at": "2026-11-03T20:54:05Z",
+      "updated_at": "2026-11-03T20:54:05Z",
+      "expires_at": "2026-11-17T20:54:04Z",
+      "workflow_run": {
+        "id": 41716728041,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "27fbc0a7c83378fdcc303732cc76cdd8f81fe40c"
+      }
+    },
+    {
+      "id": 13270551222,
+      "node_id": "MDg6QXJ0aWZhY3QxMzI3MDU1MTIyMg==",
+      "name": "mdc-ci-1.98.0-std-alloc",
+      "size_in_bytes": 288781,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13270551222",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13270551222/zip",
+      "expired": false,
+      "digest": "sha256:d9c80ec2bbdbcf8c80949c802a39549eac1af7982bdbb28019e28a459de5cf41",
+      "created_at": "2026-11-03T20:54:09Z",
+      "updated_at": "2026-11-03T20:54:09Z",
+      "expires_at": "2026-11-17T20:54:08Z",
+      "workflow_run": {
+        "id": 41716728041,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "27fbc0a7c83378fdcc303732cc76cdd8f81fe40c"
+      }
+    },
+    {
+      "id": 13270426545,
+      "node_id": "MDg6QXJ0aWZhY3QxMzI3MDQyNjU0NQ==",
+      "name": "mdc-portable-1.85.1-i686-unknown-linux-gnu",
+      "size_in_bytes": 32287,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13270426545",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13270426545/zip",
+      "expired": false,
+      "digest": "sha256:6826497bbb8a7aef809815a298ceac2584fd44703285b37dad3d8e63e0e39481",
+      "created_at": "2026-11-03T20:54:16Z",
+      "updated_at": "2026-11-03T20:54:16Z",
+      "expires_at": "2026-11-17T20:54:15Z",
+      "workflow_run": {
+        "id": 41716728041,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "27fbc0a7c83378fdcc303732cc76cdd8f81fe40c"
+      }
+    },
+    {
+      "id": 13269953220,
+      "node_id": "MDg6QXJ0aWZhY3QxMzI2OTk1MzIyMA==",
+      "name": "mdc-portable-comparison",
+      "size_in_bytes": 1179,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13269953220",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13269953220/zip",
+      "expired": false,
+      "digest": "sha256:69f81fa49e1ecf8f8ecdd03549c2c1147260ec89e51c715da939c7e165ee3404",
+      "created_at": "2026-11-03T20:54:51Z",
+      "updated_at": "2026-11-03T20:54:51Z",
+      "expires_at": "2026-11-17T20:54:50Z",
+      "workflow_run": {
+        "id": 41716728041,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "27fbc0a7c83378fdcc303732cc76cdd8f81fe40c"
+      }
+    },
+    {
+      "id": 13269778190,
+      "node_id": "MDg6QXJ0aWZhY3QxMzI2OTc3ODE5MA==",
+      "name": "mdc-ci-1.85.1-default",
+      "size_in_bytes": 289115,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13269778190",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13269778190/zip",
+      "expired": false,
+      "digest": "sha256:2370024d360690a0f1f56a7b5f3328371f8cfcdcadb61e9c04da74c70858f046",
+      "created_at": "2026-11-03T20:54:17Z",
+      "updated_at": "2026-11-03T20:54:17Z",
+      "expires_at": "2026-11-17T20:54:16Z",
+      "workflow_run": {
+        "id": 41716728041,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "27fbc0a7c83378fdcc303732cc76cdd8f81fe40c"
+      }
+    },
+    {
+      "id": 13269628298,
+      "node_id": "MDg6QXJ0aWZhY3QxMzI2OTYyODI5OA==",
+      "name": "mdc-ci-1.98.0-default",
+      "size_in_bytes": 289105,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13269628298",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13269628298/zip",
+      "expired": false,
+      "digest": "sha256:87b2398c472cb01c10bc3893522774dc075557ccc92a6bf08681f9a5d5e001a0",
+      "created_at": "2026-11-03T20:54:14Z",
+      "updated_at": "2026-11-03T20:54:14Z",
+      "expires_at": "2026-11-17T20:54:12Z",
+      "workflow_run": {
+        "id": 41716728041,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "27fbc0a7c83378fdcc303732cc76cdd8f81fe40c"
+      }
+    },
+    {
+      "id": 13269513203,
+      "node_id": "MDg6QXJ0aWZhY3QxMzI2OTUxMzIwMw==",
+      "name": "mdc-ci-1.85.1-std-alloc",
+      "size_in_bytes": 288788,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13269513203",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13269513203/zip",
+      "expired": false,
+      "digest": "sha256:f262063d61a4b434c11ec3e1e32f9e95dd0037cb8cc57a5ec3c44b3978f11d88",
+      "created_at": "2026-11-03T20:54:12Z",
+      "updated_at": "2026-11-03T20:54:12Z",
+      "expires_at": "2026-11-17T20:54:11Z",
+      "workflow_run": {
+        "id": 41716728041,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "27fbc0a7c83378fdcc303732cc76cdd8f81fe40c"
+      }
+    },
+    {
+      "id": 13269368408,
+      "node_id": "MDg6QXJ0aWZhY3QxMzI2OTM2ODQwOA==",
+      "name": "mdc-portable-1.98.0-s390x-unknown-linux-gnu",
+      "size_in_bytes": 32288,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13269368408",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13269368408/zip",
+      "expired": false,
+      "digest": "sha256:bc4966877ee6eb4c8058cad4addb8dc0674a71cbabbc2a582629cc1ac6ba18f0",
+      "created_at": "2026-11-03T20:54:32Z",
+      "updated_at": "2026-11-03T20:54:32Z",
+      "expires_at": "2026-11-17T20:54:31Z",
+      "workflow_run": {
+        "id": 41716728041,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "27fbc0a7c83378fdcc303732cc76cdd8f81fe40c"
+      }
+    },
+    {
+      "id": 13269303401,
+      "node_id": "MDg6QXJ0aWZhY3QxMzI2OTMwMzQwMQ==",
+      "name": "mdc-portable-1.85.1-s390x-unknown-linux-gnu",
+      "size_in_bytes": 32286,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13269303401",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13269303401/zip",
+      "expired": false,
+      "digest": "sha256:78dabf57e1a07ef28099ec656be97c2b3d8aa6f1bbf8c46d48b14bfafb97cf44",
+      "created_at": "2026-11-03T20:54:18Z",
+      "updated_at": "2026-11-03T20:54:18Z",
+      "expires_at": "2026-11-17T20:54:17Z",
+      "workflow_run": {
+        "id": 41716728041,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "27fbc0a7c83378fdcc303732cc76cdd8f81fe40c"
+      }
+    },
+    {
+      "id": 13269273395,
+      "node_id": "MDg6QXJ0aWZhY3QxMzI2OTI3MzM5NQ==",
+      "name": "mdc-ci-1.85.1-alloc",
+      "size_in_bytes": 288798,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13269273395",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13269273395/zip",
+      "expired": false,
+      "digest": "sha256:5f503e8f272843dfe0ff0758cb0a237a66edddb6cf4532ab9bade68d5aa23d8f",
+      "created_at": "2026-11-03T20:54:15Z",
+      "updated_at": "2026-11-03T20:54:15Z",
+      "expires_at": "2026-11-17T20:54:14Z",
+      "workflow_run": {
+        "id": 41716728041,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "27fbc0a7c83378fdcc303732cc76cdd8f81fe40c"
+      }
+    }
+  ]
+}
