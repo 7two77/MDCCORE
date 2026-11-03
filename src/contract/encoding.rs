@@ -35,6 +35,11 @@ pub(crate) fn put_relation_context(out: &mut Vec<u8>, value: &RelationContext) {
 
 pub(crate) fn put_object_ref(out: &mut Vec<u8>, value: &ObjectRef) {
     match value {
+        ObjectRef::EvaluationKey(id) => {
+            out.push(14);
+            out.extend_from_slice(&id.digest().to_le_bytes());
+            put_bytes(out, id.canonical_key());
+        }
         ObjectRef::InvalidObservation(id) => {
             out.push(8);
             out.extend_from_slice(&id.digest().to_le_bytes());
@@ -146,5 +151,29 @@ mod tests {
         assert_eq!(transition[0], 6);
         assert_eq!(&state[1..], &observation[1..]);
         assert_eq!(&transition[1..], &observation[1..]);
+    }
+
+    #[test]
+    fn evaluation_keys_encode_digest_and_full_content_in_a_separate_namespace() {
+        use crate::provenance::EvaluationId;
+        let mut a = Vec::new();
+        let mut b = Vec::new();
+        let mut alias = Vec::new();
+        put_object_ref(
+            &mut a,
+            &ObjectRef::EvaluationKey(EvaluationId::for_artifact(7, alloc::vec![1, 2])),
+        );
+        put_object_ref(
+            &mut b,
+            &ObjectRef::EvaluationKey(EvaluationId::for_artifact(7, alloc::vec![1, 3])),
+        );
+        put_object_ref(&mut alias, &ObjectRef::Evaluation(7));
+        assert_ne!(a, b);
+        assert_ne!(a, alias);
+        assert_eq!(a[0], 14);
+        assert_eq!(alias[0], 7);
+        assert_eq!(&a[1..9], &alias[1..9]);
+        assert_eq!(&a[9..17], &2_u64.to_le_bytes());
+        assert_eq!(&a[17..], &[1, 2]);
     }
 }

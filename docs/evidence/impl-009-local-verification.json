@@ -1,0 +1,80 @@
+[
+  {
+    "rust": "1.85.1",
+    "profile": "default",
+    "exit_code": 0,
+    "rust_tests_passed": 168,
+    "python_checks_passed": 17,
+    "report_directory": "/tmp/mdc-impl-009-ci/1.85.1/default",
+    "build_environment": {
+      "CARGO_PROFILE_DEV_DEBUG": "0",
+      "CARGO_PROFILE_TEST_DEBUG": "0",
+      "CARGO_INCREMENTAL": "0"
+    }
+  },
+  {
+    "rust": "1.85.1",
+    "profile": "std-alloc",
+    "exit_code": 0,
+    "rust_tests_passed": 168,
+    "python_checks_passed": 17,
+    "report_directory": "/tmp/mdc-impl-009-ci/1.85.1/std-alloc",
+    "build_environment": {
+      "CARGO_PROFILE_DEV_DEBUG": "0",
+      "CARGO_PROFILE_TEST_DEBUG": "0",
+      "CARGO_INCREMENTAL": "0"
+    }
+  },
+  {
+    "rust": "1.85.1",
+    "profile": "alloc",
+    "exit_code": 0,
+    "rust_tests_passed": 168,
+    "python_checks_passed": 17,
+    "report_directory": "/tmp/mdc-impl-009-ci/1.85.1/alloc",
+    "build_environment": {
+      "CARGO_PROFILE_DEV_DEBUG": "0",
+      "CARGO_PROFILE_TEST_DEBUG": "0",
+      "CARGO_INCREMENTAL": "0"
+    }
+  },
+  {
+    "rust": "1.98.0",
+    "profile": "default",
+    "exit_code": 0,
+    "rust_tests_passed": 168,
+    "python_checks_passed": 17,
+    "report_directory": "/tmp/mdc-impl-009-ci/1.98.0/default",
+    "build_environment": {
+      "CARGO_PROFILE_DEV_DEBUG": "0",
+      "CARGO_PROFILE_TEST_DEBUG": "0",
+      "CARGO_INCREMENTAL": "0"
+    }
+  },
+  {
+    "rust": "1.98.0",
+    "profile": "std-alloc",
+    "exit_code": 0,
+    "rust_tests_passed": 168,
+    "python_checks_passed": 17,
+    "report_directory": "/tmp/mdc-impl-009-ci/1.98.0/std-alloc",
+    "build_environment": {
+      "CARGO_PROFILE_DEV_DEBUG": "0",
+      "CARGO_PROFILE_TEST_DEBUG": "0",
+      "CARGO_INCREMENTAL": "0"
+    }
+  },
+  {
+    "rust": "1.98.0",
+    "profile": "alloc",
+    "exit_code": 0,
+    "rust_tests_passed": 168,
+    "python_checks_passed": 17,
+    "report_directory": "/tmp/mdc-impl-009-ci/1.98.0/alloc",
+    "build_environment": {
+      "CARGO_PROFILE_DEV_DEBUG": "0",
+      "CARGO_PROFILE_TEST_DEBUG": "0",
+      "CARGO_INCREMENTAL": "0"
+    }
+  }
+]

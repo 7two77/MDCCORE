@@ -189,7 +189,9 @@ pub fn basis(p: &Pipeline, r: &ObjectRef) -> Vec<u8> {
         ObjectRef::Composition(_) => p.resolve_composition(r).unwrap().canonical_basis(),
         ObjectRef::State(_) => p.resolve_state(r).unwrap().canonical_basis(),
         ObjectRef::Transition(_) => p.resolve_transition(r).unwrap().canonical_basis(),
-        ObjectRef::Evaluation(_) => p.resolve_evaluation(r).unwrap().canonical_basis(),
+        ObjectRef::Evaluation(_) | ObjectRef::EvaluationKey(_) => {
+            p.resolve_evaluation(r).unwrap().canonical_basis()
+        }
         _ => panic!("only retained admitted objects in this fixture"),
     }
 }
