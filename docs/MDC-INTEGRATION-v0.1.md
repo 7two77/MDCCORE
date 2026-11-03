@@ -89,8 +89,14 @@ python3 -B scripts/check_gate_readiness.py
 
 Это команды для подготовленного кандидата. После дальнейших изменений main
 history audit исполняется без `--candidate`.
-Полный hosted integration run привязывается отдельным receipt к опубликованному
-integration commit; прежний 010 PASS сам по себе не заменяет этот run.
+[Hosted integration receipt](evidence/integration-hosted-ci.json) подтвердил
+12/12 jobs для кандидата 9eace82 и bridge c53279a; push и PR runs прошли.
+Скачанные history/comparison ZIP checksums и JSON payload сверены с журналами
+и pinned controls. Отдельно сохранены [history artifact](evidence/integration-hosted-history.json)
+и [portable comparison](evidence/integration-hosted-portable-comparison.json).
+Последующий commit архивирует эти документы, сохраняя тот же core fingerprint;
+финальный hosted run вершины кандидата указан в PR. Прежний 010 PASS не заменяет
+этот integration run.
 
 ## Порядок принятия
 

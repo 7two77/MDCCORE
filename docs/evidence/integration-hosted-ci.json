@@ -1,0 +1,524 @@
+{
+  "package": "MDC-INTEGRATION-001",
+  "acceptance": "PASS",
+  "repository": "7two77/MDCCORE",
+  "branch": "mdc/integration-v0.1",
+  "commit_sha": "9eace820be867e7d3e3f5cbc6ad9031d86b173b9",
+  "bridge_commit": "c53279a4a76fe342e3e2469aa9457b36906f9c0a",
+  "bridge_parents": [
+    "5bd25557aed4a6dcb08b7fb1bc2d14e91ca81dbf",
+    "b54b30febb7a63adfb12e23bd20ca030b71700da"
+  ],
+  "implementation_source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b",
+  "push_run": {
+    "id": 41623199483,
+    "url": "https://github.com/7two77/MDCCORE/actions/runs/41623199483",
+    "conclusion": "success"
+  },
+  "pr_run": {
+    "id": 41623275219,
+    "url": "https://github.com/7two77/MDCCORE/actions/runs/41623275219",
+    "conclusion": "success"
+  },
+  "pr": {
+    "number": 3,
+    "url": "https://github.com/7two77/MDCCORE/pull/3",
+    "base": "main"
+  },
+  "jobs_passed": 12,
+  "jobs": [
+    {
+      "id": 125873870941,
+      "name": "Preserve integration ancestry and the 010 source",
+      "conclusion": "success",
+      "rust_tests_passed": 0,
+      "rust_tests_failed": 0,
+      "python_suites": [],
+      "e2e": [],
+      "portable": []
+    },
+    {
+      "id": 125873871213,
+      "name": "Rust 1.98.0 / std-alloc",
+      "conclusion": "success",
+      "rust_tests_passed": 176,
+      "rust_tests_failed": 0,
+      "python_suites": [
+        4,
+        17
+      ],
+      "e2e": [
+        {
+          "acceptance": "PASS",
+          "report": "/home/runner/work/MDCCORE/MDCCORE/ci-evidence/execution.json",
+          "cases_per_process": [
+            23,
+            23
+          ],
+          "validation_errors": []
+        }
+      ],
+      "portable": [
+        {
+          "acceptance": "PASS",
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+          "negative_controls": 7
+        }
+      ]
+    },
+    {
+      "id": 125873871251,
+      "name": "Rust 1.85.1 / std-alloc",
+      "conclusion": "success",
+      "rust_tests_passed": 176,
+      "rust_tests_failed": 0,
+      "python_suites": [
+        4,
+        17
+      ],
+      "e2e": [
+        {
+          "acceptance": "PASS",
+          "report": "/home/runner/work/MDCCORE/MDCCORE/ci-evidence/execution.json",
+          "cases_per_process": [
+            23,
+            23
+          ],
+          "validation_errors": []
+        }
+      ],
+      "portable": [
+        {
+          "acceptance": "PASS",
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+          "negative_controls": 7
+        }
+      ]
+    },
+    {
+      "id": 125873871315,
+      "name": "Rust 1.85.1 / alloc",
+      "conclusion": "success",
+      "rust_tests_passed": 176,
+      "rust_tests_failed": 0,
+      "python_suites": [
+        4,
+        17
+      ],
+      "e2e": [
+        {
+          "acceptance": "PASS",
+          "report": "/home/runner/work/MDCCORE/MDCCORE/ci-evidence/execution.json",
+          "cases_per_process": [
+            23,
+            23
+          ],
+          "validation_errors": []
+        }
+      ],
+      "portable": [
+        {
+          "acceptance": "PASS",
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+          "negative_controls": 7
+        }
+      ]
+    },
+    {
+      "id": 125873871329,
+      "name": "Portable Rust 1.85.1 / i686-unknown-linux-gnu",
+      "conclusion": "success",
+      "rust_tests_passed": 7,
+      "rust_tests_failed": 0,
+      "python_suites": [],
+      "e2e": [],
+      "portable": [
+        {
+          "acceptance": "PASS",
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+          "negative_controls": 7
+        }
+      ]
+    },
+    {
+      "id": 125873871347,
+      "name": "Portable Rust 1.98.0 / s390x-unknown-linux-gnu",
+      "conclusion": "success",
+      "rust_tests_passed": 7,
+      "rust_tests_failed": 0,
+      "python_suites": [],
+      "e2e": [],
+      "portable": [
+        {
+          "acceptance": "PASS",
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+          "negative_controls": 7
+        }
+      ]
+    },
+    {
+      "id": 125873871350,
+      "name": "Portable Rust 1.98.0 / i686-unknown-linux-gnu",
+      "conclusion": "success",
+      "rust_tests_passed": 7,
+      "rust_tests_failed": 0,
+      "python_suites": [],
+      "e2e": [],
+      "portable": [
+        {
+          "acceptance": "PASS",
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+          "negative_controls": 7
+        }
+      ]
+    },
+    {
+      "id": 125873871358,
+      "name": "Portable Rust 1.85.1 / s390x-unknown-linux-gnu",
+      "conclusion": "success",
+      "rust_tests_passed": 7,
+      "rust_tests_failed": 0,
+      "python_suites": [],
+      "e2e": [],
+      "portable": [
+        {
+          "acceptance": "PASS",
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+          "negative_controls": 7
+        }
+      ]
+    },
+    {
+      "id": 125873871371,
+      "name": "Rust 1.98.0 / default",
+      "conclusion": "success",
+      "rust_tests_passed": 176,
+      "rust_tests_failed": 0,
+      "python_suites": [
+        4,
+        17
+      ],
+      "e2e": [
+        {
+          "acceptance": "PASS",
+          "report": "/home/runner/work/MDCCORE/MDCCORE/ci-evidence/execution.json",
+          "cases_per_process": [
+            23,
+            23
+          ],
+          "validation_errors": []
+        }
+      ],
+      "portable": [
+        {
+          "acceptance": "PASS",
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+          "negative_controls": 7
+        }
+      ]
+    },
+    {
+      "id": 125873871407,
+      "name": "Rust 1.85.1 / default",
+      "conclusion": "success",
+      "rust_tests_passed": 176,
+      "rust_tests_failed": 0,
+      "python_suites": [
+        4,
+        17
+      ],
+      "e2e": [
+        {
+          "acceptance": "PASS",
+          "report": "/home/runner/work/MDCCORE/MDCCORE/ci-evidence/execution.json",
+          "cases_per_process": [
+            23,
+            23
+          ],
+          "validation_errors": []
+        }
+      ],
+      "portable": [
+        {
+          "acceptance": "PASS",
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+          "negative_controls": 7
+        }
+      ]
+    },
+    {
+      "id": 125873871499,
+      "name": "Rust 1.98.0 / alloc",
+      "conclusion": "success",
+      "rust_tests_passed": 176,
+      "rust_tests_failed": 0,
+      "python_suites": [
+        4,
+        17
+      ],
+      "e2e": [
+        {
+          "acceptance": "PASS",
+          "report": "/home/runner/work/MDCCORE/MDCCORE/ci-evidence/execution.json",
+          "cases_per_process": [
+            23,
+            23
+          ],
+          "validation_errors": []
+        }
+      ],
+      "portable": [
+        {
+          "acceptance": "PASS",
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+          "negative_controls": 7
+        }
+      ]
+    },
+    {
+      "id": 125874222342,
+      "name": "Compare portable bytes across toolchains and targets",
+      "conclusion": "success",
+      "rust_tests_passed": 0,
+      "rust_tests_failed": 0,
+      "python_suites": [],
+      "e2e": [],
+      "portable": []
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 13225280457,
+      "name": "mdc-portable-1.98.0-i686-unknown-linux-gnu",
+      "digest": "sha256:ec352805f2fa6106cafd7c968b791356c2788ad10d79a0d0b1b89fd49d808796",
+      "size_in_bytes": 13261,
+      "expired": false
+    },
+    {
+      "id": 13225095719,
+      "name": "mdc-ci-1.98.0-std-alloc",
+      "digest": "sha256:4f9f21de5a0bba36b79adb0a89097f518664fae67302e8086bc31ab811829611",
+      "size_in_bytes": 268463,
+      "expired": false
+    },
+    {
+      "id": 13224741270,
+      "name": "mdc-integration-history",
+      "digest": "sha256:ae920e98ba11c09c7856f81a26d4adafb31c82dc5a7265a0891ed54095ee69aa",
+      "size_in_bytes": 680,
+      "expired": false
+    },
+    {
+      "id": 13224726800,
+      "name": "mdc-portable-1.98.0-s390x-unknown-linux-gnu",
+      "digest": "sha256:1a3b2489ffc19c6d49e617953ab36b8af45bed486f13199f1d9caea5c2f6d62b",
+      "size_in_bytes": 13263,
+      "expired": false
+    },
+    {
+      "id": 13224667028,
+      "name": "mdc-portable-1.85.1-s390x-unknown-linux-gnu",
+      "digest": "sha256:308138affa2115612cf2670db02d73f758d7a91b20a0d3b3e9a6b50532062b71",
+      "size_in_bytes": 13267,
+      "expired": false
+    },
+    {
+      "id": 13224243038,
+      "name": "mdc-portable-1.85.1-i686-unknown-linux-gnu",
+      "digest": "sha256:546bce643f08b31f4e140ece41664b72b0c9fc8430bca1a149be52310fc4e1ae",
+      "size_in_bytes": 13266,
+      "expired": false
+    },
+    {
+      "id": 13224198215,
+      "name": "mdc-ci-1.98.0-alloc",
+      "digest": "sha256:7b9b53262e2c9827829ac3007d893d53e60633f28d25b815d66eb6de7f9889a2",
+      "size_in_bytes": 268469,
+      "expired": false
+    },
+    {
+      "id": 13224168103,
+      "name": "mdc-ci-1.85.1-std-alloc",
+      "digest": "sha256:ced86fb35988550d9c1c913251182f29175b44e4e13b768b48b3bfe7b4e017b1",
+      "size_in_bytes": 268473,
+      "expired": false
+    },
+    {
+      "id": 13224152550,
+      "name": "mdc-ci-1.85.1-default",
+      "digest": "sha256:dbd11e9826febddaf1e46234d2260b974431483f82ea37b25d0a566babb6312c",
+      "size_in_bytes": 268814,
+      "expired": false
+    },
+    {
+      "id": 13224148411,
+      "name": "mdc-ci-1.85.1-alloc",
+      "digest": "sha256:9193e274480bd10e87666d4a0e02ab10e81325ce9a7c38d3ceb12ae0a6d57995",
+      "size_in_bytes": 268483,
+      "expired": false
+    },
+    {
+      "id": 13223938031,
+      "name": "mdc-ci-1.98.0-default",
+      "digest": "sha256:441057ada06cd60ce8fa335c43b84ce2f919e05e2613a0e21a4528f4ae2c2798",
+      "size_in_bytes": 268803,
+      "expired": false
+    },
+    {
+      "id": 13223893314,
+      "name": "mdc-portable-comparison",
+      "digest": "sha256:9d836b04cee2601f8422e94224929a1f9ba93764ee238adfc4215f5c9a985738",
+      "size_in_bytes": 586,
+      "expired": false
+    }
+  ],
+  "history": {
+    "acceptance": "PASS",
+    "revision": "9eace820be867e7d3e3f5cbc6ad9031d86b173b9",
+    "mode": "candidate",
+    "bridge_commit": "c53279a4a76fe342e3e2469aa9457b36906f9c0a",
+    "verified_tree_commit": "9eace820be867e7d3e3f5cbc6ad9031d86b173b9",
+    "main_before": "5bd25557aed4a6dcb08b7fb1bc2d14e91ca81dbf",
+    "implementation_tip": "b54b30febb7a63adfb12e23bd20ca030b71700da",
+    "preserved_milestones": [
+      {
+        "name": "baseline-v0.1",
+        "commit": "a8c15c7ffbbe48993e97142f6842da044bda4162"
+      },
+      {
+        "name": "MDC-IMPL-008",
+        "commit": "70f37fc2b510f9436f1208ee378017dec444537e"
+      },
+      {
+        "name": "MDC-IMPL-009",
+        "commit": "d33bb979c0b8b6a69126fd79544d3f43e5df9d3b"
+      },
+      {
+        "name": "MDC-IMPL-010",
+        "commit": "b54b30febb7a63adfb12e23bd20ca030b71700da"
+      }
+    ],
+    "roots": [
+      "a8c15c7ffbbe48993e97142f6842da044bda4162",
+      "2dca7f93450d0766dd334d03d8b71487b15d0ea0"
+    ],
+    "protected_implementation_files": 157,
+    "original_main_files_preserved": 2,
+    "implementation_source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b"
+  },
+  "portable_comparison": {
+    "acceptance": "PASS",
+    "implementation_source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b",
+    "commit_sha": "9eace820be867e7d3e3f5cbc6ad9031d86b173b9",
+    "github_run_id": "41623199483",
+    "configurations": [
+      {
+        "rust": "1.85.1",
+        "profile": "alloc",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.85.1",
+        "profile": "default",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.85.1",
+        "profile": "std-alloc",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "alloc",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "default",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "std-alloc",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.85.1",
+        "profile": "portable-i686-unknown-linux-gnu",
+        "target": {
+          "arch": "x86",
+          "pointer_width": 32,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.85.1",
+        "profile": "portable-s390x-unknown-linux-gnu",
+        "target": {
+          "arch": "s390x",
+          "pointer_width": 64,
+          "endian": "big"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "portable-i686-unknown-linux-gnu",
+        "target": {
+          "arch": "x86",
+          "pointer_width": 32,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "portable-s390x-unknown-linux-gnu",
+        "target": {
+          "arch": "s390x",
+          "pointer_width": 64,
+          "endian": "big"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      }
+    ]
+  },
+  "source_protected_files": 157,
+  "original_main_files_preserved": 2,
+  "downloaded_history_and_comparison": "ZIP SHA256 and payload checked against GitHub artifact digests, job logs and known controls",
+  "main_unchanged": "5bd25557aed4a6dcb08b7fb1bc2d14e91ca81dbf",
+  "milestone_branches_unchanged": true,
+  "merge_performed": false,
+  "scope": "Snapshot of the first verified integration candidate. Subsequent documentation-only archival commit preserves the same core fingerprint and bridge; its final CI is linked from PR #3."
+}
