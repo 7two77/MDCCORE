@@ -1,0 +1,56 @@
+{
+  "package": "MDC-INTEGRATION-001",
+  "repository": "7two77/MDCCORE",
+  "main_before": "5bd25557aed4a6dcb08b7fb1bc2d14e91ca81dbf",
+  "implementation_tip": "b54b30febb7a63adfb12e23bd20ca030b71700da",
+  "milestones": [
+    {
+      "name": "baseline-v0.1",
+      "commit": "a8c15c7ffbbe48993e97142f6842da044bda4162"
+    },
+    {
+      "name": "MDC-IMPL-008",
+      "commit": "70f37fc2b510f9436f1208ee378017dec444537e"
+    },
+    {
+      "name": "MDC-IMPL-009",
+      "commit": "d33bb979c0b8b6a69126fd79544d3f43e5df9d3b"
+    },
+    {
+      "name": "MDC-IMPL-010",
+      "commit": "b54b30febb7a63adfb12e23bd20ca030b71700da"
+    }
+  ],
+  "expected_roots": [
+    "2dca7f93450d0766dd334d03d8b71487b15d0ea0",
+    "a8c15c7ffbbe48993e97142f6842da044bda4162"
+  ],
+  "bridge_parents": [
+    "5bd25557aed4a6dcb08b7fb1bc2d14e91ca81dbf",
+    "b54b30febb7a63adfb12e23bd20ca030b71700da"
+  ],
+  "implementation_source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b",
+  "implementation_files": 159,
+  "allowed_changes_to_implementation": [
+    "README.md",
+    ".github/workflows/ci.yml"
+  ],
+  "original_main_files": [
+    {
+      "original_path": "README.md",
+      "preserved_path": "docs/history/README-main-5bd25557.md",
+      "sha256": "56235fc36fe5bb202b7d62253baef98e4dd298194b39f57d0d5b31da6adadd00",
+      "git_blob_sha": "90ab813d4e170238190544b422ca659e84060db2",
+      "bytes": 39
+    },
+    {
+      "original_path": "PRISM-REFERENCE-RUNNER-001-v0.2-R2.zip",
+      "preserved_path": "PRISM-REFERENCE-RUNNER-001-v0.2-R2.zip",
+      "sha256": "ddc4bdf2e81e63c776e3d80bb3700c4957b89ca19da6a887c8e52e0a44ac2624",
+      "git_blob_sha": "81826c1158d81b0a87fc6509c332a77e9c350101",
+      "bytes": 40403
+    }
+  ],
+  "required_pr_merge_method": "merge commit; preserve bridge and milestone ancestry",
+  "main_updated_by_preparation": false
+}

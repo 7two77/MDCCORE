@@ -1,0 +1,74 @@
+[
+  {
+    "rust": "1.85.1",
+    "profile": "default",
+    "exit_code": 0,
+    "rust_tests_passed": 145,
+    "python_checks_passed": 17,
+    "report_directory": "/tmp/mdc-impl-008-ci/1.85.1/default"
+  },
+  {
+    "rust": "1.85.1",
+    "profile": "std-alloc",
+    "exit_code": 0,
+    "rust_tests_passed": 145,
+    "python_checks_passed": 17,
+    "report_directory": "/tmp/mdc-impl-008-ci/1.85.1/std-alloc"
+  },
+  {
+    "rust": "1.85.1",
+    "profile": "alloc",
+    "exit_code": 0,
+    "rust_tests_passed": 145,
+    "python_checks_passed": 17,
+    "report_directory": "/tmp/mdc-impl-008-ci/1.85.1/alloc"
+  },
+  {
+    "rust": "1.98.0",
+    "profile": "default",
+    "exit_code": 101,
+    "rust_tests_passed": 0,
+    "python_checks_passed": null,
+    "report_directory": "/tmp/mdc-impl-008-ci/1.98.0/default-failed-no-space",
+    "failure_class": "infrastructure: No space left on device; succeeded on retry with debug symbols disabled"
+  },
+  {
+    "rust": "1.98.0",
+    "profile": "default",
+    "exit_code": 0,
+    "rust_tests_passed": 145,
+    "python_checks_passed": 17,
+    "report_directory": "/tmp/mdc-impl-008-ci/1.98.0/default",
+    "build_environment": {
+      "CARGO_PROFILE_DEV_DEBUG": "0",
+      "CARGO_PROFILE_TEST_DEBUG": "0"
+    },
+    "retry_after": "No space left on device"
+  },
+  {
+    "rust": "1.98.0",
+    "profile": "std-alloc",
+    "exit_code": 0,
+    "rust_tests_passed": 145,
+    "python_checks_passed": 17,
+    "report_directory": "/tmp/mdc-impl-008-ci/1.98.0/std-alloc",
+    "build_environment": {
+      "CARGO_PROFILE_DEV_DEBUG": "0",
+      "CARGO_PROFILE_TEST_DEBUG": "0"
+    },
+    "retry_after": "No space left on device"
+  },
+  {
+    "rust": "1.98.0",
+    "profile": "alloc",
+    "exit_code": 0,
+    "rust_tests_passed": 145,
+    "python_checks_passed": 17,
+    "report_directory": "/tmp/mdc-impl-008-ci/1.98.0/alloc",
+    "build_environment": {
+      "CARGO_PROFILE_DEV_DEBUG": "0",
+      "CARGO_PROFILE_TEST_DEBUG": "0"
+    },
+    "retry_after": "No space left on device"
+  }
+]

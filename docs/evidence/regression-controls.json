@@ -1,0 +1,35 @@
+[
+  {
+    "name": "original_memory_leak_detected",
+    "command": [
+      "cargo",
+      "test",
+      "--locked",
+      "--offline",
+      "--features",
+      "std,alloc",
+      "--test",
+      "allocation_regression"
+    ],
+    "exit_code": 101,
+    "regression_detected": true,
+    "stdout": "\nrunning 1 test\ntest repeated_canonicalization_identity_and_snapshots_release_their_allocations ... FAILED\n\nfailures:\n\n---- repeated_canonicalization_identity_and_snapshots_release_their_allocations stdout ----\n\nthread 'repeated_canonicalization_identity_and_snapshots_release_their_allocations' panicked at tests/allocation_regression.rs:102:5:\nassertion `left == right` failed: temporary canonical buffers must be freed\n  left: 2102272\n right: 0\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\n\nfailures:\n    repeated_canonicalization_identity_and_snapshots_release_their_allocations\n\ntest result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s\n\n",
+    "stderr": "   Compiling mdc_core v0.1.0 (/tmp/mdc-impl-001-regression-controls/legacy-leak)\nwarning: calls to `std::mem::drop` with a reference instead of an owned value does nothing\n  --> tests/allocation_regression.rs:96:9\n   |\n96 |         drop(black_box(observation.canonical_basis()));\n   |         ^^^^^----------------------------------------^\n   |              |\n   |              argument has type `&[u8]`\n   |\n   = note: `#[warn(dropping_references)]` on by default\nhelp: use `let _ = ...` to ignore the expression or result\n   |\n96 -         drop(black_box(observation.canonical_basis()));\n96 +         let _ = black_box(observation.canonical_basis());\n   |\n\nwarning: `mdc_core` (test \"allocation_regression\") generated 1 warning\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.27s\n     Running tests/allocation_regression.rs (/tmp/mdc-impl-001-regression-controls/original_memory_leak_detected-target/debug/deps/allocation_regression-d2740d3baa31e565)\nerror: test failed, to rerun pass `--test allocation_regression`\n"
+  },
+  {
+    "name": "double_basis_regression_detected",
+    "command": [
+      "cargo",
+      "test",
+      "--locked",
+      "--offline",
+      "--test",
+      "technical_foundation",
+      "snapshot_captures_one_basis_even_if_successive_calls_differ"
+    ],
+    "exit_code": 101,
+    "regression_detected": true,
+    "stdout": "\nrunning 1 test\ntest snapshot_captures_one_basis_even_if_successive_calls_differ ... FAILED\n\nfailures:\n\n---- snapshot_captures_one_basis_even_if_successive_calls_differ stdout ----\n\nthread 'snapshot_captures_one_basis_even_if_successive_calls_differ' panicked at tests/technical_foundation.rs:35:5:\nassertion `left == right` failed\n  left: 2\n right: 1\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\n\nfailures:\n    snapshot_captures_one_basis_even_if_successive_calls_differ\n\ntest result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 2 filtered out; finished in 0.00s\n\n",
+    "stderr": "   Compiling mdc_core v0.1.0 (/tmp/mdc-impl-001-regression-controls/double-basis)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.25s\n     Running tests/technical_foundation.rs (/tmp/mdc-impl-001-regression-controls/double_basis_regression_detected-target/debug/deps/technical_foundation-3bee644a896fe020)\nerror: test failed, to rerun pass `--test technical_foundation`\n"
+  }
+]

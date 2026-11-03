@@ -1,0 +1,742 @@
+{
+  "package": "MDC-IMPL-009",
+  "repository": "7two77/MDCCORE",
+  "commit_sha": "d33bb979c0b8b6a69126fd79544d3f43e5df9d3b",
+  "branch": "mdc/impl-009-evaluation-retention",
+  "push_run": {
+    "id": 41614270848,
+    "url": "https://github.com/7two77/MDCCORE/actions/runs/41614270848",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-11-03T09:50:25Z",
+    "updated_at": "2026-11-03T09:51:01Z"
+  },
+  "pull_request": {
+    "number": 1,
+    "url": "https://github.com/7two77/MDCCORE/pull/1",
+    "base": "mdc/impl-008-lifecycle",
+    "head": "mdc/impl-009-evaluation-retention",
+    "draft": true
+  },
+  "pr_run": {
+    "id": 41614323975,
+    "url": "https://github.com/7two77/MDCCORE/actions/runs/41614323975",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "jobs": [
+    {
+      "id": 125843660927,
+      "name": "Rust 1.85.1 / alloc",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 41614270848,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Install Rust toolchain and components",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Verify library, examples, and E2E evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Retain verification evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        }
+      ]
+    },
+    {
+      "id": 125843661340,
+      "name": "Rust 1.98.0 / default",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 41614270848,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Install Rust toolchain and components",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Verify library, examples, and E2E evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Retain verification evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        }
+      ]
+    },
+    {
+      "id": 125843661349,
+      "name": "Rust 1.85.1 / default",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 41614270848,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Install Rust toolchain and components",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Verify library, examples, and E2E evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Retain verification evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        }
+      ]
+    },
+    {
+      "id": 125843661354,
+      "name": "Rust 1.98.0 / alloc",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 41614270848,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Install Rust toolchain and components",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Verify library, examples, and E2E evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Retain verification evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        }
+      ]
+    },
+    {
+      "id": 125843661453,
+      "name": "Rust 1.85.1 / std-alloc",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 41614270848,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Install Rust toolchain and components",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Verify library, examples, and E2E evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Retain verification evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        }
+      ]
+    },
+    {
+      "id": 125843661464,
+      "name": "Rust 1.98.0 / std-alloc",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 41614270848,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Install Rust toolchain and components",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Verify library, examples, and E2E evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Retain verification evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 13221140512,
+      "name": "mdc-ci-1.85.1-default",
+      "size_in_bytes": 257980,
+      "digest": "sha256:bb9e53aaa67f4c6288f3c5c4196f778b5bf297fc0cbd6430fae4280647a32941",
+      "expired": false
+    },
+    {
+      "id": 13221110570,
+      "name": "mdc-ci-1.98.0-std-alloc",
+      "size_in_bytes": 257635,
+      "digest": "sha256:df243027b979d63bdd0587ad8f8f494b207b64ffdaa23afb3e7fbf8ac1b5a6b6",
+      "expired": false
+    },
+    {
+      "id": 13220507349,
+      "name": "mdc-ci-1.98.0-alloc",
+      "size_in_bytes": 257642,
+      "digest": "sha256:cda7e0228e88ce436eb0e7722481767a90acb07294a5e7c880373cd5d2ae55fe",
+      "expired": false
+    },
+    {
+      "id": 13220347810,
+      "name": "mdc-ci-1.85.1-alloc",
+      "size_in_bytes": 257645,
+      "digest": "sha256:8f4fa9ef89412746abe2e21eb7c3bad4a861969f6a13ef720e26a5f1b0ada885",
+      "expired": false
+    },
+    {
+      "id": 13219918938,
+      "name": "mdc-ci-1.85.1-std-alloc",
+      "size_in_bytes": 257656,
+      "digest": "sha256:8887e66507a913b4aec22c5eb2e344f03fedc3430bfb97db619dcb1d5f5f17a3",
+      "expired": false
+    },
+    {
+      "id": 13219559767,
+      "name": "mdc-ci-1.98.0-default",
+      "size_in_bytes": 257981,
+      "digest": "sha256:6120684f6795d294cb4cdaed0ade74f20315c349c910855990b38689a26f5da3",
+      "expired": false
+    }
+  ],
+  "source_sha256": "d5e5f48b47910d9095fa6c7cd5f40a4155d6ea44db70415fbce62d3553d00b1e",
+  "scope": "Hosted push-run artifacts are independently inspected; local preparation records remain historical.",
+  "main_modified": false,
+  "acceptance": "PASS",
+  "verified_at": "2026-11-03T09:55:10.849494+00:00",
+  "hosted_matrix_jobs_passed": 6,
+  "artifact_bundles_verified": 6,
+  "verification": [
+    {
+      "artifact": "mdc-ci-1.85.1-default",
+      "artifact_id": 13221140512,
+      "zip_sha256_verified": true,
+      "metadata_commit_verified": true,
+      "metadata_worktree_clean": true,
+      "source_and_ci_hashes_verified": true,
+      "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7",
+      "profile": "default",
+      "rust_tests_passed": 168,
+      "rust_tests_failed": 0,
+      "python_checks_passed": 17,
+      "e2e_cases_per_process": [
+        23,
+        23
+      ],
+      "e2e_validation_errors": [],
+      "legacy_008_canonical_graph_and_lineage": "MATCH",
+      "lifecycle_repeated_identical": true,
+      "legacy_008_event_sha256": "36daa543e61875b193c7287a86ebb08cddfa35b866d22e40abc1ccc1f2ddfaa0",
+      "keyed_example_repeated_identical": true,
+      "canonical_keys_snapshot_sha256": "77e72edcdfbf7516d6c983f25486253a4c73dbf7a101e8ed833738d6cf1a876e",
+      "artifact_file_sha256": {
+        "clippy.log": "440550082d14a3a81d0dd8edec17cc29875a7a3e64942c6669da5c7948c9e5ba",
+        "e2e.log": "9882e360723f5f356fcd6a70ef10cf70d6296af44b81419734210e840b66b95d",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "execution.json": "b83cf3f79b19980e856f701cf9b47a6d65437716f48ed9452c7e1e55f5494a76",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "977dd93dd598ff0372faacff716ca3cc9307aecd838e78a05ca69cd321b45e6d",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "metadata.json": "b89b4340c02866ba2580004b005ba7e8cee62921ce94fb14c05e549e09437b12",
+        "no-alloc-rejection.log": "5597cc3314c4d9796b60246d043e9f118b9083af718868e0eb0d60685b24fb8f",
+        "tests.log": "61426e52916eeae2e6e9a3cc164e146922291925ff9a37c546e497dc2cd94afd",
+        "validator-tests.log": "7b2b87750f6664ea97f1d030f8aae5b4baf0835e91ab4a2549a1de3308f34680"
+      }
+    },
+    {
+      "artifact": "mdc-ci-1.98.0-std-alloc",
+      "artifact_id": 13221110570,
+      "zip_sha256_verified": true,
+      "metadata_commit_verified": true,
+      "metadata_worktree_clean": true,
+      "source_and_ci_hashes_verified": true,
+      "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)\nbinary: rustc\ncommit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea\ncommit-date: 2026-08-18\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.0\nLLVM version: 22.1.8",
+      "profile": "std-alloc",
+      "rust_tests_passed": 168,
+      "rust_tests_failed": 0,
+      "python_checks_passed": 17,
+      "e2e_cases_per_process": [
+        23,
+        23
+      ],
+      "e2e_validation_errors": [],
+      "legacy_008_canonical_graph_and_lineage": "MATCH",
+      "lifecycle_repeated_identical": true,
+      "legacy_008_event_sha256": "36daa543e61875b193c7287a86ebb08cddfa35b866d22e40abc1ccc1f2ddfaa0",
+      "keyed_example_repeated_identical": true,
+      "canonical_keys_snapshot_sha256": "77e72edcdfbf7516d6c983f25486253a4c73dbf7a101e8ed833738d6cf1a876e",
+      "artifact_file_sha256": {
+        "clippy.log": "8849c32ed68db10b24a1db30b47ef0702847802d47675dc836962ed6c50d1cad",
+        "e2e.log": "9882e360723f5f356fcd6a70ef10cf70d6296af44b81419734210e840b66b95d",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "execution.json": "ee0a4bc4442ef5a42f28326d01a73441ad5c46414b7eaaed50dc61ce45f829c9",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "977dd93dd598ff0372faacff716ca3cc9307aecd838e78a05ca69cd321b45e6d",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "metadata.json": "c572ab218abade8cb8e971277a929ab36664d56881cacd5847fb396cb2638f11",
+        "tests.log": "94d606d1eb8e3eacb8a47980d6ffd22f38a6afb6f674c35b972a8cabafce2de4",
+        "validator-tests.log": "c659d3d9508b8058c22078f4f00e5647cda05b37f6d757c5caa21210bfe0a76b"
+      }
+    },
+    {
+      "artifact": "mdc-ci-1.98.0-alloc",
+      "artifact_id": 13220507349,
+      "zip_sha256_verified": true,
+      "metadata_commit_verified": true,
+      "metadata_worktree_clean": true,
+      "source_and_ci_hashes_verified": true,
+      "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)\nbinary: rustc\ncommit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea\ncommit-date: 2026-08-18\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.0\nLLVM version: 22.1.8",
+      "profile": "alloc",
+      "rust_tests_passed": 168,
+      "rust_tests_failed": 0,
+      "python_checks_passed": 17,
+      "e2e_cases_per_process": [
+        23,
+        23
+      ],
+      "e2e_validation_errors": [],
+      "legacy_008_canonical_graph_and_lineage": "MATCH",
+      "lifecycle_repeated_identical": true,
+      "legacy_008_event_sha256": "36daa543e61875b193c7287a86ebb08cddfa35b866d22e40abc1ccc1f2ddfaa0",
+      "keyed_example_repeated_identical": true,
+      "canonical_keys_snapshot_sha256": "77e72edcdfbf7516d6c983f25486253a4c73dbf7a101e8ed833738d6cf1a876e",
+      "artifact_file_sha256": {
+        "clippy.log": "e587723587b9672c9a69c8f2818f4bc45e8abfaa797e4531afac98655f79d370",
+        "e2e.log": "9882e360723f5f356fcd6a70ef10cf70d6296af44b81419734210e840b66b95d",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "execution.json": "4f73fed081a8844e89ddbba92e29188b3cdb84508017b2f92f57f74850778329",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "f1271765acd2f6afcb440662ed2b9b88fddc61163c5b280ba78e063af81aa459",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "metadata.json": "2c841b003d2a4f03fe3181d7ea06bdfff6f327444d5e5386d185c025db6ab093",
+        "tests.log": "74bd131e4552d6a889a1d7fcedf5ff6cc9ffb1d1910233a82aee8902e117df23",
+        "validator-tests.log": "9392edfb87010112c00b67f398bd73eec0042cbaf87e30abfddf51039435f0e3"
+      }
+    },
+    {
+      "artifact": "mdc-ci-1.85.1-alloc",
+      "artifact_id": 13220347810,
+      "zip_sha256_verified": true,
+      "metadata_commit_verified": true,
+      "metadata_worktree_clean": true,
+      "source_and_ci_hashes_verified": true,
+      "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7",
+      "profile": "alloc",
+      "rust_tests_passed": 168,
+      "rust_tests_failed": 0,
+      "python_checks_passed": 17,
+      "e2e_cases_per_process": [
+        23,
+        23
+      ],
+      "e2e_validation_errors": [],
+      "legacy_008_canonical_graph_and_lineage": "MATCH",
+      "lifecycle_repeated_identical": true,
+      "legacy_008_event_sha256": "36daa543e61875b193c7287a86ebb08cddfa35b866d22e40abc1ccc1f2ddfaa0",
+      "keyed_example_repeated_identical": true,
+      "canonical_keys_snapshot_sha256": "77e72edcdfbf7516d6c983f25486253a4c73dbf7a101e8ed833738d6cf1a876e",
+      "artifact_file_sha256": {
+        "clippy.log": "b34ad92caf5b86223390d1a7b22de88aefe49ed34f5bbd215d70ad56a6821eb4",
+        "e2e.log": "9882e360723f5f356fcd6a70ef10cf70d6296af44b81419734210e840b66b95d",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "execution.json": "cd3c19c3a464d44fe367b3d3a8a7b721e88e3908a2ce2a98207e46345801aec2",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "d828a704d52b47d1876a89bb6b6f294618736acbbd7e80dc12dfc47ad5453ff9",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "metadata.json": "1a2d8f51f43ae6d9490e157d1919021a5ea8c03ee37ac929b6e7bc2a75e6f97b",
+        "tests.log": "0946e472fbf5ac55b0649f77e2cc4ed192296dad43f130c2b4017d389cd77add",
+        "validator-tests.log": "08ac331dd40884f1a8ec1aa29746e4f9e133152262551003030a11a99229b701"
+      }
+    },
+    {
+      "artifact": "mdc-ci-1.85.1-std-alloc",
+      "artifact_id": 13219918938,
+      "zip_sha256_verified": true,
+      "metadata_commit_verified": true,
+      "metadata_worktree_clean": true,
+      "source_and_ci_hashes_verified": true,
+      "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7",
+      "profile": "std-alloc",
+      "rust_tests_passed": 168,
+      "rust_tests_failed": 0,
+      "python_checks_passed": 17,
+      "e2e_cases_per_process": [
+        23,
+        23
+      ],
+      "e2e_validation_errors": [],
+      "legacy_008_canonical_graph_and_lineage": "MATCH",
+      "lifecycle_repeated_identical": true,
+      "legacy_008_event_sha256": "36daa543e61875b193c7287a86ebb08cddfa35b866d22e40abc1ccc1f2ddfaa0",
+      "keyed_example_repeated_identical": true,
+      "canonical_keys_snapshot_sha256": "77e72edcdfbf7516d6c983f25486253a4c73dbf7a101e8ed833738d6cf1a876e",
+      "artifact_file_sha256": {
+        "clippy.log": "f4e21f36c6b68efc9ad42d11fc3398d59d236f6b627b8c03697fd1a3417f1819",
+        "e2e.log": "9882e360723f5f356fcd6a70ef10cf70d6296af44b81419734210e840b66b95d",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "execution.json": "b09cbfa73182f517b6d1792256c3c52719d6044713c24033360c4c946b68ac03",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "c8100a6c62934f540d2924dac858571950d4103a0f7935e45de78b4abf3111a1",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "metadata.json": "a0676bfcb61b97a91318b89fd06c525b6fe4e8b6818bd02e92d1e191b39f1466",
+        "tests.log": "2a5da9bf1a4ad343c867e298960804d6ca5737762e4e2837e8a659a3d887430c",
+        "validator-tests.log": "b17b50743cfd92fa4290502a629069e5403a6695c603e568e3b2c1e0dab8983e"
+      }
+    },
+    {
+      "artifact": "mdc-ci-1.98.0-default",
+      "artifact_id": 13219559767,
+      "zip_sha256_verified": true,
+      "metadata_commit_verified": true,
+      "metadata_worktree_clean": true,
+      "source_and_ci_hashes_verified": true,
+      "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)\nbinary: rustc\ncommit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea\ncommit-date: 2026-08-18\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.0\nLLVM version: 22.1.8",
+      "profile": "default",
+      "rust_tests_passed": 168,
+      "rust_tests_failed": 0,
+      "python_checks_passed": 17,
+      "e2e_cases_per_process": [
+        23,
+        23
+      ],
+      "e2e_validation_errors": [],
+      "legacy_008_canonical_graph_and_lineage": "MATCH",
+      "lifecycle_repeated_identical": true,
+      "legacy_008_event_sha256": "36daa543e61875b193c7287a86ebb08cddfa35b866d22e40abc1ccc1f2ddfaa0",
+      "keyed_example_repeated_identical": true,
+      "canonical_keys_snapshot_sha256": "77e72edcdfbf7516d6c983f25486253a4c73dbf7a101e8ed833738d6cf1a876e",
+      "artifact_file_sha256": {
+        "clippy.log": "7690916c9e9fe9366f216e8342bac82184e0a441eb22e9d6c7869e27f176f931",
+        "e2e.log": "9882e360723f5f356fcd6a70ef10cf70d6296af44b81419734210e840b66b95d",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "execution.json": "39b7c9b9431d20fc076e6902b705d3ea45355767a344aff759af634cb011259f",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "34273a5375c186f81ffef2f54451a66333a5e8f1ecf1a9ef7cd48c5f921e49b6",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "metadata.json": "ea3d29462a43c2bc4fdcdc04c2a42cf5bf1f6c7bb621cef0297098396abea38d",
+        "no-alloc-rejection.log": "5597cc3314c4d9796b60246d043e9f118b9083af718868e0eb0d60685b24fb8f",
+        "tests.log": "6d905f9f4b301e9afea2599e908a81660c84f93b3b0b3cde245125ab66b8840b",
+        "validator-tests.log": "61d8d0f3ef6f9d001b9b8b4dc5731a55e031f24e9cb73f6bbe6c8474b07608da"
+      }
+    }
+  ],
+  "compatibility": "008 graph, lineage and lifecycle canonical event MATCH",
+  "main_sha_unchanged": "5bd25557aed4a6dcb08b7fb1bc2d14e91ca81dbf",
+  "remote_base_sha_unchanged": "70f37fc2b510f9436f1208ee378017dec444537e",
+  "codespaces_checkout_changed": false
+}
