@@ -74,6 +74,14 @@ NOT_EXECUTED/UNVERIFIED; текущая [матрица v0.5](MDC-CONTRACT-TO-IM
 и feature branches может менять semantic code, сохраняя факт исходной интеграции.
 History guard не закрепляет 010 как неизменяемую текущую реализацию навсегда.
 
+[Local controls](evidence/integration-guard-controls.json) исполнили десять
+сценариев: три положительных и семь ожидаемых отказов (одна история, squash,
+обратный порядок parents, изменённые source/archive/исторический README).
+Контрольный future-code commit проходит history mode и отклоняется candidate mode.
+Синтетические commits создавались как локальные Git objects без изменения public refs.
+[Local native CI](evidence/integration-local-verification.json) подтвердил
+176 Rust tests, 17 E2E Python tests и 4 comparison Python tests на bridge commit.
+
 ```bash
 python3 -B .github/ci/check_integration.py --candidate
 python3 -B scripts/check_gate_readiness.py
