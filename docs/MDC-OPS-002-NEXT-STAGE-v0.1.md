@@ -1,6 +1,6 @@
 # MDC-OPS-002 — Следующий этап: решения и сценарии приёмки v0.1
 
-Дата: 2026-11-03. Статус: DRAFT / DECISIONS OPEN.
+Дата: 2026-11-03. Статус: CORE CONSUMER DECISIONS CONFIRMED / 011 CONTRACT IN PROGRESS.
 База: main `6177277f12bc7a67861dc365e96340409bed8d34`.
 Последний функциональный пакет: MDC-IMPL-010. Этот документ инициирует подготовку
 следующего этапа, не вводит новые semantic contracts и не назначает продуктовые
@@ -59,15 +59,15 @@ recovery; оба механизма не являются предусловие
 
 ## Два решения владельца, определяющие ближайшую реализацию
 
-DR-N01 — первый практический сценарий: OPEN.
-Варианты: встраиваемая Rust-библиотека; долго работающий сервис; исторический replay.
-Нужен один пример входа и полезного результата. Наличие generic examples не
-заменяет подтверждение такого потребителя.
+DR-N01 — первый практический сценарий: CONFIRMED, 2026-11-03.
+Владелец выбрал исторический replay для исследования закономерностей с дальнейшей
+эволюцией в длительно работающий сервис. Торговый adapter является отдельным
+потребителем core; его domain contracts и temporal availability фиксируются отдельно.
 
-DR-N02 — восстановление после перезапуска: OPEN.
-Варианты: точное восстановление принятого графа/истории; допустимо пересоздание из
-источников; требование пока неизвестно. Это влияет на выбор следующего пакета.
-Отсутствие ответа не считается выбором варианта.
+DR-N02 — восстановление после перезапуска: CONFIRMED, 2026-11-03.
+Требуется точное восстановление принятого графа, Evaluation и lifecycle/audit history.
+Следующий функциональный пакет — MDC-IMPL-011. Crash-safe commit/storage — следующий
+отдельный contract после snapshot roundtrip; успешный in-memory replay его не доказывает.
 
 Уточнения после этих двух решений:
 - Для replay: требуется ли causal cutoff отдельно от timestamp наблюдения?
@@ -98,8 +98,12 @@ DR-N05 — import validation, PROPOSED.
 Явно captured unresolved references в invalid artifacts/Evaluations сохраняются;
 они не являются повреждением только потому, что ссылка не разрешается.
 Незавершённый import не меняет существующий admitted graph.
-Re-evaluation и повторное admission не используются как способ «восстановить»
-historical snapshot: позднее появившиеся inputs не должны переписать старый отказ.
+Восстановление не оценивает старые artifacts против финального/текущего графа:
+позднее появившиеся inputs не должны переписать старый отказ. Для 011 выбран
+отдельный recorded-session профиль: полный replay исходных операций по frozen
+definitions в исходном порядке, с exact-byte проверкой каждого outcome и полного
+state manifest. Он применим к сессиям, записываемым с создания, и не является
+общим structural importer произвольного незаписанного Pipeline.
 
 DR-N06 — storage boundary, PROPOSED.
 Сохранить std и no_std+alloc kernel. Filesystem/network/clock и durable commit
@@ -166,6 +170,6 @@ Recovery восстанавливает заявленную committed гран�
 Обновлён post-merge checkpoint и текущая матрица; описаны decisions/dependencies
 и acceptance scenarios. Code/API, identity defaults, source fingerprint, Cargo
 manifests/lockfiles и исторические receipts сохранены. Функциональный номер 011
-предлагается для snapshot только при выборе соответствующего требования.
+подтверждён для snapshot согласно DR-N01/DR-N02.
 Выбор владельца записывается отдельным decision record, затем начинается
 contract-to-test-to-implementation работа в feature branch.
