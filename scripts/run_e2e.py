@@ -7,12 +7,12 @@ from pathlib import Path
 import subprocess
 import sys
 
-from e2e_report import source_fingerprint, validate_bundle, validate_execution
+from e2e_report import DEFAULT_REPORT, source_fingerprint, validate_bundle, validate_execution
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", default="docs/evidence/mdc-e2e-conformance-001.json")
+    parser.add_argument("--output", default=DEFAULT_REPORT)
     parser.add_argument("--no-default-features", action="store_true")
     parser.add_argument("--features", default="")
     args = parser.parse_args()

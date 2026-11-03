@@ -26,7 +26,10 @@ pub struct TransitionRequest {
 impl Pipeline {
     pub fn derive_state(&mut self, request: StateRequest) -> Result<ObjectRef, PipelineError> {
         match self.try_derive_state(&request) {
-            Ok(reference) => Ok(reference),
+            Ok(reference) => {
+                self.track_lifecycle_birth(&reference);
+                Ok(reference)
+            }
             Err(error) => {
                 self.record_rejection(RejectedRequest::State(request), error.clone());
                 Err(error)
@@ -42,6 +45,7 @@ impl Pipeline {
         if !matches!(request.composition, ObjectRef::Composition(_)) {
             return Err(PipelineError::InvalidInputType(request.composition.clone()));
         }
+        self.ensure_usable(&request.composition)?;
         let composition = self
             .resolve_composition(&request.composition)
             .ok_or_else(|| PipelineError::InputUnresolved(request.composition.clone()))?;
@@ -91,7 +95,10 @@ impl Pipeline {
 
     pub fn transition(&mut self, request: TransitionRequest) -> Result<ObjectRef, PipelineError> {
         match self.try_transition(&request) {
-            Ok(reference) => Ok(reference),
+            Ok(reference) => {
+                self.track_lifecycle_birth(&reference);
+                Ok(reference)
+            }
             Err(error) => {
                 self.record_rejection(RejectedRequest::Transition(request), error.clone());
                 Err(error)
@@ -109,6 +116,8 @@ impl Pipeline {
                 return Err(PipelineError::InvalidInputType(reference.clone()));
             }
         }
+        self.ensure_usable(&request.source)?;
+        self.ensure_usable(&request.target)?;
         let source = self
             .resolve_state(&request.source)
             .ok_or_else(|| PipelineError::InputUnresolved(request.source.clone()))?;
@@ -175,6 +184,7 @@ impl Pipeline {
     fn observation_facts(&self) -> Vec<ObservationFact> {
         self.observations
             .values()
+            .filter(|o| self.ensure_usable(&ObjectRef::Observation(o.id())).is_ok())
             .map(|observation| ObservationFact {
                 reference: ObjectRef::Observation(observation.id()),
                 source: observation.source_ref().clone(),

@@ -7,4 +7,5 @@ pub mod structure;
 
 pub(crate) mod invalid_encoding;
 
+pub mod lifecycle;
 pub mod projection;

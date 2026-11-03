@@ -9,13 +9,13 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from e2e_report import source_fingerprint, validate_bundle  # noqa: E402
+from e2e_report import DEFAULT_REPORT, source_fingerprint, validate_bundle  # noqa: E402
 
 
 class EvidenceAcceptanceTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.good = json.loads((ROOT / "docs/evidence/mdc-e2e-conformance-001.json").read_text())
+        cls.good = json.loads((ROOT / DEFAULT_REPORT).read_text())
 
     def reject(self, mutate):
         bundle = copy.deepcopy(self.good)

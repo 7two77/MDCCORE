@@ -6,13 +6,15 @@
 `Cargo.toml`, `src/`, `tests/`. Вложенный каталог `mdc_core/` сохранён как исходный
 материал для сравнения; он не подключён как workspace member.
 
-Текущий рабочий пакет — **MDC-IMPL-007: E2E runner и technical projection isolation**.
-Решения и ограничения описаны в [записи решений](docs/MDC-IMPL-007.md).
-Исторические решения и результаты MDC-IMPL-001…006 сохранены в `docs/`.
+Текущий рабочий пакет — **MDC-IMPL-008: Lifecycle invalidation и зависимости**.
+[Контракт MDC-LIFECYCLE-001/1](docs/MDC-LIFECYCLE-CONTRACT-v0.1.md),
+[реализация и проверки](docs/MDC-IMPL-008.md),
+[матрица v0.2](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.2.md).
+Исторические решения и результаты MDC-IMPL-001…007/OPS-001 сохранены в `docs/`.
 
 **MDC-E2E-CONFORMANCE-001: PASS для объявленного fixture MDC-SCALAR-001.**
 Все 12 assertions E2E-A01…A12 и 11 negative cases N01…N11 выполнены в двух
-раздельных OS-процессах. [Execution evidence](docs/evidence/mdc-e2e-conformance-001.json)
+раздельных OS-процессах. [Execution evidence](docs/evidence/mdc-e2e-conformance-001-impl-008.json)
 содержит фактические результаты, canonical bytes, lineage и snapshots. PASS
 применим к записанным source fingerprint, toolchain, features и target; текущую
 применимость отчёта проверяет `check_gate_readiness.py`.
@@ -47,16 +49,18 @@ cargo run --locked --offline --example source_measurement
 cargo run --locked --offline --example relation_composition
 cargo run --locked --offline --example state_transition
 cargo run --locked --offline --example invalid_artifacts
+cargo run --locked --offline --example lifecycle
 python3 scripts/run_e2e.py
 python3 scripts/check_gate_readiness.py
 python3 -m unittest discover -s tests -p 'test_e2e_report.py'
 ```
 
 Полная матрица команд, результатов и compatibility checks записывается в
-[evidence MDC-IMPL-007](docs/evidence/impl-007.json).
-Подтверждены 124/124 Rust tests в default, `std,alloc` и `no_std + alloc`,
-17/17 Python mutation tests, Format и Clippy. E2E launcher выполнен отдельно
-в default и alloc; оба execution bundles получили PASS.
+[evidence MDC-IMPL-008](docs/evidence/impl-008.json).
+Подтверждены 145/145 Rust tests и 17/17 Python checks в каждом из шести локальных
+запусков: Rust 1.85.1 / 1.98.0 × default, `std,alloc`, `no_std + alloc`.
+Format, Clippy, старый E2E и два прогона lifecycle example проходят.
+Hosted CI пакета 008 ещё NOT_EXECUTED; опубликованный CI baseline проверял a8c15c7.
 Runner исполняется на std-хосте; библиотека сохраняет конфигурацию no_std+alloc.
 Python validator независимо проверяет покрытие cases, ожидаемые semantic
 results, graph/snapshot evidence, projection isolation и fingerprint реализации.
@@ -70,7 +74,11 @@ definitions, actual results и creation-time lineage snapshots. Audit receipt
 Полная reference closure не означает admissibility: invalid objects нельзя
 использовать как admitted inputs. Существующий invalid target Evaluation
 получает TargetInvalid/Fail, а не missing-target Unresolved. Последующая
-invalidation уже admitted objects и propagation по descendants не реализованы.
+invalidation admitted objects выполняется по versioned LifecycleContract с
+propagation по required declared inputs. Исторические canonical snapshots
+сохраняются; текущий status доступен через `Pipeline::lifecycle_view()`.
+Повторная Evaluation отозванного target сохраняет TargetInvalidated, lifecycle
+epoch и причинные event keys. Новые derivation/projection paths проверяют usable границу.
 
 State и Transition с `Pass` либо `Unresolved` остаются `Candidate`; `Fail`
 отклоняет derivation с сохранением всех вычисленных результатов. Наличие
@@ -92,7 +100,7 @@ Technical projection использует зарегистрированный v
 PASS fixture не устанавливает универсальное соответствие MDC для любых данных,
 контрактов, платформ или будущих изменений. Профиль scalar не реализует
 произвольные schemas, units conversion, рыночную интерпретацию, общие external
-evidence contracts или последующую invalidation принятого графа. Native Rust
+evidence contracts, reinstatement или durable lifecycle recovery. Native Rust
 Hash и локальная политика коллизий не дают межплатформенной гарантии identity.
 Отдельная retention коллизий Evaluation остаётся ограничением MDC-IMPL-005/006.
 

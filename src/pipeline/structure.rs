@@ -24,7 +24,10 @@ pub struct CompositionRequest {
 impl Pipeline {
     pub fn relate(&mut self, request: RelationRequest) -> Result<ObjectRef, PipelineError> {
         match self.try_relate(&request) {
-            Ok(reference) => Ok(reference),
+            Ok(reference) => {
+                self.track_lifecycle_birth(&reference);
+                Ok(reference)
+            }
             Err(error) => {
                 self.record_rejection(RejectedRequest::Relation(request), error.clone());
                 Err(error)
@@ -54,7 +57,10 @@ impl Pipeline {
 
     pub fn compose(&mut self, request: CompositionRequest) -> Result<ObjectRef, PipelineError> {
         match self.try_compose(&request) {
-            Ok(reference) => Ok(reference),
+            Ok(reference) => {
+                self.track_lifecycle_birth(&reference);
+                Ok(reference)
+            }
             Err(error) => {
                 self.record_rejection(RejectedRequest::Composition(request), error.clone());
                 Err(error)
@@ -91,6 +97,7 @@ impl Pipeline {
                 if !matches!(reference, ObjectRef::Relation(_)) {
                     return Err(PipelineError::InvalidInputType(reference.clone()));
                 }
+                self.ensure_usable(reference)?;
                 let relation = self
                     .resolve_relation(reference)
                     .ok_or_else(|| PipelineError::InputUnresolved(reference.clone()))?;
@@ -137,6 +144,7 @@ impl Pipeline {
         &self,
         reference: &ObjectRef,
     ) -> Result<ResolvedRelationInput, PipelineError> {
+        self.ensure_usable(reference)?;
         match reference {
             ObjectRef::Observation(_) => {
                 let object = self

@@ -206,7 +206,10 @@ impl Pipeline {
             }
         };
         if let Some(candidate) = self.failed_candidate.take() {
-            debug_assert!(matches!(error, PipelineError::IdentityCollision(_)));
+            debug_assert!(matches!(
+                error,
+                PipelineError::IdentityCollision(_) | PipelineError::InputInvalidated { .. }
+            ));
             match (*candidate, &mut body) {
                 (
                     ComputedCandidate::Measurement(candidate),

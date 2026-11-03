@@ -506,6 +506,19 @@ pub(crate) fn put_pipeline_error(out: &mut Vec<u8>, error: &PipelineError) {
             out.push(19);
             put_object_ref(out, reference);
         }
+        PipelineError::InputInvalidated {
+            reference,
+            revision,
+            events,
+        } => {
+            out.push(20);
+            put_object_ref(out, reference);
+            integer(out, revision);
+            out.extend_from_slice(&(events.len() as u64).to_le_bytes());
+            for event in events {
+                put_bytes(out, event.canonical_key());
+            }
+        }
     }
 }
 

@@ -4,13 +4,13 @@ import argparse
 import json
 from pathlib import Path
 import sys
-from e2e_report import CASE_IDS, source_fingerprint, validate_bundle
+from e2e_report import DEFAULT_REPORT, CASE_IDS, source_fingerprint, validate_bundle
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--manifest-only", action="store_true")
-    parser.add_argument("--report", default="docs/evidence/mdc-e2e-conformance-001.json")
+    parser.add_argument("--report", default=DEFAULT_REPORT)
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     report = Path(args.report)

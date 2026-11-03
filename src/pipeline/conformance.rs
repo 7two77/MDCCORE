@@ -14,21 +14,38 @@ use crate::model::evaluation::{
 use crate::provenance::ObjectRef;
 use alloc::vec::Vec;
 
-struct Subject {
-    kind: TargetType,
+pub(super) struct Subject {
+    pub(super) kind: TargetType,
     id: u64,
-    basis: Vec<u8>,
+    pub(super) basis: Vec<u8>,
     domain: DomainContext,
     frame: Option<RelationContext>,
     dynamics: Option<DynamicsContext>,
     result: R,
     count: Option<usize>,
 }
+impl Subject {
+    pub(super) fn matches_context(&self, context: &DynamicsContext) -> bool {
+        &self.domain == context.frame().domain()
+            && self
+                .frame
+                .as_ref()
+                .is_none_or(|frame| frame == context.frame())
+            && self
+                .dynamics
+                .as_ref()
+                .is_none_or(|versions| versions == context)
+    }
+}
 impl Pipeline {
     /// Always retains invalid evaluations, except a local identity collision.
     pub fn evaluate(&mut self, request: EvaluationRequest) -> Result<ObjectRef, PipelineError> {
         let subject = self.evaluation_subject(&request.target);
         let definition = self.registry.conformance(&request.contract).cloned();
+        let lifecycle = self
+            .lifecycle_view(&request.target)
+            .ok()
+            .filter(|v| !v.invalidated_by.is_empty());
         let mut data = EvaluationData {
             target_basis: subject.as_ref().map(|s| s.basis.clone()).or_else(|| {
                 self.resolve_invalid(&request.target)
@@ -40,6 +57,7 @@ impl Pipeline {
             result: None,
             status: S::Invalid,
             diagnostics: Vec::new(),
+            lifecycle,
         };
         if let Some(contract) = definition {
             let mut precondition_result = None;
@@ -68,6 +86,10 @@ impl Pipeline {
             }
             if data.request.context != contract.context {
                 data.diagnostics.push(D::ContextMismatch);
+                precondition_result = Some(R::Fail);
+            }
+            if subject.is_some() && self.ensure_usable(&data.request.target).is_err() {
+                data.diagnostics.push(D::TargetInvalidated);
                 precondition_result = Some(R::Fail);
             }
             if let Some(subject) = &subject {
@@ -205,7 +227,9 @@ impl Pipeline {
         let id = artifact.id();
         self.check_identity(id, &artifact.canonical_basis())?;
         self.evaluations.entry(id).or_insert(artifact);
-        Ok(ObjectRef::Evaluation(id))
+        let reference = ObjectRef::Evaluation(id);
+        self.track_lifecycle_birth(&reference);
+        Ok(reference)
     }
     pub fn resolve_evaluation(&self, reference: &ObjectRef) -> Option<&ConformanceEvaluation> {
         if let ObjectRef::Evaluation(id) = reference {
@@ -217,7 +241,7 @@ impl Pipeline {
     pub fn evaluation_count(&self) -> usize {
         self.evaluations.len()
     }
-    fn evaluation_subject(&self, reference: &ObjectRef) -> Option<Subject> {
+    pub(super) fn evaluation_subject(&self, reference: &ObjectRef) -> Option<Subject> {
         let (kind, id, basis, domain, frame, dynamics, result, count) = match reference {
             ObjectRef::Observation(_) => {
                 let x = self.resolve_observation(reference)?;

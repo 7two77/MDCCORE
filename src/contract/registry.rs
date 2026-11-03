@@ -2,6 +2,7 @@
 use super::conformance::{
     ConformanceContract, ConformanceCriterionContract, ConformanceCriterionKind, TargetType,
 };
+use super::lifecycle::LifecycleContract;
 use super::projection::ProjectionProfile;
 
 use super::dynamics::{
@@ -132,11 +133,13 @@ pub enum RegistryError {
     InvalidConformanceDefinition,
     ProjectionConformanceUnresolved(VersionedId),
     ProjectionContractMismatch,
+    InvalidLifecycleReasons,
 }
 
 /// A registry never replaces a previously registered contract version.
 #[derive(Default)]
 pub struct Registry {
+    lifecycle: BTreeMap<VersionedId, LifecycleContract>,
     projections: BTreeMap<VersionedId, ProjectionProfile>,
     conformance_criteria: BTreeMap<VersionedId, ConformanceCriterionContract>,
     conformance: BTreeMap<VersionedId, ConformanceContract>,
@@ -155,6 +158,25 @@ pub struct Registry {
 impl Registry {
     pub fn new() -> Self {
         Self::default()
+    }
+
+    pub fn register_lifecycle(
+        &mut self,
+        mut contract: LifecycleContract,
+    ) -> Result<(), RegistryError> {
+        if self.lifecycle.contains_key(&contract.reference) {
+            return Err(RegistryError::DuplicateReference(contract.reference));
+        }
+        contract.allowed_reasons.sort();
+        if contract.allowed_reasons.is_empty()
+            || contract.allowed_reasons.windows(2).any(|p| p[0] == p[1])
+        {
+            return Err(RegistryError::InvalidLifecycleReasons);
+        }
+        insert(&mut self.lifecycle, contract.reference.clone(), contract)
+    }
+    pub fn lifecycle(&self, reference: &VersionedId) -> Option<&LifecycleContract> {
+        self.lifecycle.get(reference)
     }
 
     pub fn register_schema(&mut self, contract: SchemaContract) -> Result<(), RegistryError> {

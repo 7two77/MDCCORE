@@ -8,4 +8,5 @@ pub mod transition;
 pub mod evaluation;
 pub mod invalid;
 
+pub mod lifecycle;
 pub mod representation;

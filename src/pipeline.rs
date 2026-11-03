@@ -19,6 +19,7 @@ use crate::model::state::{AdmittedState, StateError};
 use crate::model::transition::{AdmittedTransition, TransitionError};
 use crate::provenance::ObjectRef;
 
+mod lifecycle;
 mod projection;
 pub use projection::{ProjectionError, ProjectionRequest};
 mod conformance;
@@ -66,6 +67,11 @@ pub enum PipelineError {
     Transition(TransitionError),
     IdentityCollision(u64),
     ProvenanceIncomplete(ObjectRef),
+    InputInvalidated {
+        reference: ObjectRef,
+        revision: u64,
+        events: Vec<crate::model::lifecycle::LifecycleEventId>,
+    },
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
@@ -104,6 +110,10 @@ impl RejectedAttempt {
 }
 
 pub struct Pipeline {
+    lifecycle_events: Vec<crate::model::lifecycle::LifecycleEvent>,
+    lifecycle_rejections: Vec<crate::model::lifecycle::LifecycleRejection>,
+    lifecycle_invalid: BTreeSet<ObjectRef>,
+    lifecycle_birth: BTreeMap<ObjectRef, u64>,
     registry: Registry,
     observations: BTreeMap<u64, AdmittedObservation>,
     measurements: BTreeMap<u64, Measurement>,
@@ -120,6 +130,10 @@ pub struct Pipeline {
 impl Pipeline {
     pub fn new(registry: Registry) -> Self {
         Self {
+            lifecycle_events: Vec::new(),
+            lifecycle_rejections: Vec::new(),
+            lifecycle_invalid: BTreeSet::new(),
+            lifecycle_birth: BTreeMap::new(),
             registry,
             observations: BTreeMap::new(),
             measurements: BTreeMap::new(),
@@ -140,7 +154,10 @@ impl Pipeline {
 
     pub fn admit(&mut self, request: ObservationRequest) -> Result<ObjectRef, PipelineError> {
         match self.try_admit(&request) {
-            Ok(reference) => Ok(reference),
+            Ok(reference) => {
+                self.track_lifecycle_birth(&reference);
+                Ok(reference)
+            }
             Err(error) => {
                 self.record_rejection(RejectedRequest::Observation(request), error.clone());
                 Err(error)
@@ -173,7 +190,10 @@ impl Pipeline {
 
     pub fn measure(&mut self, request: MeasurementRequest) -> Result<ObjectRef, PipelineError> {
         match self.try_measure(&request) {
-            Ok(reference) => Ok(reference),
+            Ok(reference) => {
+                self.track_lifecycle_birth(&reference);
+                Ok(reference)
+            }
             Err(error) => {
                 self.record_rejection(RejectedRequest::Measurement(request), error.clone());
                 Err(error)
@@ -205,6 +225,7 @@ impl Pipeline {
     }
 
     fn resolve_input(&self, reference: &ObjectRef) -> Result<ResolvedInput, PipelineError> {
+        self.ensure_usable(reference)?;
         match reference {
             ObjectRef::Observation(_) => {
                 let observation = self
@@ -282,6 +303,21 @@ impl Pipeline {
         });
         if existing.is_some_and(|existing| existing != basis) {
             return Err(PipelineError::IdentityCollision(id));
+        }
+        for reference in &self.lifecycle_invalid {
+            let invalid_id = match reference {
+                ObjectRef::Observation(id)
+                | ObjectRef::Measurement(id)
+                | ObjectRef::Relation(id)
+                | ObjectRef::Composition(id)
+                | ObjectRef::State(id)
+                | ObjectRef::Transition(id)
+                | ObjectRef::Evaluation(id) => *id,
+                _ => continue,
+            };
+            if invalid_id == id {
+                self.ensure_usable(reference)?;
+            }
         }
         Ok(())
     }

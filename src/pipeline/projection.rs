@@ -23,6 +23,7 @@ pub enum ProjectionError {
     ConformanceRequired,
     EvaluationMismatch,
     BackflowForbidden,
+    InvalidatedInput(ObjectRef),
 }
 impl Pipeline {
     pub fn project(&self, request: ProjectionRequest) -> Result<Representation, ProjectionError> {
@@ -30,6 +31,10 @@ impl Pipeline {
             .registry()
             .projection(&request.profile)
             .ok_or(ProjectionError::ProfileUnresolved)?;
+        for reference in [&request.target, &request.evaluation] {
+            self.ensure_usable(reference)
+                .map_err(|_| ProjectionError::InvalidatedInput(reference.clone()))?;
+        }
         let (target_type, basis) = self.projection_source(&request.target)?;
         if target_type != profile.target_type {
             return Err(ProjectionError::InvalidTargetType);

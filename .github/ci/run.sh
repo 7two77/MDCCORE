@@ -14,13 +14,14 @@ esac
 export MDC_CI_REPORT_DIR=${MDC_CI_REPORT_DIR:-"$MDC_CI_ROOT/ci-evidence/$MDC_CI_PROFILE"}
 export MDC_CI_PROFILE
 mkdir -p "$MDC_CI_REPORT_DIR"
+MDC_CI_CURRENT_REPORT=$(python3 -B -c 'from scripts.e2e_report import DEFAULT_REPORT; print(DEFAULT_REPORT)')
 MDC_CI_SAVED_REPORT=$(mktemp)
-cp docs/evidence/mdc-e2e-conformance-001.json "$MDC_CI_SAVED_REPORT"
+cp "$MDC_CI_CURRENT_REPORT" "$MDC_CI_SAVED_REPORT"
 MDC_CI_STEP=metadata
 finish() {
   MDC_CI_EXIT=$?
   set +e
-  cp "$MDC_CI_SAVED_REPORT" docs/evidence/mdc-e2e-conformance-001.json
+  cp "$MDC_CI_SAVED_REPORT" "$MDC_CI_CURRENT_REPORT"
   MDC_CI_RESTORE_EXIT=$?
   rm -f "$MDC_CI_SAVED_REPORT"
   if (( MDC_CI_RESTORE_EXIT != 0 )); then MDC_CI_EXIT=1; fi
@@ -58,11 +59,15 @@ fi
 for MDC_CI_EXAMPLE in source_measurement relation_composition state_transition conformance invalid_artifacts; do
   run_check "example-$MDC_CI_EXAMPLE" cargo run --quiet --locked --offline "${MDC_CI_FEATURES[@]}" --example "$MDC_CI_EXAMPLE"
 done
+for MDC_CI_LIFECYCLE_RUN in 1 2; do
+  run_check "lifecycle-$MDC_CI_LIFECYCLE_RUN" cargo run --quiet --locked --offline "${MDC_CI_FEATURES[@]}" --example lifecycle
+done
+run_check lifecycle-determinism cmp "$MDC_CI_REPORT_DIR/lifecycle-1.log" "$MDC_CI_REPORT_DIR/lifecycle-2.log"
 run_check e2e python3 scripts/run_e2e.py "${MDC_CI_FEATURES[@]}" --output "$MDC_CI_REPORT_DIR/execution.json"
 run_check evidence-check python3 scripts/check_gate_readiness.py --report "$MDC_CI_REPORT_DIR/execution.json"
 # The legacy Python suite reads a fixed path. Supply fresh output for this run,
 # then restore the historical tracked bundle on both success and failure.
-cp "$MDC_CI_REPORT_DIR/execution.json" docs/evidence/mdc-e2e-conformance-001.json
+cp "$MDC_CI_REPORT_DIR/execution.json" "$MDC_CI_CURRENT_REPORT"
 run_check validator-tests python3 -m unittest discover -s tests -p test_e2e_report.py
 MDC_CI_STEP=complete
 printf 'MDC_CI_VERIFY=PASS profile=%s reports=%s\n' "$MDC_CI_PROFILE" "$MDC_CI_REPORT_DIR"

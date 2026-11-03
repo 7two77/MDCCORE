@@ -23,6 +23,7 @@ pub enum EvaluationDiagnostic {
     ProvenanceIncomplete,
     CriterionUnresolved,
     TargetInvalid,
+    TargetInvalidated,
 }
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub struct CriterionAssessment {
@@ -48,6 +49,7 @@ pub(crate) struct EvaluationData {
     pub result: Option<ConformanceResult>,
     pub status: LifecycleStatus,
     pub diagnostics: Vec<EvaluationDiagnostic>,
+    pub lifecycle: Option<crate::model::lifecycle::LifecycleView>,
 }
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub struct ConformanceEvaluation {
@@ -59,6 +61,7 @@ pub struct ConformanceEvaluation {
     result: Option<ConformanceResult>,
     status: LifecycleStatus,
     diagnostics: Vec<EvaluationDiagnostic>,
+    lifecycle: Option<crate::model::lifecycle::LifecycleView>,
     provenance: DerivationProvenance,
 }
 impl ConformanceEvaluation {
@@ -76,6 +79,7 @@ impl ConformanceEvaluation {
             result: data.result,
             status: data.status,
             diagnostics: data.diagnostics,
+            lifecycle: data.lifecycle,
             provenance,
         };
         artifact.id = IdentityAdapter::derive_identity(&artifact);
@@ -104,6 +108,9 @@ impl ConformanceEvaluation {
     }
     pub fn status(&self) -> LifecycleStatus {
         self.status
+    }
+    pub fn lifecycle_context(&self) -> Option<&crate::model::lifecycle::LifecycleView> {
+        self.lifecycle.as_ref()
     }
     pub fn diagnostics(&self) -> &[EvaluationDiagnostic] {
         &self.diagnostics
@@ -169,7 +176,18 @@ impl CanonicalSemanticBasis for ConformanceEvaluation {
                 EvaluationDiagnostic::ProvenanceIncomplete => 4,
                 EvaluationDiagnostic::CriterionUnresolved => 5,
                 EvaluationDiagnostic::TargetInvalid => 6,
+                EvaluationDiagnostic::TargetInvalidated => 7,
             });
+        }
+        if let Some(context) = &self.lifecycle {
+            bytes.extend_from_slice(b"MDC-LIFECYCLE-001/evaluation-context/v1\0");
+            bytes.extend_from_slice(&context.revision.to_le_bytes());
+            bytes.extend_from_slice(&context.admitted_revision.to_le_bytes());
+            bytes.push(context.status as u8);
+            bytes.extend_from_slice(&(context.invalidated_by.len() as u64).to_le_bytes());
+            for event in &context.invalidated_by {
+                put_bytes(&mut bytes, event.canonical_key());
+            }
         }
         put_reference(&mut bytes, self.provenance.contract());
         for input in self.provenance.inputs() {
