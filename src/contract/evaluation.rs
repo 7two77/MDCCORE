@@ -2,10 +2,11 @@ use crate::provenance::Provenance;
 use alloc::vec::Vec;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[repr(u8)]
 pub enum ConformanceResult {
-    Pass,
-    Fail,
-    Unresolved,
+    Pass = 0,
+    Fail = 1,
+    Unresolved = 2,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -35,10 +36,11 @@ pub fn aggregate_results(
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[repr(u8)]
 pub enum LifecycleStatus {
-    Candidate,
-    Conformant,
-    Invalid,
+    Candidate = 0,
+    Conformant = 1,
+    Invalid = 2,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]

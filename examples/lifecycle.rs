@@ -101,7 +101,16 @@ pub fn graph() -> Graph {
     graph_with_registry(registry())
 }
 pub fn graph_with_registry(registry: Registry) -> Graph {
-    let mut p = Pipeline::new(registry);
+    graph_with_identity_protocol(
+        registry,
+        mdc_core::identity::IdentityProtocol::LegacyRustHashFnv64,
+    )
+}
+pub fn graph_with_identity_protocol(
+    registry: Registry,
+    protocol: mdc_core::identity::IdentityProtocol,
+) -> Graph {
+    let mut p = Pipeline::with_identity_protocol(registry, protocol);
     let s1 = core_fixture::state(&mut p, 10, [12, 6]);
     let s2 = core_fixture::state(&mut p, 30, [8, 4]);
     let t = p

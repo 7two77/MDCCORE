@@ -132,18 +132,19 @@ impl CapturedInput {
 }
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd)]
+#[repr(u8)]
 pub enum DefinitionKind {
-    Source,
-    Schema,
-    Operator,
-    Relation,
-    Composition,
-    State,
-    Transition,
-    Constraint,
-    StateCriterion,
-    TransitionCondition,
-    Conformance,
+    Source = 0,
+    Schema = 1,
+    Operator = 2,
+    Relation = 3,
+    Composition = 4,
+    State = 5,
+    Transition = 6,
+    Constraint = 7,
+    StateCriterion = 8,
+    TransitionCondition = 9,
+    Conformance = 10,
 }
 
 #[derive(Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
@@ -228,6 +229,10 @@ impl InvalidSemanticObject {
             unresolved: data.unresolved,
             unresolved_definitions: data.unresolved_definitions,
         }
+    }
+
+    pub(crate) fn seal_identity(&mut self, protocol: crate::identity::IdentityProtocol) {
+        self.id = InvalidId::with_protocol(self.canonical_basis(), protocol);
     }
 
     pub fn id(&self) -> &InvalidId {

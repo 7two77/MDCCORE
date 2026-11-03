@@ -60,6 +60,7 @@ pub struct AdmissionProvenance {
     source: VersionedId,
     schema: VersionedId,
     acquisition_context: String,
+    identity_protocol: crate::identity::IdentityProtocol,
 }
 
 impl AdmissionProvenance {
@@ -76,7 +77,7 @@ impl AdmissionProvenance {
     }
 
     pub fn identity_profile(&self) -> &'static str {
-        "legacy-rust-hash-fnv64"
+        self.identity_protocol.name()
     }
 }
 
@@ -128,11 +129,17 @@ impl AdmittedObservation {
                 source: source.reference.clone(),
                 schema: source.schema.clone(),
                 acquisition_context,
+                identity_protocol: crate::identity::IdentityProtocol::LegacyRustHashFnv64,
             },
         };
         observation.id =
             IdentityAdapter::derive_identity_from_basis(&observation.canonical_basis());
         Ok(observation)
+    }
+
+    pub(crate) fn seal_identity(&mut self, protocol: crate::identity::IdentityProtocol) {
+        self.id = protocol.derive_from_basis(&self.canonical_basis());
+        self.provenance.identity_protocol = protocol;
     }
 
     pub fn id(&self) -> u64 {

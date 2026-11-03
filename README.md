@@ -6,15 +6,18 @@
 `Cargo.toml`, `src/`, `tests/`. Вложенный каталог `mdc_core/` сохранён как исходный
 материал для сравнения; он не подключён как workspace member.
 
-Текущий рабочий пакет — **MDC-IMPL-009: Evaluation collision retention**.
-[Контракт](docs/MDC-EVALUATION-RETENTION-CONTRACT-v0.1.md),
-[реализация и проверки](docs/MDC-IMPL-009.md),
-[матрица v0.3](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.3.md).
-Исторические решения 001…008/OPS-001 сохранены в `docs/`.
+Текущий рабочий пакет — **MDC-IMPL-010: Portable identity**.
+[Контракт](docs/MDC-PORTABLE-IDENTITY-CONTRACT-v0.1.md),
+[реализация и проверки](docs/MDC-IMPL-010.md),
+[матрица v0.4](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.4.md).
+`Pipeline::new()` сохраняет legacy identity; portable graph явно выбирается через
+`Pipeline::with_identity_protocol(registry, IdentityProtocol::PortableV1)`.
+Профиль применяется ко всей цепочке, включая invalid artifacts и lifecycle journal.
+Прежние решения 001…009/OPS-001 сохранены в `docs/`.
 
 **MDC-E2E-CONFORMANCE-001: PASS для объявленного fixture MDC-SCALAR-001.**
 Все 12 assertions E2E-A01…A12 и 11 negative cases N01…N11 выполнены в двух
-раздельных OS-процессах. [Execution evidence](docs/evidence/mdc-e2e-conformance-001-impl-009.json)
+раздельных OS-процессах. [Execution evidence](docs/evidence/mdc-e2e-conformance-001-impl-010.json)
 содержит фактические результаты, canonical bytes, lineage и snapshots. PASS
 применим к записанным source fingerprint, toolchain, features и target; текущую
 применимость отчёта проверяет `check_gate_readiness.py`.
@@ -51,17 +54,21 @@ cargo run --locked --offline --example state_transition
 cargo run --locked --offline --example invalid_artifacts
 cargo run --locked --offline --example lifecycle
 cargo run --locked --offline --example evaluation_retention
+cargo run --locked --offline --example portable_identity
+cargo run --locked --offline --example identity_migration
 python3 scripts/run_e2e.py
 python3 scripts/check_gate_readiness.py
 python3 -m unittest discover -s tests -p 'test_e2e_report.py'
 ```
 
-Полная матрица команд, результатов и compatibility checks записывается в
-[evidence MDC-IMPL-009](docs/evidence/impl-009.json).
-Подтверждены 168/168 Rust tests и 17/17 Python checks в каждом из шести локальных
+Матрица команд, результатов и compatibility checks записана в
+[evidence MDC-IMPL-010](docs/evidence/impl-010-local-verification.json).
+Подтверждены 176/176 Rust tests и 21/21 Python checks (17 E2E + 4 comparison) в каждом из шести локальных
 запусков: Rust 1.85.1 / 1.98.0 × default, `std,alloc`, `no_std + alloc`.
-Format, Clippy, прежний E2E, lifecycle и keyed-reference примеры проходят.
-Hosted CI пакета 009 ещё NOT_EXECUTED; опубликованный CI 008 проверял 70f37fc.
+Format, Clippy, прежний E2E, lifecycle, keyed-reference и portable примеры проходят.
+[Hosted CI 009](https://github.com/7two77/MDCCORE/actions/runs/41614270848) прошёл
+для d33bb97. CI ветки 010 дополнительно исполняет portable tests/graph на i686
+и s390x/QEMU и требует совпадения всех десяти matrix configurations.
 Runner исполняется на std-хосте; библиотека сохраняет конфигурацию no_std+alloc.
 Python validator независимо проверяет покрытие cases, ожидаемые semantic
 results, graph/snapshot evidence, projection isolation и fingerprint реализации.
@@ -102,7 +109,9 @@ PASS fixture не устанавливает универсальное соот
 контрактов, платформ или будущих изменений. Профиль scalar не реализует
 произвольные schemas, units conversion, рыночную интерпретацию, общие external
 evidence contracts, reinstatement или durable lifecycle recovery. Native Rust
-Hash и локальная политика коллизий не дают межплатформенной гарантии identity.
+Hash остаётся непереносимым legacy protocol. Новый opt-in portable v1 имеет
+явные bytes/hash rules и отдельный cross-target gate; гарантия ограничена
+заявленными profiles, inputs и targets. Глобальная уникальность u64 не доказана.
 Evaluation хранится по полному canonical key; коллизия digest не перезаписывает
 другие результаты. Для новых consumers доступны `evaluate_keyed()` и
 `ObjectRef::EvaluationKey`. Numeric aliases закреплены за первым reservation;

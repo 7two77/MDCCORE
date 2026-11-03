@@ -56,7 +56,7 @@ if [[ "$MDC_CI_PROFILE" == default ]]; then
   fi
 fi
 
-for MDC_CI_EXAMPLE in source_measurement relation_composition state_transition conformance invalid_artifacts; do
+for MDC_CI_EXAMPLE in source_measurement relation_composition state_transition conformance invalid_artifacts identity_migration; do
   run_check "example-$MDC_CI_EXAMPLE" cargo run --quiet --locked --offline "${MDC_CI_FEATURES[@]}" --example "$MDC_CI_EXAMPLE"
 done
 for MDC_CI_LIFECYCLE_RUN in 1 2; do
@@ -67,6 +67,13 @@ for MDC_CI_RETENTION_RUN in 1 2; do
   run_check "evaluation-retention-$MDC_CI_RETENTION_RUN" cargo run --quiet --locked --offline "${MDC_CI_FEATURES[@]}" --example evaluation_retention
 done
 run_check evaluation-retention-determinism cmp "$MDC_CI_REPORT_DIR/evaluation-retention-1.log" "$MDC_CI_REPORT_DIR/evaluation-retention-2.log"
+for MDC_CI_PORTABLE_RUN in 1 2; do
+  run_check "portable-$MDC_CI_PORTABLE_RUN" cargo run --quiet --locked --offline "${MDC_CI_FEATURES[@]}" --example portable_identity
+done
+run_check portable-determinism cmp "$MDC_CI_REPORT_DIR/portable-1.log" "$MDC_CI_REPORT_DIR/portable-2.log"
+cargo run --quiet --locked --offline "${MDC_CI_FEATURES[@]}" --example identity_target > "$MDC_CI_REPORT_DIR/target.json"
+run_check portable-check python3 -B scripts/check_portable_identity.py --log "$MDC_CI_REPORT_DIR/portable-1.log" --output "$MDC_CI_REPORT_DIR/portable-verification.json"
+run_check portable-validator-tests env MDC_PORTABLE_LOG="$MDC_CI_REPORT_DIR/portable-1.log" python3 -B -m unittest discover -s tests -p test_portable_identity.py
 run_check e2e python3 scripts/run_e2e.py "${MDC_CI_FEATURES[@]}" --output "$MDC_CI_REPORT_DIR/execution.json"
 run_check evidence-check python3 scripts/check_gate_readiness.py --report "$MDC_CI_REPORT_DIR/execution.json"
 # The legacy Python suite reads a fixed path. Supply fresh output for this run,

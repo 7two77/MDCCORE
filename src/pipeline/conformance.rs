@@ -6,7 +6,7 @@ use crate::contract::evaluation::{
 };
 use crate::contract::registry::DomainContext;
 use crate::contract::structure::RelationContext;
-use crate::identity::{CanonicalSemanticBasis, IdentityAdapter};
+use crate::identity::CanonicalSemanticBasis;
 pub use crate::model::evaluation::EvaluationRequest;
 use crate::model::evaluation::{
     ConformanceEvaluation, CriterionAssessment, EvaluationData, EvaluationDiagnostic as D,
@@ -197,7 +197,7 @@ impl Pipeline {
                             }
                         }
                         ConformanceCriterionKind::IdentityCoherent => {
-                            if IdentityAdapter::derive_identity_from_basis(&subject.basis)
+                            if self.identity_protocol.derive_from_basis(&subject.basis)
                                 == subject.id
                             {
                                 R::Pass
@@ -238,7 +238,8 @@ impl Pipeline {
         } else {
             data.diagnostics.push(D::ContractUnresolved);
         }
-        let artifact = ConformanceEvaluation::new(data);
+        let mut artifact = ConformanceEvaluation::new(data);
+        artifact.seal_identity(self.identity_protocol);
         #[cfg(test)]
         let artifact = {
             let mut artifact = artifact;

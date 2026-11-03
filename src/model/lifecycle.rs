@@ -101,8 +101,12 @@ impl LifecycleEvent {
     pub fn unresolved_definitions(&self) -> &[crate::model::invalid::UnresolvedDefinition] {
         &self.unresolved_definitions
     }
-    pub(crate) fn seal(&mut self) {
-        self.id = LifecycleEventId::new(self.canonical_basis());
+    pub(crate) fn seal(&mut self, protocol: crate::identity::IdentityProtocol) {
+        let canonical_key = self.canonical_basis();
+        self.id = LifecycleEventId {
+            digest: protocol.derive_from_basis(&canonical_key),
+            canonical_key,
+        };
     }
 }
 impl CanonicalSemanticBasis for LifecycleEvent {
