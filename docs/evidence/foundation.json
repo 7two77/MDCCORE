@@ -1,0 +1,140 @@
+{
+  "root": "/workspace/mdc-core",
+  "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)",
+  "cargo": "cargo 1.85.1 (d73d2caf9 2024-12-31)",
+  "checks": [
+    {
+      "name": "default",
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "expected_outcome_observed": true,
+      "tests_passed": 12,
+      "stdout": "\nrunning 6 tests\ntest tests::test_distinct_identity ... ok\ntest tests::test_deterministic_identity ... ok\ntest tests::test_invalid_source_returns_error ... ok\ntest tests::test_positive_chain ... ok\ntest tests::test_semantic_snapshot_preserves_content ... ok\ntest tests::test_snapshot_preserves_identity ... ok\n\ntest result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 1 test\ntest repeated_canonicalization_identity_and_snapshots_release_their_allocations ... ok\n\ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s\n\n\nrunning 2 tests\ntest test_e2e_deterministic_double_run ... ok\ntest test_e2e_no_backflow ... ok\n\ntest result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 3 tests\ntest observation_preserves_the_existing_bytes_and_native_hash_protocol ... ok\ntest observation_basis_remains_owned_after_observation_is_dropped ... ok\ntest snapshot_captures_one_basis_even_if_successive_calls_differ ... ok\n\ntest result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n",
+      "stderr": "    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling mdc_core v0.1.0 (/workspace/mdc-core)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.89s\n     Running unittests src/lib.rs (/tmp/mdc-impl-001-foundation-target/debug/deps/mdc_core-70b18af433677d86)\n     Running tests/allocation_regression.rs (/tmp/mdc-impl-001-foundation-target/debug/deps/allocation_regression-d2740d3baa31e565)\n     Running tests/mdc_e2e_conformance_001.rs (/tmp/mdc-impl-001-foundation-target/debug/deps/mdc_e2e_conformance_001-290bfa6432586c6f)\n     Running tests/technical_foundation.rs (/tmp/mdc-impl-001-foundation-target/debug/deps/technical_foundation-3bee644a896fe020)\n   Doc-tests mdc_core\n"
+    },
+    {
+      "name": "std_alloc",
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "--features",
+        "std,alloc"
+      ],
+      "exit_code": 0,
+      "expected_outcome_observed": true,
+      "tests_passed": 12,
+      "stdout": "\nrunning 6 tests\ntest tests::test_deterministic_identity ... ok\ntest tests::test_distinct_identity ... ok\ntest tests::test_invalid_source_returns_error ... ok\ntest tests::test_positive_chain ... ok\ntest tests::test_semantic_snapshot_preserves_content ... ok\ntest tests::test_snapshot_preserves_identity ... ok\n\ntest result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 1 test\ntest repeated_canonicalization_identity_and_snapshots_release_their_allocations ... ok\n\ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s\n\n\nrunning 2 tests\ntest test_e2e_no_backflow ... ok\ntest test_e2e_deterministic_double_run ... ok\n\ntest result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 3 tests\ntest observation_basis_remains_owned_after_observation_is_dropped ... ok\ntest observation_preserves_the_existing_bytes_and_native_hash_protocol ... ok\ntest snapshot_captures_one_basis_even_if_successive_calls_differ ... ok\n\ntest result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n",
+      "stderr": "    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.00s\n     Running unittests src/lib.rs (/tmp/mdc-impl-001-foundation-target/debug/deps/mdc_core-70b18af433677d86)\n     Running tests/allocation_regression.rs (/tmp/mdc-impl-001-foundation-target/debug/deps/allocation_regression-d2740d3baa31e565)\n     Running tests/mdc_e2e_conformance_001.rs (/tmp/mdc-impl-001-foundation-target/debug/deps/mdc_e2e_conformance_001-290bfa6432586c6f)\n     Running tests/technical_foundation.rs (/tmp/mdc-impl-001-foundation-target/debug/deps/technical_foundation-3bee644a896fe020)\n   Doc-tests mdc_core\n"
+    },
+    {
+      "name": "alloc_only",
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "--no-default-features",
+        "--features",
+        "alloc"
+      ],
+      "exit_code": 0,
+      "expected_outcome_observed": true,
+      "tests_passed": 12,
+      "stdout": "\nrunning 6 tests\ntest tests::test_deterministic_identity ... ok\ntest tests::test_distinct_identity ... ok\ntest tests::test_invalid_source_returns_error ... ok\ntest tests::test_positive_chain ... ok\ntest tests::test_semantic_snapshot_preserves_content ... ok\ntest tests::test_snapshot_preserves_identity ... ok\n\ntest result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 1 test\ntest repeated_canonicalization_identity_and_snapshots_release_their_allocations ... ok\n\ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s\n\n\nrunning 2 tests\ntest test_e2e_deterministic_double_run ... ok\ntest test_e2e_no_backflow ... ok\n\ntest result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 3 tests\ntest observation_basis_remains_owned_after_observation_is_dropped ... ok\ntest observation_preserves_the_existing_bytes_and_native_hash_protocol ... ok\ntest snapshot_captures_one_basis_even_if_successive_calls_differ ... ok\n\ntest result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n",
+      "stderr": "   Compiling mdc_core v0.1.0 (/workspace/mdc-core)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.46s\n     Running unittests src/lib.rs (/tmp/mdc-impl-001-foundation-target/debug/deps/mdc_core-bffe8fb955d3e8d2)\n     Running tests/allocation_regression.rs (/tmp/mdc-impl-001-foundation-target/debug/deps/allocation_regression-e1dc2aa6df0ccee9)\n     Running tests/mdc_e2e_conformance_001.rs (/tmp/mdc-impl-001-foundation-target/debug/deps/mdc_e2e_conformance_001-131d03ca6f9fca97)\n     Running tests/technical_foundation.rs (/tmp/mdc-impl-001-foundation-target/debug/deps/technical_foundation-8cf1cb30bf5f28cd)\n   Doc-tests mdc_core\n"
+    },
+    {
+      "name": "alloc_library_check",
+      "command": [
+        "cargo",
+        "check",
+        "--locked",
+        "--offline",
+        "--no-default-features",
+        "--features",
+        "alloc"
+      ],
+      "exit_code": 0,
+      "expected_outcome_observed": true,
+      "tests_passed": 0,
+      "stdout": "",
+      "stderr": "    Checking mdc_core v0.1.0 (/workspace/mdc-core)\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.03s\n"
+    },
+    {
+      "name": "no_features",
+      "command": [
+        "cargo",
+        "check",
+        "--locked",
+        "--offline",
+        "--no-default-features"
+      ],
+      "exit_code": 101,
+      "expected_outcome_observed": true,
+      "tests_passed": 0,
+      "stdout": "",
+      "stderr": "    Checking mdc_core v0.1.0 (/workspace/mdc-core)\nerror: mdc_core requires allocation: enable the `alloc` feature or the default `std` feature\n --> src/lib.rs:7:1\n  |\n7 | / compile_error!(\n8 | |     \"mdc_core requires allocation: enable the `alloc` feature or the default `std` feature\"\n9 | | );\n  | |_^\n\nerror: could not compile `mdc_core` (lib) due to 1 previous error\n"
+    },
+    {
+      "name": "format",
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "expected_outcome_observed": true,
+      "tests_passed": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "clippy_default",
+      "command": [
+        "cargo",
+        "clippy",
+        "--locked",
+        "--offline",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "expected_outcome_observed": true,
+      "tests_passed": 0,
+      "stdout": "",
+      "stderr": "    Checking mdc_core v0.1.0 (/workspace/mdc-core)\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.13s\n"
+    },
+    {
+      "name": "clippy_alloc",
+      "command": [
+        "cargo",
+        "clippy",
+        "--locked",
+        "--offline",
+        "--no-default-features",
+        "--features",
+        "alloc",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "expected_outcome_observed": true,
+      "tests_passed": 0,
+      "stdout": "",
+      "stderr": "    Checking mdc_core v0.1.0 (/workspace/mdc-core)\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.12s\n"
+    }
+  ]
+}

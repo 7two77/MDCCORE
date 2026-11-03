@@ -1,0 +1,65 @@
+{
+  "package": "MDC-OPS-001",
+  "kind": "local_ci_verification",
+  "profiles": [
+    {
+      "profile": "default",
+      "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7",
+      "status": "PASS",
+      "rust_tests_passed": 124,
+      "python_checks_passed": 17,
+      "e2e_cases_per_process": [
+        23,
+        23
+      ],
+      "source_sha256": "9a907068ef266ae73d30d583a2ecb4eddb47b422078b640c60c5cf9d02569bc6",
+      "ci_driver_sha256": "49edc9830b60ae53ae348e1e8eaeec3f39aaed60596692e855fa422a5b0884da",
+      "historical_bundle_restored": true
+    },
+    {
+      "profile": "std-alloc",
+      "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7",
+      "status": "PASS",
+      "rust_tests_passed": 124,
+      "python_checks_passed": 17,
+      "e2e_cases_per_process": [
+        23,
+        23
+      ],
+      "source_sha256": "9a907068ef266ae73d30d583a2ecb4eddb47b422078b640c60c5cf9d02569bc6",
+      "ci_driver_sha256": "49edc9830b60ae53ae348e1e8eaeec3f39aaed60596692e855fa422a5b0884da",
+      "historical_bundle_restored": true
+    },
+    {
+      "profile": "alloc",
+      "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7",
+      "status": "PASS",
+      "rust_tests_passed": 124,
+      "python_checks_passed": 17,
+      "e2e_cases_per_process": [
+        23,
+        23
+      ],
+      "source_sha256": "9a907068ef266ae73d30d583a2ecb4eddb47b422078b640c60c5cf9d02569bc6",
+      "ci_driver_sha256": "49edc9830b60ae53ae348e1e8eaeec3f39aaed60596692e855fa422a5b0884da",
+      "historical_bundle_restored": true
+    }
+  ],
+  "workflow_lint": {
+    "tool": "actionlint 1.7.7",
+    "status": "PASS",
+    "workflow_sha256": "6fd2f1af06eb182fd6f0cb7cf9f6a31d6f89c44c9318db5bb74feef0eb037041"
+  },
+  "hosted_github_actions_execution": "NOT_EXECUTED",
+  "rust_1_98_ci_driver_execution_here": "NOT_EXECUTED",
+  "codespaces_manual_1_98_checks": "PASS reported by user; raw reports imported only in target environment",
+  "failure_probe": {
+    "purpose": "Intentional validator failure after replacement of the fixed-path report",
+    "expected_exit": 9,
+    "actual_exit": 9,
+    "metadata_status": "FAIL",
+    "last_step": "validator-tests",
+    "historical_bundle_restored": true,
+    "report_directory_type": "relative"
+  }
+}

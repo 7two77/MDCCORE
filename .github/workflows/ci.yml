@@ -1,0 +1,143 @@
+name: MDC Core CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  integration-history:
+    name: Preserve integration ancestry and the 010 source
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      MDC_INTEGRATION_CANDIDATE: ${{ github.ref == 'refs/heads/mdc/integration-v0.1' || github.head_ref == 'mdc/integration-v0.1' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify both original roots, merge parents, files and source fingerprint
+        shell: bash
+        run: |
+          MDC_INTEGRATION_FLAGS=()
+          if [[ "$MDC_INTEGRATION_CANDIDATE" == true ]]; then MDC_INTEGRATION_FLAGS+=(--candidate); fi
+          python3 -B .github/ci/check_integration.py "${MDC_INTEGRATION_FLAGS[@]}" --output integration-history.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mdc-integration-history
+          path: integration-history.json
+          if-no-files-found: error
+          retention-days: 14
+
+  verify:
+    name: Rust ${{ matrix.rust }} / ${{ matrix.profile }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        rust: ["1.85.1", "1.98.0"]
+        profile: [default, std-alloc, alloc]
+    defaults:
+      run:
+        shell: bash
+    env:
+      RUSTUP_TOOLCHAIN: ${{ matrix.rust }}
+      CARGO_TERM_COLOR: never
+      CARGO_INCREMENTAL: "0"
+      CARGO_TARGET_DIR: target
+      MDC_CI_REPORT_DIR: ci-evidence
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Rust toolchain and components
+        run: rustup toolchain install "$RUSTUP_TOOLCHAIN" --profile minimal --component rustfmt --component clippy
+      - name: Verify library, examples, and E2E evidence
+        run: bash .github/ci/run.sh "${{ matrix.profile }}"
+      - name: Retain verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mdc-ci-${{ matrix.rust }}-${{ matrix.profile }}
+          path: ${{ env.MDC_CI_REPORT_DIR }}
+          if-no-files-found: warn
+          retention-days: 14
+
+  portable:
+    name: Portable Rust ${{ matrix.rust }} / ${{ matrix.target }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        rust: ["1.85.1", "1.98.0"]
+        target: [i686-unknown-linux-gnu, s390x-unknown-linux-gnu]
+    env:
+      RUSTUP_TOOLCHAIN: ${{ matrix.rust }}
+      CARGO_INCREMENTAL: "0"
+      CARGO_TERM_COLOR: never
+      MDC_CI_REPORT_DIR: ci-evidence
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install cross target and runtime
+        shell: bash
+        run: |
+          rustup toolchain install "$RUSTUP_TOOLCHAIN" --profile minimal --target "${{ matrix.target }}"
+          sudo apt-get update
+          case "${{ matrix.target }}" in
+            i686-unknown-linux-gnu)
+              sudo apt-get install -y gcc-multilib
+              ;;
+            s390x-unknown-linux-gnu)
+              sudo apt-get install -y gcc-s390x-linux-gnu qemu-user
+              echo 'CARGO_TARGET_S390X_UNKNOWN_LINUX_GNU_LINKER=s390x-linux-gnu-gcc' >> "$GITHUB_ENV"
+              echo 'CARGO_TARGET_S390X_UNKNOWN_LINUX_GNU_RUNNER=qemu-s390x -L /usr/s390x-linux-gnu' >> "$GITHUB_ENV"
+              ;;
+          esac
+      - name: Execute target tests and full portable graph twice
+        run: bash .github/ci/portable.sh "${{ matrix.target }}"
+      - name: Retain portable verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mdc-portable-${{ matrix.rust }}-${{ matrix.target }}
+          path: ci-evidence
+          if-no-files-found: warn
+          retention-days: 14
+
+  portable-comparison:
+    name: Compare portable bytes across toolchains and targets
+    needs: [verify, portable]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          path: portable-artifacts
+      - name: Require all ten executions to match the frozen control
+        run: python3 -B scripts/check_portable_identity.py --compare-root portable-artifacts --output portable-comparison.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mdc-portable-comparison
+          path: portable-comparison.json
+          retention-days: 14

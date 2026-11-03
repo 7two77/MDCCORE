@@ -1,0 +1,602 @@
+{
+  "package": "MDC-IMPL-010",
+  "repository": "7two77/MDCCORE",
+  "branch": "mdc/impl-010-portable-identity",
+  "commit_sha": "b54b30febb7a63adfb12e23bd20ca030b71700da",
+  "base_commit": "d33bb979c0b8b6a69126fd79544d3f43e5df9d3b",
+  "source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b",
+  "push_run": {
+    "id": 41619905838,
+    "url": "https://github.com/7two77/MDCCORE/actions/runs/41619905838",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "pr_run": {
+    "id": 41619912702,
+    "url": "https://github.com/7two77/MDCCORE/actions/runs/41619912702",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "pr": {
+    "number": 2,
+    "url": "https://github.com/7two77/MDCCORE/pull/2",
+    "base": "mdc/impl-009-evaluation-retention",
+    "draft": true
+  },
+  "jobs": [
+    {
+      "id": 125862690482,
+      "name": "Portable Rust 1.98.0 / s390x-unknown-linux-gnu",
+      "conclusion": "success",
+      "rust_tests": 7,
+      "rust_failures": 0,
+      "python_counts": [],
+      "portable_validations": [
+        {
+          "acceptance": "PASS",
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+          "negative_controls": 7
+        }
+      ],
+      "e2e": []
+    },
+    {
+      "id": 125862690710,
+      "name": "Rust 1.98.0 / std-alloc",
+      "conclusion": "success",
+      "rust_tests": 176,
+      "rust_failures": 0,
+      "python_counts": [
+        4,
+        17
+      ],
+      "portable_validations": [
+        {
+          "acceptance": "PASS",
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+          "negative_controls": 7
+        }
+      ],
+      "e2e": [
+        {
+          "acceptance": "PASS",
+          "report": "/home/runner/work/MDCCORE/MDCCORE/ci-evidence/execution.json",
+          "cases_per_process": [
+            23,
+            23
+          ],
+          "validation_errors": []
+        }
+      ],
+      "lifecycle_009_event": "MATCH",
+      "keyed_009_example": "MATCH"
+    },
+    {
+      "id": 125862690712,
+      "name": "Rust 1.85.1 / alloc",
+      "conclusion": "success",
+      "rust_tests": 176,
+      "rust_failures": 0,
+      "python_counts": [
+        4,
+        17
+      ],
+      "portable_validations": [
+        {
+          "acceptance": "PASS",
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+          "negative_controls": 7
+        }
+      ],
+      "e2e": [
+        {
+          "acceptance": "PASS",
+          "report": "/home/runner/work/MDCCORE/MDCCORE/ci-evidence/execution.json",
+          "cases_per_process": [
+            23,
+            23
+          ],
+          "validation_errors": []
+        }
+      ],
+      "lifecycle_009_event": "MATCH",
+      "keyed_009_example": "MATCH"
+    },
+    {
+      "id": 125862690809,
+      "name": "Portable Rust 1.98.0 / i686-unknown-linux-gnu",
+      "conclusion": "success",
+      "rust_tests": 7,
+      "rust_failures": 0,
+      "python_counts": [],
+      "portable_validations": [
+        {
+          "acceptance": "PASS",
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+          "negative_controls": 7
+        }
+      ],
+      "e2e": []
+    },
+    {
+      "id": 125862690858,
+      "name": "Rust 1.85.1 / default",
+      "conclusion": "success",
+      "rust_tests": 176,
+      "rust_failures": 0,
+      "python_counts": [
+        4,
+        17
+      ],
+      "portable_validations": [
+        {
+          "acceptance": "PASS",
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+          "negative_controls": 7
+        }
+      ],
+      "e2e": [
+        {
+          "acceptance": "PASS",
+          "report": "/home/runner/work/MDCCORE/MDCCORE/ci-evidence/execution.json",
+          "cases_per_process": [
+            23,
+            23
+          ],
+          "validation_errors": []
+        }
+      ],
+      "lifecycle_009_event": "MATCH",
+      "keyed_009_example": "MATCH"
+    },
+    {
+      "id": 125862690870,
+      "name": "Rust 1.85.1 / std-alloc",
+      "conclusion": "success",
+      "rust_tests": 176,
+      "rust_failures": 0,
+      "python_counts": [
+        4,
+        17
+      ],
+      "portable_validations": [
+        {
+          "acceptance": "PASS",
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+          "negative_controls": 7
+        }
+      ],
+      "e2e": [
+        {
+          "acceptance": "PASS",
+          "report": "/home/runner/work/MDCCORE/MDCCORE/ci-evidence/execution.json",
+          "cases_per_process": [
+            23,
+            23
+          ],
+          "validation_errors": []
+        }
+      ],
+      "lifecycle_009_event": "MATCH",
+      "keyed_009_example": "MATCH"
+    },
+    {
+      "id": 125862690905,
+      "name": "Portable Rust 1.85.1 / s390x-unknown-linux-gnu",
+      "conclusion": "success",
+      "rust_tests": 7,
+      "rust_failures": 0,
+      "python_counts": [],
+      "portable_validations": [
+        {
+          "acceptance": "PASS",
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+          "negative_controls": 7
+        }
+      ],
+      "e2e": []
+    },
+    {
+      "id": 125862690910,
+      "name": "Rust 1.98.0 / default",
+      "conclusion": "success",
+      "rust_tests": 176,
+      "rust_failures": 0,
+      "python_counts": [
+        4,
+        17
+      ],
+      "portable_validations": [
+        {
+          "acceptance": "PASS",
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+          "negative_controls": 7
+        }
+      ],
+      "e2e": [
+        {
+          "acceptance": "PASS",
+          "report": "/home/runner/work/MDCCORE/MDCCORE/ci-evidence/execution.json",
+          "cases_per_process": [
+            23,
+            23
+          ],
+          "validation_errors": []
+        }
+      ],
+      "lifecycle_009_event": "MATCH",
+      "keyed_009_example": "MATCH"
+    },
+    {
+      "id": 125862690919,
+      "name": "Rust 1.98.0 / alloc",
+      "conclusion": "success",
+      "rust_tests": 176,
+      "rust_failures": 0,
+      "python_counts": [
+        4,
+        17
+      ],
+      "portable_validations": [
+        {
+          "acceptance": "PASS",
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+          "negative_controls": 7
+        }
+      ],
+      "e2e": [
+        {
+          "acceptance": "PASS",
+          "report": "/home/runner/work/MDCCORE/MDCCORE/ci-evidence/execution.json",
+          "cases_per_process": [
+            23,
+            23
+          ],
+          "validation_errors": []
+        }
+      ],
+      "lifecycle_009_event": "MATCH",
+      "keyed_009_example": "MATCH"
+    },
+    {
+      "id": 125862690945,
+      "name": "Portable Rust 1.85.1 / i686-unknown-linux-gnu",
+      "conclusion": "success",
+      "rust_tests": 7,
+      "rust_failures": 0,
+      "python_counts": [],
+      "portable_validations": [
+        {
+          "acceptance": "PASS",
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+          "negative_controls": 7
+        }
+      ],
+      "e2e": []
+    },
+    {
+      "id": 125863061904,
+      "name": "Compare portable bytes across toolchains and targets",
+      "conclusion": "success",
+      "rust_tests": 0,
+      "rust_failures": 0,
+      "python_counts": [],
+      "portable_validations": [],
+      "e2e": []
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 13223770034,
+      "name": "mdc-portable-comparison",
+      "digest": "sha256:619bcaee227ad13e4edee291a71eeacfbfd9df5e373b2b9cc9c6a3f91b1fe798",
+      "size_in_bytes": 589,
+      "expired": false
+    },
+    {
+      "id": 13223431247,
+      "name": "mdc-portable-1.85.1-i686-unknown-linux-gnu",
+      "digest": "sha256:95a4122f5b07943ecf603b4e6d0a8c865ad4c11cc7445913a29ef174511d8493",
+      "size_in_bytes": 13213,
+      "expired": false
+    },
+    {
+      "id": 13223332168,
+      "name": "mdc-ci-1.98.0-default",
+      "digest": "sha256:9ec88294eb20507b457b392bdeb852b44474f435dc5a303a7e941523408a29eb",
+      "size_in_bytes": 268749,
+      "expired": false
+    },
+    {
+      "id": 13223187221,
+      "name": "mdc-portable-1.98.0-i686-unknown-linux-gnu",
+      "digest": "sha256:7b22fc71bb4d9728f93fe0299957188ef46c605d88e15030da32570440d0da7b",
+      "size_in_bytes": 13213,
+      "expired": false
+    },
+    {
+      "id": 13223092654,
+      "name": "mdc-ci-1.85.1-std-alloc",
+      "digest": "sha256:f494eb2e640e864498815595ab34d3b8b0c6cffd3c8023891ebc4f1536916479",
+      "size_in_bytes": 268422,
+      "expired": false
+    },
+    {
+      "id": 13222767285,
+      "name": "mdc-portable-1.98.0-s390x-unknown-linux-gnu",
+      "digest": "sha256:0dcaecf8889599a6fb23fa4ee582f2de957e971bf33bfe94ed03f7093c73b51c",
+      "size_in_bytes": 13213,
+      "expired": false
+    },
+    {
+      "id": 13222642467,
+      "name": "mdc-ci-1.98.0-std-alloc",
+      "digest": "sha256:2255c5ca45f97195aa43606a32d50e3a43a796f11eb59c92aa8e4f100e42e916",
+      "size_in_bytes": 268408,
+      "expired": false
+    },
+    {
+      "id": 13222473639,
+      "name": "mdc-portable-1.85.1-s390x-unknown-linux-gnu",
+      "digest": "sha256:3bea85e119bb1e8e3229e66484214389b08f086066cb8a769fbe77849ac17a92",
+      "size_in_bytes": 13218,
+      "expired": false
+    },
+    {
+      "id": 13222447815,
+      "name": "mdc-ci-1.98.0-alloc",
+      "digest": "sha256:ca1ef6089f8282516ede8f2f6adc979dbcc02298f8fc9ca19a9f20e8ec5c13aa",
+      "size_in_bytes": 268436,
+      "expired": false
+    },
+    {
+      "id": 13222397959,
+      "name": "mdc-ci-1.85.1-default",
+      "digest": "sha256:681359c40f0863442298bfb1abfd967b220584e698687306255a9f86e2bd05c4",
+      "size_in_bytes": 268755,
+      "expired": false
+    },
+    {
+      "id": 13221999385,
+      "name": "mdc-ci-1.85.1-alloc",
+      "digest": "sha256:c95722199cb10056d24ca66b0ba6018a3a747d01cd9fda53a6e7bb755010a504",
+      "size_in_bytes": 268424,
+      "expired": false
+    }
+  ],
+  "comparison_log": {
+    "acceptance": "PASS",
+    "implementation_source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b",
+    "commit_sha": "b54b30febb7a63adfb12e23bd20ca030b71700da",
+    "github_run_id": "41619905838",
+    "configurations": [
+      {
+        "rust": "1.85.1",
+        "profile": "alloc",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.85.1",
+        "profile": "default",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.85.1",
+        "profile": "std-alloc",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "alloc",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "default",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "std-alloc",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.85.1",
+        "profile": "portable-i686-unknown-linux-gnu",
+        "target": {
+          "arch": "x86",
+          "pointer_width": 32,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.85.1",
+        "profile": "portable-s390x-unknown-linux-gnu",
+        "target": {
+          "arch": "s390x",
+          "pointer_width": 64,
+          "endian": "big"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "portable-i686-unknown-linux-gnu",
+        "target": {
+          "arch": "x86",
+          "pointer_width": 32,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "portable-s390x-unknown-linux-gnu",
+        "target": {
+          "arch": "s390x",
+          "pointer_width": 64,
+          "endian": "big"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      }
+    ]
+  },
+  "main_sha_unchanged": "5bd25557aed4a6dcb08b7fb1bc2d14e91ca81dbf",
+  "base_branch_unchanged": "d33bb979c0b8b6a69126fd79544d3f43e5df9d3b",
+  "codespaces_changed_by_agent": false,
+  "superseded_receipt": {
+    "commit": "257f3909aa3cf8b332428d76e27c4671c7fee5e8",
+    "run_id": 41619100053,
+    "reason": "Receipt digest field held a CI file hash due to variable reuse; original bytes validation passed, but receipt failed independent verification. Fixed and regression tested in b54b30f."
+  },
+  "limitations": [
+    "Portable profile is opt-in; default remains legacy.",
+    "Captured-byte migration does not implement a general persistent semantic graph importer.",
+    "Cross-target claims apply to declared fixtures on x86_64/i686 Linux and QEMU s390x Linux, Rust 1.85.1/1.98.0.",
+    "FNV64 is non-cryptographic; collision guards and full canonical keys remain required."
+  ],
+  "acceptance": "PASS",
+  "jobs_passed": 11,
+  "artifact_bundles_uploaded": 11,
+  "comparison_zip_sha256_verified": "619bcaee227ad13e4edee291a71eeacfbfd9df5e373b2b9cc9c6a3f91b1fe798",
+  "comparison": {
+    "acceptance": "PASS",
+    "implementation_source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b",
+    "commit_sha": "b54b30febb7a63adfb12e23bd20ca030b71700da",
+    "github_run_id": "41619905838",
+    "configurations": [
+      {
+        "rust": "1.85.1",
+        "profile": "alloc",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.85.1",
+        "profile": "default",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.85.1",
+        "profile": "std-alloc",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "alloc",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "default",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "std-alloc",
+        "target": {
+          "arch": "x86_64",
+          "pointer_width": 64,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.85.1",
+        "profile": "portable-i686-unknown-linux-gnu",
+        "target": {
+          "arch": "x86",
+          "pointer_width": 32,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.85.1",
+        "profile": "portable-s390x-unknown-linux-gnu",
+        "target": {
+          "arch": "s390x",
+          "pointer_width": 64,
+          "endian": "big"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "portable-i686-unknown-linux-gnu",
+        "target": {
+          "arch": "x86",
+          "pointer_width": 32,
+          "endian": "little"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      },
+      {
+        "rust": "1.98.0",
+        "profile": "portable-s390x-unknown-linux-gnu",
+        "target": {
+          "arch": "s390x",
+          "pointer_width": 64,
+          "endian": "big"
+        },
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+      }
+    ]
+  },
+  "verified_at": "2026-11-03T10:33:14.680385+00:00"
+}

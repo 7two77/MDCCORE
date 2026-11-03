@@ -1,0 +1,31 @@
+{
+  "kind": "imported_codespaces_evidence",
+  "implementation_source_sha256": "9a907068ef266ae73d30d583a2ecb4eddb47b422078b640c60c5cf9d02569bc6",
+  "reports": {
+    "default": {
+      "path": "docs/evidence/codespaces-baseline-default.json",
+      "sha256": "22986b0858802f4e6dde68481fcd93ee59837efce883bcbc6986ad42ef3dbd41",
+      "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)\nbinary: rustc\ncommit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea\ncommit-date: 2026-08-18\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.0\nLLVM version: 22.1.8\n",
+      "cargo": "cargo 1.98.0 (797e8a9bc 2026-08-05)",
+      "target": "x86_64-unknown-linux-gnu",
+      "cases_per_process": [
+        23,
+        23
+      ],
+      "acceptance": "PASS"
+    },
+    "alloc": {
+      "path": "docs/evidence/codespaces-baseline-alloc.json",
+      "sha256": "5b696c712b6c476741ad31e5e3a02bdd5d4eb19f569c466c4848ee221e8e59dd",
+      "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)\nbinary: rustc\ncommit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea\ncommit-date: 2026-08-18\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.0\nLLVM version: 22.1.8\n",
+      "cargo": "cargo 1.98.0 (797e8a9bc 2026-08-05)",
+      "target": "x86_64-unknown-linux-gnu",
+      "cases_per_process": [
+        23,
+        23
+      ],
+      "acceptance": "PASS"
+    }
+  },
+  "scope": "Validated E2E reports; full Rust test counts remain supported by user-provided console output."
+}

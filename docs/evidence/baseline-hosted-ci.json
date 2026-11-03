@@ -1,0 +1,486 @@
+{
+  "package": "MDC-OPS-001",
+  "kind": "github_hosted_ci_verification",
+  "checked_at": "2026-11-02 20:22:46 UTC",
+  "repository": "7two77/MDCCORE",
+  "branch": "mdc/baseline-v0.1",
+  "commit": "a8c15c7ffbbe48993e97142f6842da044bda4162",
+  "run_id": 41518386565,
+  "run_url": "https://github.com/7two77/MDCCORE/actions/runs/41518386565",
+  "run_status": "completed",
+  "conclusion": "success",
+  "run_attempt": 1,
+  "jobs": [
+    {
+      "job_id": 125527720939,
+      "name": "Rust 1.98.0 / default",
+      "rust_tests_passed": 124,
+      "rust_tests_failed": 0,
+      "python_checks": 17,
+      "e2e_report_lines": [
+        "2026-11-02T20:21:19.3194259Z {\"acceptance\": \"PASS\", \"report\": \"/home/runner/work/MDCCORE/MDCCORE/ci-evidence/execution.json\", \"cases_per_process\": [23, 23], \"validation_errors\": []}"
+      ],
+      "driver_pass": true,
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Install Rust toolchain and components",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Verify library, examples, and E2E evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Retain verification evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        }
+      ]
+    },
+    {
+      "job_id": 125527721137,
+      "name": "Rust 1.98.0 / alloc",
+      "rust_tests_passed": 124,
+      "rust_tests_failed": 0,
+      "python_checks": 17,
+      "e2e_report_lines": [
+        "2026-11-02T20:21:13.8683995Z {\"acceptance\": \"PASS\", \"report\": \"/home/runner/work/MDCCORE/MDCCORE/ci-evidence/execution.json\", \"cases_per_process\": [23, 23], \"validation_errors\": []}"
+      ],
+      "driver_pass": true,
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Install Rust toolchain and components",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Verify library, examples, and E2E evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Retain verification evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        }
+      ]
+    },
+    {
+      "job_id": 125527721207,
+      "name": "Rust 1.85.1 / std-alloc",
+      "rust_tests_passed": 124,
+      "rust_tests_failed": 0,
+      "python_checks": 17,
+      "e2e_report_lines": [
+        "2026-11-02T20:21:19.3525564Z {\"acceptance\": \"PASS\", \"report\": \"/home/runner/work/MDCCORE/MDCCORE/ci-evidence/execution.json\", \"cases_per_process\": [23, 23], \"validation_errors\": []}"
+      ],
+      "driver_pass": true,
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Install Rust toolchain and components",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Verify library, examples, and E2E evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Retain verification evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        }
+      ]
+    },
+    {
+      "job_id": 125527721267,
+      "name": "Rust 1.85.1 / default",
+      "rust_tests_passed": 124,
+      "rust_tests_failed": 0,
+      "python_checks": 17,
+      "e2e_report_lines": [
+        "2026-11-02T20:21:30.3899569Z {\"acceptance\": \"PASS\", \"report\": \"/home/runner/work/MDCCORE/MDCCORE/ci-evidence/execution.json\", \"cases_per_process\": [23, 23], \"validation_errors\": []}"
+      ],
+      "driver_pass": true,
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Install Rust toolchain and components",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Verify library, examples, and E2E evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Retain verification evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        }
+      ]
+    },
+    {
+      "job_id": 125527721324,
+      "name": "Rust 1.85.1 / alloc",
+      "rust_tests_passed": 124,
+      "rust_tests_failed": 0,
+      "python_checks": 17,
+      "e2e_report_lines": [
+        "2026-11-02T20:21:26.4123852Z {\"acceptance\": \"PASS\", \"report\": \"/home/runner/work/MDCCORE/MDCCORE/ci-evidence/execution.json\", \"cases_per_process\": [23, 23], \"validation_errors\": []}"
+      ],
+      "driver_pass": true,
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Install Rust toolchain and components",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Verify library, examples, and E2E evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Retain verification evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        }
+      ]
+    },
+    {
+      "job_id": 125527721334,
+      "name": "Rust 1.98.0 / std-alloc",
+      "rust_tests_passed": 124,
+      "rust_tests_failed": 0,
+      "python_checks": 17,
+      "e2e_report_lines": [
+        "2026-11-02T20:21:18.0635040Z {\"acceptance\": \"PASS\", \"report\": \"/home/runner/work/MDCCORE/MDCCORE/ci-evidence/execution.json\", \"cases_per_process\": [23, 23], \"validation_errors\": []}"
+      ],
+      "driver_pass": true,
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Install Rust toolchain and components",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Verify library, examples, and E2E evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Retain verification evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 13176956145,
+      "name": "mdc-ci-1.98.0-std-alloc",
+      "size_in_bytes": 250664,
+      "digest": "sha256:fa0c72612573e8626faafe69b19effc1c5557fa5eb7982af6b03ce1987d6e780",
+      "expired": false,
+      "expires_at": "2026-11-16T20:21:19Z",
+      "url": "https://github.com/7two77/MDCCORE/actions/runs/41518386565/artifacts/13176956145"
+    },
+    {
+      "id": 13176331570,
+      "name": "mdc-ci-1.98.0-default",
+      "size_in_bytes": 251010,
+      "digest": "sha256:373e49a0f35b8bebe94986cb970feb91c28e4f2bb6cd9cf05a3cdd027fd2203b",
+      "expired": false,
+      "expires_at": "2026-11-16T20:21:20Z",
+      "url": "https://github.com/7two77/MDCCORE/actions/runs/41518386565/artifacts/13176331570"
+    },
+    {
+      "id": 13176272341,
+      "name": "mdc-ci-1.85.1-default",
+      "size_in_bytes": 251020,
+      "digest": "sha256:5f45d0e4263a603b75e099dcfe79a90dfebab83d56ed2a224f887095764b09f8",
+      "expired": false,
+      "expires_at": "2026-11-16T20:21:31Z",
+      "url": "https://github.com/7two77/MDCCORE/actions/runs/41518386565/artifacts/13176272341"
+    },
+    {
+      "id": 13176131939,
+      "name": "mdc-ci-1.98.0-alloc",
+      "size_in_bytes": 250681,
+      "digest": "sha256:6c136668000e160a81c2894000320167f0c063d3c1b64c63721f0e07d4c8d1bd",
+      "expired": false,
+      "expires_at": "2026-11-16T20:21:14Z",
+      "url": "https://github.com/7two77/MDCCORE/actions/runs/41518386565/artifacts/13176131939"
+    },
+    {
+      "id": 13176031966,
+      "name": "mdc-ci-1.85.1-alloc",
+      "size_in_bytes": 250683,
+      "digest": "sha256:87bb03208edbff3bf103651f4ef6ce3225392a424bf43e187068808f70ed5378",
+      "expired": false,
+      "expires_at": "2026-11-16T20:21:27Z",
+      "url": "https://github.com/7two77/MDCCORE/actions/runs/41518386565/artifacts/13176031966"
+    },
+    {
+      "id": 13175459939,
+      "name": "mdc-ci-1.85.1-std-alloc",
+      "size_in_bytes": 250685,
+      "digest": "sha256:88e4a0ece10e808b6f6478ccb93a51b08bd566a57048da4ede803a7385806a94",
+      "expired": false,
+      "expires_at": "2026-11-16T20:21:20Z",
+      "url": "https://github.com/7two77/MDCCORE/actions/runs/41518386565/artifacts/13175459939"
+    }
+  ],
+  "scope": "GitHub run/job API and decoded job logs inspected; artifact presence/digests inspected via listing, artifact contents not independently downloaded. Main history not merged or rewritten."
+}
