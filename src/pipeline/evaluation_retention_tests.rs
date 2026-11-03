@@ -490,3 +490,65 @@ fn portable_collision_retention_and_revocation_keep_the_exact_result() {
     );
     assert!(project(&p, &inputs[1], &second).is_ok());
 }
+
+#[test]
+fn recorded_snapshot_retains_forced_collision_aliases_and_separate_revocation() {
+    let (base, _) = fixture_with_protocol(IdentityProtocol::PortableV1);
+    let mut session = SnapshotSession::new(base.registry, IdentityProtocol::PortableV1);
+    session.force_evaluation_digest_for_test(7);
+    let refs: Vec<_> = [3_i64, 4, 5]
+        .into_iter()
+        .enumerate()
+        .map(|(i, n)| {
+            session
+                .admit(ObservationRequest {
+                    source: id("source"),
+                    timestamp: Some((i as u64 + 1) * 10),
+                    payload: n.to_le_bytes().to_vec(),
+                    acquisition_context: format!("record/{i}"),
+                })
+                .unwrap()
+        })
+        .collect();
+    let a = session
+        .evaluate(request(session.pipeline(), "O", &refs[0]))
+        .unwrap();
+    let b = session
+        .evaluate_keyed(request(session.pipeline(), "O", &refs[1]))
+        .unwrap();
+    session
+        .invalidate(InvalidationRequest {
+            request_id: "withdraw".into(),
+            contract: id("revoke/O"),
+            target: refs[0].clone(),
+            reason: InvalidationReason::EvidenceWithdrawn,
+            evidence: vec![refs[2].clone()],
+            expected_revision: 0,
+        })
+        .unwrap();
+    let limits = SnapshotLimits::default();
+    let bytes = session.export(limits).unwrap();
+    assert!(matches!(
+        SnapshotSession::restore(&bytes, limits),
+        Err(SnapshotError::OutcomeMismatch { .. })
+    ));
+    let restored = SnapshotSession::restore_with_digest_for_test(&bytes, limits, 7).unwrap();
+    assert_eq!(restored.export(limits).unwrap(), bytes);
+    assert_eq!(restored.pipeline().evaluations_with_digest(7).len(), 2);
+    assert_eq!(
+        restored.pipeline().resolve_evaluation(&a),
+        session.pipeline().resolve_evaluation(&a)
+    );
+    assert_eq!(
+        restored.pipeline().resolve_evaluation(&b),
+        session.pipeline().resolve_evaluation(&b)
+    );
+    assert_eq!(
+        restored.pipeline().lifecycle_view(&a).unwrap().status,
+        LifecycleStatus::Invalid
+    );
+    assert_ne!(
+        restored.pipeline().lifecycle_view(&b).unwrap().status,
+        LifecycleStatus::Invalid
+    );
+}

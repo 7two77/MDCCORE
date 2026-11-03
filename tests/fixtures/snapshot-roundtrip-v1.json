@@ -1,0 +1,15 @@
+{
+  "profile": "MDC-SNAPSHOT-001/1 recorded portable rich fixture",
+  "format_version": 1,
+  "engine_version": 1,
+  "operations": 38,
+  "objects": 31,
+  "lifecycle_revision": 2,
+  "semantic_rejections": 9,
+  "lifecycle_rejections": 2,
+  "process_receipt": "MDC_SNAPSHOT_VERIFY=PASS operations=38 objects=31 revision=2 rejections=9 lifecycle_rejections=2\n",
+  "archive_bytes": 372782,
+  "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+  "manifest_bytes": 269158,
+  "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+}

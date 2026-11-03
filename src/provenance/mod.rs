@@ -96,6 +96,12 @@ pub struct InvalidId {
     canonical_key: Vec<u8>,
 }
 impl InvalidId {
+    pub(crate) fn from_snapshot_parts(digest: u64, canonical_key: Vec<u8>) -> Self {
+        Self {
+            digest,
+            canonical_key,
+        }
+    }
     pub(crate) fn with_protocol(
         canonical_key: Vec<u8>,
         protocol: crate::identity::IdentityProtocol,

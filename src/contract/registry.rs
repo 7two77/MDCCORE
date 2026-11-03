@@ -1,4 +1,5 @@
 //! Explicit, versioned contracts for the initial scalar profile.
+pub(crate) mod snapshot;
 use super::conformance::{
     ConformanceContract, ConformanceCriterionContract, ConformanceCriterionKind, TargetType,
 };

@@ -74,6 +74,13 @@ run_check portable-determinism cmp "$MDC_CI_REPORT_DIR/portable-1.log" "$MDC_CI_
 cargo run --quiet --locked --offline "${MDC_CI_FEATURES[@]}" --example identity_target > "$MDC_CI_REPORT_DIR/target.json"
 run_check portable-check python3 -B scripts/check_portable_identity.py --log "$MDC_CI_REPORT_DIR/portable-1.log" --output "$MDC_CI_REPORT_DIR/portable-verification.json"
 run_check portable-validator-tests env MDC_PORTABLE_LOG="$MDC_CI_REPORT_DIR/portable-1.log" python3 -B -m unittest discover -s tests -p test_portable_identity.py
+run_check snapshot-producer cargo run --quiet --locked --offline "${MDC_CI_FEATURES[@]}" --example snapshot_roundtrip -- produce "$MDC_CI_REPORT_DIR/snapshot.bin"
+for MDC_SNAPSHOT_RUN in 1 2; do
+  run_check "snapshot-consumer-$MDC_SNAPSHOT_RUN" cargo run --quiet --locked --offline "${MDC_CI_FEATURES[@]}" --example snapshot_roundtrip -- consume "$MDC_CI_REPORT_DIR/snapshot.bin"
+  run_check "snapshot-equality-$MDC_SNAPSHOT_RUN" cmp "$MDC_CI_REPORT_DIR/snapshot-producer.log" "$MDC_CI_REPORT_DIR/snapshot-consumer-$MDC_SNAPSHOT_RUN.log"
+done
+run_check snapshot-control python3 -B scripts/check_snapshot_roundtrip.py --folder "$MDC_CI_REPORT_DIR" --output "$MDC_CI_REPORT_DIR/snapshot-verification.json"
+run_check snapshot-validator-tests env MDC_SNAPSHOT_REPORT="$MDC_CI_REPORT_DIR" python3 -B -m unittest discover -s tests -p test_snapshot_roundtrip.py
 run_check e2e python3 scripts/run_e2e.py "${MDC_CI_FEATURES[@]}" --output "$MDC_CI_REPORT_DIR/execution.json"
 run_check evidence-check python3 scripts/check_gate_readiness.py --report "$MDC_CI_REPORT_DIR/execution.json"
 # The legacy Python suite reads a fixed path. Supply fresh output for this run,
