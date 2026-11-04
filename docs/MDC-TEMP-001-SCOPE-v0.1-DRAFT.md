@@ -1,12 +1,22 @@
 # MDC-TEMP-001 — Historical availability and first replay scope
 
-2026-11-04. DRAFT / INPUT DATA PROFILE PENDING / NOT IMPLEMENTED.
+2026-11-04. REQUIREMENTS DRAFT / FIRST MODELED SLICE IMPLEMENTED IN MDC-IMPL-014.
 Base: main 1f0b76a after MDC-IMPL-013. Historical replay is the selected first
 consumer. This document prepares its requirements; it is not a market strategy,
 a new edition of STP-MDC, or a claim that current E2E establishes causal backtesting.
 VAIXLNS-Builder and MA-000 are not imported as MDC normative requirements.
 
-## Owner input needed before the executable data contract
+## Selected first slice
+
+The owner subsequently proposed Binance Spot/Deribit, BTCUSDT/ETHUSDT, 1m OHLCV,
+CSV/Parquet and modeled latency. MDC-IMPL-014 selects Binance Spot / BTCUSDT /
+1m / CSV and isolated per-decision views. Its executable boundaries are in the
+[profile contract](MDC-BINANCE-REPLAY-CONTRACT-v0.1.md). This is MODELED availability,
+not observed receipt history or a complete implementation of TA01…TA12.
+The earlier design exploration below is retained as requirements context; statements
+about unselected options apply to that preparation, not to the new bounded adapter.
+
+## Input questions used to scope the first profile
 
 One concrete dataset/profile is needed: provider/exchange, instrument, event kind
 (trades/quotes/bars/other), file/schema and timestamp fields/units. No exchange,
@@ -83,8 +93,8 @@ eligible receipt versions, or add a versioned visibility mechanism covering all
 core selectors. This can support historical cutoffs, but must prove completeness
 of visibility enforcement and preserve creation-time snapshots.
 
-No option is implemented or selected here. The choice must follow the actual
-dataset and acceptance case. Tests must deliberately place a late observation
+The preparation did not select an option. MDC-IMPL-014 now selects the isolated
+bounded view for its final-bar modeled profile. Tests deliberately place a late observation
 in storage that would satisfy ObservationAfter by event timestamp; it must still
 be unavailable to the earlier decision.
 

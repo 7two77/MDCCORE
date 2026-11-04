@@ -3,7 +3,7 @@
 История объединения исходной main и проверенного стека baseline → 008 → 009 → 010,
 сохранённые материалы и правила сопровождения описаны в
 [MDC-INTEGRATION-001](docs/MDC-INTEGRATION-v0.1.md).
-Актуальная [матрица v0.11](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.11.md)
+Актуальная [матрица v0.12](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.12.md)
 учитывает опубликованные hosted CI receipts. Подготовка первого Git commit
 сохранена в [MDC-OPS-001](docs/MDC-OPS-001.md).
 
@@ -11,7 +11,14 @@
 `Cargo.toml`, `src/`, `tests/`. Вложенный каталог `mdc_core/` сохранён как исходный
 материал для сравнения; он не подключён как workspace member.
 
-Последний функциональный пакет — **MDC-IMPL-013: automatic time/count flush**.
+Последний функциональный пакет — **MDC-IMPL-014: Binance CSV и bounded replay**.
+[Адаптер и команды](adapters/mdc_replay/README.md),
+[моделируемый временной контракт](docs/MDC-BINANCE-REPLAY-CONTRACT-v0.1.md),
+[проверки и ограничения](docs/MDC-IMPL-014.md).
+Доступность свечей моделируется; каждый cutoff получает отдельный граф только
+из доступных баров. Рыночная стратегия, доходность и ордера не реализованы.
+
+MDC-IMPL-013: automatic time/count flush.
 [Scheduler API, проверки и ограничения](docs/MDC-IMPL-013.md).
 Основной WAL/recovery adapter добавлен в MDC-IMPL-012.
 [Реализация, проверки и ограничения](docs/MDC-IMPL-012.md),
@@ -31,8 +38,9 @@ count threshold с явной BatchPolicy. Raw Store сохраняет explicit
 Registry, записью всех mutators с создания и exact outcome/state validation.
 Произвольный ранее созданный незаписанный Pipeline не импортируется.
 [Решения владельца](docs/MDC-DECISIONS-2026-11-03-v0.1.md): historical replay →
-service и exact restart context. Торговый adapter, cursor/broker state и
-available_at/decision_at требуют отдельных contracts.
+service и exact restart context. Исполнение сделок и external cursor/broker
+state требуют отдельных contracts. Моделируемые
+available_at/decision_at реализованы только в bounded replay adapter 014.
 
 Portable identity добавлена в [MDC-IMPL-010](docs/MDC-IMPL-010.md).
 `Pipeline::new()` сохраняет legacy identity; portable graph явно выбирается через
@@ -42,7 +50,7 @@ Portable identity добавлена в [MDC-IMPL-010](docs/MDC-IMPL-010.md).
 
 **MDC-E2E-CONFORMANCE-001: PASS для объявленного fixture MDC-SCALAR-001.**
 Все 12 assertions E2E-A01…A12 и 11 negative cases N01…N11 выполнены в двух
-раздельных OS-процессах. [Execution evidence](docs/evidence/mdc-e2e-conformance-001-impl-013.json)
+раздельных OS-процессах. [Execution evidence](docs/evidence/mdc-e2e-conformance-001-impl-014.json)
 содержит фактические результаты, canonical bytes, lineage и snapshots. PASS
 применим к записанным source fingerprint, toolchain, features и target; текущую
 применимость отчёта проверяет `check_gate_readiness.py`.
@@ -143,7 +151,8 @@ PASS fixture не устанавливает универсальное соот
 evidence contracts или reinstatement. Bounded Linux recovery реализован отдельно
 от core; его гарантии зависят от filesystem/device sync и заданных limits. Recorded snapshots
 сохраняют core context, но не позиции/ордера внешнего торгового adapter. WAL/HEAD recovery добавлен в host crate. History compaction и
-available_at/decision_at semantics отсутствуют.
+general core available_at/decision_at semantics отсутствуют; 014 изолирует
+доступность в отдельном профиле adapter.
 Restore имеет стоимость replay истории; import limits не ограничивают обычный SnapshotSession live recording;
 mdc_store отдельно ограничивает число calls и размеры записей.
 Native Rust
@@ -170,5 +179,8 @@ Host verification: `bash .github/ci/store.sh`. Новый host crate требу�
 
 После PR #8: [проверка main](docs/MDC-OPS-004-POST-AUTO-FLUSH-v0.1.md) и
 [draft требований historical availability/replay](docs/MDC-TEMP-001-SCOPE-v0.1-DRAFT.md).
-Для исполнимого data contract ожидается выбор источника, инструмента и формата.
-Текущий storage PASS не является подтверждением отсутствия lookahead в backtest.
+Для первой итерации выбраны Binance Spot / BTCUSDT / 1m / CSV. Официальные малые
+fixtures покрывают ms и us эпохи; все цены/объёмы точные e8, ошибки не превращаются
+в нули. Technical State проверяет доступность свидетельств, а не торговый сигнал.
+Storage PASS и технический replay не доказывают реальное время получения
+исторических данных или готовность полноценной торговой системы.

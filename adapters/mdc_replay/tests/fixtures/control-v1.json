@@ -1,0 +1,37 @@
+{
+  "profile": "BINANCE-SPOT-1M-MODELED-001",
+  "case": "Event of second bar is in horizon but its modeled availability is after cutoff",
+  "expected_report": {
+    "profile": "BINANCE-SPOT-1M-MODELED-001",
+    "symbol": "BTCUSDT",
+    "timestamp_unit": "ms",
+    "canonical_time_unit": "us",
+    "availability_quality": "modeled",
+    "origin_attestation": "provided_csv",
+    "lag_us": 100000,
+    "lag_anchor": "reported_close",
+    "decision_us": 1704067320049000,
+    "decision_id": "617ef182627656f0c8e5d415879e08a6065f377e44eb621f0bdb4920c35bc50c",
+    "raw_dataset_sha256": "9910e64a48a152de968366044cd7798c679d1abc94485be2c3dad710751b6664",
+    "duplicate_rows": 0,
+    "eligible": [
+      {
+        "evidence_id": "6412cf358d34fd9e54036b22d796fb0699c1020d5a6a41215304753f2563cf75",
+        "event_us": 1704067259999000,
+        "available_us": 1704067260099000,
+        "evidence_basis_hex": "42494e414e43452d53504f542d314d2d4d4f44454c45442d30303100000000a08601000000000000202110d70d060018a3b413d70d0600b829b613d70d060080cdc67dd803000080056cd7d803000080f94ef7d703000040c35cd7d8030000209e24d600000000909774b6278a00002f05000000000000b08f358a00000000c050d8972a590000",
+        "ohlcv_e8": [
+          4228358000000,
+          4229862000000,
+          4226102000000,
+          4229861000000,
+          3592724000
+        ]
+      }
+    ],
+    "core_operations": 12,
+    "technical_confirmation": "UNRESOLVED",
+    "core_snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900"
+  },
+  "core_snapshot_bytes": 9581
+}

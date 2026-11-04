@@ -1,0 +1,39 @@
+{
+  "acceptance": "PASS",
+  "implementation_source_sha256": "f83e908199f317dcfe889ac8fd9b470c4189a29268f19d1eddab11c1b540877c",
+  "records": [
+    {
+      "day": "2024-01-01",
+      "archive_url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01-01.zip",
+      "checksum_url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01-01.zip.CHECKSUM",
+      "archive_sha256": "4ec2915e610ab4e9a4d5e86a5ada1c15bbf6b5db343cdb385681d6ac97166a4e",
+      "csv_sha256": "eb9a1b452184ea664e86e87f9cba783639163578d0bed9ff2073d25d897dbe1b",
+      "rows": 1440,
+      "selection": "first 3 rows in original archive order; normalized LF",
+      "sample_file": "BTCUSDT-1m-2024-01-01-first3.csv",
+      "sample_sha256": "9910e64a48a152de968366044cd7798c679d1abc94485be2c3dad710751b6664",
+      "checksum_verification": "MATCH",
+      "extracted_csv_matches_zip": true,
+      "cli_output": "MDC_BINANCE_CSV=OK rows=1440 unique=1440 duplicates=0 unit=ms availability=modeled",
+      "profile": "BINANCE-SPOT-1M-MODELED-001",
+      "availability_quality": "modeled"
+    },
+    {
+      "day": "2025-01-01",
+      "archive_url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2025-01-01.zip",
+      "checksum_url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2025-01-01.zip.CHECKSUM",
+      "archive_sha256": "10a12909f1b0e3fcc6b7f502e5ea9be5d1ba3455dd8ab16cc61c8650640ba7c0",
+      "csv_sha256": "c85bf92e1dc232e8bdedb05fd3a111174c73c5acf2094a1a3233c99a061c9d48",
+      "rows": 1440,
+      "selection": "first 3 rows in original archive order; normalized LF",
+      "sample_file": "BTCUSDT-1m-2025-01-01-first3.csv",
+      "sample_sha256": "75156f1986fce61ed9464d7da85e7fb716887e38cd9fe37398ef3259f2ca386e",
+      "checksum_verification": "MATCH",
+      "extracted_csv_matches_zip": true,
+      "cli_output": "MDC_BINANCE_CSV=OK rows=1440 unique=1440 duplicates=0 unit=us availability=modeled",
+      "profile": "BINANCE-SPOT-1M-MODELED-001",
+      "availability_quality": "modeled"
+    }
+  ],
+  "scope": "full-day parsing only; bounded core decision tests use first-three-row fixtures"
+}
