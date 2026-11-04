@@ -33,4 +33,16 @@ done
 python3 -B scripts/check_snapshot_roundtrip.py --folder "$MDC_CI_REPORT_DIR" --output "$MDC_CI_REPORT_DIR/snapshot-verification.json"
 MDC_CI_STEP=wal-bridge-tests
 cargo test --locked --offline --no-default-features --features alloc --target "$MDC_PORTABLE_TARGET" --test wal_bridge 2>&1 | tee "$MDC_CI_REPORT_DIR/wal-bridge-tests.log"
+MDC_CI_STEP=binance-replay-tests
+# Seed every locked package: Cargo's offline resolution can require packages
+# outside the selected target's fetch filter (e.g. cpufeatures on s390x).
+cargo fetch --locked --manifest-path adapters/mdc_replay/Cargo.toml
+cargo test --locked --offline --manifest-path adapters/mdc_replay/Cargo.toml --target "$MDC_PORTABLE_TARGET" --test replay 2>&1 | tee "$MDC_CI_REPORT_DIR/binance-tests.log"
+MDC_CI_STEP=binance-replay-execution
+for MDC_REPLAY_RUN in 1 2; do
+  cargo run --quiet --locked --offline --manifest-path adapters/mdc_replay/Cargo.toml --target "$MDC_PORTABLE_TARGET" --bin mdc-binance-replay -- decision \
+    adapters/mdc_replay/tests/fixtures/BTCUSDT-1m-2024-01-01-first3.csv BTCUSDT ms 100 close 1704067320049000 \
+    "$MDC_CI_REPORT_DIR/binance-replay-$MDC_REPLAY_RUN.json" "$MDC_CI_REPORT_DIR/binance-replay-$MDC_REPLAY_RUN.bin"
+done
+python3 -B scripts/check_binance_replay.py --folder "$MDC_CI_REPORT_DIR" --output "$MDC_CI_REPORT_DIR/binance-verification.json"
 MDC_CI_STEP=complete

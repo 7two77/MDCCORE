@@ -1,0 +1,1572 @@
+{
+  "acceptance": "PASS",
+  "kind": "post_merge_checkpoint",
+  "commit": "1f0b76a2ecf58eba5b1bbc9354b7131300c3cb4e",
+  "tree": "9a39938199c48659af72300a6e48d4c1f6077df3",
+  "matches_reviewed_013_tree": true,
+  "implementation_source_sha256": "2c8fb946fd41b2d0777edda5ac5fd9cfffed6a01fea9931ae5daa1ff418d0c22",
+  "workflow_run": {
+    "conclusion": "success",
+    "databaseId": 41791564548,
+    "event": "push",
+    "headSha": "1f0b76a2ecf58eba5b1bbc9354b7131300c3cb4e",
+    "jobs": [
+      {
+        "completedAt": "2026-11-04T07:20:59Z",
+        "conclusion": "success",
+        "databaseId": 126445896027,
+        "name": "Portable Rust 1.98.0 / i686-unknown-linux-gnu",
+        "startedAt": "2026-11-04T07:20:23Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Install cross target and runtime",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Execute target tests and full portable graph twice",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Retain portable verification evidence",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 11,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 12,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 13,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/7two77/MDCCORE/actions/runs/41791564548/job/126445896027"
+      },
+      {
+        "completedAt": "2026-11-04T07:20:30Z",
+        "conclusion": "success",
+        "databaseId": 126445896214,
+        "name": "Preserve integration ancestry and the 010 source",
+        "startedAt": "2026-11-04T07:20:23Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Verify both original roots, merge parents, files and source fingerprint",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/upload-artifact@v4",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 9,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 10,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 11,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/7two77/MDCCORE/actions/runs/41791564548/job/126445896214"
+      },
+      {
+        "completedAt": "2026-11-04T07:20:58Z",
+        "conclusion": "success",
+        "databaseId": 126445896261,
+        "name": "Rust 1.85.1 / alloc",
+        "startedAt": "2026-11-04T07:20:23Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Install Rust toolchain and components",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Verify library, examples, and E2E evidence",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Retain verification evidence",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 11,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 12,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 13,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/7two77/MDCCORE/actions/runs/41791564548/job/126445896261"
+      },
+      {
+        "completedAt": "2026-11-04T07:21:08Z",
+        "conclusion": "success",
+        "databaseId": 126445896281,
+        "name": "Portable Rust 1.85.1 / i686-unknown-linux-gnu",
+        "startedAt": "2026-11-04T07:20:33Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Install cross target and runtime",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Execute target tests and full portable graph twice",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Retain portable verification evidence",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 11,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 12,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 13,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/7two77/MDCCORE/actions/runs/41791564548/job/126445896281"
+      },
+      {
+        "completedAt": "2026-11-04T07:21:40Z",
+        "conclusion": "success",
+        "databaseId": 126445896348,
+        "name": "Portable Rust 1.85.1 / s390x-unknown-linux-gnu",
+        "startedAt": "2026-11-04T07:20:23Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Install cross target and runtime",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Execute target tests and full portable graph twice",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Retain portable verification evidence",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 11,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 12,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 13,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/7two77/MDCCORE/actions/runs/41791564548/job/126445896348"
+      },
+      {
+        "completedAt": "2026-11-04T07:20:58Z",
+        "conclusion": "success",
+        "databaseId": 126445896370,
+        "name": "Rust 1.98.0 / default",
+        "startedAt": "2026-11-04T07:20:23Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Install Rust toolchain and components",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Verify library, examples, and E2E evidence",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Retain verification evidence",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 11,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 12,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 13,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/7two77/MDCCORE/actions/runs/41791564548/job/126445896370"
+      },
+      {
+        "completedAt": "2026-11-04T07:20:58Z",
+        "conclusion": "success",
+        "databaseId": 126445896373,
+        "name": "Rust 1.98.0 / alloc",
+        "startedAt": "2026-11-04T07:20:23Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Install Rust toolchain and components",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Verify library, examples, and E2E evidence",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Retain verification evidence",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 11,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 12,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 13,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/7two77/MDCCORE/actions/runs/41791564548/job/126445896373"
+      },
+      {
+        "completedAt": "2026-11-04T07:21:09Z",
+        "conclusion": "success",
+        "databaseId": 126445896382,
+        "name": "Portable Rust 1.98.0 / s390x-unknown-linux-gnu",
+        "startedAt": "2026-11-04T07:20:28Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Install cross target and runtime",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Execute target tests and full portable graph twice",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Retain portable verification evidence",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 11,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 12,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 13,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/7two77/MDCCORE/actions/runs/41791564548/job/126445896382"
+      },
+      {
+        "completedAt": "2026-11-04T07:20:56Z",
+        "conclusion": "success",
+        "databaseId": 126445896389,
+        "name": "Rust 1.98.0 / std-alloc",
+        "startedAt": "2026-11-04T07:20:23Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Install Rust toolchain and components",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Verify library, examples, and E2E evidence",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Retain verification evidence",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 11,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 12,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 13,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/7two77/MDCCORE/actions/runs/41791564548/job/126445896389"
+      },
+      {
+        "completedAt": "2026-11-04T07:20:59Z",
+        "conclusion": "success",
+        "databaseId": 126445896396,
+        "name": "Linux store Rust 1.85.1",
+        "startedAt": "2026-11-04T07:20:23Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Install Rust toolchain and components",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Verify strict commits, recovery, buffering and process termination",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/upload-artifact@v4",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 11,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 12,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 13,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/7two77/MDCCORE/actions/runs/41791564548/job/126445896396"
+      },
+      {
+        "completedAt": "2026-11-04T07:20:58Z",
+        "conclusion": "success",
+        "databaseId": 126445896494,
+        "name": "Rust 1.85.1 / default",
+        "startedAt": "2026-11-04T07:20:23Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Install Rust toolchain and components",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Verify library, examples, and E2E evidence",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Retain verification evidence",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 11,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 12,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 13,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/7two77/MDCCORE/actions/runs/41791564548/job/126445896494"
+      },
+      {
+        "completedAt": "2026-11-04T07:20:51Z",
+        "conclusion": "success",
+        "databaseId": 126445896519,
+        "name": "Rust 1.85.1 / std-alloc",
+        "startedAt": "2026-11-04T07:20:23Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Install Rust toolchain and components",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Verify library, examples, and E2E evidence",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Retain verification evidence",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 11,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 12,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 13,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/7two77/MDCCORE/actions/runs/41791564548/job/126445896519"
+      },
+      {
+        "completedAt": "2026-11-04T07:20:48Z",
+        "conclusion": "success",
+        "databaseId": 126445896634,
+        "name": "Linux store Rust 1.98.0",
+        "startedAt": "2026-11-04T07:20:23Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Install Rust toolchain and components",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Verify strict commits, recovery, buffering and process termination",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/upload-artifact@v4",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 11,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 12,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 13,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/7two77/MDCCORE/actions/runs/41791564548/job/126445896634"
+      },
+      {
+        "completedAt": "2026-11-04T07:21:57Z",
+        "conclusion": "success",
+        "databaseId": 126446389508,
+        "name": "Compare portable bytes across toolchains and targets",
+        "startedAt": "2026-11-04T07:21:42Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/download-artifact@v4",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Require all ten executions to match the frozen control",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Compare fresh-process snapshot bytes across all targets",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/upload-artifact@v4",
+            "number": 7,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 13,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 14,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 15,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/7two77/MDCCORE/actions/runs/41791564548/job/126446389508"
+      }
+    ],
+    "status": "completed",
+    "url": "https://github.com/7two77/MDCCORE/actions/runs/41791564548"
+  },
+  "actual_job_log_checks": [
+    {
+      "id": 126445896027,
+      "name": "Portable Rust 1.98.0 / i686-unknown-linux-gnu",
+      "rust": 26,
+      "python": 0,
+      "ci_pass": false,
+      "store_pass": false,
+      "three_recovery_cases": false
+    },
+    {
+      "id": 126445896214,
+      "name": "Preserve integration ancestry and the 010 source",
+      "rust": 0,
+      "python": 0,
+      "ci_pass": false,
+      "store_pass": false,
+      "three_recovery_cases": false,
+      "receipts": [
+        {
+          "acceptance": "PASS",
+          "revision": "1f0b76a2ecf58eba5b1bbc9354b7131300c3cb4e",
+          "mode": "history",
+          "bridge_commit": "c53279a4a76fe342e3e2469aa9457b36906f9c0a",
+          "verified_tree_commit": "c53279a4a76fe342e3e2469aa9457b36906f9c0a",
+          "main_before": "5bd25557aed4a6dcb08b7fb1bc2d14e91ca81dbf",
+          "implementation_tip": "b54b30febb7a63adfb12e23bd20ca030b71700da",
+          "preserved_milestones": [
+            {
+              "name": "baseline-v0.1",
+              "commit": "a8c15c7ffbbe48993e97142f6842da044bda4162"
+            },
+            {
+              "name": "MDC-IMPL-008",
+              "commit": "70f37fc2b510f9436f1208ee378017dec444537e"
+            },
+            {
+              "name": "MDC-IMPL-009",
+              "commit": "d33bb979c0b8b6a69126fd79544d3f43e5df9d3b"
+            },
+            {
+              "name": "MDC-IMPL-010",
+              "commit": "b54b30febb7a63adfb12e23bd20ca030b71700da"
+            }
+          ],
+          "roots": [
+            "a8c15c7ffbbe48993e97142f6842da044bda4162",
+            "2dca7f93450d0766dd334d03d8b71487b15d0ea0"
+          ],
+          "protected_implementation_files": 157,
+          "original_main_files_preserved": 2,
+          "implementation_source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b"
+        }
+      ]
+    },
+    {
+      "id": 126445896261,
+      "name": "Rust 1.85.1 / alloc",
+      "rust": 213,
+      "python": 25,
+      "ci_pass": true,
+      "store_pass": false,
+      "three_recovery_cases": false
+    },
+    {
+      "id": 126445896281,
+      "name": "Portable Rust 1.85.1 / i686-unknown-linux-gnu",
+      "rust": 26,
+      "python": 0,
+      "ci_pass": false,
+      "store_pass": false,
+      "three_recovery_cases": false
+    },
+    {
+      "id": 126445896348,
+      "name": "Portable Rust 1.85.1 / s390x-unknown-linux-gnu",
+      "rust": 26,
+      "python": 0,
+      "ci_pass": false,
+      "store_pass": false,
+      "three_recovery_cases": false
+    },
+    {
+      "id": 126445896370,
+      "name": "Rust 1.98.0 / default",
+      "rust": 213,
+      "python": 25,
+      "ci_pass": true,
+      "store_pass": false,
+      "three_recovery_cases": false
+    },
+    {
+      "id": 126445896373,
+      "name": "Rust 1.98.0 / alloc",
+      "rust": 213,
+      "python": 25,
+      "ci_pass": true,
+      "store_pass": false,
+      "three_recovery_cases": false
+    },
+    {
+      "id": 126445896382,
+      "name": "Portable Rust 1.98.0 / s390x-unknown-linux-gnu",
+      "rust": 26,
+      "python": 0,
+      "ci_pass": false,
+      "store_pass": false,
+      "three_recovery_cases": false
+    },
+    {
+      "id": 126445896389,
+      "name": "Rust 1.98.0 / std-alloc",
+      "rust": 213,
+      "python": 25,
+      "ci_pass": true,
+      "store_pass": false,
+      "three_recovery_cases": false
+    },
+    {
+      "id": 126445896396,
+      "name": "Linux store Rust 1.85.1",
+      "rust": 74,
+      "python": 0,
+      "ci_pass": false,
+      "store_pass": true,
+      "three_recovery_cases": true
+    },
+    {
+      "id": 126445896494,
+      "name": "Rust 1.85.1 / default",
+      "rust": 213,
+      "python": 25,
+      "ci_pass": true,
+      "store_pass": false,
+      "three_recovery_cases": false
+    },
+    {
+      "id": 126445896519,
+      "name": "Rust 1.85.1 / std-alloc",
+      "rust": 213,
+      "python": 25,
+      "ci_pass": true,
+      "store_pass": false,
+      "three_recovery_cases": false
+    },
+    {
+      "id": 126445896634,
+      "name": "Linux store Rust 1.98.0",
+      "rust": 74,
+      "python": 0,
+      "ci_pass": false,
+      "store_pass": true,
+      "three_recovery_cases": true
+    },
+    {
+      "id": 126446389508,
+      "name": "Compare portable bytes across toolchains and targets",
+      "rust": 0,
+      "python": 0,
+      "ci_pass": false,
+      "store_pass": false,
+      "three_recovery_cases": false,
+      "receipts": [
+        {
+          "acceptance": "PASS",
+          "implementation_source_sha256": "2c8fb946fd41b2d0777edda5ac5fd9cfffed6a01fea9931ae5daa1ff418d0c22",
+          "commit_sha": "1f0b76a2ecf58eba5b1bbc9354b7131300c3cb4e",
+          "github_run_id": "41791564548",
+          "configurations": [
+            {
+              "rust": "1.85.1",
+              "profile": "alloc",
+              "target": {
+                "arch": "x86_64",
+                "pointer_width": 64,
+                "endian": "little"
+              },
+              "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+            },
+            {
+              "rust": "1.85.1",
+              "profile": "default",
+              "target": {
+                "arch": "x86_64",
+                "pointer_width": 64,
+                "endian": "little"
+              },
+              "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+            },
+            {
+              "rust": "1.85.1",
+              "profile": "std-alloc",
+              "target": {
+                "arch": "x86_64",
+                "pointer_width": 64,
+                "endian": "little"
+              },
+              "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+            },
+            {
+              "rust": "1.98.0",
+              "profile": "alloc",
+              "target": {
+                "arch": "x86_64",
+                "pointer_width": 64,
+                "endian": "little"
+              },
+              "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+            },
+            {
+              "rust": "1.98.0",
+              "profile": "default",
+              "target": {
+                "arch": "x86_64",
+                "pointer_width": 64,
+                "endian": "little"
+              },
+              "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+            },
+            {
+              "rust": "1.98.0",
+              "profile": "std-alloc",
+              "target": {
+                "arch": "x86_64",
+                "pointer_width": 64,
+                "endian": "little"
+              },
+              "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+            },
+            {
+              "rust": "1.85.1",
+              "profile": "portable-i686-unknown-linux-gnu",
+              "target": {
+                "arch": "x86",
+                "pointer_width": 32,
+                "endian": "little"
+              },
+              "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+            },
+            {
+              "rust": "1.85.1",
+              "profile": "portable-s390x-unknown-linux-gnu",
+              "target": {
+                "arch": "s390x",
+                "pointer_width": 64,
+                "endian": "big"
+              },
+              "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+            },
+            {
+              "rust": "1.98.0",
+              "profile": "portable-i686-unknown-linux-gnu",
+              "target": {
+                "arch": "x86",
+                "pointer_width": 32,
+                "endian": "little"
+              },
+              "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+            },
+            {
+              "rust": "1.98.0",
+              "profile": "portable-s390x-unknown-linux-gnu",
+              "target": {
+                "arch": "s390x",
+                "pointer_width": 64,
+                "endian": "big"
+              },
+              "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+            }
+          ]
+        },
+        {
+          "acceptance": "PASS",
+          "commit_sha": "1f0b76a2ecf58eba5b1bbc9354b7131300c3cb4e",
+          "github_run_id": "41791564548",
+          "implementation_source_sha256": "2c8fb946fd41b2d0777edda5ac5fd9cfffed6a01fea9931ae5daa1ff418d0c22",
+          "configurations": [
+            {
+              "artifact_folder": "mdc-ci-1.85.1-alloc",
+              "processes": 3,
+              "archive_bytes": 372782,
+              "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+              "manifest_bytes": 269158,
+              "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+            },
+            {
+              "artifact_folder": "mdc-ci-1.85.1-default",
+              "processes": 3,
+              "archive_bytes": 372782,
+              "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+              "manifest_bytes": 269158,
+              "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+            },
+            {
+              "artifact_folder": "mdc-ci-1.85.1-std-alloc",
+              "processes": 3,
+              "archive_bytes": 372782,
+              "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+              "manifest_bytes": 269158,
+              "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+            },
+            {
+              "artifact_folder": "mdc-ci-1.98.0-alloc",
+              "processes": 3,
+              "archive_bytes": 372782,
+              "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+              "manifest_bytes": 269158,
+              "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+            },
+            {
+              "artifact_folder": "mdc-ci-1.98.0-default",
+              "processes": 3,
+              "archive_bytes": 372782,
+              "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+              "manifest_bytes": 269158,
+              "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+            },
+            {
+              "artifact_folder": "mdc-ci-1.98.0-std-alloc",
+              "processes": 3,
+              "archive_bytes": 372782,
+              "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+              "manifest_bytes": 269158,
+              "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+            },
+            {
+              "artifact_folder": "mdc-portable-1.85.1-i686-unknown-linux-gnu",
+              "processes": 3,
+              "archive_bytes": 372782,
+              "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+              "manifest_bytes": 269158,
+              "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+            },
+            {
+              "artifact_folder": "mdc-portable-1.85.1-s390x-unknown-linux-gnu",
+              "processes": 3,
+              "archive_bytes": 372782,
+              "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+              "manifest_bytes": 269158,
+              "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+            },
+            {
+              "artifact_folder": "mdc-portable-1.98.0-i686-unknown-linux-gnu",
+              "processes": 3,
+              "archive_bytes": 372782,
+              "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+              "manifest_bytes": 269158,
+              "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+            },
+            {
+              "artifact_folder": "mdc-portable-1.98.0-s390x-unknown-linux-gnu",
+              "processes": 3,
+              "archive_bytes": 372782,
+              "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+              "manifest_bytes": 269158,
+              "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 13304110180,
+      "node_id": "MDg6QXJ0aWZhY3QxMzMwNDExMDE4MA==",
+      "name": "mdc-portable-1.85.1-s390x-unknown-linux-gnu",
+      "size_in_bytes": 33492,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13304110180",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13304110180/zip",
+      "expired": false,
+      "digest": "sha256:f6353dc1f626b0c503be40075428ff222b8721180c312386dfb3e64b2ebe0d09",
+      "created_at": "2026-11-04T07:21:36Z",
+      "updated_at": "2026-11-04T07:21:36Z",
+      "expires_at": "2026-11-18T07:21:34Z",
+      "workflow_run": {
+        "id": 41791564548,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "1f0b76a2ecf58eba5b1bbc9354b7131300c3cb4e"
+      }
+    },
+    {
+      "id": 13303821883,
+      "node_id": "MDg6QXJ0aWZhY3QxMzMwMzgyMTg4Mw==",
+      "name": "mdc-portable-1.85.1-i686-unknown-linux-gnu",
+      "size_in_bytes": 33483,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303821883",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303821883/zip",
+      "expired": false,
+      "digest": "sha256:6472a97267891e4e67d276a79cdcfc1f8e002b69d3dc7ec898a4c36622485a4b",
+      "created_at": "2026-11-04T07:21:06Z",
+      "updated_at": "2026-11-04T07:21:06Z",
+      "expires_at": "2026-11-18T07:21:06Z",
+      "workflow_run": {
+        "id": 41791564548,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "1f0b76a2ecf58eba5b1bbc9354b7131300c3cb4e"
+      }
+    },
+    {
+      "id": 13303811793,
+      "node_id": "MDg6QXJ0aWZhY3QxMzMwMzgxMTc5Mw==",
+      "name": "mdc-ci-1.85.1-std-alloc",
+      "size_in_bytes": 290232,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303811793",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303811793/zip",
+      "expired": false,
+      "digest": "sha256:995b093f41a5f01a0fd06e2d30303fbbf9e8e70ab5cc803a902603ba755b1a1c",
+      "created_at": "2026-11-04T07:20:49Z",
+      "updated_at": "2026-11-04T07:20:49Z",
+      "expires_at": "2026-11-18T07:20:48Z",
+      "workflow_run": {
+        "id": 41791564548,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "1f0b76a2ecf58eba5b1bbc9354b7131300c3cb4e"
+      }
+    },
+    {
+      "id": 13303617384,
+      "node_id": "MDg6QXJ0aWZhY3QxMzMwMzYxNzM4NA==",
+      "name": "mdc-ci-1.85.1-default",
+      "size_in_bytes": 290569,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303617384",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303617384/zip",
+      "expired": false,
+      "digest": "sha256:7d9a3412fc14d90660828dc90945210191c45b77da57331785358e51b55daa6d",
+      "created_at": "2026-11-04T07:20:55Z",
+      "updated_at": "2026-11-04T07:20:55Z",
+      "expires_at": "2026-11-18T07:20:55Z",
+      "workflow_run": {
+        "id": 41791564548,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "1f0b76a2ecf58eba5b1bbc9354b7131300c3cb4e"
+      }
+    },
+    {
+      "id": 13303467731,
+      "node_id": "MDg6QXJ0aWZhY3QxMzMwMzQ2NzczMQ==",
+      "name": "mdc-ci-1.98.0-default",
+      "size_in_bytes": 290579,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303467731",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303467731/zip",
+      "expired": false,
+      "digest": "sha256:f379ae04089c5aa91743df1a0e266c342148061a988072d51c6f3189aa877a86",
+      "created_at": "2026-11-04T07:20:55Z",
+      "updated_at": "2026-11-04T07:20:55Z",
+      "expires_at": "2026-11-18T07:20:54Z",
+      "workflow_run": {
+        "id": 41791564548,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "1f0b76a2ecf58eba5b1bbc9354b7131300c3cb4e"
+      }
+    },
+    {
+      "id": 13303407816,
+      "node_id": "MDg6QXJ0aWZhY3QxMzMwMzQwNzgxNg==",
+      "name": "mdc-ci-1.98.0-std-alloc",
+      "size_in_bytes": 290236,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303407816",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303407816/zip",
+      "expired": false,
+      "digest": "sha256:e85f87d6296b4e04b95eaade307750d2f40b9c20eacb774072d41a7db16d49e0",
+      "created_at": "2026-11-04T07:20:53Z",
+      "updated_at": "2026-11-04T07:20:53Z",
+      "expires_at": "2026-11-18T07:20:52Z",
+      "workflow_run": {
+        "id": 41791564548,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "1f0b76a2ecf58eba5b1bbc9354b7131300c3cb4e"
+      }
+    },
+    {
+      "id": 13303227654,
+      "node_id": "MDg6QXJ0aWZhY3QxMzMwMzIyNzY1NA==",
+      "name": "mdc-integration-history",
+      "size_in_bytes": 680,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303227654",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303227654/zip",
+      "expired": false,
+      "digest": "sha256:291558cc80f6f94db3ee6c37e3abe05aeac9ce63ad1399bb0e827af0e4e8c176",
+      "created_at": "2026-11-04T07:20:28Z",
+      "updated_at": "2026-11-04T07:20:28Z",
+      "expires_at": "2026-11-18T07:20:28Z",
+      "workflow_run": {
+        "id": 41791564548,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "1f0b76a2ecf58eba5b1bbc9354b7131300c3cb4e"
+      }
+    },
+    {
+      "id": 13303218747,
+      "node_id": "MDg6QXJ0aWZhY3QxMzMwMzIxODc0Nw==",
+      "name": "mdc-portable-1.98.0-i686-unknown-linux-gnu",
+      "size_in_bytes": 33483,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303218747",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303218747/zip",
+      "expired": false,
+      "digest": "sha256:0c34ca8c9933215b3a712c00c1cb15db2adabe73de00a26ebe865b2be564537f",
+      "created_at": "2026-11-04T07:20:57Z",
+      "updated_at": "2026-11-04T07:20:57Z",
+      "expires_at": "2026-11-18T07:20:57Z",
+      "workflow_run": {
+        "id": 41791564548,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "1f0b76a2ecf58eba5b1bbc9354b7131300c3cb4e"
+      }
+    },
+    {
+      "id": 13303202884,
+      "node_id": "MDg6QXJ0aWZhY3QxMzMwMzIwMjg4NA==",
+      "name": "mdc-ci-1.85.1-alloc",
+      "size_in_bytes": 290241,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303202884",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303202884/zip",
+      "expired": false,
+      "digest": "sha256:2f9acf2be373c949bfd99e08b370fd4166e0b665c05708d7b42403fb45b0c19f",
+      "created_at": "2026-11-04T07:20:55Z",
+      "updated_at": "2026-11-04T07:20:55Z",
+      "expires_at": "2026-11-18T07:20:55Z",
+      "workflow_run": {
+        "id": 41791564548,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "1f0b76a2ecf58eba5b1bbc9354b7131300c3cb4e"
+      }
+    },
+    {
+      "id": 13303143104,
+      "node_id": "MDg6QXJ0aWZhY3QxMzMwMzE0MzEwNA==",
+      "name": "mdc-store-1.98.0",
+      "size_in_bytes": 69122,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303143104",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303143104/zip",
+      "expired": false,
+      "digest": "sha256:ccf1a1efdadcdaf83853ba93a113df1f69cff3c0bcc435c3de1519e3e000f406",
+      "created_at": "2026-11-04T07:20:46Z",
+      "updated_at": "2026-11-04T07:20:46Z",
+      "expires_at": "2026-11-18T07:20:45Z",
+      "workflow_run": {
+        "id": 41791564548,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "1f0b76a2ecf58eba5b1bbc9354b7131300c3cb4e"
+      }
+    },
+    {
+      "id": 13303089250,
+      "node_id": "MDg6QXJ0aWZhY3QxMzMwMzA4OTI1MA==",
+      "name": "mdc-store-1.85.1",
+      "size_in_bytes": 69146,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303089250",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303089250/zip",
+      "expired": false,
+      "digest": "sha256:8a361f8da6ae5137c55eca3aa2a8f92093d00b50bae095c52182a058d62e2252",
+      "created_at": "2026-11-04T07:20:57Z",
+      "updated_at": "2026-11-04T07:20:57Z",
+      "expires_at": "2026-11-18T07:20:57Z",
+      "workflow_run": {
+        "id": 41791564548,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "1f0b76a2ecf58eba5b1bbc9354b7131300c3cb4e"
+      }
+    },
+    {
+      "id": 13303079281,
+      "node_id": "MDg6QXJ0aWZhY3QxMzMwMzA3OTI4MQ==",
+      "name": "mdc-portable-comparison",
+      "size_in_bytes": 1176,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303079281",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13303079281/zip",
+      "expired": false,
+      "digest": "sha256:9f0ff3876f94578ac1f8ac2c8f4b017ab1963d41f4330054c912a8529af648fe",
+      "created_at": "2026-11-04T07:21:53Z",
+      "updated_at": "2026-11-04T07:21:53Z",
+      "expires_at": "2026-11-18T07:21:52Z",
+      "workflow_run": {
+        "id": 41791564548,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "1f0b76a2ecf58eba5b1bbc9354b7131300c3cb4e"
+      }
+    },
+    {
+      "id": 13302929643,
+      "node_id": "MDg6QXJ0aWZhY3QxMzMwMjkyOTY0Mw==",
+      "name": "mdc-portable-1.98.0-s390x-unknown-linux-gnu",
+      "size_in_bytes": 33491,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13302929643",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13302929643/zip",
+      "expired": false,
+      "digest": "sha256:741b6cbc751842d2688057f2bb20ca8001c4f89953eb6e501fa5feec831fad61",
+      "created_at": "2026-11-04T07:21:07Z",
+      "updated_at": "2026-11-04T07:21:07Z",
+      "expires_at": "2026-11-18T07:21:06Z",
+      "workflow_run": {
+        "id": 41791564548,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "1f0b76a2ecf58eba5b1bbc9354b7131300c3cb4e"
+      }
+    },
+    {
+      "id": 13302854865,
+      "node_id": "MDg6QXJ0aWZhY3QxMzMwMjg1NDg2NQ==",
+      "name": "mdc-ci-1.98.0-alloc",
+      "size_in_bytes": 290233,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13302854865",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13302854865/zip",
+      "expired": false,
+      "digest": "sha256:c13e4931614a531ed417d1a9682bfb90a45fd993391e620ce66f121dc29d1d41",
+      "created_at": "2026-11-04T07:20:56Z",
+      "updated_at": "2026-11-04T07:20:56Z",
+      "expires_at": "2026-11-18T07:20:54Z",
+      "workflow_run": {
+        "id": 41791564548,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "1f0b76a2ecf58eba5b1bbc9354b7131300c3cb4e"
+      }
+    }
+  ]
+}

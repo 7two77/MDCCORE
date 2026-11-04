@@ -23,3 +23,10 @@ adapter требуют собственного контракта. VAIXLNS-Buil
 Открыты эксплуатационные детали первого consumer: data source/schema, desired
 State/Transition results, time basis, graph scale, storage platform и delivery channel.
 Они не препятствуют ограниченному exact core roundtrip в 011.
+
+2026-11-04: владелец предложил первый market input: Binance Spot либо Deribit,
+BTCUSDT/ETHUSDT, 1m OHLCV, CSV/Parquet, event=close_time и модель задержки.
+Для MDC-IMPL-014 выбран ограниченный Binance Spot/BTCUSDT/1m/CSV профиль.
+Задержка явно MODELED; после 2025-01-01 официальные Spot timestamps — us,
+раньше — ms. Решения и границы зафиксированы в
+[контракте адаптера](MDC-BINANCE-REPLAY-CONTRACT-v0.1.md).

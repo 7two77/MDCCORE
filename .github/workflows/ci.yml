@@ -152,9 +152,40 @@ jobs:
           if-no-files-found: error
           retention-days: 14
 
+  replay:
+    name: Binance replay Rust ${{ matrix.rust }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        rust: ["1.85.1", "1.98.0"]
+    env:
+      RUSTUP_TOOLCHAIN: ${{ matrix.rust }}
+      CARGO_INCREMENTAL: "0"
+      CARGO_TERM_COLOR: never
+      CARGO_TARGET_DIR: target
+      MDC_CI_REPORT_DIR: ci-evidence
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Rust toolchain and components
+        run: rustup toolchain install "$RUSTUP_TOOLCHAIN" --profile minimal --component rustfmt --component clippy
+      - name: Verify exact OHLCV parsing and isolated cutoff replay
+        run: bash .github/ci/replay.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mdc-replay-${{ matrix.rust }}
+          path: ci-evidence
+          if-no-files-found: error
+          retention-days: 14
+
   portable-comparison:
     name: Compare portable bytes across toolchains and targets
-    needs: [verify, portable]
+    needs: [verify, portable, replay]
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
@@ -169,10 +200,13 @@ jobs:
         run: python3 -B scripts/check_portable_identity.py --compare-root portable-artifacts --output portable-comparison.json
       - name: Compare fresh-process snapshot bytes across all targets
         run: python3 -B scripts/check_snapshot_roundtrip.py --compare-root portable-artifacts --output snapshot-comparison.json
+      - name: Compare modeled Binance replay across six configurations
+        run: python3 -B scripts/check_binance_replay.py --compare-root portable-artifacts --output binance-replay-comparison.json
       - uses: actions/upload-artifact@v4
         with:
           name: mdc-portable-comparison
           path: |
             portable-comparison.json
             snapshot-comparison.json
+            binance-replay-comparison.json
           retention-days: 14
