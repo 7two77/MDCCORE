@@ -3,7 +3,7 @@
 История объединения исходной main и проверенного стека baseline → 008 → 009 → 010,
 сохранённые материалы и правила сопровождения описаны в
 [MDC-INTEGRATION-001](docs/MDC-INTEGRATION-v0.1.md).
-Актуальная [матрица v0.10](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.10.md)
+Актуальная [матрица v0.11](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.11.md)
 учитывает опубликованные hosted CI receipts. Подготовка первого Git commit
 сохранена в [MDC-OPS-001](docs/MDC-OPS-001.md).
 
@@ -167,3 +167,8 @@ VAIXLNS-Builder и STSA-MC не входят в текущую область р
 Host verification: `bash .github/ci/store.sh`. Новый host crate требует explicit
 `cargo fetch --locked --manifest-path adapters/mdc_store/Cargo.toml` перед offline
 проверками. Root core остаётся без новых зависимостей.
+
+После PR #8: [проверка main](docs/MDC-OPS-004-POST-AUTO-FLUSH-v0.1.md) и
+[draft требований historical availability/replay](docs/MDC-TEMP-001-SCOPE-v0.1-DRAFT.md).
+Для исполнимого data contract ожидается выбор источника, инструмента и формата.
+Текущий storage PASS не является подтверждением отсутствия lookahead в backtest.
