@@ -3,12 +3,14 @@
 #![cfg_attr(not(target_os = "linux"), allow(unused))]
 #[cfg(not(target_os = "linux"))]
 compile_error!("mdc_store v1 supports Linux local filesystems only");
+mod scheduler;
 mod wire;
 use mdc_core::{
     contract::registry::Registry,
     identity::IdentityProtocol,
     pipeline::{SnapshotError, SnapshotLimits, SnapshotOutcome, SnapshotRequest, SnapshotSession},
 };
+pub use scheduler::{BatchPolicy, ScheduledSnapshot, ScheduledStore, SchedulerStatus, StoreClient};
 use std::{
     fs::{self, File, OpenOptions},
     io::{Read, Seek, SeekFrom, Write},
@@ -22,6 +24,9 @@ use wire::{frame, hash, parse, Call, Hash, Head, Kind, R, W};
 
 #[derive(Debug)]
 pub enum Error {
+    InvalidBatchPolicy(&'static str),
+    SchedulerStopped,
+    WorkerPanicked,
     MissingStore,
     Io(std::io::Error),
     Indeterminate(Box<Error>),
