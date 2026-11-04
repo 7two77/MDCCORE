@@ -21,7 +21,7 @@ MDC-OPS-003, 2026-11-03. Main 27fbc0a после PR #5. Область: суще
 | Native execution 011 | IMPLEMENTED | 209 Rust + 25 Python × 6; producer и два consumer process; local evidence |
 | Cross-target snapshot execution | IMPLEMENTED | Hosted CI на main: 4 cross jobs × 22 tests; archive/manifest совпали между 10 configurations |
 | Post-merge main verification | IMPLEMENTED | Run 41716728041: 12/12 PASS, native 209 Rust + 25 Python × 6, history guard и 12 artifacts |
-| Durable recovery contract | PARTIAL | Направление snapshot + WAL/hybrid sync записано; typed ACK, prefix commit и fault scenarios спроектированы, wire/adapter отсутствуют |
+| Durable recovery contract | PARTIAL | Направление snapshot + WAL/hybrid sync записано; wire v1/HEAD/SHA-256 и prefix commit заданы; framing vectors есть, runtime adapter отсутствует |
 | Export произвольного незаписанного Pipeline | MISSING | API требует запись всех изменений с создания session |
 | Общий persisted structural importer / migration | PARTIAL | Есть self-contained recorded profile; нет arbitrary graph import или engine migration |
 | Durable recovery | MISSING | Нет storage commit boundary, WAL/fsync, atomic publication или crash recovery |

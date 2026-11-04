@@ -26,10 +26,12 @@ snapshot bytes на всех десяти configurations, history guard и artif
 
 Draft разделяет AcceptedVolatile и DurableThrough, требует durable полного
 префикса перед публикацией решения, описывает rotation и recovery tail policy.
-Linux/local filesystem/single writer — предлагаемая первая область поддержки;
-exact wire format, lock, API критических barriers, N/timeout и budgets ещё
-должны быть зафиксированы. Одна секунда/N — примеры, не утверждённые SLA.
+Для первого engineering profile зафиксированы Linux/local filesystem/single writer,
+[wire v1](MDC-WAL-WIRE-CONTRACT-v1.md), SHA-256 frame chain, flock и отдельный
+HEAD certificate. N/timeout задаются конфигурацией; секунда/N остаются примерами,
+не утверждёнными SLA. [Framing vectors](evidence/wal-framing-v1.json) не являются
+execution evidence реального recovery.
 
-Runtime WAL/recovery отсутствует. Следующий результат — frozen wire/commit
-contract, затем host adapter и crash-point acceptance R01…R12. Temporal profile
+Runtime WAL/recovery отсутствует. Wire/commit contract подготовлен к реализации; следующий результат — host adapter
+и crash-point acceptance R01…R12. Temporal profile
 и внешний trading state остаются отдельными требованиями.

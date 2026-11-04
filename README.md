@@ -30,7 +30,8 @@ Portable identity добавлена в [MDC-IMPL-010](docs/MDC-IMPL-010.md).
 [проект recovery contract](docs/MDC-RECOVERY-CONTRACT-v0.1-DRAFT.md).
 Владелец предложил local snapshot + WAL и hybrid sync. Draft разделяет
 volatile/durable ACK и фиксирует требования к сохранению полного префикса решения.
-Wire/commit protocol ещё проектируется; runtime WAL/recovery пока отсутствует.
+[Wire/commit protocol v1](docs/MDC-WAL-WIRE-CONTRACT-v1.md) и framing vectors
+зафиксированы для первого Linux/single-writer профиля. Runtime WAL/recovery пока отсутствует.
 `Pipeline::new()` сохраняет legacy identity; portable graph явно выбирается через
 `Pipeline::with_identity_protocol(registry, IdentityProtocol::PortableV1)`.
 Профиль применяется ко всей цепочке, включая invalid artifacts и lifecycle journal.

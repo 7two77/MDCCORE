@@ -1,6 +1,6 @@
 # MDC-RECOVERY-001 — Snapshot + WAL recovery contract v0.1 DRAFT
 
-2026-11-03. Статус: OWNER DIRECTION RECORDED / ENGINEERING DRAFT / NOT IMPLEMENTED.
+2026-11-04. Статус: OWNER DIRECTION RECORDED / WIRE V1 SPECIFIED / NOT IMPLEMENTED.
 Основание: historical replay → long-running service, snapshot MDC-IMPL-011
 в main 27fbc0a и предложение владельца использовать local files + WAL с hybrid sync.
 Этот документ — новый host contract; он не переопределяет исходные STP-MDC.
@@ -9,8 +9,8 @@
 
 | ID | Направление владельца | Что ещё требуется зафиксировать |
 |---|---|---|
-| R-D01 | Local snapshot + append-only WAL, без embedded DB в первом профиле | Linux/local filesystem/single writer — предлагаемая первая область поддержки; lock mechanism и filesystem prerequisites |
-| R-D02 | Snapshot и критические решения sync; streaming events допускают buffered batch | Typed ACK, critical barrier, batch limits и recovery suffix policy |
+| R-D01 | Local snapshot + append-only WAL, без embedded DB в первом профиле | Первый инженерный профиль: Linux/local filesystem/single writer; LOCK + nonblocking flock и filesystem prerequisites |
+| R-D02 | Snapshot и критические решения sync; streaming events допускают buffered batch | Typed ACK и critical barrier определены в wire v1; batch interval/N задаются явно |
 
 Одна секунда либо N событий приведены владельцем как примеры batch policy,
 а не утверждённые численные SLA. Максимальная скорость или сохранность последних
@@ -70,8 +70,9 @@ Storage container должен иметь version, session/profile/engine identi
 sequence boundaries, bounded lengths, record type и corruption detection.
 WAL записывает original typed request, exact outcome и host deduplication receipt,
 включая отказы и повторы. Контроль префикса и связь с snapshot обязательны.
-Algorithm checksum, exact byte layout, commit marker и integrity chain пока не
-зафиксированы. Semantic u64 digest не заменяет storage integrity; MAC не заявлен.
+[Wire v1](MDC-WAL-WIRE-CONTRACT-v1.md) фиксирует SHA-256 framing, chain и
+отдельный atomic HEAD с committed offset; независимого WAL commit marker нет.
+Semantic u64 digest не заменяет storage integrity; MAC не заявлен.
 
 Предпочтительно переиспользовать fixed-width codec 011 и явно версионировать WAL
 framing. Сейчас operation codec private: для отдельного adapter нужен узкий
@@ -93,7 +94,7 @@ Snapshot 011 содержит всю recorded history; физическое уд
    ограничены host policy; превышение budget создаёт backpressure либо error.
 4. Для batch/critical barrier завершить commit protocol непрерывного префикса,
    выполнить WAL sync и только после его успеха продвинуть D и выдать durable ACK.
-   Exact порядок marker/write/sync и проверка crash points фиксируются в wire contract.
+   Exact write/sync/HEAD publication и crash boundaries заданы wire v1.
 5. После неоднозначной I/O ошибки не выдавать fictitious success/rollback. Перейти
    в recovery-required state; запретить новые writes и внешнюю публикацию решения.
 
@@ -136,8 +137,7 @@ request не создаёт новый artifact/audit/event. Invalidation reques
 
 Torn tail можно отбросить только когда формат доказывает, что он uncommitted.
 Corruption committed range, conflicting history или неразличимая неоднозначность
-требуют hard error и диагностики, без silent reset/fallback. Конкретная схема
-commit markers должна различать эти случаи; она ещё не реализована.
+требуют hard error и диагностики, без silent reset/fallback. Wire v1 различает эти случаи через HEAD committed offset; он ещё не реализован.
 
 External input cursor должен быть согласован с durable boundary для replay.
 Это не exactly-once delivery бирже/брокеру и не atomic transaction с торговой
@@ -173,8 +173,9 @@ injection и kill процесса не равны испытанию реаль
 
 ## Порядок реализации
 
-1. Заморозить WAL framing/version/integrity, typed receipts, D/commit state machine,
-   request-ID conflict rules, lock и budgets; проверить их на crash-point модели.
+1. Реализовать [wire v1](MDC-WAL-WIRE-CONTRACT-v1.md): framing/integrity, HEAD,
+   typed receipts, request-ID conflict rules, lock и bounds. Контрольные vectors
+   уже закреплены; они не заменяют parser/replay/fault tests.
 2. Реализовать host storage adapter и необходимый узкий API к 011. Сначала strict
    prefix commit/recovery с fault injection, затем buffered batch с теми же invariants.
 3. Добавить checkpoint/rotation, fresh-process tests и CI receipts R01…R12.
@@ -182,3 +183,6 @@ injection и kill процесса не равны испытанию реаль
 
 Temporal availability available_at/decision_at остаётся отдельным обязательным
 контрактом до заявления о причинно корректном historical trading replay.
+
+Wire v1 и [framing vectors](evidence/wal-framing-v1.json) — завершённый результат
+первого design slice. Все runtime claims по-прежнему NOT IMPLEMENTED.
