@@ -83,6 +83,8 @@ per cross configuration. Comparison requires all **six** replay configurations
 and all **ten** prior core/snapshot configurations with matching exact checkout,
 source fingerprint, complete matrix, clean worktree and CI-file hashes. Workflow
 now contains 16 jobs; actual hosted completion is recorded separately on the PR.
+The cross setup fetches the complete locked dependency set before offline
+execution; target-filtered fetch alone left cpufeatures unavailable on s390x.
 
 ## Limits and next boundary
 
