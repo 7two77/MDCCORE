@@ -1,9 +1,10 @@
 # MDC-WAL-001/1 — Wire format and commit protocol
 
-2026-11-04. Design version 1, ready for implementation/review. NOT IMPLEMENTED.
+2026-11-04. Specification version 1. A bounded implementation is described in
+[MDC-IMPL-012](MDC-IMPL-012.md); execution scope and exclusions are stated there.
 Scope: Linux, local filesystem, single writer, snapshot engine 011/1.
 This fixes the first engineering profile of the owner's snapshot + WAL / hybrid
-direction. It does not claim a durable runtime or power-loss test result.
+direction. The specification alone is not a runtime or power-loss test result.
 
 ## Store and identity
 
@@ -56,7 +57,7 @@ request_id has 1…256 UTF-8 bytes, no NUL; case and normalization are literal.
 Receipt request/outcome must equal the corresponding saved 011 journal call;
 snapshot operation_count equals snapshot_seq. No old host ID is pruned in v1.
 
-The core snapshot is unmodified MDC-SNAPSHOT-001/1. A new narrow core bridge must
+The core snapshot is unmodified MDC-SNAPSHOT-001/1. The narrow core bridge must
 expose exact journal request/outcome encoding and verified replay; it may not
 allow arbitrary private Pipeline writes or a mutable escape. Existing private
 operation tags 0…8 and outcome encoding from 011/engine1 are preserved.

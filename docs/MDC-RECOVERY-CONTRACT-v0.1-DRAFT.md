@@ -1,3 +1,8 @@
+> 2026-11-04 implementation update: [MDC-IMPL-012](MDC-IMPL-012.md) adds the
+> bounded Linux host runtime following wire v1. The text below preserves the
+> original design discussion; statements about future implementation are historical.
+> Automatic scheduling, external state and universal power-loss guarantees remain excluded.
+
 # MDC-RECOVERY-001 — Snapshot + WAL recovery contract v0.1 DRAFT
 
 2026-11-04. Статус: OWNER DIRECTION RECORDED / WIRE V1 SPECIFIED / NOT IMPLEMENTED.

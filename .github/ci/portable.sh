@@ -31,4 +31,6 @@ for MDC_SNAPSHOT_RUN in 1 2; do
   cmp "$MDC_CI_REPORT_DIR/snapshot-producer.log" "$MDC_CI_REPORT_DIR/snapshot-consumer-$MDC_SNAPSHOT_RUN.log"
 done
 python3 -B scripts/check_snapshot_roundtrip.py --folder "$MDC_CI_REPORT_DIR" --output "$MDC_CI_REPORT_DIR/snapshot-verification.json"
+MDC_CI_STEP=wal-bridge-tests
+cargo test --locked --offline --no-default-features --features alloc --target "$MDC_PORTABLE_TARGET" --test wal_bridge 2>&1 | tee "$MDC_CI_REPORT_DIR/wal-bridge-tests.log"
 MDC_CI_STEP=complete

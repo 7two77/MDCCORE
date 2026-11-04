@@ -1,0 +1,660 @@
+{
+  "package": "MDC-IMPL-012",
+  "acceptance": "PASS",
+  "scope": "local native Linux x86_64; conditional filesystem sync; hosted execution separate",
+  "base_main": "737f5b6bc6670642669badbdde48e2a8984c410d",
+  "implementation_source_sha256": "63c0359c3084ee21356985c992b4a091fff5f4cad1b30e8f9c3e1ddb6819c7d3",
+  "core_root_manifest_lock_and_nested_tree_unchanged": true,
+  "records": [
+    {
+      "rust": "1.85.1",
+      "profile": "alloc",
+      "metadata": {
+        "kind": "ci_execution",
+        "schema_version": 1,
+        "status": "PASS",
+        "exit_code": 0,
+        "last_step": "complete",
+        "profile": "alloc",
+        "commit_sha": "737f5b6bc6670642669badbdde48e2a8984c410d",
+        "worktree_dirty": true,
+        "github_run_id": null,
+        "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7",
+        "cargo": "cargo 1.85.1 (d73d2caf9 2024-12-31)",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "implementation_source_sha256": "63c0359c3084ee21356985c992b4a091fff5f4cad1b30e8f9c3e1ddb6819c7d3",
+        "ci_file_sha256": {
+          ".github/workflows/ci.yml": "e2c04a79813669f835112dda7be73cd92c2d21d1cc14461f7fcc4ccbcf162933",
+          ".github/ci/check_integration.py": "7de650076149fd3c8c935ffb03c1dd5ec461d7956ceb00cf018deb881b1bee47",
+          ".github/ci/portable.sh": "e8eb902c306676237e3605d2d1357bf3d9025424c317563fb5423e07c5501340",
+          ".github/ci/record.py": "4ff8ce3cd2b94598c9bbe45e6f9c789f169924f15ad98823795c69b27890d122",
+          ".github/ci/run.sh": "d2ae44ec693db1b6462441be47f64de84a3e4bd6e7ad90479d65c7dca9675924",
+          ".github/ci/store.sh": "2937cdacef6dbc046094614fe1a6118e1b2dd4e6ddb67eefe38ef2c26ee523b2"
+        }
+      },
+      "rust_tests": 213,
+      "python_checks": 25,
+      "snapshot": {
+        "acceptance": "PASS",
+        "artifact_folder": "alloc",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      },
+      "log_sha256": {
+        "clippy.log": "5e11c494cda1aeb472682728531b3b6a864af373984e423c7b05f7165d1011a2",
+        "driver.log": "aeaf0715e48d10e29073b15098d198450c381b7212d11150f7d5020fae4f7af4",
+        "e2e.log": "bfb0db50e4bf93e3eca740cb690dbee59bb1dc146c211c5e4272b6a44d795502",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-identity_migration.log": "27a904fe4d0f6ed22af26fe63587cdff8559ca11a0521e11393ad1835282895e",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "f04a6331fed174beaa625182f6e890b89879f412f5144b3e6088f630d22d3256",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-1.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
+        "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-validator-tests.log": "ca2aa3ffaf22346b421b187a00f49f275ce9cffac5a9c7768ead652eb47f8abf",
+        "snapshot-consumer-1.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-consumer-2.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-control.log": "490e6f413910eff3f727634c3db2d4518c606e1e6f6680c854eefb3f72dca2c4",
+        "snapshot-equality-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-equality-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-producer.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-validator-tests.log": "e73c3805f810fdcf3d0167ced7085c48306c9482a952ffb710551d230cdb3e51",
+        "tests.log": "42a8d7c8f1766806afaa002d135dfc178ca803c56a8e932bc4abb900d2342231",
+        "validator-tests.log": "32c266879cadd28f90ae21733f9da5a9f001e26ac3b193e60d8fbe389e36f720"
+      }
+    },
+    {
+      "rust": "1.85.1",
+      "profile": "default",
+      "metadata": {
+        "kind": "ci_execution",
+        "schema_version": 1,
+        "status": "PASS",
+        "exit_code": 0,
+        "last_step": "complete",
+        "profile": "default",
+        "commit_sha": "737f5b6bc6670642669badbdde48e2a8984c410d",
+        "worktree_dirty": true,
+        "github_run_id": null,
+        "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7",
+        "cargo": "cargo 1.85.1 (d73d2caf9 2024-12-31)",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "implementation_source_sha256": "63c0359c3084ee21356985c992b4a091fff5f4cad1b30e8f9c3e1ddb6819c7d3",
+        "ci_file_sha256": {
+          ".github/workflows/ci.yml": "e2c04a79813669f835112dda7be73cd92c2d21d1cc14461f7fcc4ccbcf162933",
+          ".github/ci/check_integration.py": "7de650076149fd3c8c935ffb03c1dd5ec461d7956ceb00cf018deb881b1bee47",
+          ".github/ci/portable.sh": "e8eb902c306676237e3605d2d1357bf3d9025424c317563fb5423e07c5501340",
+          ".github/ci/record.py": "4ff8ce3cd2b94598c9bbe45e6f9c789f169924f15ad98823795c69b27890d122",
+          ".github/ci/run.sh": "d2ae44ec693db1b6462441be47f64de84a3e4bd6e7ad90479d65c7dca9675924",
+          ".github/ci/store.sh": "2937cdacef6dbc046094614fe1a6118e1b2dd4e6ddb67eefe38ef2c26ee523b2"
+        }
+      },
+      "rust_tests": 213,
+      "python_checks": 25,
+      "snapshot": {
+        "acceptance": "PASS",
+        "artifact_folder": "default",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      },
+      "log_sha256": {
+        "clippy.log": "47d1ebe904a90b00c5b9e4f31a52db52e92ee8caeaa47e1a29a4a65b6baf0c9d",
+        "driver.log": "a97307866c3600109bb22c740e293e73215664569462b21d581d98606228c4aa",
+        "e2e.log": "e92c4c1cc9c3310104a57fecb5cbff988fbadf184e77a09a23593ed782dbb73d",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-identity_migration.log": "27a904fe4d0f6ed22af26fe63587cdff8559ca11a0521e11393ad1835282895e",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "086e166d04d4f968506e9b680bbaf91b5a169554ce57da11cade8767ac76e7f1",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "no-alloc-rejection.log": "95dd1052a7471531d458b4dcad40b989a301a4d1b6b8a65b0bd9f8dbb8ecd9ab",
+        "portable-1.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
+        "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-validator-tests.log": "34d0e8a043a86c2774707eef69d4bee9d3026a90aba4cd829a5661e887a4daa3",
+        "snapshot-consumer-1.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-consumer-2.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-control.log": "a33975b8164ad24fe089d73e71c330460f022c761b407a93b8e545b21b42981c",
+        "snapshot-equality-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-equality-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-producer.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-validator-tests.log": "e73c3805f810fdcf3d0167ced7085c48306c9482a952ffb710551d230cdb3e51",
+        "tests.log": "1f57d55d0fc0cd548a128686f3c98c0a01adfd633a5f9a5b90470c85ed27a035",
+        "validator-tests.log": "034c8c760baf376d2ef4617bc7ff6718a5b695dc0dd77c5c666c2c4c4a7ea6b7"
+      }
+    },
+    {
+      "rust": "1.85.1",
+      "profile": "std-alloc",
+      "metadata": {
+        "kind": "ci_execution",
+        "schema_version": 1,
+        "status": "PASS",
+        "exit_code": 0,
+        "last_step": "complete",
+        "profile": "std-alloc",
+        "commit_sha": "737f5b6bc6670642669badbdde48e2a8984c410d",
+        "worktree_dirty": true,
+        "github_run_id": null,
+        "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7",
+        "cargo": "cargo 1.85.1 (d73d2caf9 2024-12-31)",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "implementation_source_sha256": "63c0359c3084ee21356985c992b4a091fff5f4cad1b30e8f9c3e1ddb6819c7d3",
+        "ci_file_sha256": {
+          ".github/workflows/ci.yml": "e2c04a79813669f835112dda7be73cd92c2d21d1cc14461f7fcc4ccbcf162933",
+          ".github/ci/check_integration.py": "7de650076149fd3c8c935ffb03c1dd5ec461d7956ceb00cf018deb881b1bee47",
+          ".github/ci/portable.sh": "e8eb902c306676237e3605d2d1357bf3d9025424c317563fb5423e07c5501340",
+          ".github/ci/record.py": "4ff8ce3cd2b94598c9bbe45e6f9c789f169924f15ad98823795c69b27890d122",
+          ".github/ci/run.sh": "d2ae44ec693db1b6462441be47f64de84a3e4bd6e7ad90479d65c7dca9675924",
+          ".github/ci/store.sh": "2937cdacef6dbc046094614fe1a6118e1b2dd4e6ddb67eefe38ef2c26ee523b2"
+        }
+      },
+      "rust_tests": 213,
+      "python_checks": 25,
+      "snapshot": {
+        "acceptance": "PASS",
+        "artifact_folder": "std-alloc",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      },
+      "log_sha256": {
+        "clippy.log": "47d1ebe904a90b00c5b9e4f31a52db52e92ee8caeaa47e1a29a4a65b6baf0c9d",
+        "driver.log": "d481f5206027270c6d314b97e35347ea2bdc50469fd1cb7e2983f9d3e078883f",
+        "e2e.log": "8851df022ae08546550cb586fd025f29592a5b02828100159057cfa7d360c00e",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-identity_migration.log": "27a904fe4d0f6ed22af26fe63587cdff8559ca11a0521e11393ad1835282895e",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "8f3ae2616dd1e18d0fe1f4076d35b698a81fb5dae3fa8b45c2750e9a19508e5e",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-1.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
+        "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-validator-tests.log": "3001fef76e1766ee20521b3f1a814838f56d623089d081d5fb18dbbb9b5470b8",
+        "snapshot-consumer-1.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-consumer-2.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-control.log": "22ebaec9a3293b2fb29c6b08d06d0ca3e589fee44dd8a285521965eabf04d930",
+        "snapshot-equality-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-equality-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-producer.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-validator-tests.log": "e73c3805f810fdcf3d0167ced7085c48306c9482a952ffb710551d230cdb3e51",
+        "tests.log": "c19780c48f84fa70ce0eddb1f303c55d1b4926362d0183e5c6d43565a6e75954",
+        "validator-tests.log": "10c7c63eff824fe226c3eefa4ac6a86ed7938dc288db5ec16614979c7c0312f9"
+      }
+    },
+    {
+      "rust": "1.85.1",
+      "profile": "store",
+      "metadata": {
+        "kind": "ci_execution",
+        "schema_version": 1,
+        "status": "PASS",
+        "exit_code": 0,
+        "last_step": "complete",
+        "profile": "linux-store",
+        "commit_sha": "737f5b6bc6670642669badbdde48e2a8984c410d",
+        "worktree_dirty": true,
+        "github_run_id": null,
+        "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7",
+        "cargo": "cargo 1.85.1 (d73d2caf9 2024-12-31)",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "implementation_source_sha256": "63c0359c3084ee21356985c992b4a091fff5f4cad1b30e8f9c3e1ddb6819c7d3",
+        "ci_file_sha256": {
+          ".github/workflows/ci.yml": "e2c04a79813669f835112dda7be73cd92c2d21d1cc14461f7fcc4ccbcf162933",
+          ".github/ci/check_integration.py": "7de650076149fd3c8c935ffb03c1dd5ec461d7956ceb00cf018deb881b1bee47",
+          ".github/ci/portable.sh": "e8eb902c306676237e3605d2d1357bf3d9025424c317563fb5423e07c5501340",
+          ".github/ci/record.py": "4ff8ce3cd2b94598c9bbe45e6f9c789f169924f15ad98823795c69b27890d122",
+          ".github/ci/run.sh": "d2ae44ec693db1b6462441be47f64de84a3e4bd6e7ad90479d65c7dca9675924",
+          ".github/ci/store.sh": "2937cdacef6dbc046094614fe1a6118e1b2dd4e6ddb67eefe38ef2c26ee523b2"
+        }
+      },
+      "rust_tests_default": 23,
+      "rust_tests_fault_injection": 25,
+      "sigkill_points": 18,
+      "recovery_execution": {
+        "acceptance": "PASS",
+        "kind": "fresh_process_recovery_execution",
+        "scope": "Linux process restart; not real power-loss validation",
+        "cases": [
+          {
+            "id": "wal",
+            "processes": [
+              {
+                "pid": 19830,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.2916664970034617
+              },
+              {
+                "pid": 19863,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.281347399999504
+              },
+              {
+                "pid": 19876,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.2767653050032095
+              }
+            ],
+            "core_snapshot_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+            "store_files_sha256": {
+              "HEAD": "a75a5a308522ecc242d5e0aee352f064eb1c75a7623f7bc191d659e7a2ff7726",
+              "LOCK": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "S-0000000000000001.mdcs": "6c080995a4cd3f168a5f3476e49c6ae41dd7ba3f2874087863c249a841ae24a1",
+              "W-0000000000000001.mdcw": "c77c5bbd95903679bd51620a38558325442ba7cb81647d50a8db60856433bab4"
+            }
+          },
+          {
+            "id": "checkpoint",
+            "processes": [
+              {
+                "pid": 19879,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.35327969799982384
+              },
+              {
+                "pid": 19883,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.08809075099998154
+              },
+              {
+                "pid": 19884,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.08854494200204499
+              }
+            ],
+            "core_snapshot_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+            "store_files_sha256": {
+              "HEAD": "d071dafa691a4320441a281f07a37d508bc4b4e3309ec043f8ba80440897b447",
+              "LOCK": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "S-0000000000000003.mdcs": "b76cc86444cb71f9085f30f86b8cdb9d5138f28c97556a1e8177a0856a345b3d",
+              "W-0000000000000003.mdcw": "e70d192be467f79e8807d3516d2daa268c603cf387e2c7fef84ace6bbc1d610f"
+            }
+          }
+        ]
+      },
+      "log_sha256": {
+        "clippy-default.log": "51c7aef3c0c67b53cb177dc17ee15c96cfe685457266676f1895a10c7295319a",
+        "clippy-fault-injection.log": "a979bc9059e066d11d6ea4566430021c679a769c5f49264dd63a9f0497c9835c",
+        "dependencies.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "driver.log": "57930dfb824acc7338d30a3e3c51920c018da83193156cb856a99dde9921ca51",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "fresh-process-recovery.log": "4898a51c7a2c65e8ee9edf710faf76920d20e28a693e50c88520abddfd9a160b",
+        "production-build.log": "492249c9f550482a9a491739745144c5a474b15b27fd7de5717f8cd83c68916d",
+        "tests-default.log": "f07eb0e5fba552258926ccff9081188c5cf1ffa160ef40e4284a4b116a8eb7ed",
+        "tests-fault-injection.log": "8585a67eb2eb4b1336b080e48c021458ac31cf4368adeeddb1cad0e9098cd79c"
+      }
+    },
+    {
+      "rust": "1.98.0",
+      "profile": "alloc",
+      "metadata": {
+        "kind": "ci_execution",
+        "schema_version": 1,
+        "status": "PASS",
+        "exit_code": 0,
+        "last_step": "complete",
+        "profile": "alloc",
+        "commit_sha": "737f5b6bc6670642669badbdde48e2a8984c410d",
+        "worktree_dirty": true,
+        "github_run_id": null,
+        "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)\nbinary: rustc\ncommit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea\ncommit-date: 2026-08-18\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.0\nLLVM version: 22.1.8",
+        "cargo": "cargo 1.98.0 (797e8a9bc 2026-08-05)",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "implementation_source_sha256": "63c0359c3084ee21356985c992b4a091fff5f4cad1b30e8f9c3e1ddb6819c7d3",
+        "ci_file_sha256": {
+          ".github/workflows/ci.yml": "e2c04a79813669f835112dda7be73cd92c2d21d1cc14461f7fcc4ccbcf162933",
+          ".github/ci/check_integration.py": "7de650076149fd3c8c935ffb03c1dd5ec461d7956ceb00cf018deb881b1bee47",
+          ".github/ci/portable.sh": "e8eb902c306676237e3605d2d1357bf3d9025424c317563fb5423e07c5501340",
+          ".github/ci/record.py": "4ff8ce3cd2b94598c9bbe45e6f9c789f169924f15ad98823795c69b27890d122",
+          ".github/ci/run.sh": "d2ae44ec693db1b6462441be47f64de84a3e4bd6e7ad90479d65c7dca9675924",
+          ".github/ci/store.sh": "2937cdacef6dbc046094614fe1a6118e1b2dd4e6ddb67eefe38ef2c26ee523b2"
+        }
+      },
+      "rust_tests": 213,
+      "python_checks": 25,
+      "snapshot": {
+        "acceptance": "PASS",
+        "artifact_folder": "alloc",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      },
+      "log_sha256": {
+        "clippy.log": "a1911cc3f4120ab25372e08d4eaeb578f13aefbadff9f8c63ebccba7a01358cd",
+        "driver.log": "0369606c069197512834557df5eb5f8cb2c58c765f343a020d55ff5720c2929e",
+        "e2e.log": "1470eee921bc22608271bf2260e0a80fc10d76bfc93b98b6ab6fe0ec7e0a921d",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-identity_migration.log": "27a904fe4d0f6ed22af26fe63587cdff8559ca11a0521e11393ad1835282895e",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "be78bd097e2a0d66fa1ed10fa3bbdefeea136c2b6bc32f05d90294a5ade614ad",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-1.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
+        "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-validator-tests.log": "71a2fdf0cef1adcb1a51c26a74a2f35f84df488e30f9d53c06388e314e871b7c",
+        "snapshot-consumer-1.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-consumer-2.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-control.log": "490e6f413910eff3f727634c3db2d4518c606e1e6f6680c854eefb3f72dca2c4",
+        "snapshot-equality-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-equality-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-producer.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-validator-tests.log": "e73c3805f810fdcf3d0167ced7085c48306c9482a952ffb710551d230cdb3e51",
+        "tests.log": "13bab9732f99d6622825b80f72c50d281c6d00827a196ad13c9ccb8d09993383",
+        "validator-tests.log": "7f3361cd3ec5ff721422cffed89ab6784e250957e0419e2bac9646e2d9bb5875"
+      }
+    },
+    {
+      "rust": "1.98.0",
+      "profile": "default",
+      "metadata": {
+        "kind": "ci_execution",
+        "schema_version": 1,
+        "status": "PASS",
+        "exit_code": 0,
+        "last_step": "complete",
+        "profile": "default",
+        "commit_sha": "737f5b6bc6670642669badbdde48e2a8984c410d",
+        "worktree_dirty": true,
+        "github_run_id": null,
+        "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)\nbinary: rustc\ncommit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea\ncommit-date: 2026-08-18\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.0\nLLVM version: 22.1.8",
+        "cargo": "cargo 1.98.0 (797e8a9bc 2026-08-05)",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "implementation_source_sha256": "63c0359c3084ee21356985c992b4a091fff5f4cad1b30e8f9c3e1ddb6819c7d3",
+        "ci_file_sha256": {
+          ".github/workflows/ci.yml": "e2c04a79813669f835112dda7be73cd92c2d21d1cc14461f7fcc4ccbcf162933",
+          ".github/ci/check_integration.py": "7de650076149fd3c8c935ffb03c1dd5ec461d7956ceb00cf018deb881b1bee47",
+          ".github/ci/portable.sh": "e8eb902c306676237e3605d2d1357bf3d9025424c317563fb5423e07c5501340",
+          ".github/ci/record.py": "4ff8ce3cd2b94598c9bbe45e6f9c789f169924f15ad98823795c69b27890d122",
+          ".github/ci/run.sh": "d2ae44ec693db1b6462441be47f64de84a3e4bd6e7ad90479d65c7dca9675924",
+          ".github/ci/store.sh": "2937cdacef6dbc046094614fe1a6118e1b2dd4e6ddb67eefe38ef2c26ee523b2"
+        }
+      },
+      "rust_tests": 213,
+      "python_checks": 25,
+      "snapshot": {
+        "acceptance": "PASS",
+        "artifact_folder": "default",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      },
+      "log_sha256": {
+        "clippy.log": "da79ba202374a05b3b652c26d1b5ee95c2f7c7599d600a4f3f4ee4f103678b1b",
+        "driver.log": "7e9315bf5125a7d1de43144b0cfbe96fe4d6b46566ff9edd67dcb6a978a8698f",
+        "e2e.log": "7959383bee24ae67281b94b730b068ecaf062381b5a9a655f1c0c57145372524",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-identity_migration.log": "27a904fe4d0f6ed22af26fe63587cdff8559ca11a0521e11393ad1835282895e",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "236d64caed25529f227e2689559305e953290676521293a388df80141816d78b",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "no-alloc-rejection.log": "95dd1052a7471531d458b4dcad40b989a301a4d1b6b8a65b0bd9f8dbb8ecd9ab",
+        "portable-1.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
+        "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-validator-tests.log": "10d44c2e32d05bdd33c194458deeb57624637dc889393baaea8646644710d211",
+        "snapshot-consumer-1.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-consumer-2.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-control.log": "a33975b8164ad24fe089d73e71c330460f022c761b407a93b8e545b21b42981c",
+        "snapshot-equality-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-equality-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-producer.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-validator-tests.log": "e73c3805f810fdcf3d0167ced7085c48306c9482a952ffb710551d230cdb3e51",
+        "tests.log": "0ea6511a2649966d157293d1febadd08ba0906d33a78e048713880be9edf6703",
+        "validator-tests.log": "61e5fc887e67eab96b8d5d9332380dad3159bd95de304119e774b5cfcbe42ffb"
+      }
+    },
+    {
+      "rust": "1.98.0",
+      "profile": "std-alloc",
+      "metadata": {
+        "kind": "ci_execution",
+        "schema_version": 1,
+        "status": "PASS",
+        "exit_code": 0,
+        "last_step": "complete",
+        "profile": "std-alloc",
+        "commit_sha": "737f5b6bc6670642669badbdde48e2a8984c410d",
+        "worktree_dirty": true,
+        "github_run_id": null,
+        "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)\nbinary: rustc\ncommit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea\ncommit-date: 2026-08-18\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.0\nLLVM version: 22.1.8",
+        "cargo": "cargo 1.98.0 (797e8a9bc 2026-08-05)",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "implementation_source_sha256": "63c0359c3084ee21356985c992b4a091fff5f4cad1b30e8f9c3e1ddb6819c7d3",
+        "ci_file_sha256": {
+          ".github/workflows/ci.yml": "e2c04a79813669f835112dda7be73cd92c2d21d1cc14461f7fcc4ccbcf162933",
+          ".github/ci/check_integration.py": "7de650076149fd3c8c935ffb03c1dd5ec461d7956ceb00cf018deb881b1bee47",
+          ".github/ci/portable.sh": "e8eb902c306676237e3605d2d1357bf3d9025424c317563fb5423e07c5501340",
+          ".github/ci/record.py": "4ff8ce3cd2b94598c9bbe45e6f9c789f169924f15ad98823795c69b27890d122",
+          ".github/ci/run.sh": "d2ae44ec693db1b6462441be47f64de84a3e4bd6e7ad90479d65c7dca9675924",
+          ".github/ci/store.sh": "2937cdacef6dbc046094614fe1a6118e1b2dd4e6ddb67eefe38ef2c26ee523b2"
+        }
+      },
+      "rust_tests": 213,
+      "python_checks": 25,
+      "snapshot": {
+        "acceptance": "PASS",
+        "artifact_folder": "std-alloc",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      },
+      "log_sha256": {
+        "clippy.log": "47d1ebe904a90b00c5b9e4f31a52db52e92ee8caeaa47e1a29a4a65b6baf0c9d",
+        "driver.log": "886b0ccd95963c2215db0cb7e9569016cb417a2f32f7ffd9663fc3db5242d110",
+        "e2e.log": "c0aec837c361109ac9e7c37b7435d610a9d41ed86c15602829311731d45dbfe9",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-identity_migration.log": "27a904fe4d0f6ed22af26fe63587cdff8559ca11a0521e11393ad1835282895e",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "8f3ae2616dd1e18d0fe1f4076d35b698a81fb5dae3fa8b45c2750e9a19508e5e",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-1.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
+        "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-validator-tests.log": "179c9c6d7bd7ff45f2bcd8bb35aadb896dc1ea1cf78d378ffd5731c56cb2cbfb",
+        "snapshot-consumer-1.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-consumer-2.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-control.log": "22ebaec9a3293b2fb29c6b08d06d0ca3e589fee44dd8a285521965eabf04d930",
+        "snapshot-equality-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-equality-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-producer.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-validator-tests.log": "e73c3805f810fdcf3d0167ced7085c48306c9482a952ffb710551d230cdb3e51",
+        "tests.log": "cfe40aaecf3746aa06d2922efff611feb7269d0c2b32ee36a98995397b166756",
+        "validator-tests.log": "7ddb154b6d2ea54182f84d31afdf2e9dad146cbed35ebf1e9049aa319cfa2fbd"
+      }
+    },
+    {
+      "rust": "1.98.0",
+      "profile": "store",
+      "metadata": {
+        "kind": "ci_execution",
+        "schema_version": 1,
+        "status": "PASS",
+        "exit_code": 0,
+        "last_step": "complete",
+        "profile": "linux-store",
+        "commit_sha": "737f5b6bc6670642669badbdde48e2a8984c410d",
+        "worktree_dirty": true,
+        "github_run_id": null,
+        "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)\nbinary: rustc\ncommit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea\ncommit-date: 2026-08-18\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.0\nLLVM version: 22.1.8",
+        "cargo": "cargo 1.98.0 (797e8a9bc 2026-08-05)",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "implementation_source_sha256": "63c0359c3084ee21356985c992b4a091fff5f4cad1b30e8f9c3e1ddb6819c7d3",
+        "ci_file_sha256": {
+          ".github/workflows/ci.yml": "e2c04a79813669f835112dda7be73cd92c2d21d1cc14461f7fcc4ccbcf162933",
+          ".github/ci/check_integration.py": "7de650076149fd3c8c935ffb03c1dd5ec461d7956ceb00cf018deb881b1bee47",
+          ".github/ci/portable.sh": "e8eb902c306676237e3605d2d1357bf3d9025424c317563fb5423e07c5501340",
+          ".github/ci/record.py": "4ff8ce3cd2b94598c9bbe45e6f9c789f169924f15ad98823795c69b27890d122",
+          ".github/ci/run.sh": "d2ae44ec693db1b6462441be47f64de84a3e4bd6e7ad90479d65c7dca9675924",
+          ".github/ci/store.sh": "2937cdacef6dbc046094614fe1a6118e1b2dd4e6ddb67eefe38ef2c26ee523b2"
+        }
+      },
+      "rust_tests_default": 23,
+      "rust_tests_fault_injection": 25,
+      "sigkill_points": 18,
+      "recovery_execution": {
+        "acceptance": "PASS",
+        "kind": "fresh_process_recovery_execution",
+        "scope": "Linux process restart; not real power-loss validation",
+        "cases": [
+          {
+            "id": "wal",
+            "processes": [
+              {
+                "pid": 21253,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.33638542400149163
+              },
+              {
+                "pid": 21254,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.36578570299752755
+              },
+              {
+                "pid": 21255,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.31858982899575494
+              }
+            ],
+            "core_snapshot_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+            "store_files_sha256": {
+              "HEAD": "647add04eb3d28046c76255c02ed32d0ab10f95482f5f01e55da112ade425958",
+              "LOCK": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "S-0000000000000001.mdcs": "5026a4f9b7f80ef0691765d000564f938c97e98bc566073306020c530fc04a16",
+              "W-0000000000000001.mdcw": "a36b5f6e358c1439f202d4034937a37a957a2101a227e535f1f1ab1f55375f57"
+            }
+          },
+          {
+            "id": "checkpoint",
+            "processes": [
+              {
+                "pid": 21256,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.42025306499999715
+              },
+              {
+                "pid": 21272,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.09070697800052585
+              },
+              {
+                "pid": 21273,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.09091077500488609
+              }
+            ],
+            "core_snapshot_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+            "store_files_sha256": {
+              "HEAD": "b4564219f3c54dc2aaf6e0eef69b7f473501a4306d2ba3d6c6ff05df7dd6dda1",
+              "LOCK": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "S-0000000000000003.mdcs": "cc20e0d41c2de21c7c370768b432112ddb9f39d4303f954469b8637a4eeaca96",
+              "W-0000000000000003.mdcw": "e9a298152933d7418086b4fe4382cfa4d5ad596550e37da4a1f42b445778c0c8"
+            }
+          }
+        ]
+      },
+      "log_sha256": {
+        "clippy-default.log": "8f59ae22802a5dc4830060f4f7b86b26201d1767492eb4ea78cc021d2570bd96",
+        "clippy-fault-injection.log": "8de4589f6461ca12f6133fab708f22b4469257e38d5b8e94f0b9704bcf0e01e2",
+        "dependencies.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "driver.log": "86f72106d02753a8f5de548a3bbff904e500f5a9eb965184aa6f38d3f1a4420e",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "fresh-process-recovery.log": "f4ec3cbb9360174fb23f3d784abc3bd757380875f5b2645a971bb8ffe7ccf101",
+        "production-build.log": "492249c9f550482a9a491739745144c5a474b15b27fd7de5717f8cd83c68916d",
+        "tests-default.log": "0f3450b8b96f55ca527e350654987d8eba859c2ddcb99cd1e9d95c60b4260319",
+        "tests-fault-injection.log": "b590f60e600778b01f7c7c5fa135331f87e5cd5181efeb61c456ca0107481201"
+      }
+    }
+  ]
+}
