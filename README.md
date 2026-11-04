@@ -3,7 +3,7 @@
 История объединения исходной main и проверенного стека baseline → 008 → 009 → 010,
 сохранённые материалы и правила сопровождения описаны в
 [MDC-INTEGRATION-001](docs/MDC-INTEGRATION-v0.1.md).
-Актуальная [матрица v0.12](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.12.md)
+Актуальная [матрица v0.13](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.13.md)
 учитывает опубликованные hosted CI receipts. Подготовка первого Git commit
 сохранена в [MDC-OPS-001](docs/MDC-OPS-001.md).
 
@@ -184,3 +184,9 @@ fixtures покрывают ms и us эпохи; все цены/объёмы т
 в нули. Technical State проверяет доступность свидетельств, а не торговый сигнал.
 Storage PASS и технический replay не доказывают реальное время получения
 исторических данных или готовность полноценной торговой системы.
+
+После PR #9: [проверка main 9f21fe7](docs/MDC-OPS-005-POST-REPLAY-v0.1.md),
+post-merge CI 16/16 PASS. Следующий пакет — восстановление replay по сохранённым
+source/plan и префиксу завершённых решений. Подготовлен
+[проект контракта](docs/MDC-REPLAY-RECOVERY-CONTRACT-v0.1-DRAFT.md);
+runtime этого расширения пока не реализован.
