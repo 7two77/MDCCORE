@@ -23,11 +23,12 @@ def main():
     folder = Path(tempfile.mkdtemp(prefix="recovery-", dir=output.parent))
     cases = []
     expected = "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2"
-    for name in ("wal", "checkpoint"):
+    for name in ("wal", "checkpoint", "scheduled"):
         directory, oracle = folder / name, folder / (name + ".bin")
         rows = []
         for mode in ("produce", "consume", "consume"):
-            command = [str(executable), mode, str(directory), str(oracle)]
+            driver_mode = "scheduled-produce" if name == "scheduled" and mode == "produce" else mode
+            command = [str(executable), driver_mode, str(directory), str(oracle)]
             if mode == "produce" and name == "checkpoint":
                 command.append("checkpoint")
             started = time.monotonic()

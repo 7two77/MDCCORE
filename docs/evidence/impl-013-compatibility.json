@@ -1,0 +1,42 @@
+{
+  "acceptance": "PASS",
+  "scope": "New consumer opens saved hosted 012 stores, unchanged WAL/snapshot v1",
+  "cases": [
+    {
+      "old_package": "012",
+      "artifact": "mdc-store-1.85.1.zip",
+      "consumer_toolchain": "1.85.1",
+      "case": "wal",
+      "acceptance": "PASS",
+      "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+      "core_snapshot_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928"
+    },
+    {
+      "old_package": "012",
+      "artifact": "mdc-store-1.85.1.zip",
+      "consumer_toolchain": "1.85.1",
+      "case": "checkpoint",
+      "acceptance": "PASS",
+      "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+      "core_snapshot_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928"
+    },
+    {
+      "old_package": "012",
+      "artifact": "mdc-store-1.98.0.zip",
+      "consumer_toolchain": "1.98.0",
+      "case": "wal",
+      "acceptance": "PASS",
+      "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+      "core_snapshot_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928"
+    },
+    {
+      "old_package": "012",
+      "artifact": "mdc-store-1.98.0.zip",
+      "consumer_toolchain": "1.98.0",
+      "case": "checkpoint",
+      "acceptance": "PASS",
+      "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+      "core_snapshot_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928"
+    }
+  ]
+}
