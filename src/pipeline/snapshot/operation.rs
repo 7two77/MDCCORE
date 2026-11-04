@@ -5,7 +5,8 @@ use crate::pipeline::*;
 use crate::provenance::ObjectRef;
 use alloc::vec::Vec;
 
-pub(super) enum Operation {
+#[derive(Clone, Debug)]
+pub enum Operation {
     Admit(ObservationRequest),
     Measure(MeasurementRequest),
     Relate(RelationRequest),
@@ -16,8 +17,8 @@ pub(super) enum Operation {
     EvaluateKeyed(EvaluationRequest),
     Invalidate(InvalidationRequest),
 }
-#[derive(Clone)]
-pub(super) enum Outcome {
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub enum Outcome {
     Object(Result<ObjectRef, PipelineError>),
     Lifecycle(Result<LifecycleEventId, LifecycleError>),
 }

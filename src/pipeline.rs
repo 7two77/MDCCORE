@@ -20,7 +20,9 @@ use crate::model::transition::{AdmittedTransition, TransitionError};
 use crate::provenance::{EvaluationId, ObjectRef};
 
 pub(crate) mod snapshot;
-pub use snapshot::{SnapshotError, SnapshotLimits, SnapshotSession};
+pub use snapshot::{
+    SnapshotError, SnapshotLimits, SnapshotOutcome, SnapshotRequest, SnapshotSession,
+};
 
 mod lifecycle;
 mod projection;

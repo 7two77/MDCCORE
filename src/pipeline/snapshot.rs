@@ -9,6 +9,7 @@ mod operation;
 mod state;
 pub(crate) mod wire;
 use operation::{Operation, Outcome};
+pub use operation::{Operation as SnapshotRequest, Outcome as SnapshotOutcome};
 use wire::{Reader, Writer};
 
 const MAGIC: &[u8] = b"MDC-SNAPSHOT-001\0";
@@ -93,6 +94,66 @@ macro_rules! object_operation {
 }
 
 impl SnapshotSession {
+    /// Exact 011 request encoding, shared with the durable host adapter.
+    pub fn encode_request(
+        request: &SnapshotRequest,
+        limits: SnapshotLimits,
+    ) -> Result<Vec<u8>, SnapshotError> {
+        let mut writer = Writer::new(limits);
+        operation::encode_operation(request, &mut writer)?;
+        Ok(writer.finish())
+    }
+
+    pub fn decode_request(
+        bytes: &[u8],
+        limits: SnapshotLimits,
+    ) -> Result<SnapshotRequest, SnapshotError> {
+        let mut reader = Reader::new(bytes, limits)?;
+        let request = operation::decode_operation(&mut reader)?;
+        reader.finish()?;
+        Ok(request)
+    }
+
+    /// Obtain a saved call without exposing mutable storage or private fields.
+    pub fn recorded_call(
+        &self,
+        index: usize,
+        limits: SnapshotLimits,
+    ) -> Result<(Vec<u8>, Vec<u8>), SnapshotError> {
+        let entry = self
+            .entries
+            .get(index)
+            .ok_or(SnapshotError::InvalidSessionState("journal index"))?;
+        Ok((
+            Self::encode_request(&entry.operation, limits)?,
+            operation::outcome_bytes(&entry.outcome, limits)?,
+        ))
+    }
+
+    /// Isolate the call in a fresh candidate. Budget/replay failures preserve self.
+    /// Semantic rejection remains a recorded outcome, not an import error.
+    pub fn prepare_call(
+        &self,
+        request: &[u8],
+        expected: Option<&[u8]>,
+        limits: SnapshotLimits,
+    ) -> Result<(Self, Vec<u8>, SnapshotOutcome), SnapshotError> {
+        let operation = Self::decode_request(request, limits)?;
+        if Self::encode_request(&operation, limits)? != request {
+            return Err(SnapshotError::InvalidSessionState("noncanonical request"));
+        }
+        let mut candidate = Self::restore(&self.export(limits)?, limits)?;
+        let outcome = candidate.apply(operation);
+        let bytes = operation::outcome_bytes(&outcome, limits)?;
+        if expected.is_some_and(|value| value != bytes) {
+            return Err(SnapshotError::OutcomeMismatch {
+                operation: self.entries.len(),
+            });
+        }
+        candidate.export(limits)?;
+        Ok((candidate, bytes, outcome))
+    }
+
     pub fn new(registry: Registry, protocol: IdentityProtocol) -> Self {
         Self {
             pipeline: Pipeline::with_identity_protocol(registry, protocol),
@@ -104,6 +165,9 @@ impl SnapshotSession {
     }
     pub fn operation_count(&self) -> usize {
         self.entries.len()
+    }
+    pub fn recorded_outcome(&self, index: usize) -> Option<SnapshotOutcome> {
+        self.entries.get(index).map(|entry| entry.outcome.clone())
     }
     pub fn inventory(&self) -> Vec<ObjectRef> {
         state::inventory(&self.pipeline)

@@ -3,7 +3,7 @@
 История объединения исходной main и проверенного стека baseline → 008 → 009 → 010,
 сохранённые материалы и правила сопровождения описаны в
 [MDC-INTEGRATION-001](docs/MDC-INTEGRATION-v0.1.md).
-Актуальная [матрица v0.8](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.8.md)
+Актуальная [матрица v0.9](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.9.md)
 учитывает опубликованные hosted CI receipts. Подготовка первого Git commit
 сохранена в [MDC-OPS-001](docs/MDC-OPS-001.md).
 
@@ -11,27 +11,26 @@
 `Cargo.toml`, `src/`, `tests/`. Вложенный каталог `mdc_core/` сохранён как исходный
 материал для сравнения; он не подключён как workspace member.
 
-Последний функциональный пакет — **MDC-IMPL-011: recorded session snapshot roundtrip**.
-Первым потребителем выбран исторический replay с переходом к сервису;
-[решения владельца](docs/MDC-DECISIONS-2026-11-03-v0.1.md) и
-[эксплуатационные вопросы](docs/MDC-OPS-002-NEXT-STAGE-v0.1.md) сохранены отдельно.
-`SnapshotSession` записывает все изменяющие calls с создания пустого Pipeline.
-Self-contained export сохраняет frozen Registry, requests/outcomes и полный
-state manifest. Restore выполняет исходные операции по порядку в новом Pipeline
-и требует exact bytes каждого outcome и состояния:
-[контракт](docs/MDC-SNAPSHOT-CONTRACT-v0.1.md),
-[реализация и ограничения](docs/MDC-IMPL-011.md).
-Произвольный ранее созданный незаписанный Pipeline этим API не экспортируется.
-Durable commit и историческая доступность данных остаются отдельными механизмами.
+Последний функциональный пакет — **MDC-IMPL-012: bounded Linux WAL/recovery**.
+[Реализация, проверки и ограничения](docs/MDC-IMPL-012.md),
+[host crate](adapters/mdc_store/README.md),
+[wire contract](docs/MDC-WAL-WIRE-CONTRACT-v1.md).
+
+Независимый `mdc_store` сохраняет полный префикс истории через synced WAL и
+atomic HEAD. Buffered receipt допускает потерю suffix; строгий barrier сохраняет
+все предыдущие inputs/outcomes до выдачи durable ACK. Добавлены host request IDs,
+защита от второго writer, error fencing, checkpoint/rotation и exact replay.
+Это первый Linux/local-files/single-writer профиль, без фонового flush scheduler,
+исторической доступности данных или гарантии для любого оборудования.
+
+Основа — [snapshot MDC-IMPL-011](docs/MDC-IMPL-011.md): SnapshotSession с frozen
+Registry, записью всех mutators с создания и exact outcome/state validation.
+Произвольный ранее созданный незаписанный Pipeline не импортируется.
+[Решения владельца](docs/MDC-DECISIONS-2026-11-03-v0.1.md): historical replay →
+service и exact restart context. Торговый adapter, cursor/broker state и
+available_at/decision_at требуют отдельных contracts.
 
 Portable identity добавлена в [MDC-IMPL-010](docs/MDC-IMPL-010.md).
-После объединения snapshot-пакета подготовлены
-[post-merge checkpoint](docs/MDC-OPS-003-POST-SNAPSHOT-v0.1.md) и
-[проект recovery contract](docs/MDC-RECOVERY-CONTRACT-v0.1-DRAFT.md).
-Владелец предложил local snapshot + WAL и hybrid sync. Draft разделяет
-volatile/durable ACK и фиксирует требования к сохранению полного префикса решения.
-[Wire/commit protocol v1](docs/MDC-WAL-WIRE-CONTRACT-v1.md) и framing vectors
-зафиксированы для первого Linux/single-writer профиля. Runtime WAL/recovery пока отсутствует.
 `Pipeline::new()` сохраняет legacy identity; portable graph явно выбирается через
 `Pipeline::with_identity_protocol(registry, IdentityProtocol::PortableV1)`.
 Профиль применяется ко всей цепочке, включая invalid artifacts и lifecycle journal.
@@ -39,7 +38,7 @@ volatile/durable ACK и фиксирует требования к сохран�
 
 **MDC-E2E-CONFORMANCE-001: PASS для объявленного fixture MDC-SCALAR-001.**
 Все 12 assertions E2E-A01…A12 и 11 negative cases N01…N11 выполнены в двух
-раздельных OS-процессах. [Execution evidence](docs/evidence/mdc-e2e-conformance-001-impl-011.json)
+раздельных OS-процессах. [Execution evidence](docs/evidence/mdc-e2e-conformance-001-impl-012.json)
 содержит фактические результаты, canonical bytes, lineage и snapshots. PASS
 применим к записанным source fingerprint, toolchain, features и target; текущую
 применимость отчёта проверяет `check_gate_readiness.py`.
@@ -86,8 +85,8 @@ python3 -m unittest discover -s tests -p 'test_e2e_report.py'
 ```
 
 Матрица команд, результатов и compatibility checks записана в
-[evidence MDC-IMPL-011](docs/evidence/impl-011-local-verification.json).
-Подтверждены 209/209 Rust tests и 25/25 Python checks (17 E2E + 4 identity comparison + 4 snapshot) в каждом из шести локальных
+[evidence MDC-IMPL-012](docs/evidence/impl-012-local-verification.json).
+Подтверждены 213/213 Rust tests и 25/25 Python checks (17 E2E + 4 identity comparison + 4 snapshot) в каждом из шести локальных
 запусков: Rust 1.85.1 / 1.98.0 × default, `std,alloc`, `no_std + alloc`.
 Format, Clippy, прежний E2E, lifecycle, keyed-reference, portable и snapshot примеры проходят.
 [Hosted CI 009](https://github.com/7two77/MDCCORE/actions/runs/41614270848) прошёл
@@ -96,6 +95,9 @@ Format, Clippy, прежний E2E, lifecycle, keyed-reference, portable и snap
 011 добавляет 15 snapshot tests для cross targets, producer и два отдельных
 consumer process, frozen archive/manifest vectors и их сравнение между targets.
 Runner исполняется на std-хосте; библиотека сохраняет конфигурацию no_std+alloc.
+Host adapter отдельно проходит 23 default и 25 fault-injection tests на обеих
+версиях Rust. SIGKILL проверяет 18 publication/rotation boundaries. Power-loss
+validation и production-scale SLO не заявлены.
 Python validator независимо проверяет покрытие cases, ожидаемые semantic
 results, graph/snapshot evidence, projection isolation и fingerprint реализации.
 
@@ -134,10 +136,12 @@ Technical projection использует зарегистрированный v
 PASS fixture не устанавливает универсальное соответствие MDC для любых данных,
 контрактов, платформ или будущих изменений. Профиль scalar не реализует
 произвольные schemas, units conversion, рыночную интерпретацию, общие external
-evidence contracts, reinstatement или durable lifecycle recovery. Recorded snapshots
-сохраняют core context, но не позиции/ордера внешнего торгового adapter. Нет WAL,
-fsync, crash recovery, history compaction или available_at/decision_at semantics.
-Restore имеет стоимость replay истории; import limits не ограничивают рост live recording.
+evidence contracts или reinstatement. Bounded Linux recovery реализован отдельно
+от core; его гарантии зависят от filesystem/device sync и заданных limits. Recorded snapshots
+сохраняют core context, но не позиции/ордера внешнего торгового adapter. WAL/HEAD recovery добавлен в host crate. History compaction и
+available_at/decision_at semantics отсутствуют.
+Restore имеет стоимость replay истории; import limits не ограничивают обычный SnapshotSession live recording;
+mdc_store отдельно ограничивает число calls и размеры записей.
 Native Rust
 Hash остаётся непереносимым legacy protocol. Новый opt-in portable v1 имеет
 явные bytes/hash rules и отдельный cross-target gate; гарантия ограничена
@@ -155,3 +159,7 @@ VAIXLNS-Builder и STSA-MC не входят в текущую область р
 проверка `python3 scripts/check_gate_readiness.py --manifest-only` ожидаемо
 возвращает exit 2. Текущий checker по умолчанию проверяет execution report,
 возвращая exit 0 только при PASS и совпадении fingerprint текущего кода.
+
+Host verification: `bash .github/ci/store.sh`. Новый host crate требует explicit
+`cargo fetch --locked --manifest-path adapters/mdc_store/Cargo.toml` перед offline
+проверками. Root core остаётся без новых зависимостей.

@@ -121,6 +121,37 @@ jobs:
           if-no-files-found: warn
           retention-days: 14
 
+  linux-store:
+    name: Linux store Rust ${{ matrix.rust }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        rust: ["1.85.1", "1.98.0"]
+    env:
+      RUSTUP_TOOLCHAIN: ${{ matrix.rust }}
+      CARGO_INCREMENTAL: "0"
+      CARGO_TERM_COLOR: never
+      CARGO_TARGET_DIR: target
+      MDC_CI_REPORT_DIR: ci-evidence
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Rust toolchain and components
+        run: rustup toolchain install "$RUSTUP_TOOLCHAIN" --profile minimal --component rustfmt --component clippy
+      - name: Verify strict commits, recovery, buffering and process termination
+        run: bash .github/ci/store.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mdc-store-${{ matrix.rust }}
+          path: ci-evidence
+          if-no-files-found: error
+          retention-days: 14
+
   portable-comparison:
     name: Compare portable bytes across toolchains and targets
     needs: [verify, portable]

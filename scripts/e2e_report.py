@@ -4,7 +4,7 @@ import hashlib
 from collections import Counter
 import re
 
-DEFAULT_REPORT = "docs/evidence/mdc-e2e-conformance-001-impl-011.json"
+DEFAULT_REPORT = "docs/evidence/mdc-e2e-conformance-001-impl-012.json"
 
 CASE_IDS = {f"E2E-A{i:02}" for i in range(1, 13)} | {f"N{i:02}" for i in range(1, 12)}
 SEMANTIC = {"E2E-A05": "PASS", "E2E-A06": "UNRESOLVED", "E2E-A07": "FAIL",
@@ -15,9 +15,12 @@ KINDS = {"Observation", "Measurement", "Relation", "Composition", "State", "Tran
 def source_fingerprint(root):
     root = Path(root)
     files = [root / "Cargo.toml", root / "Cargo.lock"]
-    for folder in ("src", "examples", "tests", "scripts"):
+    for folder in ("src", "examples", "tests", "scripts", "adapters"):
         files.extend(p for p in (root / folder).rglob("*")
-                     if p.is_file() and "__pycache__" not in p.parts and p.suffix != ".pyc")
+                     if p.is_file() and "__pycache__" not in p.parts and "target" not in p.parts and p.suffix != ".pyc")
+    control = root / "docs/evidence/wal-framing-v1.json"
+    if control.is_file():
+        files.append(control)
     entries = {str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest()
                for p in sorted(set(files))}
     digest = hashlib.sha256()
