@@ -1,7 +1,9 @@
 # MDC-CAPACITY-001 — Replay resource characterization, draft v0.1
 
 2026-11-06. Proposed MDC-IMPL-016, based on verified main ee4d45f after 015.
-Status: PILOT OBSERVATIONS RECORDED / FORMAL HARNESS NOT IMPLEMENTED.
+Historical proposal. Implemented by [MDC-IMPL-016](MDC-IMPL-016.md);
+current [contract](MDC-REPLAY-CAPACITY-CONTRACT-v0.1.md). The following text
+retains the original pre-implementation proposal.
 The next slice measures resource use before changing scale or retention. It
 does not authorize loss of history or invent a production SLO.
 

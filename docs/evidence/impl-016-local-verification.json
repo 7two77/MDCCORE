@@ -1,0 +1,1469 @@
+{
+  "acceptance": "PASS",
+  "date": "2026-11-06",
+  "base_commit": "ee4d45f263b476d7ba62df31405edb23462bd6c0",
+  "implementation_source_sha256": "cca5b3a70dea13130f8fc25f91152b5fd4dfecf71fabd731eb1cd0f11ae20de4",
+  "scope": "local x86_64 Linux; cross targets belong to hosted CI",
+  "jobs": [
+    {
+      "profile": "alloc",
+      "rust": "1.85.1",
+      "status": "PASS",
+      "metadata_sha256": "32933a2f3fdf7f1d473ddcabc0dfcb3e95aa420ca8f0808a4fc378a1af3ea88d",
+      "counts": {
+        "portable-validator-tests.log": {
+          "rust": 0,
+          "python": 4
+        },
+        "snapshot-validator-tests.log": {
+          "rust": 0,
+          "python": 4
+        },
+        "tests.log": {
+          "rust": 213,
+          "python": 0
+        },
+        "validator-tests.log": {
+          "rust": 0,
+          "python": 17
+        }
+      },
+      "logs_sha256": {
+        "clippy.log": "40108eb5c2e432741fc7f36afdf5c793ec02b19e7b1ce5e51bdd2ba377bd26cb",
+        "e2e.log": "7d2775de1323c6c2c2af084a9e37ffdd92b65c95ac8d6469c34e8877f1d40f55",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-identity_migration.log": "27a904fe4d0f6ed22af26fe63587cdff8559ca11a0521e11393ad1835282895e",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "d406543f224718b237022a6f718b7b5c4163f285ff7b447252247fd16fb99e75",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-1.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
+        "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-validator-tests.log": "037993523460af7fa913ff7752e75a67ad4f52459f4b37cf8224d14e0cce1e5c",
+        "snapshot-consumer-1.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-consumer-2.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-control.log": "f5bf4a6053da6b52c5f4529d1ff3c5a109d2564b9078dfd943338bc0c23ad9ce",
+        "snapshot-equality-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-equality-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-producer.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-validator-tests.log": "f162ac6d170f5295dee020e348bd8c6f1c333f7c4f78e23f15f6a84c1e8e703b",
+        "tests.log": "9bfd01ef81e484ccd80f8b7c2f27d4acc9d847d1f1cb89a5f6ee35d1a60664ec",
+        "validator-tests.log": "7253869595120f7c7057425a2f7b7f91cd696094e8d90ce5d70a3e83d2a15813"
+      }
+    },
+    {
+      "profile": "default",
+      "rust": "1.85.1",
+      "status": "PASS",
+      "metadata_sha256": "4d90398af8d51388314cb7aad8248c33a44edc71a6a6da73d070a7061e88fa2e",
+      "counts": {
+        "portable-validator-tests.log": {
+          "rust": 0,
+          "python": 4
+        },
+        "snapshot-validator-tests.log": {
+          "rust": 0,
+          "python": 4
+        },
+        "tests.log": {
+          "rust": 213,
+          "python": 0
+        },
+        "validator-tests.log": {
+          "rust": 0,
+          "python": 17
+        }
+      },
+      "logs_sha256": {
+        "clippy.log": "63bd8a3ac13f8b1c160887cdaf9b30715b07e638d60df463cb8815f661518191",
+        "e2e.log": "fabf283e64635d8b7544e3ebabfe4786c297624a855d261ee68cf1dbadcf1818",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-identity_migration.log": "27a904fe4d0f6ed22af26fe63587cdff8559ca11a0521e11393ad1835282895e",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "af1d2cf35aacaf94dd1c8a40bb1eb81981171b00ae7b6668106f5acb3a38e60c",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "no-alloc-rejection.log": "95dd1052a7471531d458b4dcad40b989a301a4d1b6b8a65b0bd9f8dbb8ecd9ab",
+        "portable-1.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
+        "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-validator-tests.log": "b163ca8285eb66bdddaabad194b3cd2bf6731cffba8db995c030c9600d1f4a2a",
+        "snapshot-consumer-1.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-consumer-2.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-control.log": "1436bbe295e539363d4b691fca7488d535393854b555e38cf153444ea6b96145",
+        "snapshot-equality-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-equality-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-producer.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-validator-tests.log": "5d8a174d448d59185fd227bcbab9c964e39b10a9c2e28965972cfb0c833dd854",
+        "tests.log": "1cb0cf7f77865c891525be77592251ff7bebf08aa47c77d756fcaa70f8489d88",
+        "validator-tests.log": "e1d0205c5c6e2ad5601e71c6addd3d23e090e1be97fac16073d309d23e341b76"
+      }
+    },
+    {
+      "profile": "std-alloc",
+      "rust": "1.85.1",
+      "status": "PASS",
+      "metadata_sha256": "e5919405400b2d77f93706b67f5ffd5a60a0b13625539bc916afb1d28f3f29ce",
+      "counts": {
+        "portable-validator-tests.log": {
+          "rust": 0,
+          "python": 4
+        },
+        "snapshot-validator-tests.log": {
+          "rust": 0,
+          "python": 4
+        },
+        "tests.log": {
+          "rust": 213,
+          "python": 0
+        },
+        "validator-tests.log": {
+          "rust": 0,
+          "python": 17
+        }
+      },
+      "logs_sha256": {
+        "clippy.log": "4b395c9c76c7f7fb5221d30df7320c7a2387ff3842c426dbee6a59a54b5cffab",
+        "e2e.log": "4dffbf672dd68733ab13939d67781390ecc7531bea2a178f94c97e4219b13b0f",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-identity_migration.log": "27a904fe4d0f6ed22af26fe63587cdff8559ca11a0521e11393ad1835282895e",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "d406543f224718b237022a6f718b7b5c4163f285ff7b447252247fd16fb99e75",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-1.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
+        "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-validator-tests.log": "23425874568cd8529869dba59fa67bd815b519c0ded901e6b234a9b0bb9992f0",
+        "snapshot-consumer-1.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-consumer-2.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-control.log": "9e526afcc4b12835b6f3c4c09318022502a921e4ac10ab716fec4a06472888a6",
+        "snapshot-equality-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-equality-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-producer.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-validator-tests.log": "71f385628efaeed61b8ca36819a695a12058846f3539952fa581e781da33250f",
+        "tests.log": "6f97b4d5f38126c9cbafb1f9ff5b3ec18ba3504b70626de3d64a2591edb85718",
+        "validator-tests.log": "dd2e8282865412f3e2de65fdff52d304bbd359cce074f140659b8999c3a44a39"
+      }
+    },
+    {
+      "profile": "alloc",
+      "rust": "1.98.0",
+      "status": "PASS",
+      "metadata_sha256": "2c9d04ce9cd90e6a012ab7b277fe2c92247e10dc1dd14c38b09533eb648aabde",
+      "counts": {
+        "portable-validator-tests.log": {
+          "rust": 0,
+          "python": 4
+        },
+        "snapshot-validator-tests.log": {
+          "rust": 0,
+          "python": 4
+        },
+        "tests.log": {
+          "rust": 213,
+          "python": 0
+        },
+        "validator-tests.log": {
+          "rust": 0,
+          "python": 17
+        }
+      },
+      "logs_sha256": {
+        "clippy.log": "af1d2cf35aacaf94dd1c8a40bb1eb81981171b00ae7b6668106f5acb3a38e60c",
+        "e2e.log": "f15093790bac6f0e89578a0c818e1c76906826d35596d9ecf263bf2272042f44",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-identity_migration.log": "27a904fe4d0f6ed22af26fe63587cdff8559ca11a0521e11393ad1835282895e",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "d406543f224718b237022a6f718b7b5c4163f285ff7b447252247fd16fb99e75",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-1.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
+        "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-validator-tests.log": "035e1c65e84d2dd39f1894e51f823e323295ffe1ae5bde9c1c898e0789e4f321",
+        "snapshot-consumer-1.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-consumer-2.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-control.log": "74fa24850659ad5e0680d7b790076165256a7b2534ba325cac420e9d897763bf",
+        "snapshot-equality-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-equality-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-producer.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-validator-tests.log": "b6a161abed43b9a0dba9259cd451b39b20b10425ac13cc14786554c0e6fac7f1",
+        "tests.log": "36b5931a26c12a06b511077a567601c592570b22d06b0ff569462631736fe4cf",
+        "validator-tests.log": "5a5751c176eb9b89281fc28e1acdddd591b0fceefa8a1641e6ebdae0d6631eb2"
+      }
+    },
+    {
+      "profile": "default",
+      "rust": "1.98.0",
+      "status": "PASS",
+      "metadata_sha256": "33ec90ee8b07e33e498d776dace85ede1dd18e4abd970d18303441b17b681842",
+      "counts": {
+        "portable-validator-tests.log": {
+          "rust": 0,
+          "python": 4
+        },
+        "snapshot-validator-tests.log": {
+          "rust": 0,
+          "python": 4
+        },
+        "tests.log": {
+          "rust": 213,
+          "python": 0
+        },
+        "validator-tests.log": {
+          "rust": 0,
+          "python": 17
+        }
+      },
+      "logs_sha256": {
+        "clippy.log": "af1d2cf35aacaf94dd1c8a40bb1eb81981171b00ae7b6668106f5acb3a38e60c",
+        "e2e.log": "da7f50d8f031a509f3b6d1b61a1a08aeb05bb5cf51988ef28e80a5cb8153ff18",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-identity_migration.log": "27a904fe4d0f6ed22af26fe63587cdff8559ca11a0521e11393ad1835282895e",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "d406543f224718b237022a6f718b7b5c4163f285ff7b447252247fd16fb99e75",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "no-alloc-rejection.log": "95dd1052a7471531d458b4dcad40b989a301a4d1b6b8a65b0bd9f8dbb8ecd9ab",
+        "portable-1.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
+        "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-validator-tests.log": "f95defbfc38b3757e12dad333066318414f1609f6e5385fe55c3959fcf43bcfa",
+        "snapshot-consumer-1.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-consumer-2.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-control.log": "c0a5704ab8c388dbba7ce8774ca7af3b2091e9568b101f6b11c5f9a7b4edabce",
+        "snapshot-equality-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-equality-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-producer.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-validator-tests.log": "80144f3bf12d071a1497821467ab02765712cb11da3f547a5e2b5cf79f938e9a",
+        "tests.log": "477b71fe36b0e99464addc2f83ca7aef8e9a4bf0a8ac5c503d6ae0c3e96aa9e6",
+        "validator-tests.log": "e9c98cd3b88ad064924b934c9a2daafda90952b31705cf72828b7d7cfd2cb833"
+      }
+    },
+    {
+      "profile": "std-alloc",
+      "rust": "1.98.0",
+      "status": "PASS",
+      "metadata_sha256": "ee6b60de1da681dc38e8427b9ad95f4af2a2a819379dd3fe8578f3e0f6a81be9",
+      "counts": {
+        "portable-validator-tests.log": {
+          "rust": 0,
+          "python": 4
+        },
+        "snapshot-validator-tests.log": {
+          "rust": 0,
+          "python": 4
+        },
+        "tests.log": {
+          "rust": 213,
+          "python": 0
+        },
+        "validator-tests.log": {
+          "rust": 0,
+          "python": 17
+        }
+      },
+      "logs_sha256": {
+        "clippy.log": "af1d2cf35aacaf94dd1c8a40bb1eb81981171b00ae7b6668106f5acb3a38e60c",
+        "e2e.log": "85e07926b6801171a8c542b168cef64219851c9097bf31e516fccdd57cac5736",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-identity_migration.log": "27a904fe4d0f6ed22af26fe63587cdff8559ca11a0521e11393ad1835282895e",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "d406543f224718b237022a6f718b7b5c4163f285ff7b447252247fd16fb99e75",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-1.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
+        "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-validator-tests.log": "624fb476841db06ebb24d314081144dede3d98273cfe3c90aee01d77b1d5a02b",
+        "snapshot-consumer-1.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-consumer-2.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-control.log": "c902b948be516ea0a6238f08314c512d0cfe46a3572db0ab58d98ac305d72435",
+        "snapshot-equality-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-equality-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-producer.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-validator-tests.log": "80144f3bf12d071a1497821467ab02765712cb11da3f547a5e2b5cf79f938e9a",
+        "tests.log": "a7db5ed48ad8c4af99527d187f6b963de9b54280cbdac58aba5533c8825e88a8",
+        "validator-tests.log": "5eeeffeb5976191370e774e44c81ee5d14deb286782933056cf7582f5d98ce7f"
+      }
+    },
+    {
+      "profile": "binance-replay",
+      "rust": "1.85.1",
+      "status": "PASS",
+      "metadata_sha256": "66fc3f3eff3a5a228ae5648553e6908d1dbaf88f193faac3319f0edcce1909e1",
+      "counts": {
+        "capacity-validator-tests.log": {
+          "rust": 0,
+          "python": 35
+        },
+        "recovery-validator-tests.log": {
+          "rust": 0,
+          "python": 4
+        },
+        "tests-fault-injection.log": {
+          "rust": 54,
+          "python": 0
+        },
+        "tests.log": {
+          "rust": 51,
+          "python": 0
+        },
+        "validator-tests.log": {
+          "rust": 0,
+          "python": 5
+        }
+      },
+      "logs_sha256": {
+        "capacity-default.log": "a3b6afbff770859f6c46f5b329a4d47140d0bd1e9562d45b2ce7529b590d9a0d",
+        "capacity-limited.log": "41738dd108fb50468880569ce975e4201d65d6f667147fba8c71bc4f4debcfe8",
+        "capacity-validator-tests.log": "7ea844aff25b95f95346b43d5162d299b5cf6a824aa19788241917b9df46c3f3",
+        "clippy-fault-injection.log": "4d84f78054527e6d00b963467efd45aab80aa19582d00e27d282acbd7389ec8b",
+        "clippy.log": "7337a2247956b5cfcd113050ec2780dbe8a0794b4a56882a37a99391de4a141f",
+        "dependencies.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "fresh-process-recovery.log": "d8db775ffb0a337be7edeb1d28f770f75a06716d29ff295b16bbb1f79427608a",
+        "production-build.log": "9ddcb7a97f3589835ba8f354c41d25b0a805bd5f85ddbccaff009e6f6dc7236c",
+        "recovery-validator-tests.log": "3b0dbb90387b342ccecc50446a0fb5e4385d86a3f467e5b97d63f8924fc08aff",
+        "replay-validation.log": "32184f4f48162f2fb037296efa8b9ae0a21b038d430732f4d2c981f177cb7a5b",
+        "tests-fault-injection.log": "a61700ccd7dbdb2740e886a190c7632bbc3079f49c2d2db442424a513beff7d9",
+        "tests.log": "4c532d63b022640f44067b45c976f36bbadfeab1dc62f69c4d573ca184178d0d",
+        "validator-tests.log": "baf49b59538192f3e136ca0404cac516ecb8dd2fe5ba1416604056f3080fa49c"
+      }
+    },
+    {
+      "profile": "binance-replay",
+      "rust": "1.98.0",
+      "status": "PASS",
+      "metadata_sha256": "deb6d5b398d6f3285be6fb10d1f796cd8ac3a4aab32b5d98a811ee5e224e4ff9",
+      "counts": {
+        "capacity-validator-tests.log": {
+          "rust": 0,
+          "python": 35
+        },
+        "recovery-validator-tests.log": {
+          "rust": 0,
+          "python": 4
+        },
+        "tests-fault-injection.log": {
+          "rust": 54,
+          "python": 0
+        },
+        "tests.log": {
+          "rust": 51,
+          "python": 0
+        },
+        "validator-tests.log": {
+          "rust": 0,
+          "python": 5
+        }
+      },
+      "logs_sha256": {
+        "capacity-default.log": "a3b6afbff770859f6c46f5b329a4d47140d0bd1e9562d45b2ce7529b590d9a0d",
+        "capacity-limited.log": "41738dd108fb50468880569ce975e4201d65d6f667147fba8c71bc4f4debcfe8",
+        "capacity-validator-tests.log": "5dd44bc834467eec64417681e7e4efa32fa14a4af09b51691c7cde6994181a9e",
+        "clippy-fault-injection.log": "dd30beb8b8da49bb419553a83987f272311fc46d4fc5a9605cc6692fa16ff23a",
+        "clippy.log": "86ddcecec9f72e1c28a58693e5af5f81e243d7e06be2e5e5a09a61c5ee599024",
+        "dependencies.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "fresh-process-recovery.log": "d8db775ffb0a337be7edeb1d28f770f75a06716d29ff295b16bbb1f79427608a",
+        "production-build.log": "af1d2cf35aacaf94dd1c8a40bb1eb81981171b00ae7b6668106f5acb3a38e60c",
+        "recovery-validator-tests.log": "119eb158af9c8a17b35e94789e871de6f57880473f2db9e480f799d8e7a49d2d",
+        "replay-validation.log": "32184f4f48162f2fb037296efa8b9ae0a21b038d430732f4d2c981f177cb7a5b",
+        "tests-fault-injection.log": "c71a6e49deaabaa87164a821fc39c8a898eca3d5ad6000e2fca3d7682b5c8856",
+        "tests.log": "80e003b48aa6fc325b60960371312aa7b37deaeb6313cdc856c92015162d0e02",
+        "validator-tests.log": "1f11b6e880045ee35de832b81b45d06257342e13b5c79bbf0034379d4ca220b9"
+      }
+    },
+    {
+      "profile": "linux-store",
+      "rust": "1.85.1",
+      "status": "PASS",
+      "metadata_sha256": "55b20cd2c164599e062fc0742cde9980209f4721c5a3f8e07c7dfdf76f578331",
+      "counts": {
+        "tests-default.log": {
+          "rust": 36,
+          "python": 0
+        },
+        "tests-fault-injection.log": {
+          "rust": 38,
+          "python": 0
+        }
+      },
+      "logs_sha256": {
+        "clippy-default.log": "dda7980e8da1041233b9bd7cd86f479320cbe44ef953019bb06c5f1c023ea622",
+        "clippy-fault-injection.log": "a11a1de8037a032bda7e33f88e31dc898d0129cfe94956add639cd289d2ce985",
+        "dependencies.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "fresh-process-recovery.log": "5295759116d8b79d424da27ca82e11f72c2d7e54f59a59dcaff4872152f7c2a9",
+        "production-build.log": "1b06c206522a9ad6653edd56b1bb9e19254f4cd592480fbc8b10cbddc2b994e9",
+        "tests-default.log": "b7246b81cb1d2bcddf2d54cee420fe37914eced70cbf12a8a44a41a9f21ab5c7",
+        "tests-fault-injection.log": "749828e8b3cc941d9d669ebd6b50c471fdec85fd4a7f4368cd088899f99eb6f9"
+      }
+    },
+    {
+      "profile": "linux-store",
+      "rust": "1.98.0",
+      "status": "PASS",
+      "metadata_sha256": "72e388c5470df88bc7e88a8b662e5a31d8840e82e83ef4285e6cb450cf499471",
+      "counts": {
+        "tests-default.log": {
+          "rust": 36,
+          "python": 0
+        },
+        "tests-fault-injection.log": {
+          "rust": 38,
+          "python": 0
+        }
+      },
+      "logs_sha256": {
+        "clippy-default.log": "60752725ea6f194f20ebc7150276eef9d351f09c52a8c6e784e05f6a10ca45df",
+        "clippy-fault-injection.log": "63bd8a3ac13f8b1c160887cdaf9b30715b07e638d60df463cb8815f661518191",
+        "dependencies.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "fresh-process-recovery.log": "53819511356f6cb725de182c0044728c68223edbfa824a9c5542085a98bf6659",
+        "production-build.log": "f694a9e074374d315f58b8a63ce849858b1b8708cf56b3d194218605bd2a9d6e",
+        "tests-default.log": "4c9b54d3fab5dc81408b2781ff5d37a6cf47fe12553628b6af9c30689cccc871",
+        "tests-fault-injection.log": "50e4fe25d859819bee30040d260fb5fc7f5e377eb19433548f45d6f0ed2c4d9b"
+      }
+    }
+  ],
+  "production_base_files_unchanged": 103,
+  "core_portable": {
+    "acceptance": "PASS",
+    "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+    "negative_controls": 7
+  },
+  "core_snapshot": {
+    "acceptance": "PASS",
+    "artifact_folder": "core-1.98.0-default",
+    "processes": 3,
+    "archive_bytes": 372782,
+    "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+    "manifest_bytes": 269158,
+    "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+  },
+  "capacity_smoke": {
+    "default": {
+      "acceptance": "PASS",
+      "verification_scope": "local studies, not hosted CI",
+      "configurations": [
+        {
+          "rust": "1.85.1",
+          "checked": {
+            "acceptance": "PASS",
+            "source_sha256": "177ecbb250a90a547e2777f2832de120e37a77e9d0a75011972bae0fa7ff1913",
+            "points": [
+              1,
+              2,
+              3,
+              1440
+            ],
+            "repetitions": 3,
+            "cases": 12,
+            "outcomes": [
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "PreflightRejected",
+              "PreflightRejected",
+              "PreflightRejected"
+            ]
+          },
+          "summary": [
+            {
+              "requested": 1,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    2355151,
+                    1938175,
+                    3847567
+                  ],
+                  "min": 1938175,
+                  "median": 2355151,
+                  "max": 3847567
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    8275058,
+                    11846788,
+                    15793070
+                  ],
+                  "min": 8275058,
+                  "median": 11846788,
+                  "max": 15793070
+                },
+                "journal_bytes": {
+                  "samples": [
+                    11061,
+                    11061,
+                    11061
+                  ],
+                  "min": 11061,
+                  "median": 11061,
+                  "max": 11061
+                },
+                "committed": {
+                  "samples": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "min": 1,
+                  "median": 1,
+                  "max": 1
+                }
+              }
+            },
+            {
+              "requested": 2,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    6286065,
+                    5254372,
+                    7297610
+                  ],
+                  "min": 5254372,
+                  "median": 6286065,
+                  "max": 7297610
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    24694061,
+                    30620840,
+                    13524512
+                  ],
+                  "min": 13524512,
+                  "median": 24694061,
+                  "max": 30620840
+                },
+                "journal_bytes": {
+                  "samples": [
+                    27601,
+                    27601,
+                    27601
+                  ],
+                  "min": 27601,
+                  "median": 27601,
+                  "max": 27601
+                },
+                "committed": {
+                  "samples": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "min": 2,
+                  "median": 2,
+                  "max": 2
+                }
+              }
+            },
+            {
+              "requested": 3,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    12181828,
+                    35735531,
+                    9414597
+                  ],
+                  "min": 9414597,
+                  "median": 12181828,
+                  "max": 35735531
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    13517987,
+                    13350570,
+                    15303627
+                  ],
+                  "min": 13350570,
+                  "median": 13517987,
+                  "max": 15303627
+                },
+                "journal_bytes": {
+                  "samples": [
+                    49750,
+                    49750,
+                    49750
+                  ],
+                  "min": 49750,
+                  "median": 49750,
+                  "max": 49750
+                },
+                "committed": {
+                  "samples": [
+                    3,
+                    3,
+                    3
+                  ],
+                  "min": 3,
+                  "median": 3,
+                  "max": 3
+                }
+              }
+            },
+            {
+              "requested": 1440,
+              "outcomes": [
+                "PreflightRejected",
+                "PreflightRejected",
+                "PreflightRejected"
+              ],
+              "first_constraints": [
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")"
+              ],
+              "metrics": {
+                "commit_api_ns": null,
+                "recovery_api_ns": null,
+                "journal_bytes": null,
+                "committed": {
+                  "samples": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "min": 0,
+                  "median": 0,
+                  "max": 0
+                }
+              }
+            }
+          ],
+          "host": {
+            "os": "Linux-6.18.57-x86_64-with-glibc2.41",
+            "machine": "x86_64",
+            "cpu_model": "INTEL(R) XEON(R) PLATINUM 8573C",
+            "logical_cpus": 3,
+            "python_pointer_width": 64,
+            "python_byteorder": "little",
+            "filesystem": "overlayfs"
+          }
+        },
+        {
+          "rust": "1.98.0",
+          "checked": {
+            "acceptance": "PASS",
+            "source_sha256": "177ecbb250a90a547e2777f2832de120e37a77e9d0a75011972bae0fa7ff1913",
+            "points": [
+              1,
+              2,
+              3,
+              1440
+            ],
+            "repetitions": 3,
+            "cases": 12,
+            "outcomes": [
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "PreflightRejected",
+              "PreflightRejected",
+              "PreflightRejected"
+            ]
+          },
+          "summary": [
+            {
+              "requested": 1,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    2110223,
+                    2220685,
+                    2423107
+                  ],
+                  "min": 2110223,
+                  "median": 2220685,
+                  "max": 2423107
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    6341451,
+                    7670799,
+                    15517054
+                  ],
+                  "min": 6341451,
+                  "median": 7670799,
+                  "max": 15517054
+                },
+                "journal_bytes": {
+                  "samples": [
+                    11061,
+                    11061,
+                    11061
+                  ],
+                  "min": 11061,
+                  "median": 11061,
+                  "max": 11061
+                },
+                "committed": {
+                  "samples": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "min": 1,
+                  "median": 1,
+                  "max": 1
+                }
+              }
+            },
+            {
+              "requested": 2,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    5101170,
+                    4874980,
+                    4374556
+                  ],
+                  "min": 4374556,
+                  "median": 4874980,
+                  "max": 5101170
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    11203090,
+                    12332663,
+                    15095658
+                  ],
+                  "min": 11203090,
+                  "median": 12332663,
+                  "max": 15095658
+                },
+                "journal_bytes": {
+                  "samples": [
+                    27601,
+                    27601,
+                    27601
+                  ],
+                  "min": 27601,
+                  "median": 27601,
+                  "max": 27601
+                },
+                "committed": {
+                  "samples": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "min": 2,
+                  "median": 2,
+                  "max": 2
+                }
+              }
+            },
+            {
+              "requested": 3,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    9258875,
+                    12517668,
+                    8724938
+                  ],
+                  "min": 8724938,
+                  "median": 9258875,
+                  "max": 12517668
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    15038476,
+                    12481094,
+                    42938644
+                  ],
+                  "min": 12481094,
+                  "median": 15038476,
+                  "max": 42938644
+                },
+                "journal_bytes": {
+                  "samples": [
+                    49750,
+                    49750,
+                    49750
+                  ],
+                  "min": 49750,
+                  "median": 49750,
+                  "max": 49750
+                },
+                "committed": {
+                  "samples": [
+                    3,
+                    3,
+                    3
+                  ],
+                  "min": 3,
+                  "median": 3,
+                  "max": 3
+                }
+              }
+            },
+            {
+              "requested": 1440,
+              "outcomes": [
+                "PreflightRejected",
+                "PreflightRejected",
+                "PreflightRejected"
+              ],
+              "first_constraints": [
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")"
+              ],
+              "metrics": {
+                "commit_api_ns": null,
+                "recovery_api_ns": null,
+                "journal_bytes": null,
+                "committed": {
+                  "samples": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "min": 0,
+                  "median": 0,
+                  "max": 0
+                }
+              }
+            }
+          ],
+          "host": {
+            "os": "Linux-6.18.57-x86_64-with-glibc2.41",
+            "machine": "x86_64",
+            "cpu_model": "INTEL(R) XEON(R) PLATINUM 8573C",
+            "logical_cpus": 3,
+            "python_pointer_width": 64,
+            "python_byteorder": "little",
+            "filesystem": "overlayfs"
+          }
+        }
+      ]
+    },
+    "explicit_32768_journal": {
+      "acceptance": "PASS",
+      "verification_scope": "local studies, not hosted CI",
+      "configurations": [
+        {
+          "rust": "1.85.1",
+          "checked": {
+            "acceptance": "PASS",
+            "source_sha256": "177ecbb250a90a547e2777f2832de120e37a77e9d0a75011972bae0fa7ff1913",
+            "points": [
+              1,
+              2,
+              3,
+              1440
+            ],
+            "repetitions": 3,
+            "cases": 12,
+            "outcomes": [
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Limited",
+              "Limited",
+              "Limited",
+              "PreflightRejected",
+              "PreflightRejected",
+              "PreflightRejected"
+            ]
+          },
+          "summary": [
+            {
+              "requested": 1,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    6501857,
+                    2419576,
+                    2392786
+                  ],
+                  "min": 2392786,
+                  "median": 2419576,
+                  "max": 6501857
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    23103466,
+                    22198421,
+                    10200436
+                  ],
+                  "min": 10200436,
+                  "median": 22198421,
+                  "max": 23103466
+                },
+                "journal_bytes": {
+                  "samples": [
+                    11061,
+                    11061,
+                    11061
+                  ],
+                  "min": 11061,
+                  "median": 11061,
+                  "max": 11061
+                },
+                "committed": {
+                  "samples": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "min": 1,
+                  "median": 1,
+                  "max": 1
+                }
+              }
+            },
+            {
+              "requested": 2,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    5706634,
+                    7126107,
+                    57796261
+                  ],
+                  "min": 5706634,
+                  "median": 7126107,
+                  "max": 57796261
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    40739045,
+                    10830587,
+                    26761108
+                  ],
+                  "min": 10830587,
+                  "median": 26761108,
+                  "max": 40739045
+                },
+                "journal_bytes": {
+                  "samples": [
+                    27601,
+                    27601,
+                    27601
+                  ],
+                  "min": 27601,
+                  "median": 27601,
+                  "max": 27601
+                },
+                "committed": {
+                  "samples": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "min": 2,
+                  "median": 2,
+                  "max": 2
+                }
+              }
+            },
+            {
+              "requested": 3,
+              "outcomes": [
+                "Limited",
+                "Limited",
+                "Limited"
+              ],
+              "first_constraints": [
+                "Limit(\"journal bytes\")",
+                "Limit(\"journal bytes\")",
+                "Limit(\"journal bytes\")"
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    10177470,
+                    10622571,
+                    8767420
+                  ],
+                  "min": 8767420,
+                  "median": 10177470,
+                  "max": 10622571
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    11313355,
+                    19571649,
+                    15145480
+                  ],
+                  "min": 11313355,
+                  "median": 15145480,
+                  "max": 19571649
+                },
+                "journal_bytes": {
+                  "samples": [
+                    27601,
+                    27601,
+                    27601
+                  ],
+                  "min": 27601,
+                  "median": 27601,
+                  "max": 27601
+                },
+                "committed": {
+                  "samples": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "min": 2,
+                  "median": 2,
+                  "max": 2
+                }
+              }
+            },
+            {
+              "requested": 1440,
+              "outcomes": [
+                "PreflightRejected",
+                "PreflightRejected",
+                "PreflightRejected"
+              ],
+              "first_constraints": [
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")"
+              ],
+              "metrics": {
+                "commit_api_ns": null,
+                "recovery_api_ns": null,
+                "journal_bytes": null,
+                "committed": {
+                  "samples": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "min": 0,
+                  "median": 0,
+                  "max": 0
+                }
+              }
+            }
+          ],
+          "host": {
+            "os": "Linux-6.18.57-x86_64-with-glibc2.41",
+            "machine": "x86_64",
+            "cpu_model": "INTEL(R) XEON(R) PLATINUM 8573C",
+            "logical_cpus": 3,
+            "python_pointer_width": 64,
+            "python_byteorder": "little",
+            "filesystem": "overlayfs"
+          }
+        },
+        {
+          "rust": "1.98.0",
+          "checked": {
+            "acceptance": "PASS",
+            "source_sha256": "177ecbb250a90a547e2777f2832de120e37a77e9d0a75011972bae0fa7ff1913",
+            "points": [
+              1,
+              2,
+              3,
+              1440
+            ],
+            "repetitions": 3,
+            "cases": 12,
+            "outcomes": [
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Limited",
+              "Limited",
+              "Limited",
+              "PreflightRejected",
+              "PreflightRejected",
+              "PreflightRejected"
+            ]
+          },
+          "summary": [
+            {
+              "requested": 1,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    2476828,
+                    3367208,
+                    1732805
+                  ],
+                  "min": 1732805,
+                  "median": 2476828,
+                  "max": 3367208
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    6535505,
+                    6414431,
+                    11333204
+                  ],
+                  "min": 6414431,
+                  "median": 6535505,
+                  "max": 11333204
+                },
+                "journal_bytes": {
+                  "samples": [
+                    11061,
+                    11061,
+                    11061
+                  ],
+                  "min": 11061,
+                  "median": 11061,
+                  "max": 11061
+                },
+                "committed": {
+                  "samples": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "min": 1,
+                  "median": 1,
+                  "max": 1
+                }
+              }
+            },
+            {
+              "requested": 2,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    4762668,
+                    4284981,
+                    8262760
+                  ],
+                  "min": 4284981,
+                  "median": 4762668,
+                  "max": 8262760
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    10590959,
+                    7142846,
+                    7622585
+                  ],
+                  "min": 7142846,
+                  "median": 7622585,
+                  "max": 10590959
+                },
+                "journal_bytes": {
+                  "samples": [
+                    27601,
+                    27601,
+                    27601
+                  ],
+                  "min": 27601,
+                  "median": 27601,
+                  "max": 27601
+                },
+                "committed": {
+                  "samples": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "min": 2,
+                  "median": 2,
+                  "max": 2
+                }
+              }
+            },
+            {
+              "requested": 3,
+              "outcomes": [
+                "Limited",
+                "Limited",
+                "Limited"
+              ],
+              "first_constraints": [
+                "Limit(\"journal bytes\")",
+                "Limit(\"journal bytes\")",
+                "Limit(\"journal bytes\")"
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    7407440,
+                    5500285,
+                    9939660
+                  ],
+                  "min": 5500285,
+                  "median": 7407440,
+                  "max": 9939660
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    12306132,
+                    9603022,
+                    6708545
+                  ],
+                  "min": 6708545,
+                  "median": 9603022,
+                  "max": 12306132
+                },
+                "journal_bytes": {
+                  "samples": [
+                    27601,
+                    27601,
+                    27601
+                  ],
+                  "min": 27601,
+                  "median": 27601,
+                  "max": 27601
+                },
+                "committed": {
+                  "samples": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "min": 2,
+                  "median": 2,
+                  "max": 2
+                }
+              }
+            },
+            {
+              "requested": 1440,
+              "outcomes": [
+                "PreflightRejected",
+                "PreflightRejected",
+                "PreflightRejected"
+              ],
+              "first_constraints": [
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")"
+              ],
+              "metrics": {
+                "commit_api_ns": null,
+                "recovery_api_ns": null,
+                "journal_bytes": null,
+                "committed": {
+                  "samples": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "min": 0,
+                  "median": 0,
+                  "max": 0
+                }
+              }
+            }
+          ],
+          "host": {
+            "os": "Linux-6.18.57-x86_64-with-glibc2.41",
+            "machine": "x86_64",
+            "cpu_model": "INTEL(R) XEON(R) PLATINUM 8573C",
+            "logical_cpus": 3,
+            "python_pointer_width": 64,
+            "python_byteorder": "little",
+            "filesystem": "overlayfs"
+          }
+        }
+      ]
+    }
+  },
+  "full_study": {
+    "file": "impl-016-capacity-study.json",
+    "sha256": "bd9a5bce3aef1c3103ee9676128cf6c34d1583d3311025fa181bb086c31ec143",
+    "cases": 42,
+    "raw_local_artifacts": "/workspace/mdc-016-full"
+  },
+  "acquisition": "both pinned official days fetched and SHA/ZIP/CSV verified; only 2024 is the full measured series",
+  "optional_workflow": "syntax checked; hosted manual dispatch not executed pre-merge",
+  "raw_study_delivery": {
+    "acceptance": "PASS",
+    "archive": "mdc-core-impl-016-resource-studies.tar.gz",
+    "sha256": "63746713db6e633df103e1caa56ba2255b8b3e642302dfbde7ad84723a404d3c",
+    "bytes": 136886222,
+    "regular_files_stream_verified": 512
+  }
+}

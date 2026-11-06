@@ -1,0 +1,76 @@
+name: MDC capacity study (opt-in)
+
+on:
+  workflow_dispatch:
+    inputs:
+      dataset:
+        description: Explicit source acquisition choice
+        type: choice
+        options: [synthetic-1440, binance-2024, binance-2025]
+        default: synthetic-1440
+      points:
+        description: Increasing unique requested decision counts (1..4096)
+        type: string
+        default: '1,16,32,64,128,256,1440'
+      repetitions:
+        description: Retained samples per point (3..10)
+        type: string
+        default: '3'
+
+permissions:
+  contents: read
+
+jobs:
+  study:
+    name: Capacity Rust ${{ matrix.rust }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        rust: ['1.85.1', '1.98.0']
+    env:
+      RUSTUP_TOOLCHAIN: ${{ matrix.rust }}
+      CARGO_TARGET_DIR: target
+      CARGO_TERM_COLOR: never
+      MDC_CI_REPORT_DIR: ci-evidence
+      MDC_CAPACITY_DATASET: ${{ inputs.dataset }}
+      MDC_CAPACITY_POINTS: ${{ inputs.points }}
+      MDC_CAPACITY_REPETITIONS: ${{ inputs.repetitions }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install compiler
+        run: rustup toolchain install "$RUSTUP_TOOLCHAIN" --profile minimal
+      - name: Measure explicit dataset with unchanged run budgets
+        run: bash .github/ci/capacity.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mdc-capacity-study-${{ matrix.rust }}
+          path: ci-evidence
+          if-no-files-found: error
+          retention-days: 7
+
+  compare:
+    name: Compare exact study outcomes and bytes
+    needs: study
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: mdc-capacity-study-*
+          path: capacity-artifacts
+      - run: python3 -B scripts/check_capacity.py --compare-root capacity-artifacts --study --output capacity-study-comparison.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mdc-capacity-study-comparison
+          path: capacity-study-comparison.json
+          retention-days: 7

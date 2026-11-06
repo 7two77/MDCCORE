@@ -8,6 +8,7 @@ import struct
 import subprocess
 from check_portable_identity import check_target
 from e2e_report import source_fingerprint
+from ci_metadata import ci_fingerprints
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURES = ROOT / "adapters/mdc_replay/tests/fixtures"
@@ -55,8 +56,7 @@ def compare(root):
     fingerprint, files = source_fingerprint(ROOT)
     expected_commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     expected_run = os.environ.get("GITHUB_RUN_ID")
-    ci_files = [ROOT / ".github/workflows/ci.yml", *sorted((ROOT / ".github/ci").glob("*"))]
-    ci_hashes = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in ci_files if p.is_file()}
+    ci_hashes = ci_fingerprints(ROOT)
     for log in sorted(Path(root).rglob("binance-replay-1.json")):
         folder = log.parent
         record = verify_folder(folder)

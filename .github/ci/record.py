@@ -9,6 +9,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 from e2e_report import source_fingerprint  # noqa: E402
+from ci_metadata import ci_fingerprints  # noqa: E402
 
 
 def output(command):
@@ -26,7 +27,6 @@ def main():
     except subprocess.CalledProcessError:
         pass
     fingerprint, files = source_fingerprint(ROOT)
-    ci_files = [ROOT / ".github/workflows/ci.yml", *sorted((ROOT / ".github/ci").glob("*"))]
     data = {
         "kind": "ci_execution", "schema_version": 1,
         "status": "RUNNING" if status == "running" else "PASS" if status == "0" else "FAIL",
@@ -37,8 +37,7 @@ def main():
         "rustc": output(["rustc", "-vV"]), "cargo": output(["cargo", "--version"]),
         "python": sys.version, "implementation_source_sha256": fingerprint,
         "source_files": files,
-        "ci_file_sha256": {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
-                           for p in ci_files if p.is_file()},
+        "ci_file_sha256": ci_fingerprints(ROOT),
     }
     target = Path(os.environ["MDC_CI_REPORT_DIR"]) / "metadata.json"
     target.write_text(json.dumps(data, indent=2) + "\n")
