@@ -7,6 +7,7 @@ if [[ "${MDC_CAPACITY_STORAGE_V2:-false}" == true ]]; then
   fi
   export MDC_STORAGE_DATASET=${MDC_CAPACITY_DATASET:-synthetic-1440}
   export MDC_STORAGE_POINTS=${MDC_CAPACITY_POINTS:-1,64,256,1440}
+  export MDC_STORAGE_REPETITIONS=${MDC_CAPACITY_REPETITIONS:-3}
   exec bash .github/ci/storage.sh
 fi
 export MDC_CI_PROFILE=capacity-study

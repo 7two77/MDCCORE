@@ -29,5 +29,5 @@ case "${MDC_STORAGE_DATASET:-synthetic-1440}" in
   *) printf 'Unsupported dataset\n' >&2; exit 2 ;;
 esac
 MDC_CI_STEP=study
-python3 -B scripts/run_storage_v2.py run "${MDC_STORAGE_INPUT[@]}" --points "${MDC_STORAGE_POINTS:-1,64,256,1440}" --output "$MDC_CI_REPORT_DIR/study"
+python3 -B scripts/run_storage_v2.py run "${MDC_STORAGE_INPUT[@]}" --points "${MDC_STORAGE_POINTS:-1,64,256,1440}" --repetitions "${MDC_STORAGE_REPETITIONS:-3}" --output "$MDC_CI_REPORT_DIR/study"
 MDC_CI_STEP=complete

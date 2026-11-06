@@ -147,13 +147,13 @@
     "tests/wal_bridge.rs": "e2f67d9e4596243f494ccd6edc7b76bec7d5f677a6400f48d4e452b8500c3c50"
   },
   "ci_file_sha256": {
-    ".github/ci/capacity.sh": "f3c7eb9b60fa316d0fd533bb3f38a28710d17d7a91ae582f9e22948de7fde66e",
+    ".github/ci/capacity.sh": "e24e948bc4b58d92ad8c2bcfa893ea6277751c7e8f14b57e95f1808043f0a461",
     ".github/ci/check_integration.py": "7de650076149fd3c8c935ffb03c1dd5ec461d7956ceb00cf018deb881b1bee47",
     ".github/ci/portable.sh": "1b84221ed3961abd4b0b4c6814095fcf1df839b8ba7ac94ec60c3c6d94fcddc0",
     ".github/ci/record.py": "cff797d3fcee3208be335d3d44952d858f3075040cbf8aaccf9c06b2a1b2f4ff",
     ".github/ci/replay.sh": "5ca45bdc719e99056c8a09c3fb6244f166b4518309eb208db0666f0202df3c6b",
     ".github/ci/run.sh": "d2ae44ec693db1b6462441be47f64de84a3e4bd6e7ad90479d65c7dca9675924",
-    ".github/ci/storage.sh": "96c259288b90ddd0c1c85e0b98e7aafc70bbfcc04089cee4958928707c3ebaf9",
+    ".github/ci/storage.sh": "bf5c1f9b893574568e0b0df54c8b83a937930990eb9a558f83e26b1b7959e632",
     ".github/ci/store.sh": "2937cdacef6dbc046094614fe1a6118e1b2dd4e6ddb67eefe38ef2c26ee523b2",
     ".github/workflows/capacity.yml": "7793a5bd58ba0e2f8d303e1251effda9887b4e5cfa233fdadbebc950d87ad0ec",
     ".github/workflows/ci.yml": "9ae9b1d3461ea29250819aa628d433addf001589abbe1f7390b19e3b65ec19d4"
