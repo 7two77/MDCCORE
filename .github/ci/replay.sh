@@ -21,7 +21,13 @@ run_check() {
 run_check dependencies cargo fetch --locked --manifest-path adapters/mdc_replay/Cargo.toml
 run_check format cargo fmt --manifest-path adapters/mdc_replay/Cargo.toml -- --check
 run_check tests cargo test --locked --offline --manifest-path adapters/mdc_replay/Cargo.toml
+run_check tests-fault-injection cargo test --locked --offline --manifest-path adapters/mdc_replay/Cargo.toml --features fault-injection
 run_check clippy cargo clippy --locked --offline --manifest-path adapters/mdc_replay/Cargo.toml --all-targets -- -D warnings
+run_check clippy-fault-injection cargo clippy --locked --offline --manifest-path adapters/mdc_replay/Cargo.toml --features fault-injection --all-targets -- -D warnings
+run_check production-build cargo build --locked --offline --manifest-path adapters/mdc_replay/Cargo.toml --bins
+run_check fresh-process-recovery python3 -B scripts/run_replay_recovery.py --folder "$MDC_CI_REPORT_DIR/recovery"
+export MDC_REPLAY_RECOVERY_DIR="$MDC_CI_REPORT_DIR/recovery"
+run_check recovery-validator-tests python3 -B -m unittest discover -s tests -p test_replay_recovery_report.py
 MDC_CI_STEP=replay-execution
 for MDC_REPLAY_RUN in 1 2; do
   cargo run --quiet --locked --offline --manifest-path adapters/mdc_replay/Cargo.toml --bin mdc-binance-replay -- decision \

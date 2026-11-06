@@ -65,10 +65,62 @@ Default limits: 4 MiB input, 4096 rows, 4096 bytes/line, 256 visible bars; excee
 them errors without truncation. A preflight also enforces the core snapshot call
 budget. This is a bounded technical slice, not a full-day performance backtest.
 Complexity includes rebuilding and serializing the visible history per decision.
-No external cursor/WAL transaction, correction revisions, measured receipt time,
-parameter learning, positions, orders or profit calculation is implemented.
+Standalone views do not include a cursor/WAL transaction. RunStore below supplies
+source/plan recovery. Correction revisions, measured receipt time, parameter
+learning, positions, orders and profit calculation remain outside this profile.
 
-## Run from repository root
+## Durable runs (MDC-IMPL-015)
+
+`recovery::RunManifest` binds captured CSV bytes/hash, model, explicit increasing
+cutoffs and limits. Linux `recovery::RunStore` creates/opens one writer, commits
+plan indices and retains complete reports/core snapshots. `lookup`, `durable_count`
+and `next_index` expose only a validated/synced prefix. No mutable core escapes.
+The portable `validate_prefix` decoder checks logical certification in memory,
+without itself acknowledging physical durability.
+
+An open RunStore belongs to its creating process. A child inheriting it across
+fork must reopen independently; inherited access returns WrongProcess. Owner
+drop explicitly unlocks even if a forked child still holds a duplicate descriptor.
+
+Source/plan/model are immutable. `open(path, Some(&expected))` rejects changed
+expectations before repair; `open(path, None)` uses retained SOURCE. Changing the
+original input pathname cannot replace captured bytes. Changed raw input or a
+future suffix requires a new run, preserving earlier 014 cutoff core identity.
+
+`step(index)` returns after journal sync and atomic HEAD publication/directory
+sync. Committed-index retry returns the same bundle without append. Errors after
+mutation fence the writer until reopen; validation/limit errors do not advance it.
+Recovery restores recorded 011 sessions and recomputes every isolated 014 decision,
+then syncs the selected prefix/HEAD and discards uncertified tail. No silent rollback.
+
+[Wire format](../../docs/MDC-REPLAY-RUN-WIRE-v1.md) is separate from the existing
+mdc_store WAL. New defaults: 256 plan entries, 64 MiB journal, 24 MiB record body,
+1 MiB report and 16 MiB snapshot; smaller positive limits are retained in the
+manifest. A run can hit capacity before consuming its entire source. There is
+no rolling-history compaction or production-scale throughput result.
+
+Use an existing parent directory and a NEW run path:
+
+```bash
+cargo run --locked --offline --manifest-path adapters/mdc_replay/Cargo.toml \
+  --bin mdc-replay-run -- create /path/to/new-run \
+  adapters/mdc_replay/tests/fixtures/BTCUSDT-1m-2024-01-01-first3.csv \
+  BTCUSDT ms 100 close 1704067260099000,1704067320049000,1704067320099000
+cargo run --locked --offline --manifest-path adapters/mdc_replay/Cargo.toml \
+  --bin mdc-replay-run -- step /path/to/new-run 1
+cargo run --locked --offline --manifest-path adapters/mdc_replay/Cargo.toml \
+  --bin mdc-replay-run -- finish /path/to/new-run
+cargo run --locked --offline --manifest-path adapters/mdc_replay/Cargo.toml \
+  --bin mdc-replay-run -- status /path/to/new-run
+```
+
+`export DIR INDEX REPORT SNAPSHOT` copies a committed bundle to new ordinary
+paths; these copies are not a second durable authority. Sync guarantees depend
+on the Linux filesystem/device. The opt-in `fault-injection` feature is test-only;
+production builds ignore its environment hooks. Standalone writes retain their
+014 behavior; source-run recovery is supplied only by RunStore.
+
+## Standalone decision from repository root
 
 ```bash
 cargo fetch --locked --manifest-path adapters/mdc_replay/Cargo.toml

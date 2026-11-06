@@ -1,0 +1,926 @@
+{
+  "package": "MDC-IMPL-015",
+  "acceptance": "PASS",
+  "verified_date": "2026-11-06",
+  "scope": "local execution; hosted results require an exact PR head",
+  "base_commit": "9f21fe7a81c393dc5f9d3cffc96d3d0871ec48da",
+  "implementation_source_sha256": "8f0e5fb54020fa4f0477eb9ed60d8f0f9873416b992653d8a3bda5487091fd48",
+  "configurations": [
+    {
+      "kind": "core",
+      "rust": "1.85.1",
+      "profile": "default",
+      "exit": 0,
+      "seconds": 24.32,
+      "rust_counts": {
+        "snapshot-validator-tests.log": 0,
+        "validator-tests.log": 0,
+        "tests.log": 213,
+        "portable-validator-tests.log": 0
+      },
+      "python_counts": {
+        "snapshot-validator-tests.log": 4,
+        "validator-tests.log": 17,
+        "portable-validator-tests.log": 4
+      },
+      "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7",
+      "local_worktree_dirty": true,
+      "logs_sha256": {
+        "clippy.log": "18e07aef038bdda320f1bd43ee8ce3a074b8e4753b9f8adc2e706edcd35b9d45",
+        "e2e.log": "be5156df6eda090147ff3954b2358af1ea2557c28786e063f5b406a58c4cb1c5",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-identity_migration.log": "27a904fe4d0f6ed22af26fe63587cdff8559ca11a0521e11393ad1835282895e",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "d406543f224718b237022a6f718b7b5c4163f285ff7b447252247fd16fb99e75",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "no-alloc-rejection.log": "95dd1052a7471531d458b4dcad40b989a301a4d1b6b8a65b0bd9f8dbb8ecd9ab",
+        "portable-1.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
+        "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-validator-tests.log": "c824988f3fe408626d67d700acd6fe3d730806e39f755ea8d7c0b1a0af4cf5c0",
+        "snapshot-consumer-1.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-consumer-2.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-control.log": "1436bbe295e539363d4b691fca7488d535393854b555e38cf153444ea6b96145",
+        "snapshot-equality-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-equality-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-producer.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-validator-tests.log": "80144f3bf12d071a1497821467ab02765712cb11da3f547a5e2b5cf79f938e9a",
+        "tests.log": "2be667f373fa64ef3f844efca4abfb4fcde8d263b31e3a3b44c744efeaa2fc5c",
+        "validator-tests.log": "68211db8cff5973c552af425e177c8de50e324e00c898e5cd4bafa06e0a1d4b2"
+      },
+      "portable-verification.json": {
+        "acceptance": "PASS",
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "negative_controls": 7
+      },
+      "snapshot-verification.json": {
+        "acceptance": "PASS",
+        "artifact_folder": "core-1.85.1-default",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      }
+    },
+    {
+      "kind": "core",
+      "rust": "1.85.1",
+      "profile": "std-alloc",
+      "exit": 0,
+      "seconds": 10.88,
+      "rust_counts": {
+        "snapshot-validator-tests.log": 0,
+        "validator-tests.log": 0,
+        "tests.log": 213,
+        "portable-validator-tests.log": 0
+      },
+      "python_counts": {
+        "snapshot-validator-tests.log": 4,
+        "validator-tests.log": 17,
+        "portable-validator-tests.log": 4
+      },
+      "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7",
+      "local_worktree_dirty": true,
+      "logs_sha256": {
+        "clippy.log": "4b395c9c76c7f7fb5221d30df7320c7a2387ff3842c426dbee6a59a54b5cffab",
+        "e2e.log": "09a22bb0111b6f68e2093bfd02736f77c9e56f1b80a0b0759e65eca04671153f",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-identity_migration.log": "27a904fe4d0f6ed22af26fe63587cdff8559ca11a0521e11393ad1835282895e",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "d406543f224718b237022a6f718b7b5c4163f285ff7b447252247fd16fb99e75",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-1.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
+        "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-validator-tests.log": "26a892cadb4cdcc734b397dabb098e8ac80b693a6d9551a54434be3d143ecac1",
+        "snapshot-consumer-1.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-consumer-2.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-control.log": "9e526afcc4b12835b6f3c4c09318022502a921e4ac10ab716fec4a06472888a6",
+        "snapshot-equality-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-equality-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-producer.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-validator-tests.log": "473fbc0ef3b0966f5f5e134e01ed79ab298feb969d9a259ec8090cf003b637b3",
+        "tests.log": "d745b8f0f4762493865e90baee5a4fef9cb3d81794f6e7cc47de6efc6ac2ac7b",
+        "validator-tests.log": "4f179724abe12154903c74738c0a9bf93a4645305a184b0c5029cbd3b109e230"
+      },
+      "portable-verification.json": {
+        "acceptance": "PASS",
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "negative_controls": 7
+      },
+      "snapshot-verification.json": {
+        "acceptance": "PASS",
+        "artifact_folder": "core-1.85.1-std-alloc",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      }
+    },
+    {
+      "kind": "core",
+      "rust": "1.85.1",
+      "profile": "alloc",
+      "exit": 0,
+      "seconds": 18.72,
+      "rust_counts": {
+        "snapshot-validator-tests.log": 0,
+        "validator-tests.log": 0,
+        "tests.log": 213,
+        "portable-validator-tests.log": 0
+      },
+      "python_counts": {
+        "snapshot-validator-tests.log": 4,
+        "validator-tests.log": 17,
+        "portable-validator-tests.log": 4
+      },
+      "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7",
+      "local_worktree_dirty": true,
+      "logs_sha256": {
+        "clippy.log": "d59cc377a578270c4fa4f8c550a9fb451a0e4ca3605c2d437b2b8cfb047ed889",
+        "e2e.log": "626e47df9ded3aa3bb7e2a2752452f8eed7f48aa08a1b926ea9f4a9ea75cf25c",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-identity_migration.log": "27a904fe4d0f6ed22af26fe63587cdff8559ca11a0521e11393ad1835282895e",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "d406543f224718b237022a6f718b7b5c4163f285ff7b447252247fd16fb99e75",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-1.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
+        "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-validator-tests.log": "992089ddd1c16dfd8d702a9bab7d526875e1ac4fd0f68559c39663445d41bc01",
+        "snapshot-consumer-1.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-consumer-2.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-control.log": "f5bf4a6053da6b52c5f4529d1ff3c5a109d2564b9078dfd943338bc0c23ad9ce",
+        "snapshot-equality-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-equality-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-producer.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-validator-tests.log": "5d8a174d448d59185fd227bcbab9c964e39b10a9c2e28965972cfb0c833dd854",
+        "tests.log": "d12880967e6a6c202c3335d2e1a84e704b746b57c7b10f6b829b094634c6933d",
+        "validator-tests.log": "63e7adc372de5352bac02acabcf3446384c64639c7d70545f5387b519ef49421"
+      },
+      "portable-verification.json": {
+        "acceptance": "PASS",
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "negative_controls": 7
+      },
+      "snapshot-verification.json": {
+        "acceptance": "PASS",
+        "artifact_folder": "core-1.85.1-alloc",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      }
+    },
+    {
+      "kind": "core",
+      "rust": "1.98.0",
+      "profile": "default",
+      "exit": 0,
+      "seconds": 11.99,
+      "rust_counts": {
+        "snapshot-validator-tests.log": 0,
+        "validator-tests.log": 0,
+        "tests.log": 213,
+        "portable-validator-tests.log": 0
+      },
+      "python_counts": {
+        "snapshot-validator-tests.log": 4,
+        "validator-tests.log": 17,
+        "portable-validator-tests.log": 4
+      },
+      "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)\nbinary: rustc\ncommit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea\ncommit-date: 2026-08-18\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.0\nLLVM version: 22.1.8",
+      "local_worktree_dirty": true,
+      "logs_sha256": {
+        "clippy.log": "af3eb110431dd9b1e4da8db104a0ae6f6e9fd2922bfc99ee580d081e0baf3efc",
+        "e2e.log": "d6a8cb3f4d7aeeee475a8db40c75765334970d41c018c87177e38cc52022e3e6",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-identity_migration.log": "27a904fe4d0f6ed22af26fe63587cdff8559ca11a0521e11393ad1835282895e",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "d406543f224718b237022a6f718b7b5c4163f285ff7b447252247fd16fb99e75",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "no-alloc-rejection.log": "95dd1052a7471531d458b4dcad40b989a301a4d1b6b8a65b0bd9f8dbb8ecd9ab",
+        "portable-1.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
+        "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-validator-tests.log": "cd7a126ff2cbf7a815787a5a807868ce8f1c4bee651c667ec26d25016438a201",
+        "snapshot-consumer-1.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-consumer-2.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-control.log": "c0a5704ab8c388dbba7ce8774ca7af3b2091e9568b101f6b11c5f9a7b4edabce",
+        "snapshot-equality-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-equality-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-producer.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-validator-tests.log": "5d8a174d448d59185fd227bcbab9c964e39b10a9c2e28965972cfb0c833dd854",
+        "tests.log": "ddba5843ba18faa3146552b7541e74c46c80494e321126d5a3ef45fcde0e3c21",
+        "validator-tests.log": "5e596fe3af44136213de61de0238901419114c39cc094ba923007ce0c2d4822a"
+      },
+      "portable-verification.json": {
+        "acceptance": "PASS",
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "negative_controls": 7
+      },
+      "snapshot-verification.json": {
+        "acceptance": "PASS",
+        "artifact_folder": "core-1.98.0-default",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      }
+    },
+    {
+      "kind": "core",
+      "rust": "1.98.0",
+      "profile": "std-alloc",
+      "exit": 0,
+      "seconds": 4.85,
+      "rust_counts": {
+        "snapshot-validator-tests.log": 0,
+        "validator-tests.log": 0,
+        "tests.log": 213,
+        "portable-validator-tests.log": 0
+      },
+      "python_counts": {
+        "snapshot-validator-tests.log": 4,
+        "validator-tests.log": 17,
+        "portable-validator-tests.log": 4
+      },
+      "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)\nbinary: rustc\ncommit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea\ncommit-date: 2026-08-18\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.0\nLLVM version: 22.1.8",
+      "local_worktree_dirty": true,
+      "logs_sha256": {
+        "clippy.log": "492249c9f550482a9a491739745144c5a474b15b27fd7de5717f8cd83c68916d",
+        "e2e.log": "4b18f54d5d55b7eab07ad6b88d9ddad3f633af9715d196647961bc20a62bcec6",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-identity_migration.log": "27a904fe4d0f6ed22af26fe63587cdff8559ca11a0521e11393ad1835282895e",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "d406543f224718b237022a6f718b7b5c4163f285ff7b447252247fd16fb99e75",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-1.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
+        "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-validator-tests.log": "eb269153f99d128330313491496a60c9f716a91d1d250211151288bd4fbee599",
+        "snapshot-consumer-1.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-consumer-2.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-control.log": "c902b948be516ea0a6238f08314c512d0cfe46a3572db0ab58d98ac305d72435",
+        "snapshot-equality-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-equality-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-producer.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-validator-tests.log": "4a160235c0add54f7a5997815d0e01a072210439de4899c702c94dd3cd814662",
+        "tests.log": "530e3057d56a4cfddb3c518177f2173f14efe3ad516e3a4714e1f3340cd3382f",
+        "validator-tests.log": "f756f3f5928989e10aecc7d46a73ab268eb72e407fd6bff920c9fcf0ddc80f55"
+      },
+      "portable-verification.json": {
+        "acceptance": "PASS",
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "negative_controls": 7
+      },
+      "snapshot-verification.json": {
+        "acceptance": "PASS",
+        "artifact_folder": "core-1.98.0-std-alloc",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      }
+    },
+    {
+      "kind": "core",
+      "rust": "1.98.0",
+      "profile": "alloc",
+      "exit": 0,
+      "seconds": 6.81,
+      "rust_counts": {
+        "snapshot-validator-tests.log": 0,
+        "validator-tests.log": 0,
+        "tests.log": 213,
+        "portable-validator-tests.log": 0
+      },
+      "python_counts": {
+        "snapshot-validator-tests.log": 4,
+        "validator-tests.log": 17,
+        "portable-validator-tests.log": 4
+      },
+      "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)\nbinary: rustc\ncommit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea\ncommit-date: 2026-08-18\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.0\nLLVM version: 22.1.8",
+      "local_worktree_dirty": true,
+      "logs_sha256": {
+        "clippy.log": "977850cfa46f29a7684c1e8e28814503d96cf5c259fd607e8a07433c75509f39",
+        "e2e.log": "e03d058ea734eb882a41776da9e0bfcd8df34103203f60f76d05275b190bd77e",
+        "evaluation-retention-1.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-2.log": "f12bab90ace38b5b64605278b1e2f217801ca71187baee045bed726f61069b89",
+        "evaluation-retention-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence-check.log": "4d7826276707cd9e5167cb166ee1c434e5c23824a83ddd18d14413a9c5e1cd1d",
+        "example-conformance.log": "21ee29b5eab6d544cc2e56bcdc48e9b3c53378065bda5c2c0564f9386c453f66",
+        "example-identity_migration.log": "27a904fe4d0f6ed22af26fe63587cdff8559ca11a0521e11393ad1835282895e",
+        "example-invalid_artifacts.log": "7bc0c037d056c16b352f75ab8adf52d412c067b791bc05e1e93e6140bba1e6ce",
+        "example-relation_composition.log": "c2c6655b5001fde1544d27f508483426e755318a1eefcccc6915fc547caab38c",
+        "example-source_measurement.log": "5ad83d8f883ebea8ee86750896aaa12f5d2e7be4d5eef550d94da60daa822895",
+        "example-state_transition.log": "1cd1b740dc9604a84f9800ec33c3114841caf8f2f569b9cf9432eac3c160a253",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "library-check.log": "d406543f224718b237022a6f718b7b5c4163f285ff7b447252247fd16fb99e75",
+        "lifecycle-1.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-2.log": "c1294a65ef8ec0c9a587f38b9d029270ecd565621417ed5fbbc84fdc7b2a9b55",
+        "lifecycle-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-1.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-2.log": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "portable-check.log": "7c19d5d815ddf46dca5e4154f3ed807c1f7cc160dcdae96e04a7e91d42a70d3e",
+        "portable-determinism.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "portable-validator-tests.log": "6702032433d0d99531d799e7da90e5f18e94d386ba14e84165a15c1c28567b5f",
+        "snapshot-consumer-1.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-consumer-2.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-control.log": "74fa24850659ad5e0680d7b790076165256a7b2534ba325cac420e9d897763bf",
+        "snapshot-equality-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-equality-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot-producer.log": "ee9d5886022a7b06cc8c7b30b6296b389be5bee2b077824c294c7bf53a6c917a",
+        "snapshot-validator-tests.log": "b6a161abed43b9a0dba9259cd451b39b20b10425ac13cc14786554c0e6fac7f1",
+        "tests.log": "cf30d5a0ce7396022fba09604fc86bbb09bcfdc7a8b52d05346757ac7539cebd",
+        "validator-tests.log": "a526123e7f81b71fcf5a4c40ec2edd5ec15eefa28661b16c95ba2a346015430a"
+      },
+      "portable-verification.json": {
+        "acceptance": "PASS",
+        "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160",
+        "negative_controls": 7
+      },
+      "snapshot-verification.json": {
+        "acceptance": "PASS",
+        "artifact_folder": "core-1.98.0-alloc",
+        "processes": 3,
+        "archive_bytes": 372782,
+        "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+        "manifest_bytes": 269158,
+        "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+      }
+    },
+    {
+      "kind": "replay",
+      "rust": "1.85.1",
+      "exit": 0,
+      "seconds": 18.26,
+      "rust_counts": {
+        "validator-tests.log": 0,
+        "tests-fault-injection.log": 50,
+        "tests.log": 48,
+        "recovery-validator-tests.log": 0
+      },
+      "python_counts": {
+        "validator-tests.log": 5,
+        "recovery-validator-tests.log": 4
+      },
+      "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7",
+      "local_worktree_dirty": true,
+      "logs_sha256": {
+        "clippy-fault-injection.log": "47d1ebe904a90b00c5b9e4f31a52db52e92ee8caeaa47e1a29a4a65b6baf0c9d",
+        "clippy.log": "e41f1b0e72735faf2048e9f69dcf5b0e09f6b8b24be700e7886cb0a0134ca453",
+        "dependencies.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "fresh-process-recovery.log": "d8db775ffb0a337be7edeb1d28f770f75a06716d29ff295b16bbb1f79427608a",
+        "production-build.log": "64cfb97d7ea5b38aa4db203b50a71d6a145284db5a6fa627ff77ee89966f92e0",
+        "recovery-validator-tests.log": "f162ac6d170f5295dee020e348bd8c6f1c333f7c4f78e23f15f6a84c1e8e703b",
+        "replay-validation.log": "32184f4f48162f2fb037296efa8b9ae0a21b038d430732f4d2c981f177cb7a5b",
+        "tests-fault-injection.log": "8ff6d4537f1a1f7a42aeee3e575c520c1fe9dc65557bc6fcbb630a43c46e0908",
+        "tests.log": "101b4a302a2a23d1bd154482eccc776754a1ff647ad20bb99bc05affa1e97d23",
+        "validator-tests.log": "2d014bb427120fb1a5014d7499096989061fd0fdf40acb471c2e2667de60e71e"
+      },
+      "binance-verification.json": {
+        "acceptance": "PASS",
+        "processes": 2,
+        "availability_quality": "modeled",
+        "eligible_bars": 1,
+        "technical_confirmation": "UNRESOLVED",
+        "core_snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900",
+        "report_sha256": "b2b2214a58fb0fcc1fe9f8ae2ac29d30d56de1332ca75b5ed9ea92cd9190b07a"
+      },
+      "replay_recovery": {
+        "acceptance": "PASS",
+        "profile": "MDC-REPLAY-RUN-001/1",
+        "run_id": "8459c964f7225121a915ba737028f32b2e9f29df5ff7c497a0a67df1d6fed054",
+        "durable_through": 4,
+        "journal_sha256": "1da4b10a6a1542150edbfc5e57a480d993548a92dea47463d0f9b2b889b0fdb9",
+        "decisions": [
+          {
+            "index": 1,
+            "cutoff": 1704067260098999,
+            "snapshot_sha256": "0e9ce81b506295fddfc0309afee44137b3b0de06daa380a869b081e9027c7ed2",
+            "report_sha256": "f73519c5fc9f63c4d913a1b9d5cbee2b031326c67ec5d9f7ae0cc538d45f61b5",
+            "technical_confirmation": "NO_INPUT"
+          },
+          {
+            "index": 2,
+            "cutoff": 1704067260099000,
+            "snapshot_sha256": "18d7c0a38fd4d5a013dce49e2bd67ee5f3e807d4163aabd196a412de17da859a",
+            "report_sha256": "1199430f5e9ba7269f67eb7e1284b0ff8fd2c76b72d032bf9dc145116f7f364c",
+            "technical_confirmation": "UNRESOLVED"
+          },
+          {
+            "index": 3,
+            "cutoff": 1704067320049000,
+            "snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900",
+            "report_sha256": "b2b2214a58fb0fcc1fe9f8ae2ac29d30d56de1332ca75b5ed9ea92cd9190b07a",
+            "technical_confirmation": "UNRESOLVED"
+          },
+          {
+            "index": 4,
+            "cutoff": 1704067320099000,
+            "snapshot_sha256": "20b7fa536f909adbc55476a0c08946595ab3a92ac3f772b1fefb7359c435eb54",
+            "report_sha256": "fd96492b6ea330ccbbead9983a31e81b0728463ba988f893f7521e84e0d27c30",
+            "technical_confirmation": "PASS"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "replay",
+      "rust": "1.98.0",
+      "exit": 0,
+      "seconds": 32.06,
+      "rust_counts": {
+        "validator-tests.log": 0,
+        "tests-fault-injection.log": 50,
+        "tests.log": 48,
+        "recovery-validator-tests.log": 0
+      },
+      "python_counts": {
+        "validator-tests.log": 5,
+        "recovery-validator-tests.log": 4
+      },
+      "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)\nbinary: rustc\ncommit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea\ncommit-date: 2026-08-18\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.0\nLLVM version: 22.1.8",
+      "local_worktree_dirty": true,
+      "logs_sha256": {
+        "clippy-fault-injection.log": "69431cdaf1f405ca04c0458f09af22183e4f1fd6f5edb295f96cc2852ec1ae8c",
+        "clippy.log": "8765cfdbe63c42423486f94864838283e229690e0aa4250fde0095e1f6654331",
+        "dependencies.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "fresh-process-recovery.log": "d8db775ffb0a337be7edeb1d28f770f75a06716d29ff295b16bbb1f79427608a",
+        "production-build.log": "1b06c206522a9ad6653edd56b1bb9e19254f4cd592480fbc8b10cbddc2b994e9",
+        "recovery-validator-tests.log": "b447673467de6e875ff3540180d0afdf3c3c9ba37ffbad827b4cb2a075505ede",
+        "replay-validation.log": "32184f4f48162f2fb037296efa8b9ae0a21b038d430732f4d2c981f177cb7a5b",
+        "tests-fault-injection.log": "e01d333be9794953c9415b98497e8d4c6459b157c3efc1211e7a48331cbeed48",
+        "tests.log": "04d965d7bd5ddd8994b43bfb61db33c464d99fb4021a60f489a051a379ac81b0",
+        "validator-tests.log": "6afcb558278288108d2ada7aedd3e46b4e9893711260c2d74ab3ec4fc74ba613"
+      },
+      "binance-verification.json": {
+        "acceptance": "PASS",
+        "processes": 2,
+        "availability_quality": "modeled",
+        "eligible_bars": 1,
+        "technical_confirmation": "UNRESOLVED",
+        "core_snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900",
+        "report_sha256": "b2b2214a58fb0fcc1fe9f8ae2ac29d30d56de1332ca75b5ed9ea92cd9190b07a"
+      },
+      "replay_recovery": {
+        "acceptance": "PASS",
+        "profile": "MDC-REPLAY-RUN-001/1",
+        "run_id": "8459c964f7225121a915ba737028f32b2e9f29df5ff7c497a0a67df1d6fed054",
+        "durable_through": 4,
+        "journal_sha256": "1da4b10a6a1542150edbfc5e57a480d993548a92dea47463d0f9b2b889b0fdb9",
+        "decisions": [
+          {
+            "index": 1,
+            "cutoff": 1704067260098999,
+            "snapshot_sha256": "0e9ce81b506295fddfc0309afee44137b3b0de06daa380a869b081e9027c7ed2",
+            "report_sha256": "f73519c5fc9f63c4d913a1b9d5cbee2b031326c67ec5d9f7ae0cc538d45f61b5",
+            "technical_confirmation": "NO_INPUT"
+          },
+          {
+            "index": 2,
+            "cutoff": 1704067260099000,
+            "snapshot_sha256": "18d7c0a38fd4d5a013dce49e2bd67ee5f3e807d4163aabd196a412de17da859a",
+            "report_sha256": "1199430f5e9ba7269f67eb7e1284b0ff8fd2c76b72d032bf9dc145116f7f364c",
+            "technical_confirmation": "UNRESOLVED"
+          },
+          {
+            "index": 3,
+            "cutoff": 1704067320049000,
+            "snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900",
+            "report_sha256": "b2b2214a58fb0fcc1fe9f8ae2ac29d30d56de1332ca75b5ed9ea92cd9190b07a",
+            "technical_confirmation": "UNRESOLVED"
+          },
+          {
+            "index": 4,
+            "cutoff": 1704067320099000,
+            "snapshot_sha256": "20b7fa536f909adbc55476a0c08946595ab3a92ac3f772b1fefb7359c435eb54",
+            "report_sha256": "fd96492b6ea330ccbbead9983a31e81b0728463ba988f893f7521e84e0d27c30",
+            "technical_confirmation": "PASS"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "store",
+      "rust": "1.85.1",
+      "exit": 0,
+      "seconds": 41.77,
+      "rust_counts": {
+        "tests-default.log": 36,
+        "tests-fault-injection.log": 38
+      },
+      "python_counts": {},
+      "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7",
+      "local_worktree_dirty": true,
+      "logs_sha256": {
+        "clippy-default.log": "1203e0a2a5717fe64d2cad251c38ec9ee931004ce590884d12cacb111b04f45b",
+        "clippy-fault-injection.log": "ac831a0b3c7b07e05d8b831b62c15f0500ec6e17bdaf36c9bb5cf68e2138043c",
+        "dependencies.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "fresh-process-recovery.log": "89565c35b272db41d2afaffbd9cf8a527d2eada5f903d9b0d21eb26aedf3f51f",
+        "production-build.log": "da617cec9cb409cc7d90040e129ad90b46ac0d3bfc0d87a5184fe72f43403805",
+        "tests-default.log": "2cae6a8b81c2353c8d5fd5d9c878b01c357a6207cf7fe3626a2dcb4c4503dce2",
+        "tests-fault-injection.log": "b62a67b015a7539347f247583471c3a9b684e9c69ed1fd6cab409a842e4b4d81"
+      },
+      "recovery-execution.json": {
+        "acceptance": "PASS",
+        "kind": "fresh_process_recovery_execution",
+        "scope": "Linux process restart; not real power-loss validation",
+        "cases": [
+          {
+            "id": "wal",
+            "processes": [
+              {
+                "pid": 4787,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.47242483500002663
+              },
+              {
+                "pid": 4799,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.4103692759999831
+              },
+              {
+                "pid": 4800,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.8513673069999754
+              }
+            ],
+            "core_snapshot_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+            "store_files_sha256": {
+              "HEAD": "588ee69b57615d8cae971f4554fa76a7bac65d1c642e281267d4d4c76399904f",
+              "LOCK": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "S-0000000000000001.mdcs": "de082f03e33441b13c5c8e4162de8cdab4db22f3ce49f7c2618f329379a8f36a",
+              "W-0000000000000001.mdcw": "b6335d7017f0c4072d9413a54c8a15f6cc7b6a47f047d673dce8062abd133fa3"
+            }
+          },
+          {
+            "id": "checkpoint",
+            "processes": [
+              {
+                "pid": 4906,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.8505203100000358
+              },
+              {
+                "pid": 5036,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.1234503090000203
+              },
+              {
+                "pid": 5062,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.20570401399999128
+              }
+            ],
+            "core_snapshot_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+            "store_files_sha256": {
+              "HEAD": "a7c777185af92eb4761e4606dd778417509f8303a70db0352a26241c95570b75",
+              "LOCK": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "S-0000000000000003.mdcs": "d3ee438e75d221115ee7584ef2a826bd9ac78de4a99d7e91fb25b2d99e2cb1a0",
+              "W-0000000000000003.mdcw": "53095edd20898c2a2a156191ff67636c2ad9037e2f1c68444fd3d00311584d14"
+            }
+          },
+          {
+            "id": "scheduled",
+            "processes": [
+              {
+                "pid": 5071,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.9912351899999976
+              },
+              {
+                "pid": 5147,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 1.194390631000033
+              },
+              {
+                "pid": 5170,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.8261888870000007
+              }
+            ],
+            "core_snapshot_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+            "store_files_sha256": {
+              "HEAD": "b056c959276f3550bbca394a63656a7551910ebda98625b7ac8505e55cfc91d4",
+              "LOCK": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "S-0000000000000001.mdcs": "50f16d3aeba3a73125f504f5cc73043950ec9f325ae119216b87793039305a46",
+              "W-0000000000000001.mdcw": "e7be6cc5a981699f1bbd220172125cc3d4a866fe66c449516baeea6dc23dda42"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "kind": "store",
+      "rust": "1.98.0",
+      "exit": 0,
+      "seconds": 25.64,
+      "rust_counts": {
+        "tests-default.log": 36,
+        "tests-fault-injection.log": 38
+      },
+      "python_counts": {},
+      "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)\nbinary: rustc\ncommit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea\ncommit-date: 2026-08-18\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.0\nLLVM version: 22.1.8",
+      "local_worktree_dirty": true,
+      "logs_sha256": {
+        "clippy-default.log": "c600751420e6bc2fd6aefc68e1d048c52e402d8318daacac19a9ccf6dd8d0838",
+        "clippy-fault-injection.log": "51394e17ecbb1196e5b48e66a4163b85f06f10c7ddaa5489e0ddf4819ba23b4a",
+        "dependencies.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "fresh-process-recovery.log": "3d7dd1597ed7511e540d47d6ebbc6de6f50a5cee2f2c25cf7de067d36902f344",
+        "production-build.log": "af1d2cf35aacaf94dd1c8a40bb1eb81981171b00ae7b6668106f5acb3a38e60c",
+        "tests-default.log": "7f4f766e7cb28ef91938d4b5d0c2bbc775384d52fb759cd4d0ebd56c0959b738",
+        "tests-fault-injection.log": "8759de7a80be494b08c2cfbe3ca6145b98e7e6947d12b04d70c44a9a1ed198b3"
+      },
+      "recovery-execution.json": {
+        "acceptance": "PASS",
+        "kind": "fresh_process_recovery_execution",
+        "scope": "Linux process restart; not real power-loss validation",
+        "cases": [
+          {
+            "id": "wal",
+            "processes": [
+              {
+                "pid": 6864,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.39560417799998504
+              },
+              {
+                "pid": 6865,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.3773660219999897
+              },
+              {
+                "pid": 6866,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.3826133630000186
+              }
+            ],
+            "core_snapshot_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+            "store_files_sha256": {
+              "HEAD": "6d637e70a5fe5f79279d3e32dada5afd44f756a6c68019202ab1d4f13dcc7f53",
+              "LOCK": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "S-0000000000000001.mdcs": "58efe1be78a80bf875013957eb8708132fc4fc3f69f30cbbf30ed46af1aa35a7",
+              "W-0000000000000001.mdcw": "a5e68fabe3c89ec72ece67de639dc16dbc730d28ed406a665d01ae8542da05d1"
+            }
+          },
+          {
+            "id": "checkpoint",
+            "processes": [
+              {
+                "pid": 6867,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.38720238299998755
+              },
+              {
+                "pid": 6895,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.06177960399998028
+              },
+              {
+                "pid": 6907,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.06705251699997916
+              }
+            ],
+            "core_snapshot_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+            "store_files_sha256": {
+              "HEAD": "39a4366d91170d91e58db4d06f5b37f9525d1b9966e5b557a5a9fdb109b00272",
+              "LOCK": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "S-0000000000000003.mdcs": "ed60a96bf2618c90852f8a5bc985b001df3f73afec32513534fc1edf18e4685c",
+              "W-0000000000000003.mdcw": "2e3a0ab541090256d671587cdbfe6d6432716971c9ded0ea60bac6a3a862c2ef"
+            }
+          },
+          {
+            "id": "scheduled",
+            "processes": [
+              {
+                "pid": 6909,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.32070744499998227
+              },
+              {
+                "pid": 6911,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.45902987699997766
+              },
+              {
+                "pid": 7013,
+                "exit_code": 0,
+                "stdout": "MDC_RECOVERY_VERIFY=PASS operations=38 durable=38 objects=31 revision=2",
+                "elapsed_seconds": 0.37513605999998845
+              }
+            ],
+            "core_snapshot_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+            "store_files_sha256": {
+              "HEAD": "931865219d303bc4f79ec719981959ceb7eed14ada80ec4a4fbadfde0c1cb73f",
+              "LOCK": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "S-0000000000000001.mdcs": "00c92fdbd8b66b71df744414cff6ce0304fceb65c199e76b650d041d9aea5e41",
+              "W-0000000000000001.mdcw": "5bfa264135b139541aa3df82e5fc898677c86bd05ecae71e03a169c0a72fc80e"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "rr_cases": {
+    "RR01": {
+      "status": "PASS",
+      "actual_passed_tests": [
+        "resumed_every_prefix_matches_uninterrupted_full_bytes_and_cursor",
+        "independent_cli_processes_resume_and_export_the_exact_isolated_decision"
+      ]
+    },
+    "RR02": {
+      "status": "PASS",
+      "actual_passed_tests": [
+        "resumed_every_prefix_matches_uninterrupted_full_bytes_and_cursor"
+      ]
+    },
+    "RR03": {
+      "status": "PASS",
+      "actual_passed_tests": [
+        "committed_retry_lost_reply_and_invalid_indices_never_append",
+        "sigkill_all_commit_boundaries_recovers_only_a_certified_prefix"
+      ]
+    },
+    "RR04": {
+      "status": "PASS",
+      "actual_passed_tests": [
+        "wrong_source_model_plan_or_limits_rejects_before_tail_repair",
+        "changed_future_suffix_or_duplicate_creates_new_run_without_rebinding_earlier_core"
+      ]
+    },
+    "RR05": {
+      "status": "PASS",
+      "actual_passed_tests": [
+        "independent_cli_processes_resume_and_export_the_exact_isolated_decision",
+        "a_stored_event_in_horizon_but_not_yet_available_cannot_be_an_implicit_witness"
+      ]
+    },
+    "RR06": {
+      "status": "PASS",
+      "actual_passed_tests": [
+        "changed_future_suffix_or_duplicate_creates_new_run_without_rebinding_earlier_core",
+        "input_permutation_duplicates_and_equivalent_decimal_text_are_canonical"
+      ]
+    },
+    "RR07": {
+      "status": "PASS",
+      "actual_passed_tests": [
+        "second_process_cannot_enter_a_locked_run_and_lock_releases_on_drop",
+        "recovery::store::tests::owner_drop_releases_the_lock_even_with_an_inherited_file_description"
+      ]
+    },
+    "RR08": {
+      "status": "PASS",
+      "actual_passed_tests": [
+        "sigkill_create_boundaries_recover_complete_empty_or_reject_incomplete_run",
+        "recovery::store::tests::interrupted_create_never_becomes_an_implicit_new_run"
+      ]
+    },
+    "RR09": {
+      "status": "PASS",
+      "actual_passed_tests": [
+        "sigkill_all_commit_boundaries_recovers_only_a_certified_prefix",
+        "recovery::store::tests::every_post_mutation_commit_error_fences_until_reopen"
+      ]
+    },
+    "RR10": {
+      "status": "PASS",
+      "actual_passed_tests": [
+        "valid_partial_or_corrupt_uncommitted_tail_never_advances_head",
+        "sigkill_tail_repair_does_not_promote_the_uncommitted_suffix"
+      ]
+    },
+    "RR11": {
+      "status": "PASS",
+      "actual_passed_tests": [
+        "committed_corruption_or_missing_components_never_roll_back_or_repair"
+      ]
+    },
+    "RR12": {
+      "status": "PASS",
+      "actual_passed_tests": [
+        "recovery::store::tests::checksummed_but_forged_report_snapshot_and_index_are_recomputed"
+      ]
+    },
+    "RR13": {
+      "status": "PASS",
+      "actual_passed_tests": [
+        "recomputed_checksums_do_not_authorize_unknown_versions_tags_or_noncanonical_lag",
+        "malformed_length_and_limit_bombs_are_bounded_before_allocation",
+        "plans_and_persisted_limits_must_be_nonempty_strict_and_representable"
+      ]
+    },
+    "RR14": {
+      "status": "PASS",
+      "actual_passed_tests": [
+        "resource_exhaustion_keeps_the_previous_certified_prefix_usable",
+        "recovery::store::tests::recovery_does_not_expose_a_prefix_before_successful_sealing"
+      ]
+    },
+    "RR15": {
+      "status": "PASS",
+      "actual_passed_tests": [
+        "committed_retry_lost_reply_and_invalid_indices_never_append"
+      ]
+    },
+    "RR16": {
+      "status": "PASS",
+      "actual_passed_tests": [
+        "independent_python_manifest_run_header_and_empty_head_vectors_match",
+        "independent_cli_processes_resume_and_export_the_exact_isolated_decision"
+      ]
+    }
+  },
+  "resolved_lock_issue": {
+    "cause": "A parallel fork can retain a duplicated open file description after owner close.",
+    "fix": "Explicit owner-process unlock; inherited RunStore operations are rejected.",
+    "regression": "owner_drop_releases_the_lock_even_with_an_inherited_file_description",
+    "parallel_fault_stress_runs": 10,
+    "stress_log_sha256": "8b4ccdcac9449e8bbf3643cb4b2d451cb9d4f1ecc5804aa7f4902a5e07668adf"
+  }
+}

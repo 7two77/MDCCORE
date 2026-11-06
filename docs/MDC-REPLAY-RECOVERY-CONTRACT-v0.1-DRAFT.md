@@ -1,7 +1,10 @@
 # MDC-REPLAY-RECOVERY-001 — Durable replay decisions, draft v0.1
 
 2026-11-04. Preparation for MDC-IMPL-015, based on merged MDC-IMPL-014.
-Status: CONTRACT PROPOSAL / RUNTIME NOT IMPLEMENTED.
+Status: HISTORICAL PROPOSAL, realized by MDC-IMPL-015 and the
+[frozen wire contract v1](MDC-REPLAY-RUN-WIRE-v1.md). Future-tense sections below
+preserve the preparation checkpoint; current execution/limits are in
+[the implementation report](MDC-IMPL-015.md).
 Scope: Binance Spot modeled final-bar profile, bounded input, Linux local
 filesystem, one writer. The owner has selected historical replay, exact recovery
 and local snapshot + journal storage. This document specifies the next bounded
