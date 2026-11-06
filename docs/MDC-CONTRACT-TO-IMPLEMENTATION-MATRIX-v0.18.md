@@ -11,7 +11,8 @@ IMPLEMENTED refers to the declared bounded profile, not a trading deployment SLO
 | Durable replay / exact prefix / old-run continuation | IMPLEMENTED | Original v1 format; old CLI→new CLI and full file equality |
 | Owned capture and prepared manifest/source (017) | IMPLEMENTED | Actual exports 3→1, open decode/parse 2→1; mandatory restore/recompute retained |
 | Pinned A/B validator / raw evidence archives | IMPLEMENTED | Each variant validated against its own reviewed fingerprint; negative validator tests |
-| Official hosted resource benefit | UNVERIFIED | Requires the separately executed paired study; static counts are insufficient |
+| Official hosted A/B characterization | IMPLEMENTED | Run 42255016865, 3/3 PASS, 84 samples; raw files/source/archives verified |
+| Universal speedup / production capacity | UNVERIFIED | Observed grouped medians are not a universal claim; one candidate outlier is retained |
 | Full-day 1440-decision full-history profile | MISSING | Existing plan/visible/journal bounds unchanged |
 | Compaction / larger budgets / changed retention | MISSING | Separate representation/contract not selected |
 | Broader temporal availability | PARTIAL | Modeled final bars; measured receipt/corrections remain separate |

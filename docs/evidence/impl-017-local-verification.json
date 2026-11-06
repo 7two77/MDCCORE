@@ -688,6 +688,13 @@
     "manifest_bytes": 269158,
     "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
   },
-  "official_hosted_measurement": "PENDING: independent run and artifacts required; no inferred speedup",
+  "official_hosted_measurement": {
+    "acceptance": "PASS",
+    "scope": "separate hosted execution, not local test evidence",
+    "run_id": 42255016865,
+    "runtime_commit": "3b884a08428431739d6d7b279a1bdd73fb4ab660",
+    "cases": 84,
+    "receipt": "impl-017-hosted-ab.json"
+  },
   "tooling_regression": "relative CARGO_TARGET_DIR=target keeps the baseline cache inside the Git-ignored target tree; actual git check-ignore test passes"
 }
