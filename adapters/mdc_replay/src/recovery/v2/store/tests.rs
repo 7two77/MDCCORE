@@ -26,7 +26,7 @@ struct Temp(PathBuf);
 impl Temp {
     fn new() -> Self {
         let p = std::env::temp_dir().join(format!(
-            "mdc-replay-unit-{}-{}",
+            "mdc-replay-v2-unit-{}-{}",
             std::process::id(),
             NEXT.fetch_add(1, Ordering::Relaxed)
         ));

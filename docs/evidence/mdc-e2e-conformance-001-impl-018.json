@@ -6,7 +6,7 @@
   "acceptance": "PASS",
   "harness_status": "PASS",
   "metadata": {
-    "implementation_source_sha256": "3801d958cfffcf820607e248f855b6161d05c4a5625ac13edd9aa50963be9b13",
+    "implementation_source_sha256": "d26797ca7737d5ed3f3c291159df313ee8d1a0ad2ba701e8657fb8070ada976f",
     "source_files": {
       "Cargo.lock": "db212ada28cd71fe46f25450b036900db1ba8cacaa224f6f5b11b0364cd02aa4",
       "Cargo.toml": "c6e3c003ddff0ed5716ab252c94bbf23fb0155ccd862f7d278c331a47698cf0e",
@@ -22,7 +22,7 @@
       "adapters/mdc_replay/src/lib.rs": "a4c0a3a08621bc7d12aa60152b5db5e0f909f8672b0f2fefeb236a912035b0c3",
       "adapters/mdc_replay/src/recovery/store/tests.rs": "cbb7bfc1f5e9296278dc75d45b965e8892fddbfb45985ad96a1f65aa5fedd9bf",
       "adapters/mdc_replay/src/recovery/store.rs": "4a68c4dadcbdc28b45c5f3b96ed9d084b778dc8bd578ed4af69964c59ad60caa",
-      "adapters/mdc_replay/src/recovery/v2/store/tests.rs": "38dc57f61cbf2940ac664dcdb4df74934a200548a3b1d269004a148734c6f20f",
+      "adapters/mdc_replay/src/recovery/v2/store/tests.rs": "24a7d92d68c44043233b09f1d1382bd0c1ffb9ac3c128732f31995fcf8d5b4c6",
       "adapters/mdc_replay/src/recovery/v2/store.rs": "513c2453ee566c2fdcce4f2f824d6788be0e2d33a6e3a19b4eafde79d002f8ea",
       "adapters/mdc_replay/src/recovery/v2/tests.rs": "3c37b91256917b2f2e157e2e6c1c1497aedbc4976f40e1006e4d1a4c7a071f8e",
       "adapters/mdc_replay/src/recovery/v2.rs": "0f4eb5f73aea29b0a8674ed6fb8ccbc02e4a33e92cde7d248b14e631fe07f0ee",
@@ -172,11 +172,11 @@
   },
   "processes": [
     {
-      "launcher_pid": 39492,
+      "launcher_pid": 39918,
       "exit_code": 0,
       "report": {
         "schema_version": 1,
-        "process_id": 39492,
+        "process_id": 39918,
         "fixture_id": "MDC-E2E-CONFORMANCE-001",
         "fixture_version": 1,
         "profile": "MDC-SCALAR-001",
@@ -47081,11 +47081,11 @@
       "timed_out": false
     },
     {
-      "launcher_pid": 39496,
+      "launcher_pid": 39922,
       "exit_code": 0,
       "report": {
         "schema_version": 1,
-        "process_id": 39496,
+        "process_id": 39922,
         "fixture_id": "MDC-E2E-CONFORMANCE-001",
         "fixture_version": 1,
         "profile": "MDC-SCALAR-001",
