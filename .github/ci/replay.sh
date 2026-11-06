@@ -38,5 +38,10 @@ cargo run --quiet --locked --offline --example identity_target > "$MDC_CI_REPORT
 run_check replay-validation python3 -B scripts/check_binance_replay.py --folder "$MDC_CI_REPORT_DIR" --output "$MDC_CI_REPORT_DIR/binance-verification.json"
 export MDC_BINANCE_REPORT_DIR="$MDC_CI_REPORT_DIR"
 run_check validator-tests python3 -B -m unittest discover -s tests -p test_binance_replay.py
+run_check capacity-default python3 -B scripts/run_capacity.py --synthetic-day --source-label synthetic-smoke --points 1,2,3,1440 --output "$MDC_CI_REPORT_DIR/capacity-default"
+run_check capacity-limited python3 -B scripts/run_capacity.py --synthetic-day --source-label synthetic-smoke --points 1,2,3,1440 --journal-budget-bytes 32768 --output "$MDC_CI_REPORT_DIR/capacity-limited"
+export MDC_CAPACITY_REPORT_DIR="$MDC_CI_REPORT_DIR/capacity-default"
+export MDC_CAPACITY_LIMIT_REPORT_DIR="$MDC_CI_REPORT_DIR/capacity-limited"
+run_check capacity-validator-tests python3 -B -m unittest discover -s tests -p test_capacity_report.py
 MDC_CI_STEP=complete
 printf 'MDC_BINANCE_REPLAY_VERIFY=PASS reports=%s\n' "$MDC_CI_REPORT_DIR"

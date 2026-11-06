@@ -8,14 +8,14 @@ import subprocess
 from check_portable_identity import check_target
 from e2e_report import source_fingerprint
 from replay_run_report import ROOT, verify_folder
+from ci_metadata import ci_fingerprints
 
 
 def compare(root):
     fingerprint, files = source_fingerprint(ROOT)
     commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     run = os.environ.get("GITHUB_RUN_ID")
-    ci_files = [ROOT / ".github/workflows/ci.yml", *sorted((ROOT / ".github/ci").glob("*"))]
-    hashes = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in ci_files if p.is_file()}
+    hashes = ci_fingerprints(ROOT)
     rows, seen = [], set()
     for path in sorted(Path(root).rglob("replay-recovery-execution.json")):
         folder = path.parent

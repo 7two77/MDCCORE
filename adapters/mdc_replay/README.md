@@ -152,3 +152,60 @@ tests include three fresh CLI processes; CI compares two report/snapshot pairs
 across native x86_64, i686 and s390x/QEMU on two Rust versions. Frozen small
 official samples and their archive/checksum provenance are in `tests/fixtures/`;
 CI performs no network market-data fetch.
+
+## Resource characterization (MDC-IMPL-016)
+
+Linux measurements are a separate host executable, `mdc-replay-capacity`, which
+calls the same Dataset/RunManifest/RunStore APIs. `create` derives cutoffs from
+normalized availability; `commit` uses one open writer, `recover` opens in a fresh
+process, and `retry` requests an already committed bundle. Timers never enter
+canonical or persisted data. There are no new library algorithms or defaults.
+
+For a quick synthetic smoke, choose a NEW output directory:
+
+```bash
+python3 -B scripts/run_capacity.py --synthetic-day --points 1,2,3,1440 \
+  --output /path/to/new-capacity-smoke
+python3 -B scripts/check_capacity.py --folder /path/to/new-capacity-smoke \
+  --output /path/to/new-capacity-validation.json
+```
+
+A full local series takes an explicit captured CSV and its expected SHA-256:
+
+```bash
+python3 -B scripts/run_capacity.py --source /path/to/source.csv \
+  --expected-source-sha256 ACTUAL_SHA256 --source-label pinned-binance-2024 \
+  --unit ms --points 1,16,32,64,128,256,1440 --repetitions 3 \
+  --output /path/to/new-capacity-study
+```
+
+Release binaries are copied into each result directory and hashed. Reports retain
+raw process logs, captured CSV, exact plans and all run files for every repetition.
+Timing uses Rust Instant for API calls and Python perf_counter_ns for parent wall
+time; parent measurements include launch/wait overhead and 5 ms polling. Linux
+wait4 supplies per-process user/system CPU in microseconds and peak RSS in KiB,
+including process baseline. Report/snapshot lengths are logical bytes, not physical
+allocation. Fresh processes do not imply cold device caches; caches remain
+uncontrolled. Three samples support min/median/max, not p95/p99 or a latency SLO.
+
+Each phase defaults to a 120 s timeout; output defaults to 1536 MiB. Before each
+sample the runner reserves room for an entire bounded run and free-disk slack.
+It does not delete old samples. A timeout is followed by a separate recovery
+attempt; unresolved/incomplete measurement cannot earn acceptance. The 1440 point
+is an expected manifest-plan rejection under v1, not a successful full-day replay.
+A journal limit preserves the actual certified prefix and first failing index;
+measurement acceptance does not assert completion of all requested decisions.
+
+Regular CI retains three repetitions at 1, 2, 3 and 1440, plus an explicitly
+reduced **32768-byte journal** probe to exercise a nonempty limited prefix. This
+uses the existing smaller RunLimits option; the default remains **64 MiB**.
+Large series are available in the opt-in `MDC capacity study` workflow, with an
+explicit synthetic/official-day choice. `scripts/fetch_capacity_source.py` fetches
+only the two pinned fixture days when expressly requested, checks archive/checksum
+and CSV digests, and retains acquisition evidence. Ordinary CI never downloads
+market data. MODELED availability remains a simulation, including for official CSV.
+
+The validator reads actual bounded v1 frames and compares full files between
+repetitions and toolchains. CPU/timing differences are reported, not failed against
+an invented performance threshold. Re-run from a new output directory after any
+fingerprinted source or CI configuration change.
