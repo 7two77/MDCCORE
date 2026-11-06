@@ -12,7 +12,8 @@ own exact runtime, source, compiler and input binding.
 | Explicit v2 raw/zlib storage | IMPLEMENTED | Independent frames/decoded hashes; pinned host-only codec; LS01…LS09 |
 | Streaming validation / owned reads / fencing | IMPLEMENTED | Per-decision semantic replay, bounded index and certified reads; LS10…LS14 |
 | Resource study tooling | IMPLEMENTED | Separate release drivers, exact common-prefix comparison, retained samples |
-| Official 256-decision capacity and CPU/RSS | UNVERIFIED | Requires actual Rust study; see 018 execution receipt when available |
+| Pinned official 256-decision v2 storage / exact recovery | IMPLEMENTED | Three samples per native compiler, 256/256; 33,290,447 encoded and 186,361,156 decoded bytes |
+| CPU/RSS/resource observations | IMPLEMENTED | 48 variant samples, all raw data retained; equal-count recovery slightly slower; no general SLO |
 | Full-day 1440-decision profile | MISSING | Existing plan/visible/core-work bounds intentionally retained |
 | General compression ratio / performance SLO / cold RTO | UNVERIFIED | Measurements do not establish universal guarantees |
 | Broader temporal availability | PARTIAL | MODELED bar availability; measured receipt/corrections require another contract |
