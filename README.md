@@ -3,7 +3,7 @@
 История объединения исходной main и проверенного стека baseline → 008 → 009 → 010,
 сохранённые материалы и правила сопровождения описаны в
 [MDC-INTEGRATION-001](docs/MDC-INTEGRATION-v0.1.md).
-Актуальная [матрица v0.16](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.16.md)
+Актуальная [матрица v0.17](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.17.md)
 учитывает опубликованные hosted CI receipts. Подготовка первого Git commit
 сохранена в [MDC-OPS-001](docs/MDC-OPS-001.md).
 
@@ -14,6 +14,11 @@
 Последний пакет — **MDC-IMPL-016: воспроизводимые измерения replay**.
 [Контракт и проверки](docs/MDC-IMPL-016.md). Production-лимиты и форматы сохранены;
 полный день из 1440 решений по-прежнему не поддерживается.
+
+[Post-merge проверка 016 и ручного workflow](docs/MDC-OPS-007-POST-CAPACITY-v0.1.md).
+Подготовлен [проект контракта MDC-IMPL-017](docs/MDC-REPLAY-EXACT-WORK-CONTRACT-v0.1-DRAFT.md):
+один захват snapshot и повторное использование проверенных SOURCE/MANIFEST
+внутри одной операции. Runtime оптимизации пока не реализован.
 
 Восстановление replay — **MDC-IMPL-015**.
 [API, проверки и ограничения](docs/MDC-IMPL-015.md),

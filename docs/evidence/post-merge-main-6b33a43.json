@@ -1,0 +1,1850 @@
+{
+  "acceptance": "PASS",
+  "date": "2026-11-06",
+  "main_commit": "6b33a4375384ed4301695ea879e641a20f5493b9",
+  "reviewed_head": "0c30c79af778742ce0d6a3b4e60b63515d7e4b5e",
+  "parents": [
+    "ee4d45f263b476d7ba62df31405edb23462bd6c0",
+    "0c30c79af778742ce0d6a3b4e60b63515d7e4b5e"
+  ],
+  "tree": "c6718a393d1fd830f049767dd7e9933562654938",
+  "reviewed_tree_preserved": true,
+  "implementation_source_sha256": "cca5b3a70dea13130f8fc25f91152b5fd4dfecf71fabd731eb1cd0f11ae20de4",
+  "source_file_count": 129,
+  "workflow": {
+    "conclusion": "success",
+    "databaseId": 42247801358,
+    "headSha": "6b33a4375384ed4301695ea879e641a20f5493b9",
+    "status": "completed",
+    "url": "https://github.com/7two77/MDCCORE/actions/runs/42247801358"
+  },
+  "jobs": [
+    {
+      "id": 127994513601,
+      "name": "Linux store Rust 1.98.0",
+      "status": "completed",
+      "conclusion": "success",
+      "rust_tests": 74,
+      "python_tests": 0,
+      "decoded_log_file_sha256": "66fef5b7a4afda15553cac076ed003fea5114bf4149a0f5178644336a5d64dcd"
+    },
+    {
+      "id": 127994514039,
+      "name": "Portable Rust 1.98.0 / i686-unknown-linux-gnu",
+      "status": "completed",
+      "conclusion": "success",
+      "rust_tests": 50,
+      "python_tests": 0,
+      "decoded_log_file_sha256": "3be76a226b454f6866676789430f082cea1c0ca3b32ea952f489243ac6af7d90"
+    },
+    {
+      "id": 127994514046,
+      "name": "Linux store Rust 1.85.1",
+      "status": "completed",
+      "conclusion": "success",
+      "rust_tests": 74,
+      "python_tests": 0,
+      "decoded_log_file_sha256": "6756957bd2b73ccdee6df3acaf90e9a88118903ba3ba6c8c8fa753dc13be8b07"
+    },
+    {
+      "id": 127994514063,
+      "name": "Preserve integration ancestry and the 010 source",
+      "status": "completed",
+      "conclusion": "success",
+      "rust_tests": 0,
+      "python_tests": 0,
+      "decoded_log_file_sha256": "096d140a9723f3d2b0acaadec40a58eae8552f1dfc3f0b77ed11b4e9f4be62f7"
+    },
+    {
+      "id": 127994514084,
+      "name": "Rust 1.85.1 / alloc",
+      "status": "completed",
+      "conclusion": "success",
+      "rust_tests": 213,
+      "python_tests": 25,
+      "decoded_log_file_sha256": "039ed0cc7a2a244bc81097ff3e62a892eeb600e384e5c7ddbc7bc24169086c5b"
+    },
+    {
+      "id": 127994514146,
+      "name": "Portable Rust 1.85.1 / s390x-unknown-linux-gnu",
+      "status": "completed",
+      "conclusion": "success",
+      "rust_tests": 50,
+      "python_tests": 0,
+      "decoded_log_file_sha256": "f98a76e1d139001f8b14051fad59fdb4b8f6fc7b5912be93872d6520a0e0af22"
+    },
+    {
+      "id": 127994514188,
+      "name": "Binance replay Rust 1.98.0",
+      "status": "completed",
+      "conclusion": "success",
+      "rust_tests": 105,
+      "python_tests": 44,
+      "decoded_log_file_sha256": "81f84655659a6fa444cec25b26cfa52559abeb376a78e2145884f40d711bc861"
+    },
+    {
+      "id": 127994514205,
+      "name": "Binance replay Rust 1.85.1",
+      "status": "completed",
+      "conclusion": "success",
+      "rust_tests": 105,
+      "python_tests": 44,
+      "decoded_log_file_sha256": "9e561109778105ecea52917dbf20d25d2b3c7bbe61f8dce27246e1d31bd88d27"
+    },
+    {
+      "id": 127994514207,
+      "name": "Portable Rust 1.85.1 / i686-unknown-linux-gnu",
+      "status": "completed",
+      "conclusion": "success",
+      "rust_tests": 50,
+      "python_tests": 0,
+      "decoded_log_file_sha256": "4418204775019d65444951f2f84efdef35988993510f296e856ca59f6d9a32e3"
+    },
+    {
+      "id": 127994514224,
+      "name": "Rust 1.98.0 / default",
+      "status": "completed",
+      "conclusion": "success",
+      "rust_tests": 213,
+      "python_tests": 25,
+      "decoded_log_file_sha256": "e743a2238e31ab5eaa623159c3bf2d0e39101fdd673971a97cb2ac285f257415"
+    },
+    {
+      "id": 127994514260,
+      "name": "Rust 1.85.1 / default",
+      "status": "completed",
+      "conclusion": "success",
+      "rust_tests": 213,
+      "python_tests": 25,
+      "decoded_log_file_sha256": "51c7e05dc3f80af9d2d3fefa9e50268282500ebef1775aa385c64842647381fd"
+    },
+    {
+      "id": 127994514273,
+      "name": "Portable Rust 1.98.0 / s390x-unknown-linux-gnu",
+      "status": "completed",
+      "conclusion": "success",
+      "rust_tests": 50,
+      "python_tests": 0,
+      "decoded_log_file_sha256": "83961d63c00474cc00f54cd0bbee82536714df40837258d11cd3c30ad3a819ea"
+    },
+    {
+      "id": 127994514355,
+      "name": "Rust 1.98.0 / std-alloc",
+      "status": "completed",
+      "conclusion": "success",
+      "rust_tests": 213,
+      "python_tests": 25,
+      "decoded_log_file_sha256": "2027a2b27860fddbdb98a48fca9eaaa5192b1cb46ad0d426b652e96674fdc604"
+    },
+    {
+      "id": 127994514358,
+      "name": "Rust 1.98.0 / alloc",
+      "status": "completed",
+      "conclusion": "success",
+      "rust_tests": 213,
+      "python_tests": 25,
+      "decoded_log_file_sha256": "cb94e3115f4f5c15dc9c74dfcd5a3b989016f78493122d6bc126b47e85eaba2f"
+    },
+    {
+      "id": 127994514607,
+      "name": "Rust 1.85.1 / std-alloc",
+      "status": "completed",
+      "conclusion": "success",
+      "rust_tests": 213,
+      "python_tests": 25,
+      "decoded_log_file_sha256": "3c2c25ca33bbaaccacb67bc7110e42e73b1775c9d60f9c8eff1b9a52a859cfbf"
+    },
+    {
+      "id": 128000940397,
+      "name": "Compare portable bytes across toolchains and targets",
+      "status": "completed",
+      "conclusion": "success",
+      "rust_tests": 0,
+      "python_tests": 0,
+      "decoded_log_file_sha256": "64d5bdcc814eaa4da2bc60896195b0b90bc1bbb62641843fe2d1df1abc33892c"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 13519765688,
+      "name": "mdc-replay-1.98.0",
+      "size_in_bytes": 2866882,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13519765688",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13519765688/zip",
+      "expired": false,
+      "created_at": "2026-11-06T15:57:56Z",
+      "expires_at": "2026-11-20T15:57:55Z",
+      "updated_at": "2026-11-06T15:57:56Z",
+      "digest": "sha256:beb09289589cf4f927ce1361a4b6bef317ac6a2c904d85ec02e00932afeacde1",
+      "workflow_run": {
+        "id": 42247801358,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "6b33a4375384ed4301695ea879e641a20f5493b9"
+      }
+    },
+    {
+      "id": 13519765652,
+      "name": "mdc-store-1.98.0",
+      "size_in_bytes": 70788,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13519765652",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13519765652/zip",
+      "expired": false,
+      "created_at": "2026-11-06T15:57:46Z",
+      "expires_at": "2026-11-20T15:57:45Z",
+      "updated_at": "2026-11-06T15:57:46Z",
+      "digest": "sha256:cf81de337226dc36f5c4a4ec6712d6f9049a39153b250bd57d245feeeb879e56",
+      "workflow_run": {
+        "id": 42247801358,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "6b33a4375384ed4301695ea879e641a20f5493b9"
+      }
+    },
+    {
+      "id": 13519760871,
+      "name": "mdc-portable-1.85.1-s390x-unknown-linux-gnu",
+      "size_in_bytes": 41623,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13519760871",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13519760871/zip",
+      "expired": false,
+      "created_at": "2026-11-06T15:58:48Z",
+      "expires_at": "2026-11-20T15:58:47Z",
+      "updated_at": "2026-11-06T15:58:48Z",
+      "digest": "sha256:cca2e1cc3a284d57432e2d143ae2eae842ebb23d2625e9ea84c8dc4db6081917",
+      "workflow_run": {
+        "id": 42247801358,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "6b33a4375384ed4301695ea879e641a20f5493b9"
+      }
+    },
+    {
+      "id": 13519666546,
+      "name": "mdc-replay-1.85.1",
+      "size_in_bytes": 2974544,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13519666546",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13519666546/zip",
+      "expired": false,
+      "created_at": "2026-11-06T15:57:57Z",
+      "expires_at": "2026-11-20T15:57:56Z",
+      "updated_at": "2026-11-06T15:57:57Z",
+      "digest": "sha256:34210c4e25a14fa9b6c5391a5ebac3c5ff30457575b67bb6cd4952d20589118b",
+      "workflow_run": {
+        "id": 42247801358,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "6b33a4375384ed4301695ea879e641a20f5493b9"
+      }
+    },
+    {
+      "id": 13519571701,
+      "name": "mdc-store-1.85.1",
+      "size_in_bytes": 70793,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13519571701",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13519571701/zip",
+      "expired": false,
+      "created_at": "2026-11-06T15:57:42Z",
+      "expires_at": "2026-11-20T15:57:41Z",
+      "updated_at": "2026-11-06T15:57:42Z",
+      "digest": "sha256:a518d3b2476476962efecf58e29866d7f1cd7a9f0bc51751ccb6360b369cd9a0",
+      "workflow_run": {
+        "id": 42247801358,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "6b33a4375384ed4301695ea879e641a20f5493b9"
+      }
+    },
+    {
+      "id": 13519486763,
+      "name": "mdc-portable-1.98.0-s390x-unknown-linux-gnu",
+      "size_in_bytes": 41621,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13519486763",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13519486763/zip",
+      "expired": false,
+      "created_at": "2026-11-06T15:57:51Z",
+      "expires_at": "2026-11-20T15:57:50Z",
+      "updated_at": "2026-11-06T15:57:51Z",
+      "digest": "sha256:98650bb7ef6ed2339a0fd1f92ba414272cb0006ac4d1e47f973ab7b1cceae688",
+      "workflow_run": {
+        "id": 42247801358,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "6b33a4375384ed4301695ea879e641a20f5493b9"
+      }
+    },
+    {
+      "id": 13518912407,
+      "name": "mdc-ci-1.85.1-alloc",
+      "size_in_bytes": 293428,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13518912407",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13518912407/zip",
+      "expired": false,
+      "created_at": "2026-11-06T15:57:39Z",
+      "expires_at": "2026-11-20T15:57:38Z",
+      "updated_at": "2026-11-06T15:57:39Z",
+      "digest": "sha256:b803220f66254e5a3c74411a8934505c510302b7a9f09455e3b7bc18aefe8d18",
+      "workflow_run": {
+        "id": 42247801358,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "6b33a4375384ed4301695ea879e641a20f5493b9"
+      }
+    },
+    {
+      "id": 13518812401,
+      "name": "mdc-ci-1.98.0-default",
+      "size_in_bytes": 293750,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13518812401",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13518812401/zip",
+      "expired": false,
+      "created_at": "2026-11-06T15:57:36Z",
+      "expires_at": "2026-11-20T15:57:35Z",
+      "updated_at": "2026-11-06T15:57:36Z",
+      "digest": "sha256:c35d3cc4af518b4565a16f8f6d0f5811c565c67017339f56488fdfa3b35d4b26",
+      "workflow_run": {
+        "id": 42247801358,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "6b33a4375384ed4301695ea879e641a20f5493b9"
+      }
+    },
+    {
+      "id": 13518802543,
+      "name": "mdc-ci-1.85.1-std-alloc",
+      "size_in_bytes": 293419,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13518802543",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13518802543/zip",
+      "expired": false,
+      "created_at": "2026-11-06T15:57:48Z",
+      "expires_at": "2026-11-20T15:57:47Z",
+      "updated_at": "2026-11-06T15:57:48Z",
+      "digest": "sha256:2bc1c682c769f991c45e80e5d80419db6c4d03f0785e0f0fdb674e8cc822263b",
+      "workflow_run": {
+        "id": 42247801358,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "6b33a4375384ed4301695ea879e641a20f5493b9"
+      }
+    },
+    {
+      "id": 13518699252,
+      "name": "mdc-portable-1.98.0-i686-unknown-linux-gnu",
+      "size_in_bytes": 41628,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13518699252",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13518699252/zip",
+      "expired": false,
+      "created_at": "2026-11-06T16:08:51Z",
+      "expires_at": "2026-11-20T16:08:50Z",
+      "updated_at": "2026-11-06T16:08:51Z",
+      "digest": "sha256:c9991fc616ae79c1cc5f50fc1e7c117aa5a52eb91217260abbdb87b6ecbbf499",
+      "workflow_run": {
+        "id": 42247801358,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "6b33a4375384ed4301695ea879e641a20f5493b9"
+      }
+    },
+    {
+      "id": 13518622924,
+      "name": "mdc-ci-1.98.0-alloc",
+      "size_in_bytes": 293428,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13518622924",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13518622924/zip",
+      "expired": false,
+      "created_at": "2026-11-06T15:57:49Z",
+      "expires_at": "2026-11-20T15:57:48Z",
+      "updated_at": "2026-11-06T15:57:49Z",
+      "digest": "sha256:48e6794614121c1626c3fea82c83035415e6f6a321b1c3d922e8cb2e174d03dd",
+      "workflow_run": {
+        "id": 42247801358,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "6b33a4375384ed4301695ea879e641a20f5493b9"
+      }
+    },
+    {
+      "id": 13518617291,
+      "name": "mdc-portable-1.85.1-i686-unknown-linux-gnu",
+      "size_in_bytes": 41627,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13518617291",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13518617291/zip",
+      "expired": false,
+      "created_at": "2026-11-06T15:57:52Z",
+      "expires_at": "2026-11-20T15:57:51Z",
+      "updated_at": "2026-11-06T15:57:52Z",
+      "digest": "sha256:57d851e0d2e4b36873b3b094362bb35c46830a05440d2343dbc6d28ac48e2b78",
+      "workflow_run": {
+        "id": 42247801358,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "6b33a4375384ed4301695ea879e641a20f5493b9"
+      }
+    },
+    {
+      "id": 13518564920,
+      "name": "mdc-portable-comparison",
+      "size_in_bytes": 5007,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13518564920",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13518564920/zip",
+      "expired": false,
+      "created_at": "2026-11-06T16:09:05Z",
+      "expires_at": "2026-11-20T16:09:04Z",
+      "updated_at": "2026-11-06T16:09:05Z",
+      "digest": "sha256:e1d5d8d9b77d2c96a6be686449b299d31a18b4c591bd37cc5ce92307b7a1d377",
+      "workflow_run": {
+        "id": 42247801358,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "6b33a4375384ed4301695ea879e641a20f5493b9"
+      }
+    },
+    {
+      "id": 13518477758,
+      "name": "mdc-integration-history",
+      "size_in_bytes": 680,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13518477758",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13518477758/zip",
+      "expired": false,
+      "created_at": "2026-11-06T15:57:20Z",
+      "expires_at": "2026-11-20T15:57:20Z",
+      "updated_at": "2026-11-06T15:57:20Z",
+      "digest": "sha256:4cbfdbfccfa15a9a751908983d662a9ba0edebd6f19ca2f1a4a3221120107bc2",
+      "workflow_run": {
+        "id": 42247801358,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "6b33a4375384ed4301695ea879e641a20f5493b9"
+      }
+    },
+    {
+      "id": 13518097887,
+      "name": "mdc-ci-1.85.1-default",
+      "size_in_bytes": 293753,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13518097887",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13518097887/zip",
+      "expired": false,
+      "created_at": "2026-11-06T15:57:49Z",
+      "expires_at": "2026-11-20T15:57:48Z",
+      "updated_at": "2026-11-06T15:57:49Z",
+      "digest": "sha256:3cd689c62587f0828e598f058998671b2a36e1f0f397f0d976fc4f8edc73d5cb",
+      "workflow_run": {
+        "id": 42247801358,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "6b33a4375384ed4301695ea879e641a20f5493b9"
+      }
+    },
+    {
+      "id": 13517918319,
+      "name": "mdc-ci-1.98.0-std-alloc",
+      "size_in_bytes": 293414,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13517918319",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13517918319/zip",
+      "expired": false,
+      "created_at": "2026-11-06T15:57:46Z",
+      "expires_at": "2026-11-20T15:57:45Z",
+      "updated_at": "2026-11-06T15:57:46Z",
+      "digest": "sha256:22a521e197e1d7aceb0791661c2b4e304bc8cd47d5eba14a3f0335b9f86bced4",
+      "workflow_run": {
+        "id": 42247801358,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "main",
+        "head_sha": "6b33a4375384ed4301695ea879e641a20f5493b9"
+      }
+    }
+  ],
+  "integration": {
+    "acceptance": "PASS",
+    "revision": "6b33a4375384ed4301695ea879e641a20f5493b9",
+    "mode": "history",
+    "bridge_commit": "c53279a4a76fe342e3e2469aa9457b36906f9c0a",
+    "verified_tree_commit": "c53279a4a76fe342e3e2469aa9457b36906f9c0a",
+    "main_before": "5bd25557aed4a6dcb08b7fb1bc2d14e91ca81dbf",
+    "implementation_tip": "b54b30febb7a63adfb12e23bd20ca030b71700da",
+    "preserved_milestones": [
+      {
+        "name": "baseline-v0.1",
+        "commit": "a8c15c7ffbbe48993e97142f6842da044bda4162"
+      },
+      {
+        "name": "MDC-IMPL-008",
+        "commit": "70f37fc2b510f9436f1208ee378017dec444537e"
+      },
+      {
+        "name": "MDC-IMPL-009",
+        "commit": "d33bb979c0b8b6a69126fd79544d3f43e5df9d3b"
+      },
+      {
+        "name": "MDC-IMPL-010",
+        "commit": "b54b30febb7a63adfb12e23bd20ca030b71700da"
+      }
+    ],
+    "roots": [
+      "a8c15c7ffbbe48993e97142f6842da044bda4162",
+      "2dca7f93450d0766dd334d03d8b71487b15d0ea0"
+    ],
+    "protected_implementation_files": 157,
+    "original_main_files_preserved": 2,
+    "implementation_source_sha256": "71e4f1e629242f8f6460741ba42987a96d9f2f3c677b2cd1d786703418b1b08b"
+  },
+  "comparison_zip_sha256_verified": true,
+  "comparison_receipts": {
+    "portable-comparison": {
+      "acceptance": "PASS",
+      "implementation_source_sha256": "cca5b3a70dea13130f8fc25f91152b5fd4dfecf71fabd731eb1cd0f11ae20de4",
+      "commit_sha": "6b33a4375384ed4301695ea879e641a20f5493b9",
+      "github_run_id": "42247801358",
+      "configurations": [
+        {
+          "rust": "1.85.1",
+          "profile": "alloc",
+          "target": {
+            "arch": "x86_64",
+            "pointer_width": 64,
+            "endian": "little"
+          },
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+        },
+        {
+          "rust": "1.85.1",
+          "profile": "default",
+          "target": {
+            "arch": "x86_64",
+            "pointer_width": 64,
+            "endian": "little"
+          },
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+        },
+        {
+          "rust": "1.85.1",
+          "profile": "std-alloc",
+          "target": {
+            "arch": "x86_64",
+            "pointer_width": 64,
+            "endian": "little"
+          },
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+        },
+        {
+          "rust": "1.98.0",
+          "profile": "alloc",
+          "target": {
+            "arch": "x86_64",
+            "pointer_width": 64,
+            "endian": "little"
+          },
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+        },
+        {
+          "rust": "1.98.0",
+          "profile": "default",
+          "target": {
+            "arch": "x86_64",
+            "pointer_width": 64,
+            "endian": "little"
+          },
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+        },
+        {
+          "rust": "1.98.0",
+          "profile": "std-alloc",
+          "target": {
+            "arch": "x86_64",
+            "pointer_width": 64,
+            "endian": "little"
+          },
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+        },
+        {
+          "rust": "1.85.1",
+          "profile": "portable-i686-unknown-linux-gnu",
+          "target": {
+            "arch": "x86",
+            "pointer_width": 32,
+            "endian": "little"
+          },
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+        },
+        {
+          "rust": "1.85.1",
+          "profile": "portable-s390x-unknown-linux-gnu",
+          "target": {
+            "arch": "s390x",
+            "pointer_width": 64,
+            "endian": "big"
+          },
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+        },
+        {
+          "rust": "1.98.0",
+          "profile": "portable-i686-unknown-linux-gnu",
+          "target": {
+            "arch": "x86",
+            "pointer_width": 32,
+            "endian": "little"
+          },
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+        },
+        {
+          "rust": "1.98.0",
+          "profile": "portable-s390x-unknown-linux-gnu",
+          "target": {
+            "arch": "s390x",
+            "pointer_width": 64,
+            "endian": "big"
+          },
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+        }
+      ]
+    },
+    "snapshot-comparison": {
+      "acceptance": "PASS",
+      "commit_sha": "6b33a4375384ed4301695ea879e641a20f5493b9",
+      "github_run_id": "42247801358",
+      "implementation_source_sha256": "cca5b3a70dea13130f8fc25f91152b5fd4dfecf71fabd731eb1cd0f11ae20de4",
+      "configurations": [
+        {
+          "artifact_folder": "mdc-ci-1.85.1-alloc",
+          "processes": 3,
+          "archive_bytes": 372782,
+          "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+          "manifest_bytes": 269158,
+          "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+        },
+        {
+          "artifact_folder": "mdc-ci-1.85.1-default",
+          "processes": 3,
+          "archive_bytes": 372782,
+          "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+          "manifest_bytes": 269158,
+          "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+        },
+        {
+          "artifact_folder": "mdc-ci-1.85.1-std-alloc",
+          "processes": 3,
+          "archive_bytes": 372782,
+          "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+          "manifest_bytes": 269158,
+          "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+        },
+        {
+          "artifact_folder": "mdc-ci-1.98.0-alloc",
+          "processes": 3,
+          "archive_bytes": 372782,
+          "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+          "manifest_bytes": 269158,
+          "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+        },
+        {
+          "artifact_folder": "mdc-ci-1.98.0-default",
+          "processes": 3,
+          "archive_bytes": 372782,
+          "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+          "manifest_bytes": 269158,
+          "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+        },
+        {
+          "artifact_folder": "mdc-ci-1.98.0-std-alloc",
+          "processes": 3,
+          "archive_bytes": 372782,
+          "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+          "manifest_bytes": 269158,
+          "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+        },
+        {
+          "artifact_folder": "mdc-portable-1.85.1-i686-unknown-linux-gnu",
+          "processes": 3,
+          "archive_bytes": 372782,
+          "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+          "manifest_bytes": 269158,
+          "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+        },
+        {
+          "artifact_folder": "mdc-portable-1.85.1-s390x-unknown-linux-gnu",
+          "processes": 3,
+          "archive_bytes": 372782,
+          "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+          "manifest_bytes": 269158,
+          "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+        },
+        {
+          "artifact_folder": "mdc-portable-1.98.0-i686-unknown-linux-gnu",
+          "processes": 3,
+          "archive_bytes": 372782,
+          "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+          "manifest_bytes": 269158,
+          "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+        },
+        {
+          "artifact_folder": "mdc-portable-1.98.0-s390x-unknown-linux-gnu",
+          "processes": 3,
+          "archive_bytes": 372782,
+          "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+          "manifest_bytes": 269158,
+          "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+        }
+      ]
+    },
+    "binance-replay-comparison": {
+      "acceptance": "PASS",
+      "commit_sha": "6b33a4375384ed4301695ea879e641a20f5493b9",
+      "github_run_id": "42247801358",
+      "implementation_source_sha256": "cca5b3a70dea13130f8fc25f91152b5fd4dfecf71fabd731eb1cd0f11ae20de4",
+      "configurations": [
+        {
+          "rust": "1.85.1",
+          "profile": "portable-i686-unknown-linux-gnu",
+          "target": {
+            "arch": "x86",
+            "pointer_width": 32,
+            "endian": "little"
+          },
+          "processes": 2,
+          "availability_quality": "modeled",
+          "eligible_bars": 1,
+          "technical_confirmation": "UNRESOLVED",
+          "core_snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900",
+          "report_sha256": "b2b2214a58fb0fcc1fe9f8ae2ac29d30d56de1332ca75b5ed9ea92cd9190b07a"
+        },
+        {
+          "rust": "1.85.1",
+          "profile": "portable-s390x-unknown-linux-gnu",
+          "target": {
+            "arch": "s390x",
+            "pointer_width": 64,
+            "endian": "big"
+          },
+          "processes": 2,
+          "availability_quality": "modeled",
+          "eligible_bars": 1,
+          "technical_confirmation": "UNRESOLVED",
+          "core_snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900",
+          "report_sha256": "b2b2214a58fb0fcc1fe9f8ae2ac29d30d56de1332ca75b5ed9ea92cd9190b07a"
+        },
+        {
+          "rust": "1.98.0",
+          "profile": "portable-i686-unknown-linux-gnu",
+          "target": {
+            "arch": "x86",
+            "pointer_width": 32,
+            "endian": "little"
+          },
+          "processes": 2,
+          "availability_quality": "modeled",
+          "eligible_bars": 1,
+          "technical_confirmation": "UNRESOLVED",
+          "core_snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900",
+          "report_sha256": "b2b2214a58fb0fcc1fe9f8ae2ac29d30d56de1332ca75b5ed9ea92cd9190b07a"
+        },
+        {
+          "rust": "1.98.0",
+          "profile": "portable-s390x-unknown-linux-gnu",
+          "target": {
+            "arch": "s390x",
+            "pointer_width": 64,
+            "endian": "big"
+          },
+          "processes": 2,
+          "availability_quality": "modeled",
+          "eligible_bars": 1,
+          "technical_confirmation": "UNRESOLVED",
+          "core_snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900",
+          "report_sha256": "b2b2214a58fb0fcc1fe9f8ae2ac29d30d56de1332ca75b5ed9ea92cd9190b07a"
+        },
+        {
+          "rust": "1.85.1",
+          "profile": "binance-replay",
+          "target": {
+            "arch": "x86_64",
+            "pointer_width": 64,
+            "endian": "little"
+          },
+          "processes": 2,
+          "availability_quality": "modeled",
+          "eligible_bars": 1,
+          "technical_confirmation": "UNRESOLVED",
+          "core_snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900",
+          "report_sha256": "b2b2214a58fb0fcc1fe9f8ae2ac29d30d56de1332ca75b5ed9ea92cd9190b07a"
+        },
+        {
+          "rust": "1.98.0",
+          "profile": "binance-replay",
+          "target": {
+            "arch": "x86_64",
+            "pointer_width": 64,
+            "endian": "little"
+          },
+          "processes": 2,
+          "availability_quality": "modeled",
+          "eligible_bars": 1,
+          "technical_confirmation": "UNRESOLVED",
+          "core_snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900",
+          "report_sha256": "b2b2214a58fb0fcc1fe9f8ae2ac29d30d56de1332ca75b5ed9ea92cd9190b07a"
+        }
+      ]
+    },
+    "replay-recovery-comparison": {
+      "acceptance": "PASS",
+      "commit_sha": "6b33a4375384ed4301695ea879e641a20f5493b9",
+      "github_run_id": "42247801358",
+      "implementation_source_sha256": "cca5b3a70dea13130f8fc25f91152b5fd4dfecf71fabd731eb1cd0f11ae20de4",
+      "configurations": [
+        {
+          "rust": "1.85.1",
+          "target": {
+            "arch": "x86_64",
+            "pointer_width": 64,
+            "endian": "little"
+          },
+          "result": {
+            "acceptance": "PASS",
+            "profile": "MDC-REPLAY-RUN-001/1",
+            "run_id": "8459c964f7225121a915ba737028f32b2e9f29df5ff7c497a0a67df1d6fed054",
+            "durable_through": 4,
+            "journal_sha256": "1da4b10a6a1542150edbfc5e57a480d993548a92dea47463d0f9b2b889b0fdb9",
+            "decisions": [
+              {
+                "index": 1,
+                "cutoff": 1704067260098999,
+                "snapshot_sha256": "0e9ce81b506295fddfc0309afee44137b3b0de06daa380a869b081e9027c7ed2",
+                "report_sha256": "f73519c5fc9f63c4d913a1b9d5cbee2b031326c67ec5d9f7ae0cc538d45f61b5",
+                "technical_confirmation": "NO_INPUT"
+              },
+              {
+                "index": 2,
+                "cutoff": 1704067260099000,
+                "snapshot_sha256": "18d7c0a38fd4d5a013dce49e2bd67ee5f3e807d4163aabd196a412de17da859a",
+                "report_sha256": "1199430f5e9ba7269f67eb7e1284b0ff8fd2c76b72d032bf9dc145116f7f364c",
+                "technical_confirmation": "UNRESOLVED"
+              },
+              {
+                "index": 3,
+                "cutoff": 1704067320049000,
+                "snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900",
+                "report_sha256": "b2b2214a58fb0fcc1fe9f8ae2ac29d30d56de1332ca75b5ed9ea92cd9190b07a",
+                "technical_confirmation": "UNRESOLVED"
+              },
+              {
+                "index": 4,
+                "cutoff": 1704067320099000,
+                "snapshot_sha256": "20b7fa536f909adbc55476a0c08946595ab3a92ac3f772b1fefb7359c435eb54",
+                "report_sha256": "fd96492b6ea330ccbbead9983a31e81b0728463ba988f893f7521e84e0d27c30",
+                "technical_confirmation": "PASS"
+              }
+            ]
+          }
+        },
+        {
+          "rust": "1.98.0",
+          "target": {
+            "arch": "x86_64",
+            "pointer_width": 64,
+            "endian": "little"
+          },
+          "result": {
+            "acceptance": "PASS",
+            "profile": "MDC-REPLAY-RUN-001/1",
+            "run_id": "8459c964f7225121a915ba737028f32b2e9f29df5ff7c497a0a67df1d6fed054",
+            "durable_through": 4,
+            "journal_sha256": "1da4b10a6a1542150edbfc5e57a480d993548a92dea47463d0f9b2b889b0fdb9",
+            "decisions": [
+              {
+                "index": 1,
+                "cutoff": 1704067260098999,
+                "snapshot_sha256": "0e9ce81b506295fddfc0309afee44137b3b0de06daa380a869b081e9027c7ed2",
+                "report_sha256": "f73519c5fc9f63c4d913a1b9d5cbee2b031326c67ec5d9f7ae0cc538d45f61b5",
+                "technical_confirmation": "NO_INPUT"
+              },
+              {
+                "index": 2,
+                "cutoff": 1704067260099000,
+                "snapshot_sha256": "18d7c0a38fd4d5a013dce49e2bd67ee5f3e807d4163aabd196a412de17da859a",
+                "report_sha256": "1199430f5e9ba7269f67eb7e1284b0ff8fd2c76b72d032bf9dc145116f7f364c",
+                "technical_confirmation": "UNRESOLVED"
+              },
+              {
+                "index": 3,
+                "cutoff": 1704067320049000,
+                "snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900",
+                "report_sha256": "b2b2214a58fb0fcc1fe9f8ae2ac29d30d56de1332ca75b5ed9ea92cd9190b07a",
+                "technical_confirmation": "UNRESOLVED"
+              },
+              {
+                "index": 4,
+                "cutoff": 1704067320099000,
+                "snapshot_sha256": "20b7fa536f909adbc55476a0c08946595ab3a92ac3f772b1fefb7359c435eb54",
+                "report_sha256": "fd96492b6ea330ccbbead9983a31e81b0728463ba988f893f7521e84e0d27c30",
+                "technical_confirmation": "PASS"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "capacity-comparison": {
+      "acceptance": "PASS",
+      "commit_sha": "6b33a4375384ed4301695ea879e641a20f5493b9",
+      "github_run_id": "42247801358",
+      "implementation_source_sha256": "cca5b3a70dea13130f8fc25f91152b5fd4dfecf71fabd731eb1cd0f11ae20de4",
+      "configurations": [
+        {
+          "rust": "1.85.1",
+          "probe": "default_limits",
+          "checked": {
+            "acceptance": "PASS",
+            "source_sha256": "177ecbb250a90a547e2777f2832de120e37a77e9d0a75011972bae0fa7ff1913",
+            "points": [
+              1,
+              2,
+              3,
+              1440
+            ],
+            "repetitions": 3,
+            "cases": 12,
+            "outcomes": [
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "PreflightRejected",
+              "PreflightRejected",
+              "PreflightRejected"
+            ]
+          },
+          "summary": [
+            {
+              "requested": 1,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    1469840,
+                    1334147,
+                    1336080
+                  ],
+                  "min": 1334147,
+                  "median": 1336080,
+                  "max": 1469840
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    6756682,
+                    6552220,
+                    6583761
+                  ],
+                  "min": 6552220,
+                  "median": 6583761,
+                  "max": 6756682
+                },
+                "journal_bytes": {
+                  "samples": [
+                    11061,
+                    11061,
+                    11061
+                  ],
+                  "min": 11061,
+                  "median": 11061,
+                  "max": 11061
+                },
+                "committed": {
+                  "samples": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "min": 1,
+                  "median": 1,
+                  "max": 1
+                }
+              }
+            },
+            {
+              "requested": 2,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    3059454,
+                    2511298,
+                    2956261
+                  ],
+                  "min": 2511298,
+                  "median": 2956261,
+                  "max": 3059454
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    7080619,
+                    6965864,
+                    7004917
+                  ],
+                  "min": 6965864,
+                  "median": 7004917,
+                  "max": 7080619
+                },
+                "journal_bytes": {
+                  "samples": [
+                    27601,
+                    27601,
+                    27601
+                  ],
+                  "min": 27601,
+                  "median": 27601,
+                  "max": 27601
+                },
+                "committed": {
+                  "samples": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "min": 2,
+                  "median": 2,
+                  "max": 2
+                }
+              }
+            },
+            {
+              "requested": 3,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    4341815,
+                    4881774,
+                    4072570
+                  ],
+                  "min": 4072570,
+                  "median": 4341815,
+                  "max": 4881774
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    7742828,
+                    8122446,
+                    7775889
+                  ],
+                  "min": 7742828,
+                  "median": 7775889,
+                  "max": 8122446
+                },
+                "journal_bytes": {
+                  "samples": [
+                    49750,
+                    49750,
+                    49750
+                  ],
+                  "min": 49750,
+                  "median": 49750,
+                  "max": 49750
+                },
+                "committed": {
+                  "samples": [
+                    3,
+                    3,
+                    3
+                  ],
+                  "min": 3,
+                  "median": 3,
+                  "max": 3
+                }
+              }
+            },
+            {
+              "requested": 1440,
+              "outcomes": [
+                "PreflightRejected",
+                "PreflightRejected",
+                "PreflightRejected"
+              ],
+              "first_constraints": [
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")"
+              ],
+              "metrics": {
+                "commit_api_ns": null,
+                "recovery_api_ns": null,
+                "journal_bytes": null,
+                "committed": {
+                  "samples": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "min": 0,
+                  "median": 0,
+                  "max": 0
+                }
+              }
+            }
+          ],
+          "host": {
+            "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+            "machine": "x86_64",
+            "cpu_model": "AMD EPYC 7763 64-Core Processor",
+            "logical_cpus": 4,
+            "python_pointer_width": 64,
+            "python_byteorder": "little",
+            "filesystem": "ext2/ext3"
+          }
+        },
+        {
+          "rust": "1.85.1",
+          "probe": "explicit_reduced_journal_budget",
+          "checked": {
+            "acceptance": "PASS",
+            "source_sha256": "177ecbb250a90a547e2777f2832de120e37a77e9d0a75011972bae0fa7ff1913",
+            "points": [
+              1,
+              2,
+              3,
+              1440
+            ],
+            "repetitions": 3,
+            "cases": 12,
+            "outcomes": [
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Limited",
+              "Limited",
+              "Limited",
+              "PreflightRejected",
+              "PreflightRejected",
+              "PreflightRejected"
+            ]
+          },
+          "summary": [
+            {
+              "requested": 1,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    1468939,
+                    1353683,
+                    1468908
+                  ],
+                  "min": 1353683,
+                  "median": 1468908,
+                  "max": 1468939
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    6599097,
+                    6614095,
+                    6432266
+                  ],
+                  "min": 6432266,
+                  "median": 6599097,
+                  "max": 6614095
+                },
+                "journal_bytes": {
+                  "samples": [
+                    11061,
+                    11061,
+                    11061
+                  ],
+                  "min": 11061,
+                  "median": 11061,
+                  "max": 11061
+                },
+                "committed": {
+                  "samples": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "min": 1,
+                  "median": 1,
+                  "max": 1
+                }
+              }
+            },
+            {
+              "requested": 2,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    2602841,
+                    2574126,
+                    2839774
+                  ],
+                  "min": 2574126,
+                  "median": 2602841,
+                  "max": 2839774
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    7019164,
+                    7039832,
+                    6985641
+                  ],
+                  "min": 6985641,
+                  "median": 7019164,
+                  "max": 7039832
+                },
+                "journal_bytes": {
+                  "samples": [
+                    27601,
+                    27601,
+                    27601
+                  ],
+                  "min": 27601,
+                  "median": 27601,
+                  "max": 27601
+                },
+                "committed": {
+                  "samples": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "min": 2,
+                  "median": 2,
+                  "max": 2
+                }
+              }
+            },
+            {
+              "requested": 3,
+              "outcomes": [
+                "Limited",
+                "Limited",
+                "Limited"
+              ],
+              "first_constraints": [
+                "Limit(\"journal bytes\")",
+                "Limit(\"journal bytes\")",
+                "Limit(\"journal bytes\")"
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    3594916,
+                    3427913,
+                    3293434
+                  ],
+                  "min": 3293434,
+                  "median": 3427913,
+                  "max": 3594916
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    7731354,
+                    6960814,
+                    6947079
+                  ],
+                  "min": 6947079,
+                  "median": 6960814,
+                  "max": 7731354
+                },
+                "journal_bytes": {
+                  "samples": [
+                    27601,
+                    27601,
+                    27601
+                  ],
+                  "min": 27601,
+                  "median": 27601,
+                  "max": 27601
+                },
+                "committed": {
+                  "samples": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "min": 2,
+                  "median": 2,
+                  "max": 2
+                }
+              }
+            },
+            {
+              "requested": 1440,
+              "outcomes": [
+                "PreflightRejected",
+                "PreflightRejected",
+                "PreflightRejected"
+              ],
+              "first_constraints": [
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")"
+              ],
+              "metrics": {
+                "commit_api_ns": null,
+                "recovery_api_ns": null,
+                "journal_bytes": null,
+                "committed": {
+                  "samples": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "min": 0,
+                  "median": 0,
+                  "max": 0
+                }
+              }
+            }
+          ],
+          "host": {
+            "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+            "machine": "x86_64",
+            "cpu_model": "AMD EPYC 7763 64-Core Processor",
+            "logical_cpus": 4,
+            "python_pointer_width": 64,
+            "python_byteorder": "little",
+            "filesystem": "ext2/ext3"
+          }
+        },
+        {
+          "rust": "1.98.0",
+          "probe": "default_limits",
+          "checked": {
+            "acceptance": "PASS",
+            "source_sha256": "177ecbb250a90a547e2777f2832de120e37a77e9d0a75011972bae0fa7ff1913",
+            "points": [
+              1,
+              2,
+              3,
+              1440
+            ],
+            "repetitions": 3,
+            "cases": 12,
+            "outcomes": [
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "PreflightRejected",
+              "PreflightRejected",
+              "PreflightRejected"
+            ]
+          },
+          "summary": [
+            {
+              "requested": 1,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    1255996,
+                    1985523,
+                    1284980
+                  ],
+                  "min": 1255996,
+                  "median": 1284980,
+                  "max": 1985523
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    6397648,
+                    6516111,
+                    6450117
+                  ],
+                  "min": 6397648,
+                  "median": 6450117,
+                  "max": 6516111
+                },
+                "journal_bytes": {
+                  "samples": [
+                    11061,
+                    11061,
+                    11061
+                  ],
+                  "min": 11061,
+                  "median": 11061,
+                  "max": 11061
+                },
+                "committed": {
+                  "samples": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "min": 1,
+                  "median": 1,
+                  "max": 1
+                }
+              }
+            },
+            {
+              "requested": 2,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    2529054,
+                    2862268,
+                    2690126
+                  ],
+                  "min": 2529054,
+                  "median": 2690126,
+                  "max": 2862268
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    6891673,
+                    7173862,
+                    7001921
+                  ],
+                  "min": 6891673,
+                  "median": 7001921,
+                  "max": 7173862
+                },
+                "journal_bytes": {
+                  "samples": [
+                    27601,
+                    27601,
+                    27601
+                  ],
+                  "min": 27601,
+                  "median": 27601,
+                  "max": 27601
+                },
+                "committed": {
+                  "samples": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "min": 2,
+                  "median": 2,
+                  "max": 2
+                }
+              }
+            },
+            {
+              "requested": 3,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    4311244,
+                    4596200,
+                    4537280
+                  ],
+                  "min": 4311244,
+                  "median": 4537280,
+                  "max": 4596200
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    8002303,
+                    7812812,
+                    8335853
+                  ],
+                  "min": 7812812,
+                  "median": 8002303,
+                  "max": 8335853
+                },
+                "journal_bytes": {
+                  "samples": [
+                    49750,
+                    49750,
+                    49750
+                  ],
+                  "min": 49750,
+                  "median": 49750,
+                  "max": 49750
+                },
+                "committed": {
+                  "samples": [
+                    3,
+                    3,
+                    3
+                  ],
+                  "min": 3,
+                  "median": 3,
+                  "max": 3
+                }
+              }
+            },
+            {
+              "requested": 1440,
+              "outcomes": [
+                "PreflightRejected",
+                "PreflightRejected",
+                "PreflightRejected"
+              ],
+              "first_constraints": [
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")"
+              ],
+              "metrics": {
+                "commit_api_ns": null,
+                "recovery_api_ns": null,
+                "journal_bytes": null,
+                "committed": {
+                  "samples": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "min": 0,
+                  "median": 0,
+                  "max": 0
+                }
+              }
+            }
+          ],
+          "host": {
+            "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+            "machine": "x86_64",
+            "cpu_model": "AMD EPYC 7763 64-Core Processor",
+            "logical_cpus": 4,
+            "python_pointer_width": 64,
+            "python_byteorder": "little",
+            "filesystem": "ext2/ext3"
+          }
+        },
+        {
+          "rust": "1.98.0",
+          "probe": "explicit_reduced_journal_budget",
+          "checked": {
+            "acceptance": "PASS",
+            "source_sha256": "177ecbb250a90a547e2777f2832de120e37a77e9d0a75011972bae0fa7ff1913",
+            "points": [
+              1,
+              2,
+              3,
+              1440
+            ],
+            "repetitions": 3,
+            "cases": 12,
+            "outcomes": [
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Limited",
+              "Limited",
+              "Limited",
+              "PreflightRejected",
+              "PreflightRejected",
+              "PreflightRejected"
+            ]
+          },
+          "summary": [
+            {
+              "requested": 1,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    1413662,
+                    1145618,
+                    1285351
+                  ],
+                  "min": 1145618,
+                  "median": 1285351,
+                  "max": 1413662
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    6351271,
+                    6305305,
+                    6289385
+                  ],
+                  "min": 6289385,
+                  "median": 6305305,
+                  "max": 6351271
+                },
+                "journal_bytes": {
+                  "samples": [
+                    11061,
+                    11061,
+                    11061
+                  ],
+                  "min": 11061,
+                  "median": 11061,
+                  "max": 11061
+                },
+                "committed": {
+                  "samples": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "min": 1,
+                  "median": 1,
+                  "max": 1
+                }
+              }
+            },
+            {
+              "requested": 2,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    2504227,
+                    2594676,
+                    2497364
+                  ],
+                  "min": 2497364,
+                  "median": 2504227,
+                  "max": 2594676
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    6806731,
+                    7038165,
+                    7054830
+                  ],
+                  "min": 6806731,
+                  "median": 7038165,
+                  "max": 7054830
+                },
+                "journal_bytes": {
+                  "samples": [
+                    27601,
+                    27601,
+                    27601
+                  ],
+                  "min": 27601,
+                  "median": 27601,
+                  "max": 27601
+                },
+                "committed": {
+                  "samples": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "min": 2,
+                  "median": 2,
+                  "max": 2
+                }
+              }
+            },
+            {
+              "requested": 3,
+              "outcomes": [
+                "Limited",
+                "Limited",
+                "Limited"
+              ],
+              "first_constraints": [
+                "Limit(\"journal bytes\")",
+                "Limit(\"journal bytes\")",
+                "Limit(\"journal bytes\")"
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    3088162,
+                    3254104,
+                    3140721
+                  ],
+                  "min": 3088162,
+                  "median": 3140721,
+                  "max": 3254104
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    6996712,
+                    6862650,
+                    7040360
+                  ],
+                  "min": 6862650,
+                  "median": 6996712,
+                  "max": 7040360
+                },
+                "journal_bytes": {
+                  "samples": [
+                    27601,
+                    27601,
+                    27601
+                  ],
+                  "min": 27601,
+                  "median": 27601,
+                  "max": 27601
+                },
+                "committed": {
+                  "samples": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "min": 2,
+                  "median": 2,
+                  "max": 2
+                }
+              }
+            },
+            {
+              "requested": 1440,
+              "outcomes": [
+                "PreflightRejected",
+                "PreflightRejected",
+                "PreflightRejected"
+              ],
+              "first_constraints": [
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")"
+              ],
+              "metrics": {
+                "commit_api_ns": null,
+                "recovery_api_ns": null,
+                "journal_bytes": null,
+                "committed": {
+                  "samples": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "min": 0,
+                  "median": 0,
+                  "max": 0
+                }
+              }
+            }
+          ],
+          "host": {
+            "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+            "machine": "x86_64",
+            "cpu_model": "AMD EPYC 7763 64-Core Processor",
+            "logical_cpus": 4,
+            "python_pointer_width": 64,
+            "python_byteorder": "little",
+            "filesystem": "ext2/ext3"
+          }
+        }
+      ],
+      "timing_slo": "not_asserted"
+    }
+  },
+  "prior_frozen_controls_unchanged": true,
+  "native_capacity_cases": 48,
+  "runtime_optimization_017": "not implemented; contract draft only"
+}
