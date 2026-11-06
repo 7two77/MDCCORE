@@ -3,7 +3,7 @@
 История объединения исходной main и проверенного стека baseline → 008 → 009 → 010,
 сохранённые материалы и правила сопровождения описаны в
 [MDC-INTEGRATION-001](docs/MDC-INTEGRATION-v0.1.md).
-Актуальная [матрица v0.14](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.14.md)
+Актуальная [матрица v0.15](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.15.md)
 учитывает опубликованные hosted CI receipts. Подготовка первого Git commit
 сохранена в [MDC-OPS-001](docs/MDC-OPS-001.md).
 
@@ -197,3 +197,10 @@ post-merge CI 16/16 PASS. Проект source/plan recovery принят в
 [wire contract v1](docs/MDC-REPLAY-RUN-WIRE-v1.md) и реализован в отдельном RunStore
 профиля 015. Исторический [проект контракта](docs/MDC-REPLAY-RECOVERY-CONTRACT-v0.1-DRAFT.md)
 сохранён; source-run cursor не является состоянием брокера или ордеров.
+
+После PR #10: [проверка main ee4d45f](docs/MDC-OPS-006-POST-RECOVERY-v0.1.md),
+post-merge CI 16/16 PASS. Начальный release-пилот зафиксировал границу журнала
+на конкретном наборе: из 256 запрошенных cutoffs сохранены 153, затем достигнут
+лимит 64 MiB; префикс успешно восстановлен. Подготовлен
+[проект воспроизводимых измерений](docs/MDC-REPLAY-CAPACITY-CONTRACT-v0.1-DRAFT.md).
+Лимиты и runtime не изменены; общий production SLO пока не установлен.
