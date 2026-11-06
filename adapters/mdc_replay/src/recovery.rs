@@ -335,6 +335,8 @@ impl RunManifest {
         Ok(out)
     }
     pub fn decode(bytes: &[u8]) -> Result<Self> {
+        #[cfg(test)]
+        crate::work_counts::bump(|c| c.manifests += 1);
         if bytes.len() > RunLimits::default().max_manifest_bytes {
             return Err(RecoveryError::Limit("manifest bytes"));
         }
@@ -437,17 +439,19 @@ impl DecisionBundle {
         let pos = usize::try_from(index.checked_sub(1).ok_or(RecoveryError::Index)?)
             .map_err(|_| RecoveryError::Index)?;
         let cutoff = *m.cutoffs.get(pos).ok_or(RecoveryError::Index)?;
-        let view = dataset.decision(cutoff)?;
-        let report = (view.report_json()? + "\n").into_bytes();
-        let snapshot = view.snapshot_bytes()?;
+        let (decision_id_text, report, snapshot) =
+            crate::core_view::capture(dataset, cutoff)?.into_parts();
+        let report = (report + "\n").into_bytes();
         if report.len() > m.limits.max_report_bytes || snapshot.len() > m.limits.max_snapshot_bytes
         {
             return Err(RecoveryError::Limit("decision blobs"));
         }
+        #[cfg(test)]
+        crate::work_counts::bump(|c| c.restores += 1);
         SnapshotSession::restore(&snapshot, m.limits.core())?;
         let mut decision_id = [0; 32];
         for (i, b) in decision_id.iter_mut().enumerate() {
-            *b = u8::from_str_radix(&view.decision_id()[i * 2..i * 2 + 2], 16)
+            *b = u8::from_str_radix(&decision_id_text[i * 2..i * 2 + 2], 16)
                 .map_err(|_| RecoveryError::Format("decision id"))?;
         }
         Ok(Self {
@@ -569,41 +573,76 @@ pub fn validate_prefix(
     head: &[u8],
     prefix: &[u8],
 ) -> Result<Vec<DecisionBundle>> {
-    let m = RunManifest::decode(manifest)?;
-    let dataset = m.dataset(source)?;
-    let h = Head::decode(head)?;
-    let run = m.run_id();
-    let mh = hash(manifest);
-    if h.run != run || h.manifest != mh || h.offset != prefix.len() as u64 {
-        return Err(RecoveryError::Integrity("HEAD binding"));
+    PreparedManifest::decode(manifest)?
+        .bind_source(source)?
+        .validate_prefix(head, prefix)
+}
+
+// Preparation is private and inseparable from the exact captured manifest bytes.
+// Public raw validation and filesystem open share the same complete validator.
+struct PreparedManifest {
+    manifest: RunManifest,
+    manifest_hash: Hash,
+}
+impl PreparedManifest {
+    fn decode(bytes: &[u8]) -> Result<Self> {
+        Ok(Self {
+            manifest: RunManifest::decode(bytes)?,
+            manifest_hash: hash(bytes),
+        })
     }
-    if prefix.len() > m.limits.max_journal_bytes || h.count > m.cutoffs.len() as u64 {
-        return Err(RecoveryError::Limit("certified prefix"));
+    fn bind_source(self, source: &[u8]) -> Result<PreparedRun> {
+        let dataset = self.manifest.dataset(source)?;
+        Ok(PreparedRun {
+            manifest: self.manifest,
+            manifest_hash: self.manifest_hash,
+            dataset,
+        })
     }
-    let expected = header(run, mh)?;
-    if !prefix.starts_with(&expected) {
-        return Err(RecoveryError::Integrity("journal header"));
-    }
-    let mut tip: Hash = expected[expected.len() - 32..].try_into().unwrap();
-    let mut r = Reader {
-        bytes: prefix,
-        at: expected.len(),
-    };
-    let mut result = Vec::new();
-    let mut last = [0; 32];
-    for index in 1..=h.count {
-        let (b, digest) = parse(Kind::Decision, &mut r, m.limits.max_record_bytes)?;
-        let saved = DecisionBundle::decode(b, run, tip, m.limits)?;
-        if saved.index != index || saved != DecisionBundle::build(&dataset, &m, index)? {
-            return Err(RecoveryError::Integrity("decision recomputation"));
+}
+struct PreparedRun {
+    manifest: RunManifest,
+    manifest_hash: Hash,
+    dataset: Dataset,
+}
+impl PreparedRun {
+    fn validate_prefix(&self, head: &[u8], prefix: &[u8]) -> Result<Vec<DecisionBundle>> {
+        let m = &self.manifest;
+        let dataset = &self.dataset;
+        let h = Head::decode(head)?;
+        let run = m.run_id();
+        let mh = self.manifest_hash;
+        if h.run != run || h.manifest != mh || h.offset != prefix.len() as u64 {
+            return Err(RecoveryError::Integrity("HEAD binding"));
         }
-        last = saved.digest(run);
-        tip = digest;
-        result.push(saved);
+        if prefix.len() > m.limits.max_journal_bytes || h.count > m.cutoffs.len() as u64 {
+            return Err(RecoveryError::Limit("certified prefix"));
+        }
+        let expected = header(run, mh)?;
+        if !prefix.starts_with(&expected) {
+            return Err(RecoveryError::Integrity("journal header"));
+        }
+        let mut tip: Hash = expected[expected.len() - 32..].try_into().unwrap();
+        let mut r = Reader {
+            bytes: prefix,
+            at: expected.len(),
+        };
+        let mut result = Vec::new();
+        let mut last = [0; 32];
+        for index in 1..=h.count {
+            let (b, digest) = parse(Kind::Decision, &mut r, m.limits.max_record_bytes)?;
+            let saved = DecisionBundle::decode(b, run, tip, m.limits)?;
+            if saved.index != index || saved != DecisionBundle::build(dataset, m, index)? {
+                return Err(RecoveryError::Integrity("decision recomputation"));
+            }
+            last = saved.digest(run);
+            tip = digest;
+            result.push(saved);
+        }
+        r.done()?;
+        if tip != h.tip || last != h.bundle {
+            return Err(RecoveryError::Integrity("HEAD tip"));
+        }
+        Ok(result)
     }
-    r.done()?;
-    if tip != h.tip || last != h.bundle {
-        return Err(RecoveryError::Integrity("HEAD tip"));
-    }
-    Ok(result)
 }

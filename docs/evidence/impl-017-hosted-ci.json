@@ -1,0 +1,3812 @@
+{
+  "acceptance": "PASS",
+  "runtime_commit": "3b884a08428431739d6d7b279a1bdd73fb4ab660",
+  "ci_checkout_commit": "6db6c0e5daeafcfe5f0d82426001a989132e388d",
+  "implementation_source_sha256": "e6d277fc9ff80465cd401dd55671efbad24ab244194d30d4ad2085d59435931a",
+  "workflow_run_id": 42255010433,
+  "jobs": [
+    {
+      "id": 128019772961,
+      "name": "Binance replay Rust 1.85.1",
+      "conclusion": "success",
+      "rust_tests": 113,
+      "python_tests": 55,
+      "decoded_log_file_sha256": "794a97af2e1fe6e900e82375331068f05b362f1cd4c2f119159c76911d53edcf"
+    },
+    {
+      "id": 128019773356,
+      "name": "Portable Rust 1.98.0 / i686-unknown-linux-gnu",
+      "conclusion": "success",
+      "rust_tests": 50,
+      "python_tests": 0,
+      "decoded_log_file_sha256": "d3decccf89b21143e573bc3840ca7164637474803c3b64719ec7b19e85bf85ef"
+    },
+    {
+      "id": 128019773419,
+      "name": "Rust 1.98.0 / default",
+      "conclusion": "success",
+      "rust_tests": 213,
+      "python_tests": 25,
+      "decoded_log_file_sha256": "9ff24f19cac5bad57e558e4a5ed007fef6feb873e9ca491ff42e77929127fcdb"
+    },
+    {
+      "id": 128019773431,
+      "name": "Rust 1.85.1 / default",
+      "conclusion": "success",
+      "rust_tests": 213,
+      "python_tests": 25,
+      "decoded_log_file_sha256": "e075019919a1e6843d305331d9ba20ac234fac02231dd01098666a58c0d7d140"
+    },
+    {
+      "id": 128019773436,
+      "name": "Rust 1.98.0 / alloc",
+      "conclusion": "success",
+      "rust_tests": 213,
+      "python_tests": 25,
+      "decoded_log_file_sha256": "998c430253ad28d54348845e5f8785358fdd6288bbae98b40c4e1a4e8863b2f1"
+    },
+    {
+      "id": 128019773442,
+      "name": "Rust 1.98.0 / std-alloc",
+      "conclusion": "success",
+      "rust_tests": 213,
+      "python_tests": 25,
+      "decoded_log_file_sha256": "08942de2e8db3e26a9bf5acc1624d789214719e7b95a12c7d3803cec7ddbf37b"
+    },
+    {
+      "id": 128019773506,
+      "name": "Portable Rust 1.85.1 / i686-unknown-linux-gnu",
+      "conclusion": "success",
+      "rust_tests": 50,
+      "python_tests": 0,
+      "decoded_log_file_sha256": "f83cef036c18ee643adcd77bd1995335368a1f9f59308f86863dd8c716438515"
+    },
+    {
+      "id": 128019773520,
+      "name": "Preserve integration ancestry and the 010 source",
+      "conclusion": "success",
+      "rust_tests": 0,
+      "python_tests": 0,
+      "decoded_log_file_sha256": "079b94a31aa8544338db9ba7d18d669f4f7abf7d5aa66befc29ff692d4fcac4b"
+    },
+    {
+      "id": 128019773568,
+      "name": "Linux store Rust 1.98.0",
+      "conclusion": "success",
+      "rust_tests": 74,
+      "python_tests": 0,
+      "decoded_log_file_sha256": "786086c4dc50c8241298df92f7613b0d356a581d919f3cd1670b0b0299b49d1d"
+    },
+    {
+      "id": 128019773592,
+      "name": "Portable Rust 1.85.1 / s390x-unknown-linux-gnu",
+      "conclusion": "success",
+      "rust_tests": 50,
+      "python_tests": 0,
+      "decoded_log_file_sha256": "a1a4e1cf90876ab875ddc37acd1aca08c2b4d3f1d459ebbeb9b77742a01cbf8e"
+    },
+    {
+      "id": 128019773721,
+      "name": "Portable Rust 1.98.0 / s390x-unknown-linux-gnu",
+      "conclusion": "success",
+      "rust_tests": 50,
+      "python_tests": 0,
+      "decoded_log_file_sha256": "6a004b8e3e7f5d4db46bc750fa9901d6e119673d4881f656b6d599805bf82eba"
+    },
+    {
+      "id": 128019773773,
+      "name": "Rust 1.85.1 / std-alloc",
+      "conclusion": "success",
+      "rust_tests": 213,
+      "python_tests": 25,
+      "decoded_log_file_sha256": "ea1b8fc6f4d20996e05464b9e9019a6176924e2d5a3053dcb428769e86c88ebe"
+    },
+    {
+      "id": 128019773907,
+      "name": "Linux store Rust 1.85.1",
+      "conclusion": "success",
+      "rust_tests": 74,
+      "python_tests": 0,
+      "decoded_log_file_sha256": "f44e602b78bc0fa43a16f64c1816c0206d1c4dec20030a8c39c63203b74d66c2"
+    },
+    {
+      "id": 128019774014,
+      "name": "Rust 1.85.1 / alloc",
+      "conclusion": "success",
+      "rust_tests": 213,
+      "python_tests": 25,
+      "decoded_log_file_sha256": "0e8b537ad87a4ee5bdb7006fad345b9dee9ba300abab7a5703e7756243839420"
+    },
+    {
+      "id": 128019774101,
+      "name": "Binance replay Rust 1.98.0",
+      "conclusion": "success",
+      "rust_tests": 113,
+      "python_tests": 55,
+      "decoded_log_file_sha256": "86170d7f7a8ee8cf527d9c9896cfba5ecdfd5ddcc6924e6e6ed76bfb8e6eb16a"
+    },
+    {
+      "id": 128031183297,
+      "name": "Compare portable bytes across toolchains and targets",
+      "conclusion": "success",
+      "rust_tests": 0,
+      "python_tests": 0,
+      "decoded_log_file_sha256": "4c73c97a7a20e0b087aed39a84bfb9be144a010cd55983a8f0c41f55604ee8db"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 13524300230,
+      "name": "mdc-portable-comparison",
+      "size_in_bytes": 26495,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13524300230",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13524300230/zip",
+      "expired": false,
+      "created_at": "2026-11-06T17:04:59Z",
+      "expires_at": "2026-11-20T17:04:58Z",
+      "updated_at": "2026-11-06T17:04:59Z",
+      "digest": "sha256:4707eb75976b11eb064a149e19c136879c4969b8b92ad42924ef70eb4d4590ce",
+      "workflow_run": {
+        "id": 42255010433,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "mdc/replay-exact-work-contract",
+        "head_sha": "3b884a08428431739d6d7b279a1bdd73fb4ab660"
+      }
+    },
+    {
+      "id": 13523210156,
+      "name": "mdc-store-1.85.1",
+      "size_in_bytes": 70923,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13523210156",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13523210156/zip",
+      "expired": false,
+      "created_at": "2026-11-06T16:44:02Z",
+      "expires_at": "2026-11-20T16:44:01Z",
+      "updated_at": "2026-11-06T16:44:02Z",
+      "digest": "sha256:65a7fe7e8e702494fd706922328dde245100a849977ba2c5eeea279f5211aec3",
+      "workflow_run": {
+        "id": 42255010433,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "mdc/replay-exact-work-contract",
+        "head_sha": "3b884a08428431739d6d7b279a1bdd73fb4ab660"
+      }
+    },
+    {
+      "id": 13523115195,
+      "name": "mdc-integration-history",
+      "size_in_bytes": 680,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13523115195",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13523115195/zip",
+      "expired": false,
+      "created_at": "2026-11-06T16:43:31Z",
+      "expires_at": "2026-11-20T16:43:31Z",
+      "updated_at": "2026-11-06T16:43:31Z",
+      "digest": "sha256:8c0019e50caaa45a9fbc342bce0d25b59d6b2d286ab6ee800f8cc125fd4dec65",
+      "workflow_run": {
+        "id": 42255010433,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "mdc/replay-exact-work-contract",
+        "head_sha": "3b884a08428431739d6d7b279a1bdd73fb4ab660"
+      }
+    },
+    {
+      "id": 13523095249,
+      "name": "mdc-ci-1.98.0-alloc",
+      "size_in_bytes": 293709,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13523095249",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13523095249/zip",
+      "expired": false,
+      "created_at": "2026-11-06T16:43:58Z",
+      "expires_at": "2026-11-20T16:43:57Z",
+      "updated_at": "2026-11-06T16:43:58Z",
+      "digest": "sha256:9edf68d9666d442aacca7aee13fb7b0666a55ba769bc1646ceffac5e4cb346da",
+      "workflow_run": {
+        "id": 42255010433,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "mdc/replay-exact-work-contract",
+        "head_sha": "3b884a08428431739d6d7b279a1bdd73fb4ab660"
+      }
+    },
+    {
+      "id": 13523045289,
+      "name": "mdc-replay-1.98.0",
+      "size_in_bytes": 6676996,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13523045289",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13523045289/zip",
+      "expired": false,
+      "created_at": "2026-11-06T16:44:17Z",
+      "expires_at": "2026-11-20T16:44:15Z",
+      "updated_at": "2026-11-06T16:44:17Z",
+      "digest": "sha256:9f5164ce3e4ed782708838536598140f2979bd73a5cca884b266cde314c4b444",
+      "workflow_run": {
+        "id": 42255010433,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "mdc/replay-exact-work-contract",
+        "head_sha": "3b884a08428431739d6d7b279a1bdd73fb4ab660"
+      }
+    },
+    {
+      "id": 13522845499,
+      "name": "mdc-ci-1.85.1-alloc",
+      "size_in_bytes": 293706,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13522845499",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13522845499/zip",
+      "expired": false,
+      "created_at": "2026-11-06T16:43:52Z",
+      "expires_at": "2026-11-20T16:43:51Z",
+      "updated_at": "2026-11-06T16:43:52Z",
+      "digest": "sha256:86c0671fce60c75f82d9ea8d08c9fed9e5c368169d9631c3b99d4e15fff5ac1c",
+      "workflow_run": {
+        "id": 42255010433,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "mdc/replay-exact-work-contract",
+        "head_sha": "3b884a08428431739d6d7b279a1bdd73fb4ab660"
+      }
+    },
+    {
+      "id": 13522785682,
+      "name": "mdc-ci-1.85.1-std-alloc",
+      "size_in_bytes": 293697,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13522785682",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13522785682/zip",
+      "expired": false,
+      "created_at": "2026-11-06T16:43:57Z",
+      "expires_at": "2026-11-20T16:43:56Z",
+      "updated_at": "2026-11-06T16:43:57Z",
+      "digest": "sha256:03464a373a289eca145e46ab93048f5b3f9fdee56bb16d61590ad457bacb4af6",
+      "workflow_run": {
+        "id": 42255010433,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "mdc/replay-exact-work-contract",
+        "head_sha": "3b884a08428431739d6d7b279a1bdd73fb4ab660"
+      }
+    },
+    {
+      "id": 13522707621,
+      "name": "mdc-portable-1.98.0-i686-unknown-linux-gnu",
+      "size_in_bytes": 41757,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13522707621",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13522707621/zip",
+      "expired": false,
+      "created_at": "2026-11-06T16:54:33Z",
+      "expires_at": "2026-11-20T16:54:32Z",
+      "updated_at": "2026-11-06T16:54:33Z",
+      "digest": "sha256:bcbd47e60c9391fd44a2243c75d6ed058f163c3e0b67d326d9c699fac3c27d5f",
+      "workflow_run": {
+        "id": 42255010433,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "mdc/replay-exact-work-contract",
+        "head_sha": "3b884a08428431739d6d7b279a1bdd73fb4ab660"
+      }
+    },
+    {
+      "id": 13522684736,
+      "name": "mdc-portable-1.85.1-s390x-unknown-linux-gnu",
+      "size_in_bytes": 41750,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13522684736",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13522684736/zip",
+      "expired": false,
+      "created_at": "2026-11-06T17:04:41Z",
+      "expires_at": "2026-11-20T17:04:40Z",
+      "updated_at": "2026-11-06T17:04:41Z",
+      "digest": "sha256:fe4db7e55edf7b074fd0652362e4da26725f2ba6008f2cb58286b2eb13c49f26",
+      "workflow_run": {
+        "id": 42255010433,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "mdc/replay-exact-work-contract",
+        "head_sha": "3b884a08428431739d6d7b279a1bdd73fb4ab660"
+      }
+    },
+    {
+      "id": 13522640893,
+      "name": "mdc-ci-1.98.0-default",
+      "size_in_bytes": 294016,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13522640893",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13522640893/zip",
+      "expired": false,
+      "created_at": "2026-11-06T16:43:59Z",
+      "expires_at": "2026-11-20T16:43:58Z",
+      "updated_at": "2026-11-06T16:43:59Z",
+      "digest": "sha256:a8119210d89579a8f3b3ca9fa53b257d76cdb88bb407d35221f65ce471c4599b",
+      "workflow_run": {
+        "id": 42255010433,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "mdc/replay-exact-work-contract",
+        "head_sha": "3b884a08428431739d6d7b279a1bdd73fb4ab660"
+      }
+    },
+    {
+      "id": 13522216497,
+      "name": "mdc-portable-1.98.0-s390x-unknown-linux-gnu",
+      "size_in_bytes": 41755,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13522216497",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13522216497/zip",
+      "expired": false,
+      "created_at": "2026-11-06T16:44:14Z",
+      "expires_at": "2026-11-20T16:44:14Z",
+      "updated_at": "2026-11-06T16:44:14Z",
+      "digest": "sha256:615db9a73e6cc6230cabf58e7dcb7780dc4d2286979cbee8dfc3999734c7bfb5",
+      "workflow_run": {
+        "id": 42255010433,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "mdc/replay-exact-work-contract",
+        "head_sha": "3b884a08428431739d6d7b279a1bdd73fb4ab660"
+      }
+    },
+    {
+      "id": 13522193576,
+      "name": "mdc-portable-1.85.1-i686-unknown-linux-gnu",
+      "size_in_bytes": 41751,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13522193576",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13522193576/zip",
+      "expired": false,
+      "created_at": "2026-11-06T16:55:22Z",
+      "expires_at": "2026-11-20T16:55:21Z",
+      "updated_at": "2026-11-06T16:55:22Z",
+      "digest": "sha256:f454190d38d17c7b080f0d5d2887401eb7e9cac18e98832e7ab51160a4d85c16",
+      "workflow_run": {
+        "id": 42255010433,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "mdc/replay-exact-work-contract",
+        "head_sha": "3b884a08428431739d6d7b279a1bdd73fb4ab660"
+      }
+    },
+    {
+      "id": 13521971856,
+      "name": "mdc-replay-1.85.1",
+      "size_in_bytes": 6969222,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13521971856",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13521971856/zip",
+      "expired": false,
+      "created_at": "2026-11-06T16:44:27Z",
+      "expires_at": "2026-11-20T16:44:25Z",
+      "updated_at": "2026-11-06T16:44:27Z",
+      "digest": "sha256:3725ebeb701f9ad31044e6119631c5c7e582a531a96b47dd39e5b66ad5baabd3",
+      "workflow_run": {
+        "id": 42255010433,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "mdc/replay-exact-work-contract",
+        "head_sha": "3b884a08428431739d6d7b279a1bdd73fb4ab660"
+      }
+    },
+    {
+      "id": 13521578804,
+      "name": "mdc-store-1.98.0",
+      "size_in_bytes": 70916,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13521578804",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13521578804/zip",
+      "expired": false,
+      "created_at": "2026-11-06T16:43:59Z",
+      "expires_at": "2026-11-20T16:43:58Z",
+      "updated_at": "2026-11-06T16:43:59Z",
+      "digest": "sha256:dda68db88eb16c4b12b97f77559e71deb5d49cb28699d80c8d9ea28b248de9cc",
+      "workflow_run": {
+        "id": 42255010433,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "mdc/replay-exact-work-contract",
+        "head_sha": "3b884a08428431739d6d7b279a1bdd73fb4ab660"
+      }
+    },
+    {
+      "id": 13521299940,
+      "name": "mdc-ci-1.98.0-std-alloc",
+      "size_in_bytes": 293680,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13521299940",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13521299940/zip",
+      "expired": false,
+      "created_at": "2026-11-06T16:43:50Z",
+      "expires_at": "2026-11-20T16:43:48Z",
+      "updated_at": "2026-11-06T16:43:50Z",
+      "digest": "sha256:cec3f1ca46f20fc2be74086e3d2f5a31e224679ab1e48965628aebf14a23c96c",
+      "workflow_run": {
+        "id": 42255010433,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "mdc/replay-exact-work-contract",
+        "head_sha": "3b884a08428431739d6d7b279a1bdd73fb4ab660"
+      }
+    },
+    {
+      "id": 13521079983,
+      "name": "mdc-ci-1.85.1-default",
+      "size_in_bytes": 294020,
+      "url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13521079983",
+      "archive_download_url": "https://api.github.com/repos/7two77/MDCCORE/actions/artifacts/13521079983/zip",
+      "expired": false,
+      "created_at": "2026-11-06T16:43:51Z",
+      "expires_at": "2026-11-20T16:43:50Z",
+      "updated_at": "2026-11-06T16:43:51Z",
+      "digest": "sha256:a25e33c8a2913f6a9de5db5df29197e74bd99af9c62369a3a9eb4fd013f2cc2e",
+      "workflow_run": {
+        "id": 42255010433,
+        "repository_id": 1339863537,
+        "head_repository_id": 1339863537,
+        "head_branch": "mdc/replay-exact-work-contract",
+        "head_sha": "3b884a08428431739d6d7b279a1bdd73fb4ab660"
+      }
+    }
+  ],
+  "comparisons": {
+    "portable-comparison": {
+      "acceptance": "PASS",
+      "implementation_source_sha256": "e6d277fc9ff80465cd401dd55671efbad24ab244194d30d4ad2085d59435931a",
+      "commit_sha": "6db6c0e5daeafcfe5f0d82426001a989132e388d",
+      "github_run_id": "42255010433",
+      "configurations": [
+        {
+          "rust": "1.85.1",
+          "profile": "alloc",
+          "target": {
+            "arch": "x86_64",
+            "pointer_width": 64,
+            "endian": "little"
+          },
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+        },
+        {
+          "rust": "1.85.1",
+          "profile": "default",
+          "target": {
+            "arch": "x86_64",
+            "pointer_width": 64,
+            "endian": "little"
+          },
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+        },
+        {
+          "rust": "1.85.1",
+          "profile": "std-alloc",
+          "target": {
+            "arch": "x86_64",
+            "pointer_width": 64,
+            "endian": "little"
+          },
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+        },
+        {
+          "rust": "1.98.0",
+          "profile": "alloc",
+          "target": {
+            "arch": "x86_64",
+            "pointer_width": 64,
+            "endian": "little"
+          },
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+        },
+        {
+          "rust": "1.98.0",
+          "profile": "default",
+          "target": {
+            "arch": "x86_64",
+            "pointer_width": 64,
+            "endian": "little"
+          },
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+        },
+        {
+          "rust": "1.98.0",
+          "profile": "std-alloc",
+          "target": {
+            "arch": "x86_64",
+            "pointer_width": 64,
+            "endian": "little"
+          },
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+        },
+        {
+          "rust": "1.85.1",
+          "profile": "portable-i686-unknown-linux-gnu",
+          "target": {
+            "arch": "x86",
+            "pointer_width": 32,
+            "endian": "little"
+          },
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+        },
+        {
+          "rust": "1.85.1",
+          "profile": "portable-s390x-unknown-linux-gnu",
+          "target": {
+            "arch": "s390x",
+            "pointer_width": 64,
+            "endian": "big"
+          },
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+        },
+        {
+          "rust": "1.98.0",
+          "profile": "portable-i686-unknown-linux-gnu",
+          "target": {
+            "arch": "x86",
+            "pointer_width": 32,
+            "endian": "little"
+          },
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+        },
+        {
+          "rust": "1.98.0",
+          "profile": "portable-s390x-unknown-linux-gnu",
+          "target": {
+            "arch": "s390x",
+            "pointer_width": 64,
+            "endian": "big"
+          },
+          "portable_sha256": "b8466289ccf2bb4c528df7a9c6c9931762b301e9bd86b158f0223e845a0cd160"
+        }
+      ]
+    },
+    "snapshot-comparison": {
+      "acceptance": "PASS",
+      "commit_sha": "6db6c0e5daeafcfe5f0d82426001a989132e388d",
+      "github_run_id": "42255010433",
+      "implementation_source_sha256": "e6d277fc9ff80465cd401dd55671efbad24ab244194d30d4ad2085d59435931a",
+      "configurations": [
+        {
+          "artifact_folder": "mdc-ci-1.85.1-alloc",
+          "processes": 3,
+          "archive_bytes": 372782,
+          "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+          "manifest_bytes": 269158,
+          "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+        },
+        {
+          "artifact_folder": "mdc-ci-1.85.1-default",
+          "processes": 3,
+          "archive_bytes": 372782,
+          "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+          "manifest_bytes": 269158,
+          "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+        },
+        {
+          "artifact_folder": "mdc-ci-1.85.1-std-alloc",
+          "processes": 3,
+          "archive_bytes": 372782,
+          "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+          "manifest_bytes": 269158,
+          "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+        },
+        {
+          "artifact_folder": "mdc-ci-1.98.0-alloc",
+          "processes": 3,
+          "archive_bytes": 372782,
+          "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+          "manifest_bytes": 269158,
+          "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+        },
+        {
+          "artifact_folder": "mdc-ci-1.98.0-default",
+          "processes": 3,
+          "archive_bytes": 372782,
+          "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+          "manifest_bytes": 269158,
+          "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+        },
+        {
+          "artifact_folder": "mdc-ci-1.98.0-std-alloc",
+          "processes": 3,
+          "archive_bytes": 372782,
+          "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+          "manifest_bytes": 269158,
+          "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+        },
+        {
+          "artifact_folder": "mdc-portable-1.85.1-i686-unknown-linux-gnu",
+          "processes": 3,
+          "archive_bytes": 372782,
+          "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+          "manifest_bytes": 269158,
+          "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+        },
+        {
+          "artifact_folder": "mdc-portable-1.85.1-s390x-unknown-linux-gnu",
+          "processes": 3,
+          "archive_bytes": 372782,
+          "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+          "manifest_bytes": 269158,
+          "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+        },
+        {
+          "artifact_folder": "mdc-portable-1.98.0-i686-unknown-linux-gnu",
+          "processes": 3,
+          "archive_bytes": 372782,
+          "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+          "manifest_bytes": 269158,
+          "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+        },
+        {
+          "artifact_folder": "mdc-portable-1.98.0-s390x-unknown-linux-gnu",
+          "processes": 3,
+          "archive_bytes": 372782,
+          "archive_sha256": "349f902ecd41fec5da8c158eba913fe8812bace0dcfb9283547c3a250f796928",
+          "manifest_bytes": 269158,
+          "manifest_sha256": "f9a2f97d8df14c0a50cb9a99a9694c89938ac1396be332d7ed069695f039d907"
+        }
+      ]
+    },
+    "binance-replay-comparison": {
+      "acceptance": "PASS",
+      "commit_sha": "6db6c0e5daeafcfe5f0d82426001a989132e388d",
+      "github_run_id": "42255010433",
+      "implementation_source_sha256": "e6d277fc9ff80465cd401dd55671efbad24ab244194d30d4ad2085d59435931a",
+      "configurations": [
+        {
+          "rust": "1.85.1",
+          "profile": "portable-i686-unknown-linux-gnu",
+          "target": {
+            "arch": "x86",
+            "pointer_width": 32,
+            "endian": "little"
+          },
+          "processes": 2,
+          "availability_quality": "modeled",
+          "eligible_bars": 1,
+          "technical_confirmation": "UNRESOLVED",
+          "core_snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900",
+          "report_sha256": "b2b2214a58fb0fcc1fe9f8ae2ac29d30d56de1332ca75b5ed9ea92cd9190b07a"
+        },
+        {
+          "rust": "1.85.1",
+          "profile": "portable-s390x-unknown-linux-gnu",
+          "target": {
+            "arch": "s390x",
+            "pointer_width": 64,
+            "endian": "big"
+          },
+          "processes": 2,
+          "availability_quality": "modeled",
+          "eligible_bars": 1,
+          "technical_confirmation": "UNRESOLVED",
+          "core_snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900",
+          "report_sha256": "b2b2214a58fb0fcc1fe9f8ae2ac29d30d56de1332ca75b5ed9ea92cd9190b07a"
+        },
+        {
+          "rust": "1.98.0",
+          "profile": "portable-i686-unknown-linux-gnu",
+          "target": {
+            "arch": "x86",
+            "pointer_width": 32,
+            "endian": "little"
+          },
+          "processes": 2,
+          "availability_quality": "modeled",
+          "eligible_bars": 1,
+          "technical_confirmation": "UNRESOLVED",
+          "core_snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900",
+          "report_sha256": "b2b2214a58fb0fcc1fe9f8ae2ac29d30d56de1332ca75b5ed9ea92cd9190b07a"
+        },
+        {
+          "rust": "1.98.0",
+          "profile": "portable-s390x-unknown-linux-gnu",
+          "target": {
+            "arch": "s390x",
+            "pointer_width": 64,
+            "endian": "big"
+          },
+          "processes": 2,
+          "availability_quality": "modeled",
+          "eligible_bars": 1,
+          "technical_confirmation": "UNRESOLVED",
+          "core_snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900",
+          "report_sha256": "b2b2214a58fb0fcc1fe9f8ae2ac29d30d56de1332ca75b5ed9ea92cd9190b07a"
+        },
+        {
+          "rust": "1.85.1",
+          "profile": "binance-replay",
+          "target": {
+            "arch": "x86_64",
+            "pointer_width": 64,
+            "endian": "little"
+          },
+          "processes": 2,
+          "availability_quality": "modeled",
+          "eligible_bars": 1,
+          "technical_confirmation": "UNRESOLVED",
+          "core_snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900",
+          "report_sha256": "b2b2214a58fb0fcc1fe9f8ae2ac29d30d56de1332ca75b5ed9ea92cd9190b07a"
+        },
+        {
+          "rust": "1.98.0",
+          "profile": "binance-replay",
+          "target": {
+            "arch": "x86_64",
+            "pointer_width": 64,
+            "endian": "little"
+          },
+          "processes": 2,
+          "availability_quality": "modeled",
+          "eligible_bars": 1,
+          "technical_confirmation": "UNRESOLVED",
+          "core_snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900",
+          "report_sha256": "b2b2214a58fb0fcc1fe9f8ae2ac29d30d56de1332ca75b5ed9ea92cd9190b07a"
+        }
+      ]
+    },
+    "replay-recovery-comparison": {
+      "acceptance": "PASS",
+      "commit_sha": "6db6c0e5daeafcfe5f0d82426001a989132e388d",
+      "github_run_id": "42255010433",
+      "implementation_source_sha256": "e6d277fc9ff80465cd401dd55671efbad24ab244194d30d4ad2085d59435931a",
+      "configurations": [
+        {
+          "rust": "1.85.1",
+          "target": {
+            "arch": "x86_64",
+            "pointer_width": 64,
+            "endian": "little"
+          },
+          "result": {
+            "acceptance": "PASS",
+            "profile": "MDC-REPLAY-RUN-001/1",
+            "run_id": "8459c964f7225121a915ba737028f32b2e9f29df5ff7c497a0a67df1d6fed054",
+            "durable_through": 4,
+            "journal_sha256": "1da4b10a6a1542150edbfc5e57a480d993548a92dea47463d0f9b2b889b0fdb9",
+            "decisions": [
+              {
+                "index": 1,
+                "cutoff": 1704067260098999,
+                "snapshot_sha256": "0e9ce81b506295fddfc0309afee44137b3b0de06daa380a869b081e9027c7ed2",
+                "report_sha256": "f73519c5fc9f63c4d913a1b9d5cbee2b031326c67ec5d9f7ae0cc538d45f61b5",
+                "technical_confirmation": "NO_INPUT"
+              },
+              {
+                "index": 2,
+                "cutoff": 1704067260099000,
+                "snapshot_sha256": "18d7c0a38fd4d5a013dce49e2bd67ee5f3e807d4163aabd196a412de17da859a",
+                "report_sha256": "1199430f5e9ba7269f67eb7e1284b0ff8fd2c76b72d032bf9dc145116f7f364c",
+                "technical_confirmation": "UNRESOLVED"
+              },
+              {
+                "index": 3,
+                "cutoff": 1704067320049000,
+                "snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900",
+                "report_sha256": "b2b2214a58fb0fcc1fe9f8ae2ac29d30d56de1332ca75b5ed9ea92cd9190b07a",
+                "technical_confirmation": "UNRESOLVED"
+              },
+              {
+                "index": 4,
+                "cutoff": 1704067320099000,
+                "snapshot_sha256": "20b7fa536f909adbc55476a0c08946595ab3a92ac3f772b1fefb7359c435eb54",
+                "report_sha256": "fd96492b6ea330ccbbead9983a31e81b0728463ba988f893f7521e84e0d27c30",
+                "technical_confirmation": "PASS"
+              }
+            ]
+          }
+        },
+        {
+          "rust": "1.98.0",
+          "target": {
+            "arch": "x86_64",
+            "pointer_width": 64,
+            "endian": "little"
+          },
+          "result": {
+            "acceptance": "PASS",
+            "profile": "MDC-REPLAY-RUN-001/1",
+            "run_id": "8459c964f7225121a915ba737028f32b2e9f29df5ff7c497a0a67df1d6fed054",
+            "durable_through": 4,
+            "journal_sha256": "1da4b10a6a1542150edbfc5e57a480d993548a92dea47463d0f9b2b889b0fdb9",
+            "decisions": [
+              {
+                "index": 1,
+                "cutoff": 1704067260098999,
+                "snapshot_sha256": "0e9ce81b506295fddfc0309afee44137b3b0de06daa380a869b081e9027c7ed2",
+                "report_sha256": "f73519c5fc9f63c4d913a1b9d5cbee2b031326c67ec5d9f7ae0cc538d45f61b5",
+                "technical_confirmation": "NO_INPUT"
+              },
+              {
+                "index": 2,
+                "cutoff": 1704067260099000,
+                "snapshot_sha256": "18d7c0a38fd4d5a013dce49e2bd67ee5f3e807d4163aabd196a412de17da859a",
+                "report_sha256": "1199430f5e9ba7269f67eb7e1284b0ff8fd2c76b72d032bf9dc145116f7f364c",
+                "technical_confirmation": "UNRESOLVED"
+              },
+              {
+                "index": 3,
+                "cutoff": 1704067320049000,
+                "snapshot_sha256": "bdf0a775f3b72f9f6b0ac2cc4815833b267da6f8af7395aa2f042ec04d41c900",
+                "report_sha256": "b2b2214a58fb0fcc1fe9f8ae2ac29d30d56de1332ca75b5ed9ea92cd9190b07a",
+                "technical_confirmation": "UNRESOLVED"
+              },
+              {
+                "index": 4,
+                "cutoff": 1704067320099000,
+                "snapshot_sha256": "20b7fa536f909adbc55476a0c08946595ab3a92ac3f772b1fefb7359c435eb54",
+                "report_sha256": "fd96492b6ea330ccbbead9983a31e81b0728463ba988f893f7521e84e0d27c30",
+                "technical_confirmation": "PASS"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "capacity-comparison": {
+      "acceptance": "PASS",
+      "commit_sha": "6db6c0e5daeafcfe5f0d82426001a989132e388d",
+      "github_run_id": "42255010433",
+      "implementation_source_sha256": "e6d277fc9ff80465cd401dd55671efbad24ab244194d30d4ad2085d59435931a",
+      "configurations": [
+        {
+          "rust": "1.85.1",
+          "probe": "default_limits",
+          "checked": {
+            "acceptance": "PASS",
+            "source_sha256": "177ecbb250a90a547e2777f2832de120e37a77e9d0a75011972bae0fa7ff1913",
+            "points": [
+              1,
+              2,
+              3,
+              1440
+            ],
+            "repetitions": 3,
+            "cases": 12,
+            "outcomes": [
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "PreflightRejected",
+              "PreflightRejected",
+              "PreflightRejected"
+            ]
+          },
+          "summary": [
+            {
+              "requested": 1,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    1374211,
+                    1426328,
+                    1336231
+                  ],
+                  "min": 1336231,
+                  "median": 1374211,
+                  "max": 1426328
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    3641430,
+                    3812428,
+                    3740644
+                  ],
+                  "min": 3641430,
+                  "median": 3740644,
+                  "max": 3812428
+                },
+                "journal_bytes": {
+                  "samples": [
+                    11061,
+                    11061,
+                    11061
+                  ],
+                  "min": 11061,
+                  "median": 11061,
+                  "max": 11061
+                },
+                "committed": {
+                  "samples": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "min": 1,
+                  "median": 1,
+                  "max": 1
+                }
+              }
+            },
+            {
+              "requested": 2,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    2981805,
+                    2776314,
+                    2756135
+                  ],
+                  "min": 2756135,
+                  "median": 2776314,
+                  "max": 2981805
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    4221614,
+                    4176848,
+                    4230243
+                  ],
+                  "min": 4176848,
+                  "median": 4221614,
+                  "max": 4230243
+                },
+                "journal_bytes": {
+                  "samples": [
+                    27601,
+                    27601,
+                    27601
+                  ],
+                  "min": 27601,
+                  "median": 27601,
+                  "max": 27601
+                },
+                "committed": {
+                  "samples": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "min": 2,
+                  "median": 2,
+                  "max": 2
+                }
+              }
+            },
+            {
+              "requested": 3,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    4652838,
+                    4572588,
+                    4918501
+                  ],
+                  "min": 4572588,
+                  "median": 4652838,
+                  "max": 4918501
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    4857667,
+                    4895783,
+                    4749657
+                  ],
+                  "min": 4749657,
+                  "median": 4857667,
+                  "max": 4895783
+                },
+                "journal_bytes": {
+                  "samples": [
+                    49750,
+                    49750,
+                    49750
+                  ],
+                  "min": 49750,
+                  "median": 49750,
+                  "max": 49750
+                },
+                "committed": {
+                  "samples": [
+                    3,
+                    3,
+                    3
+                  ],
+                  "min": 3,
+                  "median": 3,
+                  "max": 3
+                }
+              }
+            },
+            {
+              "requested": 1440,
+              "outcomes": [
+                "PreflightRejected",
+                "PreflightRejected",
+                "PreflightRejected"
+              ],
+              "first_constraints": [
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")"
+              ],
+              "metrics": {
+                "commit_api_ns": null,
+                "recovery_api_ns": null,
+                "journal_bytes": null,
+                "committed": {
+                  "samples": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "min": 0,
+                  "median": 0,
+                  "max": 0
+                }
+              }
+            }
+          ],
+          "host": {
+            "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+            "machine": "x86_64",
+            "cpu_model": "AMD EPYC 7763 64-Core Processor",
+            "logical_cpus": 4,
+            "python_pointer_width": 64,
+            "python_byteorder": "little",
+            "filesystem": "ext2/ext3"
+          }
+        },
+        {
+          "rust": "1.85.1",
+          "probe": "explicit_reduced_journal_budget",
+          "checked": {
+            "acceptance": "PASS",
+            "source_sha256": "177ecbb250a90a547e2777f2832de120e37a77e9d0a75011972bae0fa7ff1913",
+            "points": [
+              1,
+              2,
+              3,
+              1440
+            ],
+            "repetitions": 3,
+            "cases": 12,
+            "outcomes": [
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Limited",
+              "Limited",
+              "Limited",
+              "PreflightRejected",
+              "PreflightRejected",
+              "PreflightRejected"
+            ]
+          },
+          "summary": [
+            {
+              "requested": 1,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    1305073,
+                    1372838,
+                    1308019
+                  ],
+                  "min": 1305073,
+                  "median": 1308019,
+                  "max": 1372838
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    3705038,
+                    3607567,
+                    3796758
+                  ],
+                  "min": 3607567,
+                  "median": 3705038,
+                  "max": 3796758
+                },
+                "journal_bytes": {
+                  "samples": [
+                    11061,
+                    11061,
+                    11061
+                  ],
+                  "min": 11061,
+                  "median": 11061,
+                  "max": 11061
+                },
+                "committed": {
+                  "samples": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "min": 1,
+                  "median": 1,
+                  "max": 1
+                }
+              }
+            },
+            {
+              "requested": 2,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    2828220,
+                    3007012,
+                    2901335
+                  ],
+                  "min": 2828220,
+                  "median": 2901335,
+                  "max": 3007012
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    4089801,
+                    4114849,
+                    4324956
+                  ],
+                  "min": 4089801,
+                  "median": 4114849,
+                  "max": 4324956
+                },
+                "journal_bytes": {
+                  "samples": [
+                    27601,
+                    27601,
+                    27601
+                  ],
+                  "min": 27601,
+                  "median": 27601,
+                  "max": 27601
+                },
+                "committed": {
+                  "samples": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "min": 2,
+                  "median": 2,
+                  "max": 2
+                }
+              }
+            },
+            {
+              "requested": 3,
+              "outcomes": [
+                "Limited",
+                "Limited",
+                "Limited"
+              ],
+              "first_constraints": [
+                "Limit(\"journal bytes\")",
+                "Limit(\"journal bytes\")",
+                "Limit(\"journal bytes\")"
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    3525493,
+                    3768576,
+                    3405811
+                  ],
+                  "min": 3405811,
+                  "median": 3525493,
+                  "max": 3768576
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    4135133,
+                    4116602,
+                    4255099
+                  ],
+                  "min": 4116602,
+                  "median": 4135133,
+                  "max": 4255099
+                },
+                "journal_bytes": {
+                  "samples": [
+                    27601,
+                    27601,
+                    27601
+                  ],
+                  "min": 27601,
+                  "median": 27601,
+                  "max": 27601
+                },
+                "committed": {
+                  "samples": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "min": 2,
+                  "median": 2,
+                  "max": 2
+                }
+              }
+            },
+            {
+              "requested": 1440,
+              "outcomes": [
+                "PreflightRejected",
+                "PreflightRejected",
+                "PreflightRejected"
+              ],
+              "first_constraints": [
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")"
+              ],
+              "metrics": {
+                "commit_api_ns": null,
+                "recovery_api_ns": null,
+                "journal_bytes": null,
+                "committed": {
+                  "samples": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "min": 0,
+                  "median": 0,
+                  "max": 0
+                }
+              }
+            }
+          ],
+          "host": {
+            "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+            "machine": "x86_64",
+            "cpu_model": "AMD EPYC 7763 64-Core Processor",
+            "logical_cpus": 4,
+            "python_pointer_width": 64,
+            "python_byteorder": "little",
+            "filesystem": "ext2/ext3"
+          }
+        },
+        {
+          "rust": "1.98.0",
+          "probe": "default_limits",
+          "checked": {
+            "acceptance": "PASS",
+            "source_sha256": "177ecbb250a90a547e2777f2832de120e37a77e9d0a75011972bae0fa7ff1913",
+            "points": [
+              1,
+              2,
+              3,
+              1440
+            ],
+            "repetitions": 3,
+            "cases": 12,
+            "outcomes": [
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "PreflightRejected",
+              "PreflightRejected",
+              "PreflightRejected"
+            ]
+          },
+          "summary": [
+            {
+              "requested": 1,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    193996264,
+                    131611610,
+                    210290091
+                  ],
+                  "min": 131611610,
+                  "median": 193996264,
+                  "max": 210290091
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    51371125,
+                    135789364,
+                    210448869
+                  ],
+                  "min": 51371125,
+                  "median": 135789364,
+                  "max": 210448869
+                },
+                "journal_bytes": {
+                  "samples": [
+                    11061,
+                    11061,
+                    11061
+                  ],
+                  "min": 11061,
+                  "median": 11061,
+                  "max": 11061
+                },
+                "committed": {
+                  "samples": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "min": 1,
+                  "median": 1,
+                  "max": 1
+                }
+              }
+            },
+            {
+              "requested": 2,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    84292705,
+                    2420251,
+                    2219544
+                  ],
+                  "min": 2219544,
+                  "median": 2420251,
+                  "max": 84292705
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    3232008,
+                    3170198,
+                    3183557
+                  ],
+                  "min": 3170198,
+                  "median": 3183557,
+                  "max": 3232008
+                },
+                "journal_bytes": {
+                  "samples": [
+                    27601,
+                    27601,
+                    27601
+                  ],
+                  "min": 27601,
+                  "median": 27601,
+                  "max": 27601
+                },
+                "committed": {
+                  "samples": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "min": 2,
+                  "median": 2,
+                  "max": 2
+                }
+              }
+            },
+            {
+              "requested": 3,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    3477050,
+                    18363274,
+                    3448739
+                  ],
+                  "min": 3448739,
+                  "median": 3477050,
+                  "max": 18363274
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    3708622,
+                    3794989,
+                    3694081
+                  ],
+                  "min": 3694081,
+                  "median": 3708622,
+                  "max": 3794989
+                },
+                "journal_bytes": {
+                  "samples": [
+                    49750,
+                    49750,
+                    49750
+                  ],
+                  "min": 49750,
+                  "median": 49750,
+                  "max": 49750
+                },
+                "committed": {
+                  "samples": [
+                    3,
+                    3,
+                    3
+                  ],
+                  "min": 3,
+                  "median": 3,
+                  "max": 3
+                }
+              }
+            },
+            {
+              "requested": 1440,
+              "outcomes": [
+                "PreflightRejected",
+                "PreflightRejected",
+                "PreflightRejected"
+              ],
+              "first_constraints": [
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")"
+              ],
+              "metrics": {
+                "commit_api_ns": null,
+                "recovery_api_ns": null,
+                "journal_bytes": null,
+                "committed": {
+                  "samples": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "min": 0,
+                  "median": 0,
+                  "max": 0
+                }
+              }
+            }
+          ],
+          "host": {
+            "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+            "machine": "x86_64",
+            "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+            "logical_cpus": 4,
+            "python_pointer_width": 64,
+            "python_byteorder": "little",
+            "filesystem": "ext2/ext3"
+          }
+        },
+        {
+          "rust": "1.98.0",
+          "probe": "explicit_reduced_journal_budget",
+          "checked": {
+            "acceptance": "PASS",
+            "source_sha256": "177ecbb250a90a547e2777f2832de120e37a77e9d0a75011972bae0fa7ff1913",
+            "points": [
+              1,
+              2,
+              3,
+              1440
+            ],
+            "repetitions": 3,
+            "cases": 12,
+            "outcomes": [
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Completed",
+              "Limited",
+              "Limited",
+              "Limited",
+              "PreflightRejected",
+              "PreflightRejected",
+              "PreflightRejected"
+            ]
+          },
+          "summary": [
+            {
+              "requested": 1,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    1086153,
+                    1180226,
+                    1089548
+                  ],
+                  "min": 1086153,
+                  "median": 1089548,
+                  "max": 1180226
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    2911456,
+                    2947098,
+                    2888842
+                  ],
+                  "min": 2888842,
+                  "median": 2911456,
+                  "max": 2947098
+                },
+                "journal_bytes": {
+                  "samples": [
+                    11061,
+                    11061,
+                    11061
+                  ],
+                  "min": 11061,
+                  "median": 11061,
+                  "max": 11061
+                },
+                "committed": {
+                  "samples": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "min": 1,
+                  "median": 1,
+                  "max": 1
+                }
+              }
+            },
+            {
+              "requested": 2,
+              "outcomes": [
+                "Completed",
+                "Completed",
+                "Completed"
+              ],
+              "first_constraints": [
+                null,
+                null,
+                null
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    2276690,
+                    2280385,
+                    2138716
+                  ],
+                  "min": 2138716,
+                  "median": 2276690,
+                  "max": 2280385
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    3221583,
+                    3291817,
+                    3185430
+                  ],
+                  "min": 3185430,
+                  "median": 3221583,
+                  "max": 3291817
+                },
+                "journal_bytes": {
+                  "samples": [
+                    27601,
+                    27601,
+                    27601
+                  ],
+                  "min": 27601,
+                  "median": 27601,
+                  "max": 27601
+                },
+                "committed": {
+                  "samples": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "min": 2,
+                  "median": 2,
+                  "max": 2
+                }
+              }
+            },
+            {
+              "requested": 3,
+              "outcomes": [
+                "Limited",
+                "Limited",
+                "Limited"
+              ],
+              "first_constraints": [
+                "Limit(\"journal bytes\")",
+                "Limit(\"journal bytes\")",
+                "Limit(\"journal bytes\")"
+              ],
+              "metrics": {
+                "commit_api_ns": {
+                  "samples": [
+                    18208335,
+                    3075959,
+                    6013402
+                  ],
+                  "min": 3075959,
+                  "median": 6013402,
+                  "max": 18208335
+                },
+                "recovery_api_ns": {
+                  "samples": [
+                    3234542,
+                    3287410,
+                    3328321
+                  ],
+                  "min": 3234542,
+                  "median": 3287410,
+                  "max": 3328321
+                },
+                "journal_bytes": {
+                  "samples": [
+                    27601,
+                    27601,
+                    27601
+                  ],
+                  "min": 27601,
+                  "median": 27601,
+                  "max": 27601
+                },
+                "committed": {
+                  "samples": [
+                    2,
+                    2,
+                    2
+                  ],
+                  "min": 2,
+                  "median": 2,
+                  "max": 2
+                }
+              }
+            },
+            {
+              "requested": 1440,
+              "outcomes": [
+                "PreflightRejected",
+                "PreflightRejected",
+                "PreflightRejected"
+              ],
+              "first_constraints": [
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")",
+                "Format(\"strictly increasing nonempty plan\")"
+              ],
+              "metrics": {
+                "commit_api_ns": null,
+                "recovery_api_ns": null,
+                "journal_bytes": null,
+                "committed": {
+                  "samples": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "min": 0,
+                  "median": 0,
+                  "max": 0
+                }
+              }
+            }
+          ],
+          "host": {
+            "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+            "machine": "x86_64",
+            "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+            "logical_cpus": 4,
+            "python_pointer_width": 64,
+            "python_byteorder": "little",
+            "filesystem": "ext2/ext3"
+          }
+        }
+      ],
+      "timing_slo": "not_asserted"
+    },
+    "exact-work-comparison": {
+      "acceptance": "PASS",
+      "commit": "6db6c0e5daeafcfe5f0d82426001a989132e388d",
+      "github_run_id": "42255010433",
+      "configurations": [
+        {
+          "rust": "1.85.1",
+          "receipt": {
+            "schema": "MDC-EXACT-WORK-001/1",
+            "order": [
+              "baseline",
+              "candidate"
+            ],
+            "cache_state": "uncontrolled; variants grouped, reversed across toolchains, not randomized",
+            "archives": {
+              "baseline": {
+                "file": "baseline.zip",
+                "sha256": "337b69d29ef62f5e60f41fb4321e9c3abcea8f2c1ee0a5e663a4606b0276a972"
+              },
+              "candidate": {
+                "file": "candidate.zip",
+                "sha256": "8561b7380d4a46dfc614e08843b5c45a0d5aefe1d6c26cfd45cd8bb9f85c4286"
+              },
+              "compatibility": {
+                "file": "compatibility.zip",
+                "sha256": "24850f479a37173107ffa8fdf6c9f60b32075624e4bcf0cddc332280e935447e"
+              }
+            },
+            "comparison": {
+              "acceptance": "PASS",
+              "baseline_commit": "6b33a4375384ed4301695ea879e641a20f5493b9",
+              "baseline_source_sha256": "cca5b3a70dea13130f8fc25f91152b5fd4dfecf71fabd731eb1cd0f11ae20de4",
+              "candidate_source_sha256": "e6d277fc9ff80465cd401dd55671efbad24ab244194d30d4ad2085d59435931a",
+              "baseline_build": {
+                "profile": "release",
+                "binaries": {
+                  "mdc-replay-capacity": {
+                    "file": "bin/mdc-replay-capacity",
+                    "sha256": "66700eab79a49095361f4367661552bd4403c6d914d58bf7edfb3965c55a2c8c"
+                  },
+                  "mdc-binance-replay": {
+                    "file": "bin/mdc-binance-replay",
+                    "sha256": "9cedefd1f075458703bbdcf8854610e3f7e05438fb483a4acd74907f104987d0"
+                  }
+                },
+                "command": [
+                  "cargo",
+                  "build",
+                  "--locked",
+                  "--offline",
+                  "--release",
+                  "--manifest-path",
+                  "/tmp/mdc-exact-work-w5md_jwi/source/adapters/mdc_replay/Cargo.toml",
+                  "--bin",
+                  "mdc-replay-capacity",
+                  "--bin",
+                  "mdc-binance-replay"
+                ],
+                "process": {
+                  "exit_code": 0,
+                  "timeout": false,
+                  "wall_ns": 9290145638,
+                  "user_cpu_us": 32210182,
+                  "system_cpu_us": 1325260,
+                  "peak_rss_kib": 371516,
+                  "stdout_file": "build.stdout",
+                  "stderr_file": "build.stderr",
+                  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                  "stderr_sha256": "7b2d7d0e0095ea01270b013867581511e439356c172b2e8c02829e6477e168ae"
+                },
+                "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7",
+                "cargo": "cargo 1.85.1 (d73d2caf9 2024-12-31)",
+                "commit_sha": "6b33a4375384ed4301695ea879e641a20f5493b9",
+                "tree_sha": "c6718a393d1fd830f049767dd7e9933562654938",
+                "worktree_dirty": false,
+                "implementation_source_sha256": "cca5b3a70dea13130f8fc25f91152b5fd4dfecf71fabd731eb1cd0f11ae20de4",
+                "source_files": {
+                  "Cargo.lock": "db212ada28cd71fe46f25450b036900db1ba8cacaa224f6f5b11b0364cd02aa4",
+                  "Cargo.toml": "c6e3c003ddff0ed5716ab252c94bbf23fb0155ccd862f7d278c331a47698cf0e",
+                  "adapters/mdc_replay/Cargo.lock": "44ec8014a17b2ac16ca07b614d14fb8b6f3cf6d841092764696f74998501a92b",
+                  "adapters/mdc_replay/Cargo.toml": "339b9b194870c6a676b2876ae4d1d6fd6a718d25053adb9c7c285c03c97e6ecc",
+                  "adapters/mdc_replay/README.md": "016a039eac4c45462508c019c129d8ed3ed225fa4e076aef9d38033f82d717d9",
+                  "adapters/mdc_replay/src/bin/mdc-binance-replay.rs": "ec9b8764cd8028a02e85430917e5d111dd7b0c741a17548379b6bd98627fe1a6",
+                  "adapters/mdc_replay/src/bin/mdc-replay-capacity.rs": "2d2a5709de201efd5efb65b226c17ddeab68da3a89ce55847b5962184e3452ad",
+                  "adapters/mdc_replay/src/bin/mdc-replay-run.rs": "f9a778ec9a0be3ec1b2953d37c759304017f76eceb9e72f651e689d901630d62",
+                  "adapters/mdc_replay/src/core_view.rs": "2f91078b6bcaff45358d972ce61cd4f7b0068d66061dd56649296751045d7c42",
+                  "adapters/mdc_replay/src/lib.rs": "83033e3486bd5baa102158f62dcb4f958e7d1405736b323855e00a59e5bc5fe4",
+                  "adapters/mdc_replay/src/recovery/store/tests.rs": "68c842ec82f265ab2e4ccd10280236c8eb2ac99562ea30f7397d27fa9dfbe240",
+                  "adapters/mdc_replay/src/recovery/store.rs": "0bd8f398e4d3c46cb6dfcaeecfb6ed7a120dde065963f3e797451db2fc7e98cd",
+                  "adapters/mdc_replay/src/recovery.rs": "3e46d580ce75d9bf8817f7a9e581ce000053cf690a78b6f8fe36487cd93d747a",
+                  "adapters/mdc_replay/tests/capacity_driver.rs": "78a029b794a4696c2e2fb148cece360b8db329e54588d116c6936a8c359d4ca1",
+                  "adapters/mdc_replay/tests/cli.rs": "02a8e03cdfebf1045371d5d105dddf34ac8ba4046a2b0e62736fff3b4b944007",
+                  "adapters/mdc_replay/tests/fixtures/BTCUSDT-1m-2024-01-01-first3.csv": "9910e64a48a152de968366044cd7798c679d1abc94485be2c3dad710751b6664",
+                  "adapters/mdc_replay/tests/fixtures/BTCUSDT-1m-2025-01-01-first3.csv": "75156f1986fce61ed9464d7da85e7fb716887e38cd9fe37398ef3259f2ca386e",
+                  "adapters/mdc_replay/tests/fixtures/control-v1.json": "1cb2af83a3b660bf731d4afe4637b6df68a6cebb11a0f9196b0380c947e65a71",
+                  "adapters/mdc_replay/tests/fixtures/replay-run-wire-v1.tsv": "88984197b5c8b5b6515009cc7bbbcfedc67984f195687ab916a5bbf1fb442fd9",
+                  "adapters/mdc_replay/tests/fixtures/sources.json": "c3e1cf7cbafc0769ae66c2b77b2816a2986d95df0839af94ad53efd6b3550b13",
+                  "adapters/mdc_replay/tests/recovery_wire.rs": "0dbaa7f2aa1d3e69a295fc2b0f45b5bdc77bba51dd6811f11274305bdf9d3251",
+                  "adapters/mdc_replay/tests/replay.rs": "45c3e6312fc4a7325b7218451c9aff19c7094e818bbdc8f6da0d262140e711eb",
+                  "adapters/mdc_replay/tests/run_recovery.rs": "439da1a885b9ad99fdff5fca15d021f217a570715a27fb3d922077a8f92a17a6",
+                  "adapters/mdc_store/Cargo.lock": "b162dce602a4df49059d2db25001d95bd310dd19252dfe8f85ac3a81ceb4303e",
+                  "adapters/mdc_store/Cargo.toml": "0b346be042c187d211aa9075c71bea815986a36aa5c4b22070ea781606674c9f",
+                  "adapters/mdc_store/README.md": "e4b01aeff2a86187998f43e40d0a7aea5cc815118cac27dabb30e9a3cdeef994",
+                  "adapters/mdc_store/src/bin/mdc-recovery.rs": "8d2844c940474160bd81df6b7eb2201a17e6795859cb00035437975d90ba83f6",
+                  "adapters/mdc_store/src/lib.rs": "b3450e861f9276a91d43d25ecd7fb7df2ee7ff9395b73adfdb58559d51761832",
+                  "adapters/mdc_store/src/scheduler.rs": "bf426179d15fd185a116219967413562ff22fc1a0232ae60b73a1b8ab8d512c7",
+                  "adapters/mdc_store/src/tests.rs": "ea191159436f55567061a7d398555ec8b8f42e6f95a4a68c0e032732fb49a38d",
+                  "adapters/mdc_store/src/wire.rs": "5dea966a160f13a1661118f470f67e6baba33d145718e55ca05f3c3c54325b3b",
+                  "adapters/mdc_store/tests/process_recovery.rs": "bade17775784654d198ef45a01c8b6238cf2133c9aea4b112c4d53273917aadc",
+                  "adapters/mdc_store/tests/scheduler.rs": "8cdd4218e960e9ddcceb6286c5fc8d0a0d15536fe8add3d3cca8fb6a4932696d",
+                  "docs/evidence/wal-framing-v1.json": "6856ae57ebf4fc53888ffe4a376ea3cb64e1f74600c28f68e496c69fc89ab460",
+                  "examples/conformance.rs": "59ccdb3d2aa94c07ef10e0c209e250770840cc9aaa585c2098e0ab7f33806fe4",
+                  "examples/evaluation_retention.rs": "41c04cb3ccaa715b8d9fb769015df62c468592d1b25cc82286a994dae447fc16",
+                  "examples/identity_migration.rs": "ba786329494b20d48587b5bb0b1131da239631bb57978e5f4b1a899d5f3f8e6b",
+                  "examples/identity_target.rs": "57a15ee1f90d314243a12af586509005970759278f1eccd933327bbde5d8e606",
+                  "examples/invalid_artifacts.rs": "19a2dac2f8910d2ac7b19480ae0ad39cd72a5034d8d4d8f36a849baa2d760006",
+                  "examples/lifecycle.rs": "86d2da17a55974771920817eadd216c1b68a5cedaf8e67e97836b56108a1e79a",
+                  "examples/mdc_e2e.rs": "f89d91ada876935d05d5074724bb47d1ae2644fcba0c3fa75e84c16880ee7dd5",
+                  "examples/portable_identity.rs": "076bafade32f73b6b38aeab92ba7f9f0018dba3179599ddba1b695d89517ab51",
+                  "examples/relation_composition.rs": "5cfc2391b3a296c868bb34eb628f17c33dd4e7a6fb99a246c399e331bca7baff",
+                  "examples/snapshot_roundtrip.rs": "0433cbacc05ef5a0f8f80883d350f15ef07bf33d1b78b9dc43f5dff95fe80b5f",
+                  "examples/source_measurement.rs": "00a32935f77e81b16e034a7a8ae7071aceac3683345e1960fa94d410ba168eaa",
+                  "examples/state_transition.rs": "8fee98ffbcc4e406df4bdbb24ff2d51498684d0346793aca1fb5e5564060110f",
+                  "examples/support/mdc_e2e.rs": "dbb47af9b057265a230c70a11a58eedba6adf51a0a5bb890eb31fef5daa0f457",
+                  "examples/support/portable_identity.rs": "83e607e7f26e7f7f1d48763f55b1590b0aa1211609e25cd8c0b24c53f35a008b",
+                  "examples/support/snapshot_fixture.rs": "fb1b82e3bf0f7fdcb181d1e5d4f21df5d6df6efaab1976991a9e4d69f43692b8",
+                  "scripts/capacity_report.py": "3275dd398003cc6b770c481458ff4ab08454be25833de942d6021c09466c072b",
+                  "scripts/check_binance_replay.py": "6193a426efe4a91e6b71154f293fb1aa89fd5bef74d92bcd78a92ce3030db04a",
+                  "scripts/check_capacity.py": "0872ac56cd12eb60d3e560c69344d74deec2cbffcf8a5d371146b14985f74266",
+                  "scripts/check_gate_readiness.py": "ee61ac4019c9d84be1aadd6b7286c62d0e84c0c6198cfa3741b364de78003956",
+                  "scripts/check_portable_identity.py": "3610a958c57f97b0ab26cf8a6a0a138fe302697bf716c5b8197aa3adb7cf0bc9",
+                  "scripts/check_replay_recovery.py": "a7a38cf150d014469c4f8874656cf0157af09461fef5cf83b117c50a902da76d",
+                  "scripts/check_snapshot_roundtrip.py": "715af4a5e6e2b9c19fb1a3ebc209307af5bec10de10fc33e3692d98622630c8b",
+                  "scripts/ci_metadata.py": "1a461a3ec6fa4a66fb127da4d085d00777681fee1e51b7240bd5843310a76c68",
+                  "scripts/e2e_report.py": "f4332985ae13118709f822fa5974b8f2a22c6555aca15882b767d289748155bd",
+                  "scripts/fetch_capacity_source.py": "f75ea43cd2796adbf3aa6eb49a1b657857d844c327d1719c0652e5ca74ee2bc1",
+                  "scripts/replay_run_report.py": "f9af6aa19165e0f2c7490cb39733ebbb11d6d38701d43630d23b1844a4d47ea0",
+                  "scripts/run_capacity.py": "195a92815debfab5f719267010b17a6e00af3817c51a0eb4688cf5b66edf135c",
+                  "scripts/run_e2e.py": "0a16f77b330a7315d9144ddd9ef25f17755ed9f9259b3e14169f93f4cad9e0f8",
+                  "scripts/run_replay_recovery.py": "c91a28bee1299885efe7f5c323ff8f21acc0dce6fef53cc38879ce5cb3f9a6e8",
+                  "scripts/run_store_verification.py": "bcdcfbe3df6ce89bc85325dc205cd434d0aa03deb662d1d6b5b556fd0d3c188c",
+                  "src/canonical/mod.rs": "0d85becf8224ac40ae8c2f606f002bc857657d74e90276cb6db5af778d370e9b",
+                  "src/canonical/snapshot.rs": "55cf23801abde45e53a337fc7c621c72309288dbfec0ea09a01a56d7a06e3c8e",
+                  "src/contract/conformance.rs": "26656925de1f8dab6f1fdf39f8dfdbd419bdfcc8959ac7aa046edbc19bf044f9",
+                  "src/contract/dynamics.rs": "dee46f640dbd03b6151d11059220c27080de7348a79c9af313e9cd786b4434bf",
+                  "src/contract/encoding.rs": "d267f45bd1b46fab505e65b761a68a17fc5a33ebac8118f5a8436eff4ca85487",
+                  "src/contract/evaluation.rs": "ab3e92ebebb40c33a07495fbe604bd450c5ef544ae7f599662ac68e102d3fd61",
+                  "src/contract/invalid_encoding.rs": "740eb8bc25518b9f598c3bf3db10ddddafea114781c7bb0b49b1d8d435c0ea17",
+                  "src/contract/lifecycle.rs": "909b10f37ccc0b8bd13d5867e3d318bc31d2b6b7d517e9a0f9d140f5304e3276",
+                  "src/contract/mod.rs": "e5fb29ad4e72f8e73004012e92ce80dbece42a5bf9e2fc783963b913b831518f",
+                  "src/contract/projection.rs": "531d92817312b93c1b5d409f67f7a660f16ef44fb62a62758cef43b6a4d394dd",
+                  "src/contract/registry/snapshot.rs": "a641d05069c3195842f77d7dbb979d33912ee6c1535a0ec287ff050b975cff39",
+                  "src/contract/registry.rs": "f80159c64b078b7072786c599f616928b0f2e3334ed80a1af01f8c9f01d0f6c9",
+                  "src/contract/structure.rs": "881fd943a952d6887b4bb17673379ed7023c246da3e27bbc5373bf72183ddedb",
+                  "src/identity/mod.rs": "6baad7d566960d96d004d5caa208253cbe632cc0d97c25f1200fe04ee4995827",
+                  "src/identity/portable.rs": "7f23aaa5998fc40e7211bec035ed0b82b3957bdf419588c6dd91d6141e19a93f",
+                  "src/lib.rs": "6bdf598ac1fa74c431f81c428506d9d3c1384446a5a4012a4cbe7a6021e63db1",
+                  "src/model/composition.rs": "a9b7a9bea5b040ec5f53d0138b54b2157df3d3f88f29ab9645b8f370f031199a",
+                  "src/model/evaluation.rs": "294ecbd13fbaf69f4a3f26ae79b99350245da36d44c07a983f7258e0d4269ae4",
+                  "src/model/invalid.rs": "59b70e4f7e94794d93fc08907edca19b0d0b6e99d85a6a8e6ad064cc139d3adf",
+                  "src/model/lifecycle.rs": "2fd9087e5a72def063723e4e931781eb5a67df4a31057ff2353c2c2db3843800",
+                  "src/model/measurement.rs": "eba5508eac8421134c39c2cceb51fd6d90c15a15367128805f255824595331d3",
+                  "src/model/mod.rs": "8a91ace55124bbcf245e54d27dbd683403377affe795cbe31eb9a8ad250e05ee",
+                  "src/model/observation.rs": "5c208c30500b5e33e2ffcb74e91b60c6ccd016c387a31913ec3fd21311f7883a",
+                  "src/model/relation.rs": "9b33370fdcc81c4a463c9e033ba70348863cb09fa85299476e1e80022f556761",
+                  "src/model/representation.rs": "93d842db8f4e90d06e1f0489626b23c42de2c08dc1498ff5030025787e35548b",
+                  "src/model/state.rs": "e0098f6b3df7a2f12c42b65a8b144e55aabe8e353fa4864777889965f4e6086d",
+                  "src/model/transition.rs": "528839ec01e79b7473083439558b97f25c305b9a69e126c46c68e254c6ff79ad",
+                  "src/pipeline/conformance.rs": "90a134f82f39a6a9f7dbc62e4305bd183316fe1ff73877c6f4f84b143a8434d8",
+                  "src/pipeline/dynamics.rs": "6b1da5bd27477f0f8bce00b6a45319ced21b4e4d053994afb8679716c98cc0e2",
+                  "src/pipeline/evaluation_retention_tests.rs": "a82737b0622de6cb6eb0a6d72795db4fa0d3f22c2ac5aee25a74c0dac786ff6d",
+                  "src/pipeline/invalid.rs": "961fabf06a377e54cd309396e6be0bd3e33ef430478ef5a02aa407b8517f33c6",
+                  "src/pipeline/lifecycle.rs": "fb0402e9701047cf6d3f780dc24ea79cf6eef1731a708f6b6ad5ec48e8e71022",
+                  "src/pipeline/projection.rs": "5cbf3c2e26cf8b95030f8113136907b19236b1ecb62a847ca9af537bcad15d7e",
+                  "src/pipeline/snapshot/operation.rs": "ba0b246776073a8e3375b9087dceb9c763b24bac6c263c534cc6ff846ed7eada",
+                  "src/pipeline/snapshot/state.rs": "cef4639f7ffb4db9f83d1e25d189d1b48d0d4745782af29df65c6b6e49c9ec4f",
+                  "src/pipeline/snapshot/wire.rs": "81e14e4de5e613d05ef48852058e93a34aea4fb53e8e300ba7bafdafa7324b93",
+                  "src/pipeline/snapshot.rs": "26ffb5a89d505392172674919fcbcf8dc95e07b521bcc038c159b1143228bc3c",
+                  "src/pipeline/structure.rs": "4ea9f6729b0418022524e688bc348469e45c5ee787dddb404580e22c637a39dc",
+                  "src/pipeline.rs": "cff14a3963803b7d8d54e124b42b031797625783a800481dcdfed8a3b73ba4b2",
+                  "src/provenance/mod.rs": "7a9e68e4eb0400342e742f79c05cc56a43ff1a4ec5473515320ea19438747ed3",
+                  "tests/allocation_regression.rs": "6b89cba2b30cf744a4abf83e6d19a2a9cded80f14f96a7599230fc9bf4f81f2b",
+                  "tests/conformance_boundary.rs": "c83cd0d11d1c470bb87ee3d72b3c9a5099928ad9d7366be76bbdc889219e4c03",
+                  "tests/e2e_gate.rs": "4e40b5feb2288ed952f20a3474efb8d995e75d6516d72663aa07d9ace68ad286",
+                  "tests/evaluation_retention.rs": "188a70610b5faa4944577d17ac952e15e1a625674e247e7557940c8a0005c3f9",
+                  "tests/fixtures/mdc_e2e_gate_v1.json": "f9f73f00aba4c6fac50fe962ed65a0f7b13281038bfb50d05481799e656e3b06",
+                  "tests/fixtures/portable-graph-v1.sha256": "eed2084b04e7461947e8c867f68e8a53d64944ce26c6c947efe63ed2eaa1ad51",
+                  "tests/fixtures/portable-identity-v1.tsv": "f0d418c9b0a6fa4ded7a2687abd2682d0c08da306b9151ef8677862cd5ad2fd9",
+                  "tests/fixtures/snapshot-roundtrip-v1.json": "39fe3a4b65110726087d8ec9bb883a860a9dc8f25f2b39c2925fa614907f11aa",
+                  "tests/invalid_semantic.rs": "e29557208ed2e0e6961fe181cc2a59c981133f05a3e3780e98921eb3249b2175",
+                  "tests/lifecycle.rs": "ccd786b45e7806d1fdf8949af71cf5c773521ad817674c6266a425185d87eb24",
+                  "tests/mdc_e2e_conformance_001.rs": "9036a027144b0bfd5e6bb4674f702893fe43ccdd18aace7206d1814a986a3ff5",
+                  "tests/portable_identity.rs": "7d64d049f73232ed3c0eec691fa68c6c025348207853d3d63d12adbb24bb344e",
+                  "tests/projection_boundary.rs": "b654a2306493d7d075b50fc0e0e5dd97606b977177f1d6c0618ebd36478a740e",
+                  "tests/relation_composition.rs": "8d992a7f8a463b3f07962a0ea9bd4c1b96fda2b538f7fe7aa16ef1b7b7eb02f1",
+                  "tests/snapshot_roundtrip.rs": "c344bfa181159d4095213c6128ad60b821ca39cdba2987fe715843a376104f59",
+                  "tests/source_measurement.rs": "291de00e6a20de4c25b0c7e66e0ff594dffc5ca250b6d3d1f75a02f395d78e4c",
+                  "tests/state_transition.rs": "ad94af7bbd7d00a8d50e7b9f1dd319c1294d5610d0a24e54e224534c5b428fdb",
+                  "tests/technical_foundation.rs": "09b6099f3c4a4aff5b12751f5dea68bc19c8c55adb555963793be04cb25ee1db",
+                  "tests/test_binance_replay.py": "dcedf4a1c2cf7039b98d47288516229485d67e6a145dc4b91abf3f9b2a7a9832",
+                  "tests/test_capacity_report.py": "84a5f808d7f2ebbe3389f13a4c64eee6a8991ff8fc95cbeb8ffed0bfa3c8f456",
+                  "tests/test_e2e_report.py": "403469fe28187566395abe60c997926322296a0499425e24d1a26019c3ec9889",
+                  "tests/test_portable_identity.py": "d431c3009d85a015b0ac4fb8bf650fd92be5623fe6cd0adf8b755ea432f94134",
+                  "tests/test_replay_recovery_report.py": "6f53a166255c4e10e6f9123b223295eddc0070063632cfabf45527c14fa7d143",
+                  "tests/test_snapshot_roundtrip.py": "e5cb053b6bb5fb2c4c7ee1b4e489ec6b815e9762b26d5239463f94e89ae2c90c",
+                  "tests/wal_bridge.rs": "e2f67d9e4596243f494ccd6edc7b76bec7d5f677a6400f48d4e452b8500c3c50"
+                },
+                "ci_file_sha256": {
+                  ".github/ci/capacity.sh": "348049257c666b96c46d3f8fe877224039ebe97dbcbc65e89140a4fa4d1e8e85",
+                  ".github/ci/check_integration.py": "7de650076149fd3c8c935ffb03c1dd5ec461d7956ceb00cf018deb881b1bee47",
+                  ".github/ci/portable.sh": "12bbb78b2dbaa2eabe54bfcc1a83995d7135aedc92a430c0db09f090c931448b",
+                  ".github/ci/record.py": "cff797d3fcee3208be335d3d44952d858f3075040cbf8aaccf9c06b2a1b2f4ff",
+                  ".github/ci/replay.sh": "ca6a546346f4336e0bd99c20db39c17ec03c167f9afb1cd81589e970e1543b2e",
+                  ".github/ci/run.sh": "d2ae44ec693db1b6462441be47f64de84a3e4bd6e7ad90479d65c7dca9675924",
+                  ".github/ci/store.sh": "2937cdacef6dbc046094614fe1a6118e1b2dd4e6ddb67eefe38ef2c26ee523b2",
+                  ".github/workflows/capacity.yml": "b047c57fde831d321bfbccc4551d51da9e66fe00ad5e900c5c2739f4b4229739",
+                  ".github/workflows/ci.yml": "92d14f3f7218d6690ff339badfff111b1d4e7018a81c649fbb6a6fe68b9666e5"
+                },
+                "selected_flags": {
+                  "CARGO_INCREMENTAL": "0",
+                  "CARGO_PROFILE_RELEASE_DEBUG": "0",
+                  "CARGO_PROFILE_RELEASE_OPT_LEVEL": "3"
+                },
+                "extra_rustflags_present": false,
+                "target": {
+                  "arch": "x86_64",
+                  "pointer_width": 64,
+                  "endian": "little"
+                }
+              },
+              "candidate_build": {
+                "profile": "release",
+                "binaries": {
+                  "mdc-replay-capacity": {
+                    "file": "bin/mdc-replay-capacity",
+                    "sha256": "4188af85ec6f3159f12ba2efed3f73115ebbb7f03bfc3c5cf1c2c3ee5ad11cdd"
+                  },
+                  "mdc-binance-replay": {
+                    "file": "bin/mdc-binance-replay",
+                    "sha256": "903be8fe19650e1fdfd5f970858066d255c73b2bcd9c5272f150ffbcf9121e2e"
+                  }
+                },
+                "command": [
+                  "cargo",
+                  "build",
+                  "--locked",
+                  "--offline",
+                  "--release",
+                  "--manifest-path",
+                  "/home/runner/work/MDCCORE/MDCCORE/adapters/mdc_replay/Cargo.toml",
+                  "--bin",
+                  "mdc-replay-capacity",
+                  "--bin",
+                  "mdc-binance-replay"
+                ],
+                "process": {
+                  "exit_code": 0,
+                  "timeout": false,
+                  "wall_ns": 21155813,
+                  "user_cpu_us": 14557,
+                  "system_cpu_us": 6238,
+                  "peak_rss_kib": 22504,
+                  "stdout_file": "build.stdout",
+                  "stderr_file": "build.stderr",
+                  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                  "stderr_sha256": "6bfa9e18ffdef821c711a542cfebd7db0982665615563e5a191285e489609c6f"
+                },
+                "rustc": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7",
+                "cargo": "cargo 1.85.1 (d73d2caf9 2024-12-31)",
+                "commit_sha": "6db6c0e5daeafcfe5f0d82426001a989132e388d",
+                "tree_sha": "dc69a33593879a577a094ecaac47816c88a134f7",
+                "worktree_dirty": false,
+                "implementation_source_sha256": "e6d277fc9ff80465cd401dd55671efbad24ab244194d30d4ad2085d59435931a",
+                "source_files": {
+                  "Cargo.lock": "db212ada28cd71fe46f25450b036900db1ba8cacaa224f6f5b11b0364cd02aa4",
+                  "Cargo.toml": "c6e3c003ddff0ed5716ab252c94bbf23fb0155ccd862f7d278c331a47698cf0e",
+                  "adapters/mdc_replay/Cargo.lock": "44ec8014a17b2ac16ca07b614d14fb8b6f3cf6d841092764696f74998501a92b",
+                  "adapters/mdc_replay/Cargo.toml": "339b9b194870c6a676b2876ae4d1d6fd6a718d25053adb9c7c285c03c97e6ecc",
+                  "adapters/mdc_replay/README.md": "b851e76f01078dd2d795de6c9968b15c2fc912b2c376afddc3329f8e1ab6589d",
+                  "adapters/mdc_replay/src/bin/mdc-binance-replay.rs": "ec9b8764cd8028a02e85430917e5d111dd7b0c741a17548379b6bd98627fe1a6",
+                  "adapters/mdc_replay/src/bin/mdc-replay-capacity.rs": "2d2a5709de201efd5efb65b226c17ddeab68da3a89ce55847b5962184e3452ad",
+                  "adapters/mdc_replay/src/bin/mdc-replay-run.rs": "f9a778ec9a0be3ec1b2953d37c759304017f76eceb9e72f651e689d901630d62",
+                  "adapters/mdc_replay/src/core_view.rs": "6eaf3813c10dc3f3eb68c604240197cc98d696b2cce76593ee508cd049b1d9e5",
+                  "adapters/mdc_replay/src/lib.rs": "6b9cc8bef40af1ff0525252d5d73d4c7063f477c1c9a4610a4800715055d8071",
+                  "adapters/mdc_replay/src/recovery/store/tests.rs": "cbb7bfc1f5e9296278dc75d45b965e8892fddbfb45985ad96a1f65aa5fedd9bf",
+                  "adapters/mdc_replay/src/recovery/store.rs": "4a68c4dadcbdc28b45c5f3b96ed9d084b778dc8bd578ed4af69964c59ad60caa",
+                  "adapters/mdc_replay/src/recovery.rs": "8540fb51d1e3ff96450859682d48bfe81aeb0b3547c9b49bcd2af9f2bd93d4a9",
+                  "adapters/mdc_replay/src/work_counts.rs": "793646b16b114288c02442cd27c7949804fe53941f9f77c181f44681232ee90b",
+                  "adapters/mdc_replay/tests/capacity_driver.rs": "78a029b794a4696c2e2fb148cece360b8db329e54588d116c6936a8c359d4ca1",
+                  "adapters/mdc_replay/tests/cli.rs": "02a8e03cdfebf1045371d5d105dddf34ac8ba4046a2b0e62736fff3b4b944007",
+                  "adapters/mdc_replay/tests/fixtures/BTCUSDT-1m-2024-01-01-first3.csv": "9910e64a48a152de968366044cd7798c679d1abc94485be2c3dad710751b6664",
+                  "adapters/mdc_replay/tests/fixtures/BTCUSDT-1m-2025-01-01-first3.csv": "75156f1986fce61ed9464d7da85e7fb716887e38cd9fe37398ef3259f2ca386e",
+                  "adapters/mdc_replay/tests/fixtures/control-v1.json": "1cb2af83a3b660bf731d4afe4637b6df68a6cebb11a0f9196b0380c947e65a71",
+                  "adapters/mdc_replay/tests/fixtures/replay-run-wire-v1.tsv": "88984197b5c8b5b6515009cc7bbbcfedc67984f195687ab916a5bbf1fb442fd9",
+                  "adapters/mdc_replay/tests/fixtures/sources.json": "c3e1cf7cbafc0769ae66c2b77b2816a2986d95df0839af94ad53efd6b3550b13",
+                  "adapters/mdc_replay/tests/recovery_wire.rs": "0dbaa7f2aa1d3e69a295fc2b0f45b5bdc77bba51dd6811f11274305bdf9d3251",
+                  "adapters/mdc_replay/tests/replay.rs": "45c3e6312fc4a7325b7218451c9aff19c7094e818bbdc8f6da0d262140e711eb",
+                  "adapters/mdc_replay/tests/run_recovery.rs": "439da1a885b9ad99fdff5fca15d021f217a570715a27fb3d922077a8f92a17a6",
+                  "adapters/mdc_store/Cargo.lock": "b162dce602a4df49059d2db25001d95bd310dd19252dfe8f85ac3a81ceb4303e",
+                  "adapters/mdc_store/Cargo.toml": "0b346be042c187d211aa9075c71bea815986a36aa5c4b22070ea781606674c9f",
+                  "adapters/mdc_store/README.md": "e4b01aeff2a86187998f43e40d0a7aea5cc815118cac27dabb30e9a3cdeef994",
+                  "adapters/mdc_store/src/bin/mdc-recovery.rs": "8d2844c940474160bd81df6b7eb2201a17e6795859cb00035437975d90ba83f6",
+                  "adapters/mdc_store/src/lib.rs": "b3450e861f9276a91d43d25ecd7fb7df2ee7ff9395b73adfdb58559d51761832",
+                  "adapters/mdc_store/src/scheduler.rs": "bf426179d15fd185a116219967413562ff22fc1a0232ae60b73a1b8ab8d512c7",
+                  "adapters/mdc_store/src/tests.rs": "ea191159436f55567061a7d398555ec8b8f42e6f95a4a68c0e032732fb49a38d",
+                  "adapters/mdc_store/src/wire.rs": "5dea966a160f13a1661118f470f67e6baba33d145718e55ca05f3c3c54325b3b",
+                  "adapters/mdc_store/tests/process_recovery.rs": "bade17775784654d198ef45a01c8b6238cf2133c9aea4b112c4d53273917aadc",
+                  "adapters/mdc_store/tests/scheduler.rs": "8cdd4218e960e9ddcceb6286c5fc8d0a0d15536fe8add3d3cca8fb6a4932696d",
+                  "docs/evidence/wal-framing-v1.json": "6856ae57ebf4fc53888ffe4a376ea3cb64e1f74600c28f68e496c69fc89ab460",
+                  "examples/conformance.rs": "59ccdb3d2aa94c07ef10e0c209e250770840cc9aaa585c2098e0ab7f33806fe4",
+                  "examples/evaluation_retention.rs": "41c04cb3ccaa715b8d9fb769015df62c468592d1b25cc82286a994dae447fc16",
+                  "examples/identity_migration.rs": "ba786329494b20d48587b5bb0b1131da239631bb57978e5f4b1a899d5f3f8e6b",
+                  "examples/identity_target.rs": "57a15ee1f90d314243a12af586509005970759278f1eccd933327bbde5d8e606",
+                  "examples/invalid_artifacts.rs": "19a2dac2f8910d2ac7b19480ae0ad39cd72a5034d8d4d8f36a849baa2d760006",
+                  "examples/lifecycle.rs": "86d2da17a55974771920817eadd216c1b68a5cedaf8e67e97836b56108a1e79a",
+                  "examples/mdc_e2e.rs": "f89d91ada876935d05d5074724bb47d1ae2644fcba0c3fa75e84c16880ee7dd5",
+                  "examples/portable_identity.rs": "076bafade32f73b6b38aeab92ba7f9f0018dba3179599ddba1b695d89517ab51",
+                  "examples/relation_composition.rs": "5cfc2391b3a296c868bb34eb628f17c33dd4e7a6fb99a246c399e331bca7baff",
+                  "examples/snapshot_roundtrip.rs": "0433cbacc05ef5a0f8f80883d350f15ef07bf33d1b78b9dc43f5dff95fe80b5f",
+                  "examples/source_measurement.rs": "00a32935f77e81b16e034a7a8ae7071aceac3683345e1960fa94d410ba168eaa",
+                  "examples/state_transition.rs": "8fee98ffbcc4e406df4bdbb24ff2d51498684d0346793aca1fb5e5564060110f",
+                  "examples/support/mdc_e2e.rs": "dbb47af9b057265a230c70a11a58eedba6adf51a0a5bb890eb31fef5daa0f457",
+                  "examples/support/portable_identity.rs": "83e607e7f26e7f7f1d48763f55b1590b0aa1211609e25cd8c0b24c53f35a008b",
+                  "examples/support/snapshot_fixture.rs": "fb1b82e3bf0f7fdcb181d1e5d4f21df5d6df6efaab1976991a9e4d69f43692b8",
+                  "scripts/capacity_report.py": "3275dd398003cc6b770c481458ff4ab08454be25833de942d6021c09466c072b",
+                  "scripts/check_binance_replay.py": "6193a426efe4a91e6b71154f293fb1aa89fd5bef74d92bcd78a92ce3030db04a",
+                  "scripts/check_capacity.py": "0872ac56cd12eb60d3e560c69344d74deec2cbffcf8a5d371146b14985f74266",
+                  "scripts/check_gate_readiness.py": "ee61ac4019c9d84be1aadd6b7286c62d0e84c0c6198cfa3741b364de78003956",
+                  "scripts/check_portable_identity.py": "3610a958c57f97b0ab26cf8a6a0a138fe302697bf716c5b8197aa3adb7cf0bc9",
+                  "scripts/check_replay_recovery.py": "a7a38cf150d014469c4f8874656cf0157af09461fef5cf83b117c50a902da76d",
+                  "scripts/check_snapshot_roundtrip.py": "715af4a5e6e2b9c19fb1a3ebc209307af5bec10de10fc33e3692d98622630c8b",
+                  "scripts/ci_metadata.py": "1a461a3ec6fa4a66fb127da4d085d00777681fee1e51b7240bd5843310a76c68",
+                  "scripts/e2e_report.py": "48f7a103cbe8ecbbeee04a1fff55b764dcf91034fff4345a933cf0ab3ccaa495",
+                  "scripts/exact_work.py": "b48ec66374d8a5478929cecef44cf1d59868ee80a927def6049f0e28b7befe12",
+                  "scripts/fetch_capacity_source.py": "f75ea43cd2796adbf3aa6eb49a1b657857d844c327d1719c0652e5ca74ee2bc1",
+                  "scripts/replay_run_report.py": "f9af6aa19165e0f2c7490cb39733ebbb11d6d38701d43630d23b1844a4d47ea0",
+                  "scripts/run_capacity.py": "195a92815debfab5f719267010b17a6e00af3817c51a0eb4688cf5b66edf135c",
+                  "scripts/run_e2e.py": "0a16f77b330a7315d9144ddd9ef25f17755ed9f9259b3e14169f93f4cad9e0f8",
+                  "scripts/run_replay_recovery.py": "c91a28bee1299885efe7f5c323ff8f21acc0dce6fef53cc38879ce5cb3f9a6e8",
+                  "scripts/run_store_verification.py": "bcdcfbe3df6ce89bc85325dc205cd434d0aa03deb662d1d6b5b556fd0d3c188c",
+                  "src/canonical/mod.rs": "0d85becf8224ac40ae8c2f606f002bc857657d74e90276cb6db5af778d370e9b",
+                  "src/canonical/snapshot.rs": "55cf23801abde45e53a337fc7c621c72309288dbfec0ea09a01a56d7a06e3c8e",
+                  "src/contract/conformance.rs": "26656925de1f8dab6f1fdf39f8dfdbd419bdfcc8959ac7aa046edbc19bf044f9",
+                  "src/contract/dynamics.rs": "dee46f640dbd03b6151d11059220c27080de7348a79c9af313e9cd786b4434bf",
+                  "src/contract/encoding.rs": "d267f45bd1b46fab505e65b761a68a17fc5a33ebac8118f5a8436eff4ca85487",
+                  "src/contract/evaluation.rs": "ab3e92ebebb40c33a07495fbe604bd450c5ef544ae7f599662ac68e102d3fd61",
+                  "src/contract/invalid_encoding.rs": "740eb8bc25518b9f598c3bf3db10ddddafea114781c7bb0b49b1d8d435c0ea17",
+                  "src/contract/lifecycle.rs": "909b10f37ccc0b8bd13d5867e3d318bc31d2b6b7d517e9a0f9d140f5304e3276",
+                  "src/contract/mod.rs": "e5fb29ad4e72f8e73004012e92ce80dbece42a5bf9e2fc783963b913b831518f",
+                  "src/contract/projection.rs": "531d92817312b93c1b5d409f67f7a660f16ef44fb62a62758cef43b6a4d394dd",
+                  "src/contract/registry/snapshot.rs": "a641d05069c3195842f77d7dbb979d33912ee6c1535a0ec287ff050b975cff39",
+                  "src/contract/registry.rs": "f80159c64b078b7072786c599f616928b0f2e3334ed80a1af01f8c9f01d0f6c9",
+                  "src/contract/structure.rs": "881fd943a952d6887b4bb17673379ed7023c246da3e27bbc5373bf72183ddedb",
+                  "src/identity/mod.rs": "6baad7d566960d96d004d5caa208253cbe632cc0d97c25f1200fe04ee4995827",
+                  "src/identity/portable.rs": "7f23aaa5998fc40e7211bec035ed0b82b3957bdf419588c6dd91d6141e19a93f",
+                  "src/lib.rs": "6bdf598ac1fa74c431f81c428506d9d3c1384446a5a4012a4cbe7a6021e63db1",
+                  "src/model/composition.rs": "a9b7a9bea5b040ec5f53d0138b54b2157df3d3f88f29ab9645b8f370f031199a",
+                  "src/model/evaluation.rs": "294ecbd13fbaf69f4a3f26ae79b99350245da36d44c07a983f7258e0d4269ae4",
+                  "src/model/invalid.rs": "59b70e4f7e94794d93fc08907edca19b0d0b6e99d85a6a8e6ad064cc139d3adf",
+                  "src/model/lifecycle.rs": "2fd9087e5a72def063723e4e931781eb5a67df4a31057ff2353c2c2db3843800",
+                  "src/model/measurement.rs": "eba5508eac8421134c39c2cceb51fd6d90c15a15367128805f255824595331d3",
+                  "src/model/mod.rs": "8a91ace55124bbcf245e54d27dbd683403377affe795cbe31eb9a8ad250e05ee",
+                  "src/model/observation.rs": "5c208c30500b5e33e2ffcb74e91b60c6ccd016c387a31913ec3fd21311f7883a",
+                  "src/model/relation.rs": "9b33370fdcc81c4a463c9e033ba70348863cb09fa85299476e1e80022f556761",
+                  "src/model/representation.rs": "93d842db8f4e90d06e1f0489626b23c42de2c08dc1498ff5030025787e35548b",
+                  "src/model/state.rs": "e0098f6b3df7a2f12c42b65a8b144e55aabe8e353fa4864777889965f4e6086d",
+                  "src/model/transition.rs": "528839ec01e79b7473083439558b97f25c305b9a69e126c46c68e254c6ff79ad",
+                  "src/pipeline/conformance.rs": "90a134f82f39a6a9f7dbc62e4305bd183316fe1ff73877c6f4f84b143a8434d8",
+                  "src/pipeline/dynamics.rs": "6b1da5bd27477f0f8bce00b6a45319ced21b4e4d053994afb8679716c98cc0e2",
+                  "src/pipeline/evaluation_retention_tests.rs": "a82737b0622de6cb6eb0a6d72795db4fa0d3f22c2ac5aee25a74c0dac786ff6d",
+                  "src/pipeline/invalid.rs": "961fabf06a377e54cd309396e6be0bd3e33ef430478ef5a02aa407b8517f33c6",
+                  "src/pipeline/lifecycle.rs": "fb0402e9701047cf6d3f780dc24ea79cf6eef1731a708f6b6ad5ec48e8e71022",
+                  "src/pipeline/projection.rs": "5cbf3c2e26cf8b95030f8113136907b19236b1ecb62a847ca9af537bcad15d7e",
+                  "src/pipeline/snapshot/operation.rs": "ba0b246776073a8e3375b9087dceb9c763b24bac6c263c534cc6ff846ed7eada",
+                  "src/pipeline/snapshot/state.rs": "cef4639f7ffb4db9f83d1e25d189d1b48d0d4745782af29df65c6b6e49c9ec4f",
+                  "src/pipeline/snapshot/wire.rs": "81e14e4de5e613d05ef48852058e93a34aea4fb53e8e300ba7bafdafa7324b93",
+                  "src/pipeline/snapshot.rs": "26ffb5a89d505392172674919fcbcf8dc95e07b521bcc038c159b1143228bc3c",
+                  "src/pipeline/structure.rs": "4ea9f6729b0418022524e688bc348469e45c5ee787dddb404580e22c637a39dc",
+                  "src/pipeline.rs": "cff14a3963803b7d8d54e124b42b031797625783a800481dcdfed8a3b73ba4b2",
+                  "src/provenance/mod.rs": "7a9e68e4eb0400342e742f79c05cc56a43ff1a4ec5473515320ea19438747ed3",
+                  "tests/allocation_regression.rs": "6b89cba2b30cf744a4abf83e6d19a2a9cded80f14f96a7599230fc9bf4f81f2b",
+                  "tests/conformance_boundary.rs": "c83cd0d11d1c470bb87ee3d72b3c9a5099928ad9d7366be76bbdc889219e4c03",
+                  "tests/e2e_gate.rs": "4e40b5feb2288ed952f20a3474efb8d995e75d6516d72663aa07d9ace68ad286",
+                  "tests/evaluation_retention.rs": "188a70610b5faa4944577d17ac952e15e1a625674e247e7557940c8a0005c3f9",
+                  "tests/fixtures/mdc_e2e_gate_v1.json": "f9f73f00aba4c6fac50fe962ed65a0f7b13281038bfb50d05481799e656e3b06",
+                  "tests/fixtures/portable-graph-v1.sha256": "eed2084b04e7461947e8c867f68e8a53d64944ce26c6c947efe63ed2eaa1ad51",
+                  "tests/fixtures/portable-identity-v1.tsv": "f0d418c9b0a6fa4ded7a2687abd2682d0c08da306b9151ef8677862cd5ad2fd9",
+                  "tests/fixtures/snapshot-roundtrip-v1.json": "39fe3a4b65110726087d8ec9bb883a860a9dc8f25f2b39c2925fa614907f11aa",
+                  "tests/invalid_semantic.rs": "e29557208ed2e0e6961fe181cc2a59c981133f05a3e3780e98921eb3249b2175",
+                  "tests/lifecycle.rs": "ccd786b45e7806d1fdf8949af71cf5c773521ad817674c6266a425185d87eb24",
+                  "tests/mdc_e2e_conformance_001.rs": "9036a027144b0bfd5e6bb4674f702893fe43ccdd18aace7206d1814a986a3ff5",
+                  "tests/portable_identity.rs": "7d64d049f73232ed3c0eec691fa68c6c025348207853d3d63d12adbb24bb344e",
+                  "tests/projection_boundary.rs": "b654a2306493d7d075b50fc0e0e5dd97606b977177f1d6c0618ebd36478a740e",
+                  "tests/relation_composition.rs": "8d992a7f8a463b3f07962a0ea9bd4c1b96fda2b538f7fe7aa16ef1b7b7eb02f1",
+                  "tests/snapshot_roundtrip.rs": "c344bfa181159d4095213c6128ad60b821ca39cdba2987fe715843a376104f59",
+                  "tests/source_measurement.rs": "291de00e6a20de4c25b0c7e66e0ff594dffc5ca250b6d3d1f75a02f395d78e4c",
+                  "tests/state_transition.rs": "ad94af7bbd7d00a8d50e7b9f1dd319c1294d5610d0a24e54e224534c5b428fdb",
+                  "tests/technical_foundation.rs": "09b6099f3c4a4aff5b12751f5dea68bc19c8c55adb555963793be04cb25ee1db",
+                  "tests/test_binance_replay.py": "dcedf4a1c2cf7039b98d47288516229485d67e6a145dc4b91abf3f9b2a7a9832",
+                  "tests/test_capacity_report.py": "84a5f808d7f2ebbe3389f13a4c64eee6a8991ff8fc95cbeb8ffed0bfa3c8f456",
+                  "tests/test_e2e_report.py": "403469fe28187566395abe60c997926322296a0499425e24d1a26019c3ec9889",
+                  "tests/test_exact_work.py": "dffa62a1fa69db282aba7baa9830b8ee7a009df061932db89124c66b67b28c3f",
+                  "tests/test_portable_identity.py": "d431c3009d85a015b0ac4fb8bf650fd92be5623fe6cd0adf8b755ea432f94134",
+                  "tests/test_replay_recovery_report.py": "6f53a166255c4e10e6f9123b223295eddc0070063632cfabf45527c14fa7d143",
+                  "tests/test_snapshot_roundtrip.py": "e5cb053b6bb5fb2c4c7ee1b4e489ec6b815e9762b26d5239463f94e89ae2c90c",
+                  "tests/wal_bridge.rs": "e2f67d9e4596243f494ccd6edc7b76bec7d5f677a6400f48d4e452b8500c3c50"
+                },
+                "ci_file_sha256": {
+                  ".github/ci/capacity.sh": "3fdf66b1180dc5913f62a1f6ca728296727f7e44f51d6c6b13fb374be260a043",
+                  ".github/ci/check_integration.py": "7de650076149fd3c8c935ffb03c1dd5ec461d7956ceb00cf018deb881b1bee47",
+                  ".github/ci/portable.sh": "12bbb78b2dbaa2eabe54bfcc1a83995d7135aedc92a430c0db09f090c931448b",
+                  ".github/ci/record.py": "cff797d3fcee3208be335d3d44952d858f3075040cbf8aaccf9c06b2a1b2f4ff",
+                  ".github/ci/replay.sh": "ca53e0636b6108e30cc9c7b6cf5b52d0dceb66f84e2fde2ff492a639dc4c252f",
+                  ".github/ci/run.sh": "d2ae44ec693db1b6462441be47f64de84a3e4bd6e7ad90479d65c7dca9675924",
+                  ".github/ci/store.sh": "2937cdacef6dbc046094614fe1a6118e1b2dd4e6ddb67eefe38ef2c26ee523b2",
+                  ".github/workflows/capacity.yml": "45fd5046a62003cf098c882da27b45c6ad5cb822ad12493c361d7d0be723c85d",
+                  ".github/workflows/ci.yml": "8d555cc4deb3c35a09725c964bb82162a45a018d5bdaead22f0a6f80ce037ff3"
+                },
+                "selected_flags": {
+                  "CARGO_INCREMENTAL": "0",
+                  "CARGO_PROFILE_RELEASE_DEBUG": "0",
+                  "CARGO_PROFILE_RELEASE_OPT_LEVEL": "3"
+                },
+                "extra_rustflags_present": false,
+                "target": {
+                  "arch": "x86_64",
+                  "pointer_width": 64,
+                  "endian": "little"
+                }
+              },
+              "baseline_checked": {
+                "acceptance": "PASS",
+                "source_sha256": "177ecbb250a90a547e2777f2832de120e37a77e9d0a75011972bae0fa7ff1913",
+                "points": [
+                  1,
+                  2,
+                  3,
+                  1440
+                ],
+                "repetitions": 3,
+                "cases": 12,
+                "outcomes": [
+                  "Completed",
+                  "Completed",
+                  "Completed",
+                  "Completed",
+                  "Completed",
+                  "Completed",
+                  "Limited",
+                  "Limited",
+                  "Limited",
+                  "PreflightRejected",
+                  "PreflightRejected",
+                  "PreflightRejected"
+                ]
+              },
+              "candidate_checked": {
+                "acceptance": "PASS",
+                "source_sha256": "177ecbb250a90a547e2777f2832de120e37a77e9d0a75011972bae0fa7ff1913",
+                "points": [
+                  1,
+                  2,
+                  3,
+                  1440
+                ],
+                "repetitions": 3,
+                "cases": 12,
+                "outcomes": [
+                  "Completed",
+                  "Completed",
+                  "Completed",
+                  "Completed",
+                  "Completed",
+                  "Completed",
+                  "Limited",
+                  "Limited",
+                  "Limited",
+                  "PreflightRejected",
+                  "PreflightRejected",
+                  "PreflightRejected"
+                ]
+              },
+              "source": {
+                "file": "source.csv",
+                "sha256": "177ecbb250a90a547e2777f2832de120e37a77e9d0a75011972bae0fa7ff1913",
+                "bytes": 69120,
+                "origin": "synthetic_fixture",
+                "label": "exact-work-smoke",
+                "authenticity": "not_attested"
+              },
+              "profile": {
+                "symbol": "BTCUSDT",
+                "unit": "ms",
+                "lag_ms": 100,
+                "anchor": "close",
+                "availability_quality": "modeled"
+              },
+              "points": [
+                1,
+                2,
+                3,
+                1440
+              ],
+              "repetitions": 3,
+              "limits": {
+                "max_decisions": 256,
+                "max_manifest_bytes": 16384,
+                "max_record_bytes": 25165824,
+                "max_journal_bytes": 32768,
+                "max_report_bytes": 1048576,
+                "max_snapshot_bytes": 16777216
+              },
+              "host": {
+                "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+                "machine": "x86_64",
+                "cpu_model": "AMD EPYC 7763 64-Core Processor",
+                "logical_cpus": 4,
+                "python_pointer_width": 64,
+                "python_byteorder": "little",
+                "filesystem": "ext2/ext3"
+              },
+              "baseline_summary": [
+                {
+                  "requested": 1,
+                  "outcomes": [
+                    "Completed",
+                    "Completed",
+                    "Completed"
+                  ],
+                  "first_constraints": [
+                    null,
+                    null,
+                    null
+                  ],
+                  "metrics": {
+                    "commit_api_ns": {
+                      "samples": [
+                        1506803,
+                        1389303,
+                        1318590
+                      ],
+                      "min": 1318590,
+                      "median": 1389303,
+                      "max": 1506803
+                    },
+                    "recovery_api_ns": {
+                      "samples": [
+                        6634288,
+                        6734900,
+                        6541134
+                      ],
+                      "min": 6541134,
+                      "median": 6634288,
+                      "max": 6734900
+                    },
+                    "journal_bytes": {
+                      "samples": [
+                        11061,
+                        11061,
+                        11061
+                      ],
+                      "min": 11061,
+                      "median": 11061,
+                      "max": 11061
+                    },
+                    "committed": {
+                      "samples": [
+                        1,
+                        1,
+                        1
+                      ],
+                      "min": 1,
+                      "median": 1,
+                      "max": 1
+                    }
+                  }
+                },
+                {
+                  "requested": 2,
+                  "outcomes": [
+                    "Completed",
+                    "Completed",
+                    "Completed"
+                  ],
+                  "first_constraints": [
+                    null,
+                    null,
+                    null
+                  ],
+                  "metrics": {
+                    "commit_api_ns": {
+                      "samples": [
+                        3032971,
+                        2695218,
+                        4266402
+                      ],
+                      "min": 2695218,
+                      "median": 3032971,
+                      "max": 4266402
+                    },
+                    "recovery_api_ns": {
+                      "samples": [
+                        7326034,
+                        7118866,
+                        7322541
+                      ],
+                      "min": 7118866,
+                      "median": 7322541,
+                      "max": 7326034
+                    },
+                    "journal_bytes": {
+                      "samples": [
+                        27601,
+                        27601,
+                        27601
+                      ],
+                      "min": 27601,
+                      "median": 27601,
+                      "max": 27601
+                    },
+                    "committed": {
+                      "samples": [
+                        2,
+                        2,
+                        2
+                      ],
+                      "min": 2,
+                      "median": 2,
+                      "max": 2
+                    }
+                  }
+                },
+                {
+                  "requested": 3,
+                  "outcomes": [
+                    "Limited",
+                    "Limited",
+                    "Limited"
+                  ],
+                  "first_constraints": [
+                    "Limit(\"journal bytes\")",
+                    "Limit(\"journal bytes\")",
+                    "Limit(\"journal bytes\")"
+                  ],
+                  "metrics": {
+                    "commit_api_ns": {
+                      "samples": [
+                        3541605,
+                        3519714,
+                        3576219
+                      ],
+                      "min": 3519714,
+                      "median": 3541605,
+                      "max": 3576219
+                    },
+                    "recovery_api_ns": {
+                      "samples": [
+                        7308221,
+                        7110872,
+                        7292832
+                      ],
+                      "min": 7110872,
+                      "median": 7292832,
+                      "max": 7308221
+                    },
+                    "journal_bytes": {
+                      "samples": [
+                        27601,
+                        27601,
+                        27601
+                      ],
+                      "min": 27601,
+                      "median": 27601,
+                      "max": 27601
+                    },
+                    "committed": {
+                      "samples": [
+                        2,
+                        2,
+                        2
+                      ],
+                      "min": 2,
+                      "median": 2,
+                      "max": 2
+                    }
+                  }
+                },
+                {
+                  "requested": 1440,
+                  "outcomes": [
+                    "PreflightRejected",
+                    "PreflightRejected",
+                    "PreflightRejected"
+                  ],
+                  "first_constraints": [
+                    "Format(\"strictly increasing nonempty plan\")",
+                    "Format(\"strictly increasing nonempty plan\")",
+                    "Format(\"strictly increasing nonempty plan\")"
+                  ],
+                  "metrics": {
+                    "commit_api_ns": null,
+                    "recovery_api_ns": null,
+                    "journal_bytes": null,
+                    "committed": {
+                      "samples": [
+                        0,
+                        0,
+                        0
+                      ],
+                      "min": 0,
+                      "median": 0,
+                      "max": 0
+                    }
+                  }
+                }
+              ],
+              "candidate_summary": [
+                {
+                  "requested": 1,
+                  "outcomes": [
+                    "Completed",
+                    "Completed",
+                    "Completed"
+                  ],
+                  "first_constraints": [
+                    null,
+                    null,
+                    null
+                  ],
+                  "metrics": {
+                    "commit_api_ns": {
+                      "samples": [
+                        1312349,
+                        1377020,
+                        1512964
+                      ],
+                      "min": 1312349,
+                      "median": 1377020,
+                      "max": 1512964
+                    },
+                    "recovery_api_ns": {
+                      "samples": [
+                        3727573,
+                        3651971,
+                        3811932
+                      ],
+                      "min": 3651971,
+                      "median": 3727573,
+                      "max": 3811932
+                    },
+                    "journal_bytes": {
+                      "samples": [
+                        11061,
+                        11061,
+                        11061
+                      ],
+                      "min": 11061,
+                      "median": 11061,
+                      "max": 11061
+                    },
+                    "committed": {
+                      "samples": [
+                        1,
+                        1,
+                        1
+                      ],
+                      "min": 1,
+                      "median": 1,
+                      "max": 1
+                    }
+                  }
+                },
+                {
+                  "requested": 2,
+                  "outcomes": [
+                    "Completed",
+                    "Completed",
+                    "Completed"
+                  ],
+                  "first_constraints": [
+                    null,
+                    null,
+                    null
+                  ],
+                  "metrics": {
+                    "commit_api_ns": {
+                      "samples": [
+                        2882530,
+                        2959895,
+                        2820573
+                      ],
+                      "min": 2820573,
+                      "median": 2882530,
+                      "max": 2959895
+                    },
+                    "recovery_api_ns": {
+                      "samples": [
+                        4291395,
+                        4130709,
+                        4089662
+                      ],
+                      "min": 4089662,
+                      "median": 4130709,
+                      "max": 4291395
+                    },
+                    "journal_bytes": {
+                      "samples": [
+                        27601,
+                        27601,
+                        27601
+                      ],
+                      "min": 27601,
+                      "median": 27601,
+                      "max": 27601
+                    },
+                    "committed": {
+                      "samples": [
+                        2,
+                        2,
+                        2
+                      ],
+                      "min": 2,
+                      "median": 2,
+                      "max": 2
+                    }
+                  }
+                },
+                {
+                  "requested": 3,
+                  "outcomes": [
+                    "Limited",
+                    "Limited",
+                    "Limited"
+                  ],
+                  "first_constraints": [
+                    "Limit(\"journal bytes\")",
+                    "Limit(\"journal bytes\")",
+                    "Limit(\"journal bytes\")"
+                  ],
+                  "metrics": {
+                    "commit_api_ns": {
+                      "samples": [
+                        3342333,
+                        3549148,
+                        3394760
+                      ],
+                      "min": 3342333,
+                      "median": 3394760,
+                      "max": 3549148
+                    },
+                    "recovery_api_ns": {
+                      "samples": [
+                        4077449,
+                        4108788,
+                        4078010
+                      ],
+                      "min": 4077449,
+                      "median": 4078010,
+                      "max": 4108788
+                    },
+                    "journal_bytes": {
+                      "samples": [
+                        27601,
+                        27601,
+                        27601
+                      ],
+                      "min": 27601,
+                      "median": 27601,
+                      "max": 27601
+                    },
+                    "committed": {
+                      "samples": [
+                        2,
+                        2,
+                        2
+                      ],
+                      "min": 2,
+                      "median": 2,
+                      "max": 2
+                    }
+                  }
+                },
+                {
+                  "requested": 1440,
+                  "outcomes": [
+                    "PreflightRejected",
+                    "PreflightRejected",
+                    "PreflightRejected"
+                  ],
+                  "first_constraints": [
+                    "Format(\"strictly increasing nonempty plan\")",
+                    "Format(\"strictly increasing nonempty plan\")",
+                    "Format(\"strictly increasing nonempty plan\")"
+                  ],
+                  "metrics": {
+                    "commit_api_ns": null,
+                    "recovery_api_ns": null,
+                    "journal_bytes": null,
+                    "committed": {
+                      "samples": [
+                        0,
+                        0,
+                        0
+                      ],
+                      "min": 0,
+                      "median": 0,
+                      "max": 0
+                    }
+                  }
+                }
+              ],
+              "cases": [
+                {
+                  "requested": 1,
+                  "repetition": 1,
+                  "outcome": "Completed",
+                  "committed": 1,
+                  "directory": "cases/n0001-r01/run",
+                  "first_constraint": null
+                },
+                {
+                  "requested": 1,
+                  "repetition": 2,
+                  "outcome": "Completed",
+                  "committed": 1,
+                  "directory": "cases/n0001-r02/run",
+                  "first_constraint": null
+                },
+                {
+                  "requested": 1,
+                  "repetition": 3,
+                  "outcome": "Completed",
+                  "committed": 1,
+                  "directory": "cases/n0001-r03/run",
+                  "first_constraint": null
+                },
+                {
+                  "requested": 2,
+                  "repetition": 1,
+                  "outcome": "Completed",
+                  "committed": 2,
+                  "directory": "cases/n0002-r01/run",
+                  "first_constraint": null
+                },
+                {
+                  "requested": 2,
+                  "repetition": 2,
+                  "outcome": "Completed",
+                  "committed": 2,
+                  "directory": "cases/n0002-r02/run",
+                  "first_constraint": null
+                },
+                {
+                  "requested": 2,
+                  "repetition": 3,
+                  "outcome": "Completed",
+                  "committed": 2,
+                  "directory": "cases/n0002-r03/run",
+                  "first_constraint": null
+                },
+                {
+                  "requested": 3,
+                  "repetition": 1,
+                  "outcome": "Limited",
+                  "committed": 2,
+                  "directory": "cases/n0003-r01/run",
+                  "first_constraint": "Limit(\"journal bytes\")"
+                },
+                {
+                  "requested": 3,
+                  "repetition": 2,
+                  "outcome": "Limited",
+                  "committed": 2,
+                  "directory": "cases/n0003-r02/run",
+                  "first_constraint": "Limit(\"journal bytes\")"
+                },
+                {
+                  "requested": 3,
+                  "repetition": 3,
+                  "outcome": "Limited",
+                  "committed": 2,
+                  "directory": "cases/n0003-r03/run",
+                  "first_constraint": "Limit(\"journal bytes\")"
+                },
+                {
+                  "requested": 1440,
+                  "repetition": 1,
+                  "outcome": "PreflightRejected",
+                  "committed": 0,
+                  "directory": "cases/n1440-r01/run",
+                  "first_constraint": "Format(\"strictly increasing nonempty plan\")"
+                },
+                {
+                  "requested": 1440,
+                  "repetition": 2,
+                  "outcome": "PreflightRejected",
+                  "committed": 0,
+                  "directory": "cases/n1440-r02/run",
+                  "first_constraint": "Format(\"strictly increasing nonempty plan\")"
+                },
+                {
+                  "requested": 1440,
+                  "repetition": 3,
+                  "outcome": "PreflightRejected",
+                  "committed": 0,
+                  "directory": "cases/n1440-r03/run",
+                  "first_constraint": "Format(\"strictly increasing nonempty plan\")"
+                }
+              ],
+              "full_run_files_equal": true,
+              "timing_slo": "not_asserted"
+            }
+          },
+          "artifact": "mdc-replay-1.85.1/exact-work"
+        },
+        {
+          "rust": "1.98.0",
+          "receipt": {
+            "schema": "MDC-EXACT-WORK-001/1",
+            "order": [
+              "candidate",
+              "baseline"
+            ],
+            "cache_state": "uncontrolled; variants grouped, reversed across toolchains, not randomized",
+            "archives": {
+              "baseline": {
+                "file": "baseline.zip",
+                "sha256": "5dabd3ae88c905baa1bbec7c3be94eecabc55373d18bdd05781894998be89a5e"
+              },
+              "candidate": {
+                "file": "candidate.zip",
+                "sha256": "16a8904c46aa62b3e0a1bd9314b1236aa2be0d545be8eeaa1fdd2dc5d546c800"
+              },
+              "compatibility": {
+                "file": "compatibility.zip",
+                "sha256": "8b252ecb9401fb87942748c7771043ee640ce01e8ce4a6e41ef4cc9bc45d24b0"
+              }
+            },
+            "comparison": {
+              "acceptance": "PASS",
+              "baseline_commit": "6b33a4375384ed4301695ea879e641a20f5493b9",
+              "baseline_source_sha256": "cca5b3a70dea13130f8fc25f91152b5fd4dfecf71fabd731eb1cd0f11ae20de4",
+              "candidate_source_sha256": "e6d277fc9ff80465cd401dd55671efbad24ab244194d30d4ad2085d59435931a",
+              "baseline_build": {
+                "profile": "release",
+                "binaries": {
+                  "mdc-replay-capacity": {
+                    "file": "bin/mdc-replay-capacity",
+                    "sha256": "ded724abf95ddb3ed266c5663bf0fd24adb2218a2e4df38b97c018266dd4ae58"
+                  },
+                  "mdc-binance-replay": {
+                    "file": "bin/mdc-binance-replay",
+                    "sha256": "89dd56b148b3d9a45c47fb94d91800227d8c75d3963b52d87d759daaecdb0235"
+                  }
+                },
+                "command": [
+                  "cargo",
+                  "build",
+                  "--locked",
+                  "--offline",
+                  "--release",
+                  "--manifest-path",
+                  "/tmp/mdc-exact-work-wf5xamtr/source/adapters/mdc_replay/Cargo.toml",
+                  "--bin",
+                  "mdc-replay-capacity",
+                  "--bin",
+                  "mdc-binance-replay"
+                ],
+                "process": {
+                  "exit_code": 0,
+                  "timeout": false,
+                  "wall_ns": 6715941443,
+                  "user_cpu_us": 22817542,
+                  "system_cpu_us": 1018008,
+                  "peak_rss_kib": 381284,
+                  "stdout_file": "build.stdout",
+                  "stderr_file": "build.stderr",
+                  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                  "stderr_sha256": "878cfc6bac493f11b796275a37abfa218d4bc0133ae4bc4328dffbc7eac85d7e"
+                },
+                "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)\nbinary: rustc\ncommit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea\ncommit-date: 2026-08-18\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.0\nLLVM version: 22.1.8",
+                "cargo": "cargo 1.98.0 (797e8a9bc 2026-08-05)",
+                "commit_sha": "6b33a4375384ed4301695ea879e641a20f5493b9",
+                "tree_sha": "c6718a393d1fd830f049767dd7e9933562654938",
+                "worktree_dirty": false,
+                "implementation_source_sha256": "cca5b3a70dea13130f8fc25f91152b5fd4dfecf71fabd731eb1cd0f11ae20de4",
+                "source_files": {
+                  "Cargo.lock": "db212ada28cd71fe46f25450b036900db1ba8cacaa224f6f5b11b0364cd02aa4",
+                  "Cargo.toml": "c6e3c003ddff0ed5716ab252c94bbf23fb0155ccd862f7d278c331a47698cf0e",
+                  "adapters/mdc_replay/Cargo.lock": "44ec8014a17b2ac16ca07b614d14fb8b6f3cf6d841092764696f74998501a92b",
+                  "adapters/mdc_replay/Cargo.toml": "339b9b194870c6a676b2876ae4d1d6fd6a718d25053adb9c7c285c03c97e6ecc",
+                  "adapters/mdc_replay/README.md": "016a039eac4c45462508c019c129d8ed3ed225fa4e076aef9d38033f82d717d9",
+                  "adapters/mdc_replay/src/bin/mdc-binance-replay.rs": "ec9b8764cd8028a02e85430917e5d111dd7b0c741a17548379b6bd98627fe1a6",
+                  "adapters/mdc_replay/src/bin/mdc-replay-capacity.rs": "2d2a5709de201efd5efb65b226c17ddeab68da3a89ce55847b5962184e3452ad",
+                  "adapters/mdc_replay/src/bin/mdc-replay-run.rs": "f9a778ec9a0be3ec1b2953d37c759304017f76eceb9e72f651e689d901630d62",
+                  "adapters/mdc_replay/src/core_view.rs": "2f91078b6bcaff45358d972ce61cd4f7b0068d66061dd56649296751045d7c42",
+                  "adapters/mdc_replay/src/lib.rs": "83033e3486bd5baa102158f62dcb4f958e7d1405736b323855e00a59e5bc5fe4",
+                  "adapters/mdc_replay/src/recovery/store/tests.rs": "68c842ec82f265ab2e4ccd10280236c8eb2ac99562ea30f7397d27fa9dfbe240",
+                  "adapters/mdc_replay/src/recovery/store.rs": "0bd8f398e4d3c46cb6dfcaeecfb6ed7a120dde065963f3e797451db2fc7e98cd",
+                  "adapters/mdc_replay/src/recovery.rs": "3e46d580ce75d9bf8817f7a9e581ce000053cf690a78b6f8fe36487cd93d747a",
+                  "adapters/mdc_replay/tests/capacity_driver.rs": "78a029b794a4696c2e2fb148cece360b8db329e54588d116c6936a8c359d4ca1",
+                  "adapters/mdc_replay/tests/cli.rs": "02a8e03cdfebf1045371d5d105dddf34ac8ba4046a2b0e62736fff3b4b944007",
+                  "adapters/mdc_replay/tests/fixtures/BTCUSDT-1m-2024-01-01-first3.csv": "9910e64a48a152de968366044cd7798c679d1abc94485be2c3dad710751b6664",
+                  "adapters/mdc_replay/tests/fixtures/BTCUSDT-1m-2025-01-01-first3.csv": "75156f1986fce61ed9464d7da85e7fb716887e38cd9fe37398ef3259f2ca386e",
+                  "adapters/mdc_replay/tests/fixtures/control-v1.json": "1cb2af83a3b660bf731d4afe4637b6df68a6cebb11a0f9196b0380c947e65a71",
+                  "adapters/mdc_replay/tests/fixtures/replay-run-wire-v1.tsv": "88984197b5c8b5b6515009cc7bbbcfedc67984f195687ab916a5bbf1fb442fd9",
+                  "adapters/mdc_replay/tests/fixtures/sources.json": "c3e1cf7cbafc0769ae66c2b77b2816a2986d95df0839af94ad53efd6b3550b13",
+                  "adapters/mdc_replay/tests/recovery_wire.rs": "0dbaa7f2aa1d3e69a295fc2b0f45b5bdc77bba51dd6811f11274305bdf9d3251",
+                  "adapters/mdc_replay/tests/replay.rs": "45c3e6312fc4a7325b7218451c9aff19c7094e818bbdc8f6da0d262140e711eb",
+                  "adapters/mdc_replay/tests/run_recovery.rs": "439da1a885b9ad99fdff5fca15d021f217a570715a27fb3d922077a8f92a17a6",
+                  "adapters/mdc_store/Cargo.lock": "b162dce602a4df49059d2db25001d95bd310dd19252dfe8f85ac3a81ceb4303e",
+                  "adapters/mdc_store/Cargo.toml": "0b346be042c187d211aa9075c71bea815986a36aa5c4b22070ea781606674c9f",
+                  "adapters/mdc_store/README.md": "e4b01aeff2a86187998f43e40d0a7aea5cc815118cac27dabb30e9a3cdeef994",
+                  "adapters/mdc_store/src/bin/mdc-recovery.rs": "8d2844c940474160bd81df6b7eb2201a17e6795859cb00035437975d90ba83f6",
+                  "adapters/mdc_store/src/lib.rs": "b3450e861f9276a91d43d25ecd7fb7df2ee7ff9395b73adfdb58559d51761832",
+                  "adapters/mdc_store/src/scheduler.rs": "bf426179d15fd185a116219967413562ff22fc1a0232ae60b73a1b8ab8d512c7",
+                  "adapters/mdc_store/src/tests.rs": "ea191159436f55567061a7d398555ec8b8f42e6f95a4a68c0e032732fb49a38d",
+                  "adapters/mdc_store/src/wire.rs": "5dea966a160f13a1661118f470f67e6baba33d145718e55ca05f3c3c54325b3b",
+                  "adapters/mdc_store/tests/process_recovery.rs": "bade17775784654d198ef45a01c8b6238cf2133c9aea4b112c4d53273917aadc",
+                  "adapters/mdc_store/tests/scheduler.rs": "8cdd4218e960e9ddcceb6286c5fc8d0a0d15536fe8add3d3cca8fb6a4932696d",
+                  "docs/evidence/wal-framing-v1.json": "6856ae57ebf4fc53888ffe4a376ea3cb64e1f74600c28f68e496c69fc89ab460",
+                  "examples/conformance.rs": "59ccdb3d2aa94c07ef10e0c209e250770840cc9aaa585c2098e0ab7f33806fe4",
+                  "examples/evaluation_retention.rs": "41c04cb3ccaa715b8d9fb769015df62c468592d1b25cc82286a994dae447fc16",
+                  "examples/identity_migration.rs": "ba786329494b20d48587b5bb0b1131da239631bb57978e5f4b1a899d5f3f8e6b",
+                  "examples/identity_target.rs": "57a15ee1f90d314243a12af586509005970759278f1eccd933327bbde5d8e606",
+                  "examples/invalid_artifacts.rs": "19a2dac2f8910d2ac7b19480ae0ad39cd72a5034d8d4d8f36a849baa2d760006",
+                  "examples/lifecycle.rs": "86d2da17a55974771920817eadd216c1b68a5cedaf8e67e97836b56108a1e79a",
+                  "examples/mdc_e2e.rs": "f89d91ada876935d05d5074724bb47d1ae2644fcba0c3fa75e84c16880ee7dd5",
+                  "examples/portable_identity.rs": "076bafade32f73b6b38aeab92ba7f9f0018dba3179599ddba1b695d89517ab51",
+                  "examples/relation_composition.rs": "5cfc2391b3a296c868bb34eb628f17c33dd4e7a6fb99a246c399e331bca7baff",
+                  "examples/snapshot_roundtrip.rs": "0433cbacc05ef5a0f8f80883d350f15ef07bf33d1b78b9dc43f5dff95fe80b5f",
+                  "examples/source_measurement.rs": "00a32935f77e81b16e034a7a8ae7071aceac3683345e1960fa94d410ba168eaa",
+                  "examples/state_transition.rs": "8fee98ffbcc4e406df4bdbb24ff2d51498684d0346793aca1fb5e5564060110f",
+                  "examples/support/mdc_e2e.rs": "dbb47af9b057265a230c70a11a58eedba6adf51a0a5bb890eb31fef5daa0f457",
+                  "examples/support/portable_identity.rs": "83e607e7f26e7f7f1d48763f55b1590b0aa1211609e25cd8c0b24c53f35a008b",
+                  "examples/support/snapshot_fixture.rs": "fb1b82e3bf0f7fdcb181d1e5d4f21df5d6df6efaab1976991a9e4d69f43692b8",
+                  "scripts/capacity_report.py": "3275dd398003cc6b770c481458ff4ab08454be25833de942d6021c09466c072b",
+                  "scripts/check_binance_replay.py": "6193a426efe4a91e6b71154f293fb1aa89fd5bef74d92bcd78a92ce3030db04a",
+                  "scripts/check_capacity.py": "0872ac56cd12eb60d3e560c69344d74deec2cbffcf8a5d371146b14985f74266",
+                  "scripts/check_gate_readiness.py": "ee61ac4019c9d84be1aadd6b7286c62d0e84c0c6198cfa3741b364de78003956",
+                  "scripts/check_portable_identity.py": "3610a958c57f97b0ab26cf8a6a0a138fe302697bf716c5b8197aa3adb7cf0bc9",
+                  "scripts/check_replay_recovery.py": "a7a38cf150d014469c4f8874656cf0157af09461fef5cf83b117c50a902da76d",
+                  "scripts/check_snapshot_roundtrip.py": "715af4a5e6e2b9c19fb1a3ebc209307af5bec10de10fc33e3692d98622630c8b",
+                  "scripts/ci_metadata.py": "1a461a3ec6fa4a66fb127da4d085d00777681fee1e51b7240bd5843310a76c68",
+                  "scripts/e2e_report.py": "f4332985ae13118709f822fa5974b8f2a22c6555aca15882b767d289748155bd",
+                  "scripts/fetch_capacity_source.py": "f75ea43cd2796adbf3aa6eb49a1b657857d844c327d1719c0652e5ca74ee2bc1",
+                  "scripts/replay_run_report.py": "f9af6aa19165e0f2c7490cb39733ebbb11d6d38701d43630d23b1844a4d47ea0",
+                  "scripts/run_capacity.py": "195a92815debfab5f719267010b17a6e00af3817c51a0eb4688cf5b66edf135c",
+                  "scripts/run_e2e.py": "0a16f77b330a7315d9144ddd9ef25f17755ed9f9259b3e14169f93f4cad9e0f8",
+                  "scripts/run_replay_recovery.py": "c91a28bee1299885efe7f5c323ff8f21acc0dce6fef53cc38879ce5cb3f9a6e8",
+                  "scripts/run_store_verification.py": "bcdcfbe3df6ce89bc85325dc205cd434d0aa03deb662d1d6b5b556fd0d3c188c",
+                  "src/canonical/mod.rs": "0d85becf8224ac40ae8c2f606f002bc857657d74e90276cb6db5af778d370e9b",
+                  "src/canonical/snapshot.rs": "55cf23801abde45e53a337fc7c621c72309288dbfec0ea09a01a56d7a06e3c8e",
+                  "src/contract/conformance.rs": "26656925de1f8dab6f1fdf39f8dfdbd419bdfcc8959ac7aa046edbc19bf044f9",
+                  "src/contract/dynamics.rs": "dee46f640dbd03b6151d11059220c27080de7348a79c9af313e9cd786b4434bf",
+                  "src/contract/encoding.rs": "d267f45bd1b46fab505e65b761a68a17fc5a33ebac8118f5a8436eff4ca85487",
+                  "src/contract/evaluation.rs": "ab3e92ebebb40c33a07495fbe604bd450c5ef544ae7f599662ac68e102d3fd61",
+                  "src/contract/invalid_encoding.rs": "740eb8bc25518b9f598c3bf3db10ddddafea114781c7bb0b49b1d8d435c0ea17",
+                  "src/contract/lifecycle.rs": "909b10f37ccc0b8bd13d5867e3d318bc31d2b6b7d517e9a0f9d140f5304e3276",
+                  "src/contract/mod.rs": "e5fb29ad4e72f8e73004012e92ce80dbece42a5bf9e2fc783963b913b831518f",
+                  "src/contract/projection.rs": "531d92817312b93c1b5d409f67f7a660f16ef44fb62a62758cef43b6a4d394dd",
+                  "src/contract/registry/snapshot.rs": "a641d05069c3195842f77d7dbb979d33912ee6c1535a0ec287ff050b975cff39",
+                  "src/contract/registry.rs": "f80159c64b078b7072786c599f616928b0f2e3334ed80a1af01f8c9f01d0f6c9",
+                  "src/contract/structure.rs": "881fd943a952d6887b4bb17673379ed7023c246da3e27bbc5373bf72183ddedb",
+                  "src/identity/mod.rs": "6baad7d566960d96d004d5caa208253cbe632cc0d97c25f1200fe04ee4995827",
+                  "src/identity/portable.rs": "7f23aaa5998fc40e7211bec035ed0b82b3957bdf419588c6dd91d6141e19a93f",
+                  "src/lib.rs": "6bdf598ac1fa74c431f81c428506d9d3c1384446a5a4012a4cbe7a6021e63db1",
+                  "src/model/composition.rs": "a9b7a9bea5b040ec5f53d0138b54b2157df3d3f88f29ab9645b8f370f031199a",
+                  "src/model/evaluation.rs": "294ecbd13fbaf69f4a3f26ae79b99350245da36d44c07a983f7258e0d4269ae4",
+                  "src/model/invalid.rs": "59b70e4f7e94794d93fc08907edca19b0d0b6e99d85a6a8e6ad064cc139d3adf",
+                  "src/model/lifecycle.rs": "2fd9087e5a72def063723e4e931781eb5a67df4a31057ff2353c2c2db3843800",
+                  "src/model/measurement.rs": "eba5508eac8421134c39c2cceb51fd6d90c15a15367128805f255824595331d3",
+                  "src/model/mod.rs": "8a91ace55124bbcf245e54d27dbd683403377affe795cbe31eb9a8ad250e05ee",
+                  "src/model/observation.rs": "5c208c30500b5e33e2ffcb74e91b60c6ccd016c387a31913ec3fd21311f7883a",
+                  "src/model/relation.rs": "9b33370fdcc81c4a463c9e033ba70348863cb09fa85299476e1e80022f556761",
+                  "src/model/representation.rs": "93d842db8f4e90d06e1f0489626b23c42de2c08dc1498ff5030025787e35548b",
+                  "src/model/state.rs": "e0098f6b3df7a2f12c42b65a8b144e55aabe8e353fa4864777889965f4e6086d",
+                  "src/model/transition.rs": "528839ec01e79b7473083439558b97f25c305b9a69e126c46c68e254c6ff79ad",
+                  "src/pipeline/conformance.rs": "90a134f82f39a6a9f7dbc62e4305bd183316fe1ff73877c6f4f84b143a8434d8",
+                  "src/pipeline/dynamics.rs": "6b1da5bd27477f0f8bce00b6a45319ced21b4e4d053994afb8679716c98cc0e2",
+                  "src/pipeline/evaluation_retention_tests.rs": "a82737b0622de6cb6eb0a6d72795db4fa0d3f22c2ac5aee25a74c0dac786ff6d",
+                  "src/pipeline/invalid.rs": "961fabf06a377e54cd309396e6be0bd3e33ef430478ef5a02aa407b8517f33c6",
+                  "src/pipeline/lifecycle.rs": "fb0402e9701047cf6d3f780dc24ea79cf6eef1731a708f6b6ad5ec48e8e71022",
+                  "src/pipeline/projection.rs": "5cbf3c2e26cf8b95030f8113136907b19236b1ecb62a847ca9af537bcad15d7e",
+                  "src/pipeline/snapshot/operation.rs": "ba0b246776073a8e3375b9087dceb9c763b24bac6c263c534cc6ff846ed7eada",
+                  "src/pipeline/snapshot/state.rs": "cef4639f7ffb4db9f83d1e25d189d1b48d0d4745782af29df65c6b6e49c9ec4f",
+                  "src/pipeline/snapshot/wire.rs": "81e14e4de5e613d05ef48852058e93a34aea4fb53e8e300ba7bafdafa7324b93",
+                  "src/pipeline/snapshot.rs": "26ffb5a89d505392172674919fcbcf8dc95e07b521bcc038c159b1143228bc3c",
+                  "src/pipeline/structure.rs": "4ea9f6729b0418022524e688bc348469e45c5ee787dddb404580e22c637a39dc",
+                  "src/pipeline.rs": "cff14a3963803b7d8d54e124b42b031797625783a800481dcdfed8a3b73ba4b2",
+                  "src/provenance/mod.rs": "7a9e68e4eb0400342e742f79c05cc56a43ff1a4ec5473515320ea19438747ed3",
+                  "tests/allocation_regression.rs": "6b89cba2b30cf744a4abf83e6d19a2a9cded80f14f96a7599230fc9bf4f81f2b",
+                  "tests/conformance_boundary.rs": "c83cd0d11d1c470bb87ee3d72b3c9a5099928ad9d7366be76bbdc889219e4c03",
+                  "tests/e2e_gate.rs": "4e40b5feb2288ed952f20a3474efb8d995e75d6516d72663aa07d9ace68ad286",
+                  "tests/evaluation_retention.rs": "188a70610b5faa4944577d17ac952e15e1a625674e247e7557940c8a0005c3f9",
+                  "tests/fixtures/mdc_e2e_gate_v1.json": "f9f73f00aba4c6fac50fe962ed65a0f7b13281038bfb50d05481799e656e3b06",
+                  "tests/fixtures/portable-graph-v1.sha256": "eed2084b04e7461947e8c867f68e8a53d64944ce26c6c947efe63ed2eaa1ad51",
+                  "tests/fixtures/portable-identity-v1.tsv": "f0d418c9b0a6fa4ded7a2687abd2682d0c08da306b9151ef8677862cd5ad2fd9",
+                  "tests/fixtures/snapshot-roundtrip-v1.json": "39fe3a4b65110726087d8ec9bb883a860a9dc8f25f2b39c2925fa614907f11aa",
+                  "tests/invalid_semantic.rs": "e29557208ed2e0e6961fe181cc2a59c981133f05a3e3780e98921eb3249b2175",
+                  "tests/lifecycle.rs": "ccd786b45e7806d1fdf8949af71cf5c773521ad817674c6266a425185d87eb24",
+                  "tests/mdc_e2e_conformance_001.rs": "9036a027144b0bfd5e6bb4674f702893fe43ccdd18aace7206d1814a986a3ff5",
+                  "tests/portable_identity.rs": "7d64d049f73232ed3c0eec691fa68c6c025348207853d3d63d12adbb24bb344e",
+                  "tests/projection_boundary.rs": "b654a2306493d7d075b50fc0e0e5dd97606b977177f1d6c0618ebd36478a740e",
+                  "tests/relation_composition.rs": "8d992a7f8a463b3f07962a0ea9bd4c1b96fda2b538f7fe7aa16ef1b7b7eb02f1",
+                  "tests/snapshot_roundtrip.rs": "c344bfa181159d4095213c6128ad60b821ca39cdba2987fe715843a376104f59",
+                  "tests/source_measurement.rs": "291de00e6a20de4c25b0c7e66e0ff594dffc5ca250b6d3d1f75a02f395d78e4c",
+                  "tests/state_transition.rs": "ad94af7bbd7d00a8d50e7b9f1dd319c1294d5610d0a24e54e224534c5b428fdb",
+                  "tests/technical_foundation.rs": "09b6099f3c4a4aff5b12751f5dea68bc19c8c55adb555963793be04cb25ee1db",
+                  "tests/test_binance_replay.py": "dcedf4a1c2cf7039b98d47288516229485d67e6a145dc4b91abf3f9b2a7a9832",
+                  "tests/test_capacity_report.py": "84a5f808d7f2ebbe3389f13a4c64eee6a8991ff8fc95cbeb8ffed0bfa3c8f456",
+                  "tests/test_e2e_report.py": "403469fe28187566395abe60c997926322296a0499425e24d1a26019c3ec9889",
+                  "tests/test_portable_identity.py": "d431c3009d85a015b0ac4fb8bf650fd92be5623fe6cd0adf8b755ea432f94134",
+                  "tests/test_replay_recovery_report.py": "6f53a166255c4e10e6f9123b223295eddc0070063632cfabf45527c14fa7d143",
+                  "tests/test_snapshot_roundtrip.py": "e5cb053b6bb5fb2c4c7ee1b4e489ec6b815e9762b26d5239463f94e89ae2c90c",
+                  "tests/wal_bridge.rs": "e2f67d9e4596243f494ccd6edc7b76bec7d5f677a6400f48d4e452b8500c3c50"
+                },
+                "ci_file_sha256": {
+                  ".github/ci/capacity.sh": "348049257c666b96c46d3f8fe877224039ebe97dbcbc65e89140a4fa4d1e8e85",
+                  ".github/ci/check_integration.py": "7de650076149fd3c8c935ffb03c1dd5ec461d7956ceb00cf018deb881b1bee47",
+                  ".github/ci/portable.sh": "12bbb78b2dbaa2eabe54bfcc1a83995d7135aedc92a430c0db09f090c931448b",
+                  ".github/ci/record.py": "cff797d3fcee3208be335d3d44952d858f3075040cbf8aaccf9c06b2a1b2f4ff",
+                  ".github/ci/replay.sh": "ca6a546346f4336e0bd99c20db39c17ec03c167f9afb1cd81589e970e1543b2e",
+                  ".github/ci/run.sh": "d2ae44ec693db1b6462441be47f64de84a3e4bd6e7ad90479d65c7dca9675924",
+                  ".github/ci/store.sh": "2937cdacef6dbc046094614fe1a6118e1b2dd4e6ddb67eefe38ef2c26ee523b2",
+                  ".github/workflows/capacity.yml": "b047c57fde831d321bfbccc4551d51da9e66fe00ad5e900c5c2739f4b4229739",
+                  ".github/workflows/ci.yml": "92d14f3f7218d6690ff339badfff111b1d4e7018a81c649fbb6a6fe68b9666e5"
+                },
+                "selected_flags": {
+                  "CARGO_INCREMENTAL": "0",
+                  "CARGO_PROFILE_RELEASE_DEBUG": "0",
+                  "CARGO_PROFILE_RELEASE_OPT_LEVEL": "3"
+                },
+                "extra_rustflags_present": false,
+                "target": {
+                  "arch": "x86_64",
+                  "pointer_width": 64,
+                  "endian": "little"
+                }
+              },
+              "candidate_build": {
+                "profile": "release",
+                "binaries": {
+                  "mdc-replay-capacity": {
+                    "file": "bin/mdc-replay-capacity",
+                    "sha256": "8799f2fcadbf78632114b8e0fc0cff288a11a6b16a06c9fd857a11efa7004294"
+                  },
+                  "mdc-binance-replay": {
+                    "file": "bin/mdc-binance-replay",
+                    "sha256": "315436acfa80d95dd2f0ff43b480fe796c0f0de7ce743d51e87d56acf6c2498f"
+                  }
+                },
+                "command": [
+                  "cargo",
+                  "build",
+                  "--locked",
+                  "--offline",
+                  "--release",
+                  "--manifest-path",
+                  "/home/runner/work/MDCCORE/MDCCORE/adapters/mdc_replay/Cargo.toml",
+                  "--bin",
+                  "mdc-replay-capacity",
+                  "--bin",
+                  "mdc-binance-replay"
+                ],
+                "process": {
+                  "exit_code": 0,
+                  "timeout": false,
+                  "wall_ns": 21009268,
+                  "user_cpu_us": 11843,
+                  "system_cpu_us": 7895,
+                  "peak_rss_kib": 26912,
+                  "stdout_file": "build.stdout",
+                  "stderr_file": "build.stderr",
+                  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                  "stderr_sha256": "6bfa9e18ffdef821c711a542cfebd7db0982665615563e5a191285e489609c6f"
+                },
+                "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)\nbinary: rustc\ncommit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea\ncommit-date: 2026-08-18\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.0\nLLVM version: 22.1.8",
+                "cargo": "cargo 1.98.0 (797e8a9bc 2026-08-05)",
+                "commit_sha": "6db6c0e5daeafcfe5f0d82426001a989132e388d",
+                "tree_sha": "dc69a33593879a577a094ecaac47816c88a134f7",
+                "worktree_dirty": false,
+                "implementation_source_sha256": "e6d277fc9ff80465cd401dd55671efbad24ab244194d30d4ad2085d59435931a",
+                "source_files": {
+                  "Cargo.lock": "db212ada28cd71fe46f25450b036900db1ba8cacaa224f6f5b11b0364cd02aa4",
+                  "Cargo.toml": "c6e3c003ddff0ed5716ab252c94bbf23fb0155ccd862f7d278c331a47698cf0e",
+                  "adapters/mdc_replay/Cargo.lock": "44ec8014a17b2ac16ca07b614d14fb8b6f3cf6d841092764696f74998501a92b",
+                  "adapters/mdc_replay/Cargo.toml": "339b9b194870c6a676b2876ae4d1d6fd6a718d25053adb9c7c285c03c97e6ecc",
+                  "adapters/mdc_replay/README.md": "b851e76f01078dd2d795de6c9968b15c2fc912b2c376afddc3329f8e1ab6589d",
+                  "adapters/mdc_replay/src/bin/mdc-binance-replay.rs": "ec9b8764cd8028a02e85430917e5d111dd7b0c741a17548379b6bd98627fe1a6",
+                  "adapters/mdc_replay/src/bin/mdc-replay-capacity.rs": "2d2a5709de201efd5efb65b226c17ddeab68da3a89ce55847b5962184e3452ad",
+                  "adapters/mdc_replay/src/bin/mdc-replay-run.rs": "f9a778ec9a0be3ec1b2953d37c759304017f76eceb9e72f651e689d901630d62",
+                  "adapters/mdc_replay/src/core_view.rs": "6eaf3813c10dc3f3eb68c604240197cc98d696b2cce76593ee508cd049b1d9e5",
+                  "adapters/mdc_replay/src/lib.rs": "6b9cc8bef40af1ff0525252d5d73d4c7063f477c1c9a4610a4800715055d8071",
+                  "adapters/mdc_replay/src/recovery/store/tests.rs": "cbb7bfc1f5e9296278dc75d45b965e8892fddbfb45985ad96a1f65aa5fedd9bf",
+                  "adapters/mdc_replay/src/recovery/store.rs": "4a68c4dadcbdc28b45c5f3b96ed9d084b778dc8bd578ed4af69964c59ad60caa",
+                  "adapters/mdc_replay/src/recovery.rs": "8540fb51d1e3ff96450859682d48bfe81aeb0b3547c9b49bcd2af9f2bd93d4a9",
+                  "adapters/mdc_replay/src/work_counts.rs": "793646b16b114288c02442cd27c7949804fe53941f9f77c181f44681232ee90b",
+                  "adapters/mdc_replay/tests/capacity_driver.rs": "78a029b794a4696c2e2fb148cece360b8db329e54588d116c6936a8c359d4ca1",
+                  "adapters/mdc_replay/tests/cli.rs": "02a8e03cdfebf1045371d5d105dddf34ac8ba4046a2b0e62736fff3b4b944007",
+                  "adapters/mdc_replay/tests/fixtures/BTCUSDT-1m-2024-01-01-first3.csv": "9910e64a48a152de968366044cd7798c679d1abc94485be2c3dad710751b6664",
+                  "adapters/mdc_replay/tests/fixtures/BTCUSDT-1m-2025-01-01-first3.csv": "75156f1986fce61ed9464d7da85e7fb716887e38cd9fe37398ef3259f2ca386e",
+                  "adapters/mdc_replay/tests/fixtures/control-v1.json": "1cb2af83a3b660bf731d4afe4637b6df68a6cebb11a0f9196b0380c947e65a71",
+                  "adapters/mdc_replay/tests/fixtures/replay-run-wire-v1.tsv": "88984197b5c8b5b6515009cc7bbbcfedc67984f195687ab916a5bbf1fb442fd9",
+                  "adapters/mdc_replay/tests/fixtures/sources.json": "c3e1cf7cbafc0769ae66c2b77b2816a2986d95df0839af94ad53efd6b3550b13",
+                  "adapters/mdc_replay/tests/recovery_wire.rs": "0dbaa7f2aa1d3e69a295fc2b0f45b5bdc77bba51dd6811f11274305bdf9d3251",
+                  "adapters/mdc_replay/tests/replay.rs": "45c3e6312fc4a7325b7218451c9aff19c7094e818bbdc8f6da0d262140e711eb",
+                  "adapters/mdc_replay/tests/run_recovery.rs": "439da1a885b9ad99fdff5fca15d021f217a570715a27fb3d922077a8f92a17a6",
+                  "adapters/mdc_store/Cargo.lock": "b162dce602a4df49059d2db25001d95bd310dd19252dfe8f85ac3a81ceb4303e",
+                  "adapters/mdc_store/Cargo.toml": "0b346be042c187d211aa9075c71bea815986a36aa5c4b22070ea781606674c9f",
+                  "adapters/mdc_store/README.md": "e4b01aeff2a86187998f43e40d0a7aea5cc815118cac27dabb30e9a3cdeef994",
+                  "adapters/mdc_store/src/bin/mdc-recovery.rs": "8d2844c940474160bd81df6b7eb2201a17e6795859cb00035437975d90ba83f6",
+                  "adapters/mdc_store/src/lib.rs": "b3450e861f9276a91d43d25ecd7fb7df2ee7ff9395b73adfdb58559d51761832",
+                  "adapters/mdc_store/src/scheduler.rs": "bf426179d15fd185a116219967413562ff22fc1a0232ae60b73a1b8ab8d512c7",
+                  "adapters/mdc_store/src/tests.rs": "ea191159436f55567061a7d398555ec8b8f42e6f95a4a68c0e032732fb49a38d",
+                  "adapters/mdc_store/src/wire.rs": "5dea966a160f13a1661118f470f67e6baba33d145718e55ca05f3c3c54325b3b",
+                  "adapters/mdc_store/tests/process_recovery.rs": "bade17775784654d198ef45a01c8b6238cf2133c9aea4b112c4d53273917aadc",
+                  "adapters/mdc_store/tests/scheduler.rs": "8cdd4218e960e9ddcceb6286c5fc8d0a0d15536fe8add3d3cca8fb6a4932696d",
+                  "docs/evidence/wal-framing-v1.json": "6856ae57ebf4fc53888ffe4a376ea3cb64e1f74600c28f68e496c69fc89ab460",
+                  "examples/conformance.rs": "59ccdb3d2aa94c07ef10e0c209e250770840cc9aaa585c2098e0ab7f33806fe4",
+                  "examples/evaluation_retention.rs": "41c04cb3ccaa715b8d9fb769015df62c468592d1b25cc82286a994dae447fc16",
+                  "examples/identity_migration.rs": "ba786329494b20d48587b5bb0b1131da239631bb57978e5f4b1a899d5f3f8e6b",
+                  "examples/identity_target.rs": "57a15ee1f90d314243a12af586509005970759278f1eccd933327bbde5d8e606",
+                  "examples/invalid_artifacts.rs": "19a2dac2f8910d2ac7b19480ae0ad39cd72a5034d8d4d8f36a849baa2d760006",
+                  "examples/lifecycle.rs": "86d2da17a55974771920817eadd216c1b68a5cedaf8e67e97836b56108a1e79a",
+                  "examples/mdc_e2e.rs": "f89d91ada876935d05d5074724bb47d1ae2644fcba0c3fa75e84c16880ee7dd5",
+                  "examples/portable_identity.rs": "076bafade32f73b6b38aeab92ba7f9f0018dba3179599ddba1b695d89517ab51",
+                  "examples/relation_composition.rs": "5cfc2391b3a296c868bb34eb628f17c33dd4e7a6fb99a246c399e331bca7baff",
+                  "examples/snapshot_roundtrip.rs": "0433cbacc05ef5a0f8f80883d350f15ef07bf33d1b78b9dc43f5dff95fe80b5f",
+                  "examples/source_measurement.rs": "00a32935f77e81b16e034a7a8ae7071aceac3683345e1960fa94d410ba168eaa",
+                  "examples/state_transition.rs": "8fee98ffbcc4e406df4bdbb24ff2d51498684d0346793aca1fb5e5564060110f",
+                  "examples/support/mdc_e2e.rs": "dbb47af9b057265a230c70a11a58eedba6adf51a0a5bb890eb31fef5daa0f457",
+                  "examples/support/portable_identity.rs": "83e607e7f26e7f7f1d48763f55b1590b0aa1211609e25cd8c0b24c53f35a008b",
+                  "examples/support/snapshot_fixture.rs": "fb1b82e3bf0f7fdcb181d1e5d4f21df5d6df6efaab1976991a9e4d69f43692b8",
+                  "scripts/capacity_report.py": "3275dd398003cc6b770c481458ff4ab08454be25833de942d6021c09466c072b",
+                  "scripts/check_binance_replay.py": "6193a426efe4a91e6b71154f293fb1aa89fd5bef74d92bcd78a92ce3030db04a",
+                  "scripts/check_capacity.py": "0872ac56cd12eb60d3e560c69344d74deec2cbffcf8a5d371146b14985f74266",
+                  "scripts/check_gate_readiness.py": "ee61ac4019c9d84be1aadd6b7286c62d0e84c0c6198cfa3741b364de78003956",
+                  "scripts/check_portable_identity.py": "3610a958c57f97b0ab26cf8a6a0a138fe302697bf716c5b8197aa3adb7cf0bc9",
+                  "scripts/check_replay_recovery.py": "a7a38cf150d014469c4f8874656cf0157af09461fef5cf83b117c50a902da76d",
+                  "scripts/check_snapshot_roundtrip.py": "715af4a5e6e2b9c19fb1a3ebc209307af5bec10de10fc33e3692d98622630c8b",
+                  "scripts/ci_metadata.py": "1a461a3ec6fa4a66fb127da4d085d00777681fee1e51b7240bd5843310a76c68",
+                  "scripts/e2e_report.py": "48f7a103cbe8ecbbeee04a1fff55b764dcf91034fff4345a933cf0ab3ccaa495",
+                  "scripts/exact_work.py": "b48ec66374d8a5478929cecef44cf1d59868ee80a927def6049f0e28b7befe12",
+                  "scripts/fetch_capacity_source.py": "f75ea43cd2796adbf3aa6eb49a1b657857d844c327d1719c0652e5ca74ee2bc1",
+                  "scripts/replay_run_report.py": "f9af6aa19165e0f2c7490cb39733ebbb11d6d38701d43630d23b1844a4d47ea0",
+                  "scripts/run_capacity.py": "195a92815debfab5f719267010b17a6e00af3817c51a0eb4688cf5b66edf135c",
+                  "scripts/run_e2e.py": "0a16f77b330a7315d9144ddd9ef25f17755ed9f9259b3e14169f93f4cad9e0f8",
+                  "scripts/run_replay_recovery.py": "c91a28bee1299885efe7f5c323ff8f21acc0dce6fef53cc38879ce5cb3f9a6e8",
+                  "scripts/run_store_verification.py": "bcdcfbe3df6ce89bc85325dc205cd434d0aa03deb662d1d6b5b556fd0d3c188c",
+                  "src/canonical/mod.rs": "0d85becf8224ac40ae8c2f606f002bc857657d74e90276cb6db5af778d370e9b",
+                  "src/canonical/snapshot.rs": "55cf23801abde45e53a337fc7c621c72309288dbfec0ea09a01a56d7a06e3c8e",
+                  "src/contract/conformance.rs": "26656925de1f8dab6f1fdf39f8dfdbd419bdfcc8959ac7aa046edbc19bf044f9",
+                  "src/contract/dynamics.rs": "dee46f640dbd03b6151d11059220c27080de7348a79c9af313e9cd786b4434bf",
+                  "src/contract/encoding.rs": "d267f45bd1b46fab505e65b761a68a17fc5a33ebac8118f5a8436eff4ca85487",
+                  "src/contract/evaluation.rs": "ab3e92ebebb40c33a07495fbe604bd450c5ef544ae7f599662ac68e102d3fd61",
+                  "src/contract/invalid_encoding.rs": "740eb8bc25518b9f598c3bf3db10ddddafea114781c7bb0b49b1d8d435c0ea17",
+                  "src/contract/lifecycle.rs": "909b10f37ccc0b8bd13d5867e3d318bc31d2b6b7d517e9a0f9d140f5304e3276",
+                  "src/contract/mod.rs": "e5fb29ad4e72f8e73004012e92ce80dbece42a5bf9e2fc783963b913b831518f",
+                  "src/contract/projection.rs": "531d92817312b93c1b5d409f67f7a660f16ef44fb62a62758cef43b6a4d394dd",
+                  "src/contract/registry/snapshot.rs": "a641d05069c3195842f77d7dbb979d33912ee6c1535a0ec287ff050b975cff39",
+                  "src/contract/registry.rs": "f80159c64b078b7072786c599f616928b0f2e3334ed80a1af01f8c9f01d0f6c9",
+                  "src/contract/structure.rs": "881fd943a952d6887b4bb17673379ed7023c246da3e27bbc5373bf72183ddedb",
+                  "src/identity/mod.rs": "6baad7d566960d96d004d5caa208253cbe632cc0d97c25f1200fe04ee4995827",
+                  "src/identity/portable.rs": "7f23aaa5998fc40e7211bec035ed0b82b3957bdf419588c6dd91d6141e19a93f",
+                  "src/lib.rs": "6bdf598ac1fa74c431f81c428506d9d3c1384446a5a4012a4cbe7a6021e63db1",
+                  "src/model/composition.rs": "a9b7a9bea5b040ec5f53d0138b54b2157df3d3f88f29ab9645b8f370f031199a",
+                  "src/model/evaluation.rs": "294ecbd13fbaf69f4a3f26ae79b99350245da36d44c07a983f7258e0d4269ae4",
+                  "src/model/invalid.rs": "59b70e4f7e94794d93fc08907edca19b0d0b6e99d85a6a8e6ad064cc139d3adf",
+                  "src/model/lifecycle.rs": "2fd9087e5a72def063723e4e931781eb5a67df4a31057ff2353c2c2db3843800",
+                  "src/model/measurement.rs": "eba5508eac8421134c39c2cceb51fd6d90c15a15367128805f255824595331d3",
+                  "src/model/mod.rs": "8a91ace55124bbcf245e54d27dbd683403377affe795cbe31eb9a8ad250e05ee",
+                  "src/model/observation.rs": "5c208c30500b5e33e2ffcb74e91b60c6ccd016c387a31913ec3fd21311f7883a",
+                  "src/model/relation.rs": "9b33370fdcc81c4a463c9e033ba70348863cb09fa85299476e1e80022f556761",
+                  "src/model/representation.rs": "93d842db8f4e90d06e1f0489626b23c42de2c08dc1498ff5030025787e35548b",
+                  "src/model/state.rs": "e0098f6b3df7a2f12c42b65a8b144e55aabe8e353fa4864777889965f4e6086d",
+                  "src/model/transition.rs": "528839ec01e79b7473083439558b97f25c305b9a69e126c46c68e254c6ff79ad",
+                  "src/pipeline/conformance.rs": "90a134f82f39a6a9f7dbc62e4305bd183316fe1ff73877c6f4f84b143a8434d8",
+                  "src/pipeline/dynamics.rs": "6b1da5bd27477f0f8bce00b6a45319ced21b4e4d053994afb8679716c98cc0e2",
+                  "src/pipeline/evaluation_retention_tests.rs": "a82737b0622de6cb6eb0a6d72795db4fa0d3f22c2ac5aee25a74c0dac786ff6d",
+                  "src/pipeline/invalid.rs": "961fabf06a377e54cd309396e6be0bd3e33ef430478ef5a02aa407b8517f33c6",
+                  "src/pipeline/lifecycle.rs": "fb0402e9701047cf6d3f780dc24ea79cf6eef1731a708f6b6ad5ec48e8e71022",
+                  "src/pipeline/projection.rs": "5cbf3c2e26cf8b95030f8113136907b19236b1ecb62a847ca9af537bcad15d7e",
+                  "src/pipeline/snapshot/operation.rs": "ba0b246776073a8e3375b9087dceb9c763b24bac6c263c534cc6ff846ed7eada",
+                  "src/pipeline/snapshot/state.rs": "cef4639f7ffb4db9f83d1e25d189d1b48d0d4745782af29df65c6b6e49c9ec4f",
+                  "src/pipeline/snapshot/wire.rs": "81e14e4de5e613d05ef48852058e93a34aea4fb53e8e300ba7bafdafa7324b93",
+                  "src/pipeline/snapshot.rs": "26ffb5a89d505392172674919fcbcf8dc95e07b521bcc038c159b1143228bc3c",
+                  "src/pipeline/structure.rs": "4ea9f6729b0418022524e688bc348469e45c5ee787dddb404580e22c637a39dc",
+                  "src/pipeline.rs": "cff14a3963803b7d8d54e124b42b031797625783a800481dcdfed8a3b73ba4b2",
+                  "src/provenance/mod.rs": "7a9e68e4eb0400342e742f79c05cc56a43ff1a4ec5473515320ea19438747ed3",
+                  "tests/allocation_regression.rs": "6b89cba2b30cf744a4abf83e6d19a2a9cded80f14f96a7599230fc9bf4f81f2b",
+                  "tests/conformance_boundary.rs": "c83cd0d11d1c470bb87ee3d72b3c9a5099928ad9d7366be76bbdc889219e4c03",
+                  "tests/e2e_gate.rs": "4e40b5feb2288ed952f20a3474efb8d995e75d6516d72663aa07d9ace68ad286",
+                  "tests/evaluation_retention.rs": "188a70610b5faa4944577d17ac952e15e1a625674e247e7557940c8a0005c3f9",
+                  "tests/fixtures/mdc_e2e_gate_v1.json": "f9f73f00aba4c6fac50fe962ed65a0f7b13281038bfb50d05481799e656e3b06",
+                  "tests/fixtures/portable-graph-v1.sha256": "eed2084b04e7461947e8c867f68e8a53d64944ce26c6c947efe63ed2eaa1ad51",
+                  "tests/fixtures/portable-identity-v1.tsv": "f0d418c9b0a6fa4ded7a2687abd2682d0c08da306b9151ef8677862cd5ad2fd9",
+                  "tests/fixtures/snapshot-roundtrip-v1.json": "39fe3a4b65110726087d8ec9bb883a860a9dc8f25f2b39c2925fa614907f11aa",
+                  "tests/invalid_semantic.rs": "e29557208ed2e0e6961fe181cc2a59c981133f05a3e3780e98921eb3249b2175",
+                  "tests/lifecycle.rs": "ccd786b45e7806d1fdf8949af71cf5c773521ad817674c6266a425185d87eb24",
+                  "tests/mdc_e2e_conformance_001.rs": "9036a027144b0bfd5e6bb4674f702893fe43ccdd18aace7206d1814a986a3ff5",
+                  "tests/portable_identity.rs": "7d64d049f73232ed3c0eec691fa68c6c025348207853d3d63d12adbb24bb344e",
+                  "tests/projection_boundary.rs": "b654a2306493d7d075b50fc0e0e5dd97606b977177f1d6c0618ebd36478a740e",
+                  "tests/relation_composition.rs": "8d992a7f8a463b3f07962a0ea9bd4c1b96fda2b538f7fe7aa16ef1b7b7eb02f1",
+                  "tests/snapshot_roundtrip.rs": "c344bfa181159d4095213c6128ad60b821ca39cdba2987fe715843a376104f59",
+                  "tests/source_measurement.rs": "291de00e6a20de4c25b0c7e66e0ff594dffc5ca250b6d3d1f75a02f395d78e4c",
+                  "tests/state_transition.rs": "ad94af7bbd7d00a8d50e7b9f1dd319c1294d5610d0a24e54e224534c5b428fdb",
+                  "tests/technical_foundation.rs": "09b6099f3c4a4aff5b12751f5dea68bc19c8c55adb555963793be04cb25ee1db",
+                  "tests/test_binance_replay.py": "dcedf4a1c2cf7039b98d47288516229485d67e6a145dc4b91abf3f9b2a7a9832",
+                  "tests/test_capacity_report.py": "84a5f808d7f2ebbe3389f13a4c64eee6a8991ff8fc95cbeb8ffed0bfa3c8f456",
+                  "tests/test_e2e_report.py": "403469fe28187566395abe60c997926322296a0499425e24d1a26019c3ec9889",
+                  "tests/test_exact_work.py": "dffa62a1fa69db282aba7baa9830b8ee7a009df061932db89124c66b67b28c3f",
+                  "tests/test_portable_identity.py": "d431c3009d85a015b0ac4fb8bf650fd92be5623fe6cd0adf8b755ea432f94134",
+                  "tests/test_replay_recovery_report.py": "6f53a166255c4e10e6f9123b223295eddc0070063632cfabf45527c14fa7d143",
+                  "tests/test_snapshot_roundtrip.py": "e5cb053b6bb5fb2c4c7ee1b4e489ec6b815e9762b26d5239463f94e89ae2c90c",
+                  "tests/wal_bridge.rs": "e2f67d9e4596243f494ccd6edc7b76bec7d5f677a6400f48d4e452b8500c3c50"
+                },
+                "ci_file_sha256": {
+                  ".github/ci/capacity.sh": "3fdf66b1180dc5913f62a1f6ca728296727f7e44f51d6c6b13fb374be260a043",
+                  ".github/ci/check_integration.py": "7de650076149fd3c8c935ffb03c1dd5ec461d7956ceb00cf018deb881b1bee47",
+                  ".github/ci/portable.sh": "12bbb78b2dbaa2eabe54bfcc1a83995d7135aedc92a430c0db09f090c931448b",
+                  ".github/ci/record.py": "cff797d3fcee3208be335d3d44952d858f3075040cbf8aaccf9c06b2a1b2f4ff",
+                  ".github/ci/replay.sh": "ca53e0636b6108e30cc9c7b6cf5b52d0dceb66f84e2fde2ff492a639dc4c252f",
+                  ".github/ci/run.sh": "d2ae44ec693db1b6462441be47f64de84a3e4bd6e7ad90479d65c7dca9675924",
+                  ".github/ci/store.sh": "2937cdacef6dbc046094614fe1a6118e1b2dd4e6ddb67eefe38ef2c26ee523b2",
+                  ".github/workflows/capacity.yml": "45fd5046a62003cf098c882da27b45c6ad5cb822ad12493c361d7d0be723c85d",
+                  ".github/workflows/ci.yml": "8d555cc4deb3c35a09725c964bb82162a45a018d5bdaead22f0a6f80ce037ff3"
+                },
+                "selected_flags": {
+                  "CARGO_INCREMENTAL": "0",
+                  "CARGO_PROFILE_RELEASE_DEBUG": "0",
+                  "CARGO_PROFILE_RELEASE_OPT_LEVEL": "3"
+                },
+                "extra_rustflags_present": false,
+                "target": {
+                  "arch": "x86_64",
+                  "pointer_width": 64,
+                  "endian": "little"
+                }
+              },
+              "baseline_checked": {
+                "acceptance": "PASS",
+                "source_sha256": "177ecbb250a90a547e2777f2832de120e37a77e9d0a75011972bae0fa7ff1913",
+                "points": [
+                  1,
+                  2,
+                  3,
+                  1440
+                ],
+                "repetitions": 3,
+                "cases": 12,
+                "outcomes": [
+                  "Completed",
+                  "Completed",
+                  "Completed",
+                  "Completed",
+                  "Completed",
+                  "Completed",
+                  "Limited",
+                  "Limited",
+                  "Limited",
+                  "PreflightRejected",
+                  "PreflightRejected",
+                  "PreflightRejected"
+                ]
+              },
+              "candidate_checked": {
+                "acceptance": "PASS",
+                "source_sha256": "177ecbb250a90a547e2777f2832de120e37a77e9d0a75011972bae0fa7ff1913",
+                "points": [
+                  1,
+                  2,
+                  3,
+                  1440
+                ],
+                "repetitions": 3,
+                "cases": 12,
+                "outcomes": [
+                  "Completed",
+                  "Completed",
+                  "Completed",
+                  "Completed",
+                  "Completed",
+                  "Completed",
+                  "Limited",
+                  "Limited",
+                  "Limited",
+                  "PreflightRejected",
+                  "PreflightRejected",
+                  "PreflightRejected"
+                ]
+              },
+              "source": {
+                "file": "source.csv",
+                "sha256": "177ecbb250a90a547e2777f2832de120e37a77e9d0a75011972bae0fa7ff1913",
+                "bytes": 69120,
+                "origin": "synthetic_fixture",
+                "label": "exact-work-smoke",
+                "authenticity": "not_attested"
+              },
+              "profile": {
+                "symbol": "BTCUSDT",
+                "unit": "ms",
+                "lag_ms": 100,
+                "anchor": "close",
+                "availability_quality": "modeled"
+              },
+              "points": [
+                1,
+                2,
+                3,
+                1440
+              ],
+              "repetitions": 3,
+              "limits": {
+                "max_decisions": 256,
+                "max_manifest_bytes": 16384,
+                "max_record_bytes": 25165824,
+                "max_journal_bytes": 32768,
+                "max_report_bytes": 1048576,
+                "max_snapshot_bytes": 16777216
+              },
+              "host": {
+                "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+                "machine": "x86_64",
+                "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+                "logical_cpus": 4,
+                "python_pointer_width": 64,
+                "python_byteorder": "little",
+                "filesystem": "ext2/ext3"
+              },
+              "baseline_summary": [
+                {
+                  "requested": 1,
+                  "outcomes": [
+                    "Completed",
+                    "Completed",
+                    "Completed"
+                  ],
+                  "first_constraints": [
+                    null,
+                    null,
+                    null
+                  ],
+                  "metrics": {
+                    "commit_api_ns": {
+                      "samples": [
+                        4730966,
+                        1188033,
+                        1144408
+                      ],
+                      "min": 1144408,
+                      "median": 1188033,
+                      "max": 4730966
+                    },
+                    "recovery_api_ns": {
+                      "samples": [
+                        5139382,
+                        5193923,
+                        5057352
+                      ],
+                      "min": 5057352,
+                      "median": 5139382,
+                      "max": 5193923
+                    },
+                    "journal_bytes": {
+                      "samples": [
+                        11061,
+                        11061,
+                        11061
+                      ],
+                      "min": 11061,
+                      "median": 11061,
+                      "max": 11061
+                    },
+                    "committed": {
+                      "samples": [
+                        1,
+                        1,
+                        1
+                      ],
+                      "min": 1,
+                      "median": 1,
+                      "max": 1
+                    }
+                  }
+                },
+                {
+                  "requested": 2,
+                  "outcomes": [
+                    "Completed",
+                    "Completed",
+                    "Completed"
+                  ],
+                  "first_constraints": [
+                    null,
+                    null,
+                    null
+                  ],
+                  "metrics": {
+                    "commit_api_ns": {
+                      "samples": [
+                        2372980,
+                        3382932,
+                        2322126
+                      ],
+                      "min": 2322126,
+                      "median": 2372980,
+                      "max": 3382932
+                    },
+                    "recovery_api_ns": {
+                      "samples": [
+                        5447788,
+                        5519858,
+                        5527090
+                      ],
+                      "min": 5447788,
+                      "median": 5519858,
+                      "max": 5527090
+                    },
+                    "journal_bytes": {
+                      "samples": [
+                        27601,
+                        27601,
+                        27601
+                      ],
+                      "min": 27601,
+                      "median": 27601,
+                      "max": 27601
+                    },
+                    "committed": {
+                      "samples": [
+                        2,
+                        2,
+                        2
+                      ],
+                      "min": 2,
+                      "median": 2,
+                      "max": 2
+                    }
+                  }
+                },
+                {
+                  "requested": 3,
+                  "outcomes": [
+                    "Limited",
+                    "Limited",
+                    "Limited"
+                  ],
+                  "first_constraints": [
+                    "Limit(\"journal bytes\")",
+                    "Limit(\"journal bytes\")",
+                    "Limit(\"journal bytes\")"
+                  ],
+                  "metrics": {
+                    "commit_api_ns": {
+                      "samples": [
+                        2690840,
+                        2946998,
+                        2985144
+                      ],
+                      "min": 2690840,
+                      "median": 2946998,
+                      "max": 2985144
+                    },
+                    "recovery_api_ns": {
+                      "samples": [
+                        5448108,
+                        5516629,
+                        5465824
+                      ],
+                      "min": 5448108,
+                      "median": 5465824,
+                      "max": 5516629
+                    },
+                    "journal_bytes": {
+                      "samples": [
+                        27601,
+                        27601,
+                        27601
+                      ],
+                      "min": 27601,
+                      "median": 27601,
+                      "max": 27601
+                    },
+                    "committed": {
+                      "samples": [
+                        2,
+                        2,
+                        2
+                      ],
+                      "min": 2,
+                      "median": 2,
+                      "max": 2
+                    }
+                  }
+                },
+                {
+                  "requested": 1440,
+                  "outcomes": [
+                    "PreflightRejected",
+                    "PreflightRejected",
+                    "PreflightRejected"
+                  ],
+                  "first_constraints": [
+                    "Format(\"strictly increasing nonempty plan\")",
+                    "Format(\"strictly increasing nonempty plan\")",
+                    "Format(\"strictly increasing nonempty plan\")"
+                  ],
+                  "metrics": {
+                    "commit_api_ns": null,
+                    "recovery_api_ns": null,
+                    "journal_bytes": null,
+                    "committed": {
+                      "samples": [
+                        0,
+                        0,
+                        0
+                      ],
+                      "min": 0,
+                      "median": 0,
+                      "max": 0
+                    }
+                  }
+                }
+              ],
+              "candidate_summary": [
+                {
+                  "requested": 1,
+                  "outcomes": [
+                    "Completed",
+                    "Completed",
+                    "Completed"
+                  ],
+                  "first_constraints": [
+                    null,
+                    null,
+                    null
+                  ],
+                  "metrics": {
+                    "commit_api_ns": {
+                      "samples": [
+                        1111770,
+                        1062858,
+                        1086964
+                      ],
+                      "min": 1062858,
+                      "median": 1086964,
+                      "max": 1111770
+                    },
+                    "recovery_api_ns": {
+                      "samples": [
+                        2833140,
+                        2833330,
+                        2820761
+                      ],
+                      "min": 2820761,
+                      "median": 2833140,
+                      "max": 2833330
+                    },
+                    "journal_bytes": {
+                      "samples": [
+                        11061,
+                        11061,
+                        11061
+                      ],
+                      "min": 11061,
+                      "median": 11061,
+                      "max": 11061
+                    },
+                    "committed": {
+                      "samples": [
+                        1,
+                        1,
+                        1
+                      ],
+                      "min": 1,
+                      "median": 1,
+                      "max": 1
+                    }
+                  }
+                },
+                {
+                  "requested": 2,
+                  "outcomes": [
+                    "Completed",
+                    "Completed",
+                    "Completed"
+                  ],
+                  "first_constraints": [
+                    null,
+                    null,
+                    null
+                  ],
+                  "metrics": {
+                    "commit_api_ns": {
+                      "samples": [
+                        2265412,
+                        2407472,
+                        2360643
+                      ],
+                      "min": 2265412,
+                      "median": 2360643,
+                      "max": 2407472
+                    },
+                    "recovery_api_ns": {
+                      "samples": [
+                        3304035,
+                        3255804,
+                        3244417
+                      ],
+                      "min": 3244417,
+                      "median": 3255804,
+                      "max": 3304035
+                    },
+                    "journal_bytes": {
+                      "samples": [
+                        27601,
+                        27601,
+                        27601
+                      ],
+                      "min": 27601,
+                      "median": 27601,
+                      "max": 27601
+                    },
+                    "committed": {
+                      "samples": [
+                        2,
+                        2,
+                        2
+                      ],
+                      "min": 2,
+                      "median": 2,
+                      "max": 2
+                    }
+                  }
+                },
+                {
+                  "requested": 3,
+                  "outcomes": [
+                    "Limited",
+                    "Limited",
+                    "Limited"
+                  ],
+                  "first_constraints": [
+                    "Limit(\"journal bytes\")",
+                    "Limit(\"journal bytes\")",
+                    "Limit(\"journal bytes\")"
+                  ],
+                  "metrics": {
+                    "commit_api_ns": {
+                      "samples": [
+                        2881592,
+                        2707846,
+                        2844387
+                      ],
+                      "min": 2707846,
+                      "median": 2844387,
+                      "max": 2881592
+                    },
+                    "recovery_api_ns": {
+                      "samples": [
+                        3241963,
+                        3220412,
+                        3185499
+                      ],
+                      "min": 3185499,
+                      "median": 3220412,
+                      "max": 3241963
+                    },
+                    "journal_bytes": {
+                      "samples": [
+                        27601,
+                        27601,
+                        27601
+                      ],
+                      "min": 27601,
+                      "median": 27601,
+                      "max": 27601
+                    },
+                    "committed": {
+                      "samples": [
+                        2,
+                        2,
+                        2
+                      ],
+                      "min": 2,
+                      "median": 2,
+                      "max": 2
+                    }
+                  }
+                },
+                {
+                  "requested": 1440,
+                  "outcomes": [
+                    "PreflightRejected",
+                    "PreflightRejected",
+                    "PreflightRejected"
+                  ],
+                  "first_constraints": [
+                    "Format(\"strictly increasing nonempty plan\")",
+                    "Format(\"strictly increasing nonempty plan\")",
+                    "Format(\"strictly increasing nonempty plan\")"
+                  ],
+                  "metrics": {
+                    "commit_api_ns": null,
+                    "recovery_api_ns": null,
+                    "journal_bytes": null,
+                    "committed": {
+                      "samples": [
+                        0,
+                        0,
+                        0
+                      ],
+                      "min": 0,
+                      "median": 0,
+                      "max": 0
+                    }
+                  }
+                }
+              ],
+              "cases": [
+                {
+                  "requested": 1,
+                  "repetition": 1,
+                  "outcome": "Completed",
+                  "committed": 1,
+                  "directory": "cases/n0001-r01/run",
+                  "first_constraint": null
+                },
+                {
+                  "requested": 1,
+                  "repetition": 2,
+                  "outcome": "Completed",
+                  "committed": 1,
+                  "directory": "cases/n0001-r02/run",
+                  "first_constraint": null
+                },
+                {
+                  "requested": 1,
+                  "repetition": 3,
+                  "outcome": "Completed",
+                  "committed": 1,
+                  "directory": "cases/n0001-r03/run",
+                  "first_constraint": null
+                },
+                {
+                  "requested": 2,
+                  "repetition": 1,
+                  "outcome": "Completed",
+                  "committed": 2,
+                  "directory": "cases/n0002-r01/run",
+                  "first_constraint": null
+                },
+                {
+                  "requested": 2,
+                  "repetition": 2,
+                  "outcome": "Completed",
+                  "committed": 2,
+                  "directory": "cases/n0002-r02/run",
+                  "first_constraint": null
+                },
+                {
+                  "requested": 2,
+                  "repetition": 3,
+                  "outcome": "Completed",
+                  "committed": 2,
+                  "directory": "cases/n0002-r03/run",
+                  "first_constraint": null
+                },
+                {
+                  "requested": 3,
+                  "repetition": 1,
+                  "outcome": "Limited",
+                  "committed": 2,
+                  "directory": "cases/n0003-r01/run",
+                  "first_constraint": "Limit(\"journal bytes\")"
+                },
+                {
+                  "requested": 3,
+                  "repetition": 2,
+                  "outcome": "Limited",
+                  "committed": 2,
+                  "directory": "cases/n0003-r02/run",
+                  "first_constraint": "Limit(\"journal bytes\")"
+                },
+                {
+                  "requested": 3,
+                  "repetition": 3,
+                  "outcome": "Limited",
+                  "committed": 2,
+                  "directory": "cases/n0003-r03/run",
+                  "first_constraint": "Limit(\"journal bytes\")"
+                },
+                {
+                  "requested": 1440,
+                  "repetition": 1,
+                  "outcome": "PreflightRejected",
+                  "committed": 0,
+                  "directory": "cases/n1440-r01/run",
+                  "first_constraint": "Format(\"strictly increasing nonempty plan\")"
+                },
+                {
+                  "requested": 1440,
+                  "repetition": 2,
+                  "outcome": "PreflightRejected",
+                  "committed": 0,
+                  "directory": "cases/n1440-r02/run",
+                  "first_constraint": "Format(\"strictly increasing nonempty plan\")"
+                },
+                {
+                  "requested": 1440,
+                  "repetition": 3,
+                  "outcome": "PreflightRejected",
+                  "committed": 0,
+                  "directory": "cases/n1440-r03/run",
+                  "first_constraint": "Format(\"strictly increasing nonempty plan\")"
+                }
+              ],
+              "full_run_files_equal": true,
+              "timing_slo": "not_asserted"
+            }
+          },
+          "artifact": "mdc-replay-1.98.0/exact-work"
+        }
+      ],
+      "timing_slo": "not_asserted"
+    }
+  },
+  "prior_frozen_controls_preserved": true,
+  "native_pair_archives_revalidated": true
+}

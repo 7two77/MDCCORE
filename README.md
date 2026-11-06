@@ -3,7 +3,7 @@
 История объединения исходной main и проверенного стека baseline → 008 → 009 → 010,
 сохранённые материалы и правила сопровождения описаны в
 [MDC-INTEGRATION-001](docs/MDC-INTEGRATION-v0.1.md).
-Актуальная [матрица v0.16](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.16.md)
+Актуальная [матрица v0.18](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.18.md)
 учитывает опубликованные hosted CI receipts. Подготовка первого Git commit
 сохранена в [MDC-OPS-001](docs/MDC-OPS-001.md).
 
@@ -11,9 +11,15 @@
 `Cargo.toml`, `src/`, `tests/`. Вложенный каталог `mdc_core/` сохранён как исходный
 материал для сравнения; он не подключён как workspace member.
 
-Последний пакет — **MDC-IMPL-016: воспроизводимые измерения replay**.
-[Контракт и проверки](docs/MDC-IMPL-016.md). Production-лимиты и форматы сохранены;
-полный день из 1440 решений по-прежнему не поддерживается.
+Последний пакет — **MDC-IMPL-017: устранение повторной работы при exact replay**.
+[Реализация и проверки](docs/MDC-IMPL-017.md),
+[контракт](docs/MDC-REPLAY-EXACT-WORK-CONTRACT-v0.1.md).
+Один захват snapshot используется для report/hash/bundle; open повторно использует
+проверенные SOURCE/MANIFEST. Все восстановления, пересчёты, форматы и лимиты сохранены.
+Полный день из 1440 решений по-прежнему не поддерживается.
+
+[MDC-IMPL-016: воспроизводимые измерения](docs/MDC-IMPL-016.md) и
+[post-merge проверка](docs/MDC-OPS-007-POST-CAPACITY-v0.1.md) сохранены.
 
 Восстановление replay — **MDC-IMPL-015**.
 [API, проверки и ограничения](docs/MDC-IMPL-015.md),
@@ -61,7 +67,7 @@ Portable identity добавлена в [MDC-IMPL-010](docs/MDC-IMPL-010.md).
 
 **MDC-E2E-CONFORMANCE-001: PASS для объявленного fixture MDC-SCALAR-001.**
 Все 12 assertions E2E-A01…A12 и 11 negative cases N01…N11 выполнены в двух
-раздельных OS-процессах. [Execution evidence](docs/evidence/mdc-e2e-conformance-001-impl-016.json)
+раздельных OS-процессах. [Execution evidence](docs/evidence/mdc-e2e-conformance-001-impl-017.json)
 содержит фактические результаты, canonical bytes, lineage и snapshots. PASS
 применим к записанным source fingerprint, toolchain, features и target; текущую
 применимость отчёта проверяет `check_gate_readiness.py`.

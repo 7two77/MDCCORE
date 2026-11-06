@@ -212,3 +212,172 @@ fn recovery_does_not_expose_a_prefix_before_successful_sealing() {
         );
     }
 }
+
+#[test]
+fn bundle_capture_matches_legacy_exports_across_cutoffs_and_profiles() {
+    use crate::{work_counts, LagAnchor, Limits, Symbol, TimestampUnit};
+    for (csv, unit) in [
+        (CSV, TimestampUnit::Milliseconds),
+        (
+            include_bytes!("../../../tests/fixtures/BTCUSDT-1m-2025-01-01-first3.csv").as_slice(),
+            TimestampUnit::Microseconds,
+        ),
+    ] {
+        for symbol in [Symbol::BtcUsdt, Symbol::EthUsdt] {
+            let profile = Profile::new(symbol, unit, 100, LagAnchor::ReportedClose).unwrap();
+            let dataset = Dataset::from_csv(csv, profile, Limits::default()).unwrap();
+            let a = dataset.evidence()[0].available_at();
+            let b = dataset.evidence()[1].available_at();
+            let manifest =
+                RunManifest::new(csv, profile, vec![a - 1, a, b - 1, b], RunLimits::default())
+                    .unwrap();
+            for index in 1..=4 {
+                work_counts::take();
+                let view = dataset
+                    .decision(manifest.cutoffs()[index as usize - 1])
+                    .unwrap();
+                let report = view.report_json().unwrap() + "\n";
+                let snapshot = view.snapshot_bytes().unwrap();
+                assert_eq!(work_counts::take().exports, 3);
+                let bundle = DecisionBundle::build(&dataset, &manifest, index).unwrap();
+                let observed = work_counts::take();
+                assert_eq!(observed.exports, 1);
+                assert_eq!(observed.restores, 1);
+                assert_eq!(bundle.report(), report.as_bytes());
+                assert_eq!(bundle.snapshot(), snapshot);
+                // Repeated independent requests must not consume/replace a cached view.
+                assert_eq!(
+                    DecisionBundle::build(&dataset, &manifest, index).unwrap(),
+                    bundle
+                );
+            }
+        }
+    }
+}
+
+#[test]
+fn open_prepares_once_but_restores_and_recomputes_every_bundle() {
+    use crate::work_counts;
+    let t = Temp::new();
+    let manifest = m();
+    let mut s = RunStore::create(t.run(), CSV, manifest.clone()).unwrap();
+    let saved: Vec<_> = (1..=2).map(|i| s.step(i).unwrap()).collect();
+    drop(s);
+    work_counts::take();
+    let mut s = RunStore::open(t.run(), Some(&manifest)).unwrap();
+    assert_eq!(
+        work_counts::take(),
+        work_counts::Counts {
+            exports: 2,
+            parses: 1,
+            manifests: 1,
+            restores: 2
+        }
+    );
+    for (i, bundle) in saved.iter().enumerate() {
+        assert_eq!(s.lookup(i as u64 + 1).unwrap(), Some(bundle));
+    }
+    assert_eq!(s.step(1).unwrap(), saved[0]);
+    assert_eq!(work_counts::take(), work_counts::Counts::default());
+    assert_eq!(s.next_index().unwrap(), Some(3));
+    drop(s);
+    work_counts::take();
+    let decoded = validate_prefix(
+        &fs::read(t.run().join("MANIFEST")).unwrap(),
+        CSV,
+        &fs::read(t.run().join("HEAD")).unwrap(),
+        &fs::read(t.run().join("JOURNAL")).unwrap(),
+    )
+    .unwrap();
+    assert_eq!(decoded, saved);
+    assert_eq!(
+        work_counts::take(),
+        work_counts::Counts {
+            exports: 2,
+            parses: 1,
+            manifests: 1,
+            restores: 2
+        }
+    );
+}
+
+#[test]
+fn preparation_preserves_source_and_expected_manifest_error_precedence() {
+    use crate::work_counts;
+    let t = Temp::new();
+    let manifest = m();
+    let s = RunStore::create(t.run(), CSV, manifest.clone()).unwrap();
+    drop(s);
+    let before_head = fs::read(t.run().join("HEAD")).unwrap();
+    let before_journal = fs::read(t.run().join("JOURNAL")).unwrap();
+    let mut wrong_source = CSV.to_vec();
+    wrong_source[0] ^= 1;
+    let bytes = manifest.encode().unwrap();
+    work_counts::take();
+    assert!(matches!(
+        validate_prefix(&bytes, &wrong_source, b"bad head", b"bad journal"),
+        Err(RecoveryError::Integrity("captured source"))
+    ));
+    assert_eq!(
+        work_counts::take(),
+        work_counts::Counts {
+            manifests: 1,
+            ..Default::default()
+        }
+    );
+    fs::write(t.run().join("SOURCE"), &wrong_source).unwrap();
+    let other = RunManifest::new(
+        CSV,
+        manifest.profile(),
+        vec![manifest.cutoffs()[0]],
+        manifest.limits(),
+    )
+    .unwrap();
+    work_counts::take();
+    assert!(matches!(
+        RunStore::open(t.run(), Some(&other)),
+        Err(RecoveryError::ExpectedManifest)
+    ));
+    assert_eq!(
+        work_counts::take(),
+        work_counts::Counts {
+            manifests: 1,
+            ..Default::default()
+        }
+    );
+    assert_eq!(fs::read(t.run().join("HEAD")).unwrap(), before_head);
+    assert_eq!(fs::read(t.run().join("JOURNAL")).unwrap(), before_journal);
+}
+
+#[test]
+fn captured_blob_limits_still_reject_before_restore_and_journal_mutation() {
+    use crate::work_counts;
+    for snapshot_limit in [false, true] {
+        let t = Temp::new();
+        let template = m();
+        let mut limits = template.limits();
+        if snapshot_limit {
+            limits.max_snapshot_bytes = 1;
+        } else {
+            limits.max_report_bytes = 1;
+        }
+        let manifest =
+            RunManifest::new(CSV, template.profile(), template.cutoffs().to_vec(), limits).unwrap();
+        let mut s = RunStore::create(t.run(), CSV, manifest).unwrap();
+        let before = ["HEAD", "JOURNAL"].map(|n| fs::read(t.run().join(n)).unwrap());
+        work_counts::take();
+        assert!(matches!(
+            s.step(1),
+            Err(RecoveryError::Limit("decision blobs"))
+        ));
+        let counts = work_counts::take();
+        assert_eq!(counts.exports, 1);
+        assert_eq!(counts.restores, 0);
+        assert_eq!(s.durable_count().unwrap(), 0);
+        assert!(!s.recovery_required());
+        assert_eq!(
+            ["HEAD", "JOURNAL"].map(|n| fs::read(t.run().join(n)).unwrap()),
+            before
+        );
+    }
+}

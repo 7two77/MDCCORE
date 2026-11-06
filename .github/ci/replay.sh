@@ -43,5 +43,8 @@ run_check capacity-limited python3 -B scripts/run_capacity.py --synthetic-day --
 export MDC_CAPACITY_REPORT_DIR="$MDC_CI_REPORT_DIR/capacity-default"
 export MDC_CAPACITY_LIMIT_REPORT_DIR="$MDC_CI_REPORT_DIR/capacity-limited"
 run_check capacity-validator-tests python3 -B -m unittest discover -s tests -p test_capacity_report.py
+run_check exact-work python3 -B scripts/exact_work.py run --synthetic-day --source-label exact-work-smoke --journal-budget-bytes 32768 --output "$MDC_CI_REPORT_DIR/exact-work"
+export MDC_EXACT_WORK_DIR="$MDC_CI_REPORT_DIR/exact-work"
+run_check exact-work-validator-tests python3 -B -m unittest discover -s tests -p test_exact_work.py
 MDC_CI_STEP=complete
 printf 'MDC_BINANCE_REPLAY_VERIFY=PASS reports=%s\n' "$MDC_CI_REPORT_DIR"

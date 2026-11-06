@@ -1,6 +1,8 @@
 //! Bounded Binance Spot 1m final-bar replay with explicitly MODELED availability.
 mod core_view;
 pub mod recovery;
+#[cfg(test)]
+mod work_counts;
 pub use core_view::{AdmittedBar, DecisionView, Field};
 use mdc_core::{
     contract::registry::RegistryError,
@@ -402,6 +404,8 @@ pub struct Dataset {
 }
 impl Dataset {
     pub fn from_csv(bytes: &[u8], profile: Profile, limits: Limits) -> Result<Self> {
+        #[cfg(test)]
+        work_counts::bump(|c| c.parses += 1);
         if bytes.len() > limits.max_input_bytes {
             return Err(Error::Limit("input bytes"));
         }

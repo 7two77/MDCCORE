@@ -209,3 +209,35 @@ The validator reads actual bounded v1 frames and compares full files between
 repetitions and toolchains. CPU/timing differences are reported, not failed against
 an invented performance threshold. Re-run from a new output directory after any
 fingerprinted source or CI configuration change.
+
+
+## Exact work reduction (MDC-IMPL-017)
+
+Bundle construction uses a private owned capture: production decision construction
+exports once, then the same bytes supply report/hash/bundle. Public DecisionView
+methods keep their previous owned-return behavior. The view is consumed before
+restoration; no long-lived snapshot cache or caller-supplied digest API is added.
+RunStore open privately binds decoded MANIFEST to captured SOURCE once. Public raw
+prefix validation still prepares and checks its own inputs completely, and every
+saved bundle is still restored/recomputed with the original bounds and sync order.
+
+The following command compares the pinned merged 016 source with the current
+source:
+
+```bash
+python3 -B scripts/exact_work.py run --synthetic-day --journal-budget-bytes 32768 \
+  --output /path/to/new-pair
+```
+
+Each validator executes against its own checked source fingerprint. The
+result retains separate baseline/candidate ZIPs, raw logs/binaries/runs and a third
+compatibility ZIP: a real old CLI commits index 1; the current CLI retries it and
+continues through index 3; full files match a new uninterrupted run. Public APIs,
+wire format, dependencies and default limits remain unchanged.
+
+Regular CI checks the small paired limit probe. The manual capacity workflow's
+`compare_016` option performs paired studies using the selected dataset/points.
+Variants run sequentially, with order reversed across toolchains; cache state is
+uncontrolled and the samples are grouped, not randomized. Reports retain all
+samples, source bindings and first constraints. A timing benefit must be measured;
+mechanically reduced work does not itself imply an SLO or larger daily capacity.
