@@ -38,7 +38,7 @@ its explicitly selected input. No fingerprint check is disabled to compare A/B.
 | EW08 | Existing 24 SIGKILL points and all fencing, tail and interrupted recovery checks |
 | EW09 | Private constructors, immutable inputs, profile/cutoff isolation tests; no unchecked public hash API |
 | EW10 | Paired 32768-byte probe; full default-budget official series is reported separately when executed |
-| EW11 | Two fingerprint domains, full files and sample summaries; ten additional negative pair-validator tests |
+| EW11 | Two fingerprint domains, full files and sample summaries; eleven Python checks for pair evidence and Git-ignored baseline build placement |
 | EW12 | Native Rust/profile/core/store/replay and cross-target CI matrices; Format/Clippy/examples/E2E |
 | EW13 | Explicit protected-source comparison and unchanged root/store/nested/lockfiles/wire controls |
 | EW14 | Current matrix/contract and explicit daily-capacity/SLO boundaries |

@@ -5,10 +5,12 @@ import shutil
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
+import subprocess
 import zipfile
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
-from exact_work import baseline,check_pair
+from exact_work import baseline,check_pair,baseline_target
 from capacity_report import read_json,sha
 
 
@@ -69,3 +71,12 @@ class ExactWorkTests(unittest.TestCase):
         with zipfile.ZipFile(path,'w',compression=zipfile.ZIP_DEFLATED) as z:
             for n,data in entries:z.writestr(n,data+b'x' if n=='source.csv' else data)
         self.receipt['archives']['candidate']['sha256']=sha(path);self.reject()
+
+
+class BuildLocationTests(unittest.TestCase):
+    def test_relative_ci_baseline_build_is_git_ignored(self):
+        with patch.dict(os.environ, {'CARGO_TARGET_DIR':'target'}):
+            location=baseline_target()
+            self.assertTrue(location.is_relative_to(ROOT/'target'))
+            checked=subprocess.run(['git','check-ignore','--quiet',str(location/'release/mdc-replay-run')],cwd=ROOT)
+            self.assertEqual(checked.returncode,0)

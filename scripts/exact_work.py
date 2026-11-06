@@ -22,6 +22,16 @@ def git(*args):
     return subprocess.check_output(['git', *args], cwd=ROOT, text=True).strip()
 
 
+def candidate_target():
+    # Cargo resolves a relative target directory from the source checkout.
+    return (ROOT / os.environ.get('CARGO_TARGET_DIR','target')).resolve()
+
+
+def baseline_target():
+    # Stay inside the ignored target tree; never create untracked target-baseline.
+    return candidate_target() / 'exact-work-baseline'
+
+
 @contextlib.contextmanager
 def baseline():
     try:
@@ -91,7 +101,7 @@ def compatibility(base, b, out):
     plan=','.join(map(str,create['cutoffs'][:3]));profile=report['profile'];commands=[]
     for name,source in [('old',base),('new',ROOT)]:
         env=os.environ.copy();env.update(CARGO_INCREMENTAL='0',CARGO_PROFILE_RELEASE_DEBUG='0',CARGO_PROFILE_RELEASE_OPT_LEVEL='3')
-        target=str(Path(os.environ.get('CARGO_TARGET_DIR',ROOT/'target')).resolve())+('-baseline' if name=='old' else '')
+        target=str(baseline_target() if name=='old' else candidate_target())
         env['CARGO_TARGET_DIR']=target
         cmd=['cargo','build','--locked','--offline','--release','--manifest-path',str(source/'adapters/mdc_replay/Cargo.toml'),'--bin','mdc-replay-run']
         r=subprocess.run(cmd,cwd=source,env=env,capture_output=True)
@@ -186,7 +196,7 @@ def run(args):
             for name in order:
                 source=old if name=='baseline' else ROOT
                 env=os.environ.copy()
-                if name=='baseline':env['CARGO_TARGET_DIR']=str(Path(os.environ.get('CARGO_TARGET_DIR',ROOT/'target')).resolve())+'-baseline'
+                if name=='baseline':env['CARGO_TARGET_DIR']=str(baseline_target())
                 subprocess.run([sys.executable,'-B',str(source/'scripts/run_capacity.py'),*common,'--output',str(folders[name])],cwd=source,env=env,check=True)
             comparison=compare_folders(old,folders['baseline'],folders['candidate'])
             compatibility(old,folders['candidate'],folders['compatibility'])

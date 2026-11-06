@@ -6,7 +6,7 @@
   "acceptance": "PASS",
   "harness_status": "PASS",
   "metadata": {
-    "implementation_source_sha256": "029c7db7926468e4ac865802cc644dd29fa97ebaa10a61e8979672ddd62dadf6",
+    "implementation_source_sha256": "e6d277fc9ff80465cd401dd55671efbad24ab244194d30d4ad2085d59435931a",
     "source_files": {
       "Cargo.lock": "db212ada28cd71fe46f25450b036900db1ba8cacaa224f6f5b11b0364cd02aa4",
       "Cargo.toml": "c6e3c003ddff0ed5716ab252c94bbf23fb0155ccd862f7d278c331a47698cf0e",
@@ -67,7 +67,7 @@
       "scripts/check_snapshot_roundtrip.py": "715af4a5e6e2b9c19fb1a3ebc209307af5bec10de10fc33e3692d98622630c8b",
       "scripts/ci_metadata.py": "1a461a3ec6fa4a66fb127da4d085d00777681fee1e51b7240bd5843310a76c68",
       "scripts/e2e_report.py": "48f7a103cbe8ecbbeee04a1fff55b764dcf91034fff4345a933cf0ab3ccaa495",
-      "scripts/exact_work.py": "036fdcfa925eb8172017d6ab2eeb17895a7189bfb5f55723c668d80f1b47f7fa",
+      "scripts/exact_work.py": "b48ec66374d8a5478929cecef44cf1d59868ee80a927def6049f0e28b7befe12",
       "scripts/fetch_capacity_source.py": "f75ea43cd2796adbf3aa6eb49a1b657857d844c327d1719c0652e5ca74ee2bc1",
       "scripts/replay_run_report.py": "f9af6aa19165e0f2c7490cb39733ebbb11d6d38701d43630d23b1844a4d47ea0",
       "scripts/run_capacity.py": "195a92815debfab5f719267010b17a6e00af3817c51a0eb4688cf5b66edf135c",
@@ -135,7 +135,7 @@
       "tests/test_binance_replay.py": "dcedf4a1c2cf7039b98d47288516229485d67e6a145dc4b91abf3f9b2a7a9832",
       "tests/test_capacity_report.py": "84a5f808d7f2ebbe3389f13a4c64eee6a8991ff8fc95cbeb8ffed0bfa3c8f456",
       "tests/test_e2e_report.py": "403469fe28187566395abe60c997926322296a0499425e24d1a26019c3ec9889",
-      "tests/test_exact_work.py": "0a4e0246aff1f12e4fa8a2bf6efb5398d03d187be86f983edfc3c07ab83f432a",
+      "tests/test_exact_work.py": "dffa62a1fa69db282aba7baa9830b8ee7a009df061932db89124c66b67b28c3f",
       "tests/test_portable_identity.py": "d431c3009d85a015b0ac4fb8bf650fd92be5623fe6cd0adf8b755ea432f94134",
       "tests/test_replay_recovery_report.py": "6f53a166255c4e10e6f9123b223295eddc0070063632cfabf45527c14fa7d143",
       "tests/test_snapshot_roundtrip.py": "e5cb053b6bb5fb2c4c7ee1b4e489ec6b815e9762b26d5239463f94e89ae2c90c",
@@ -163,11 +163,11 @@
   },
   "processes": [
     {
-      "launcher_pid": 20654,
+      "launcher_pid": 27412,
       "exit_code": 0,
       "report": {
         "schema_version": 1,
-        "process_id": 20654,
+        "process_id": 27412,
         "fixture_id": "MDC-E2E-CONFORMANCE-001",
         "fixture_version": 1,
         "profile": "MDC-SCALAR-001",
@@ -47072,11 +47072,11 @@
       "timed_out": false
     },
     {
-      "launcher_pid": 20659,
+      "launcher_pid": 27461,
       "exit_code": 0,
       "report": {
         "schema_version": 1,
-        "process_id": 20659,
+        "process_id": 27461,
         "fixture_id": "MDC-E2E-CONFORMANCE-001",
         "fixture_version": 1,
         "profile": "MDC-SCALAR-001",
