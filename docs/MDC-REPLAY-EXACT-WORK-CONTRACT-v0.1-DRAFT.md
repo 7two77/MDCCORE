@@ -1,7 +1,9 @@
 # MDC-REPLAY-EXACT-WORK-001 — Proposed work reduction v0.1
 
 2026-11-06. Proposed MDC-IMPL-017 after verified MDC-IMPL-016.
-Status: CONTRACT DRAFT / RUNTIME NOT IMPLEMENTED.
+Historical proposal. Implemented in [MDC-IMPL-017](MDC-IMPL-017.md);
+[current contract](MDC-REPLAY-EXACT-WORK-CONTRACT-v0.1.md).
+The original pre-implementation scope follows.
 
 ## Selected scope
 

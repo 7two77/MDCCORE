@@ -30,5 +30,9 @@ case "${MDC_CAPACITY_DATASET:-synthetic-1440}" in
   *) printf 'Unsupported capacity dataset\n' >&2; exit 2 ;;
 esac
 MDC_CI_STEP=study
-python3 -B scripts/run_capacity.py "${MDC_CAPACITY_INPUT[@]}" --points "${MDC_CAPACITY_POINTS:-1,16,32,64,128,256,1440}" --repetitions "${MDC_CAPACITY_REPETITIONS:-3}" --output "$MDC_CI_REPORT_DIR/study"
+if [[ "${MDC_CAPACITY_COMPARE_016:-false}" == true ]]; then
+  python3 -B scripts/exact_work.py run "${MDC_CAPACITY_INPUT[@]}" --points "${MDC_CAPACITY_POINTS:-1,16,32,64,128,256,1440}" --repetitions "${MDC_CAPACITY_REPETITIONS:-3}" --output "$MDC_CI_REPORT_DIR/exact-work"
+else
+  python3 -B scripts/run_capacity.py "${MDC_CAPACITY_INPUT[@]}" --points "${MDC_CAPACITY_POINTS:-1,16,32,64,128,256,1440}" --repetitions "${MDC_CAPACITY_REPETITIONS:-3}" --output "$MDC_CI_REPORT_DIR/study"
+fi
 MDC_CI_STEP=complete

@@ -202,7 +202,7 @@ impl DecisionView {
             .map(|s| s.criteria_result())
     }
     pub fn snapshot_bytes(&self) -> Result<Vec<u8>> {
-        Ok(self.session.export(SnapshotLimits::default())?)
+        export_session(&self.session)
     }
     pub fn snapshot_sha256(&self) -> Result<String> {
         Ok(digest(&self.snapshot_bytes()?))
@@ -210,6 +210,10 @@ impl DecisionView {
     /// Fields are fixed enums, numeric values or hex digests; no unescaped caller
     /// string is interpolated into this machine report.
     pub fn report_json(&self) -> Result<String> {
+        Ok(self.report_with_digest(&self.snapshot_sha256()?))
+    }
+    // Only callers in this module supply the hash of their own captured bytes.
+    fn report_with_digest(&self, snapshot_digest: &str) -> String {
         use std::fmt::Write;
         let result = match self.technical_result() {
             Some(ConformanceResult::Pass) => "PASS",
@@ -224,11 +228,30 @@ impl DecisionView {
             }
             write!(&mut out,"{{\"evidence_id\":\"{}\",\"event_us\":{},\"available_us\":{},\"evidence_basis_hex\":\"{}\",\"ohlcv_e8\":[{},{},{},{},{}]}}",e.id,e.event_us,e.available_us,hex(&e.canonical),e.payload.open(),e.payload.high(),e.payload.low(),e.payload.close(),e.payload.volume()).expect("String formatting");
         }
-        write!(&mut out,"],\"core_operations\":{},\"technical_confirmation\":\"{}\",\"core_snapshot_sha256\":\"{}\"}}",self.session.operation_count(),result,self.snapshot_sha256()?).expect("String formatting");
-        Ok(out)
+        write!(&mut out,"],\"core_operations\":{},\"technical_confirmation\":\"{}\",\"core_snapshot_sha256\":\"{}\"}}",self.session.operation_count(),result,snapshot_digest).expect("String formatting");
+        out
     }
 }
 pub(crate) fn build(dataset: &Dataset, cutoff: u64) -> Result<DecisionView> {
+    Ok(capture(dataset, cutoff)?.view)
+}
+fn export_session(session: &SnapshotSession) -> Result<Vec<u8>> {
+    #[cfg(test)]
+    crate::work_counts::bump(|c| c.exports += 1);
+    Ok(session.export(SnapshotLimits::default())?)
+}
+// No caller can assemble an unrelated view/snapshot pair or inject a digest.
+pub(crate) struct CapturedDecision {
+    view: DecisionView,
+    snapshot: Vec<u8>,
+}
+impl CapturedDecision {
+    pub(crate) fn into_parts(self) -> (String, String, Vec<u8>) {
+        let report = self.view.report_with_digest(&digest(&self.snapshot));
+        (self.view.id, report, self.snapshot)
+    }
+}
+pub(crate) fn capture(dataset: &Dataset, cutoff: u64) -> Result<CapturedDecision> {
     let visible = dataset.eligible(cutoff)?;
     let operations = if visible.is_empty() {
         0
@@ -296,8 +319,8 @@ pub(crate) fn build(dataset: &Dataset, cutoff: u64) -> Result<DecisionView> {
     } else {
         None
     };
-    session.export(SnapshotLimits::default())?;
-    Ok(DecisionView {
+    let snapshot = export_session(&session)?;
+    let view = DecisionView {
         profile: dataset.profile,
         cutoff,
         raw_hash: dataset.raw_hash.clone(),
@@ -308,5 +331,6 @@ pub(crate) fn build(dataset: &Dataset, cutoff: u64) -> Result<DecisionView> {
         technical_state,
         session,
         id: digest(&key),
-    })
+    };
+    Ok(CapturedDecision { view, snapshot })
 }

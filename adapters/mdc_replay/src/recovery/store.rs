@@ -175,15 +175,15 @@ impl RunStore {
         let dir = dir.as_ref().canonicalize()?;
         let guard = lock(&dir, false)?;
         let bytes = read(&dir, "MANIFEST", RunLimits::default().max_manifest_bytes)?;
-        let manifest = RunManifest::decode(&bytes)?;
-        if expected.is_some_and(|m| m != &manifest) {
+        let prepared = PreparedManifest::decode(&bytes)?;
+        if expected.is_some_and(|m| m != &prepared.manifest) {
             return Err(RecoveryError::ExpectedManifest);
         }
         let source = read(&dir, "SOURCE", adapter_limits().max_input_bytes)?;
-        let dataset = manifest.dataset(&source)?;
+        let prepared = prepared.bind_source(&source)?;
         let head_bytes = read(&dir, "HEAD", 512)?;
         let head = Head::decode(&head_bytes)?;
-        if head.offset > manifest.limits.max_journal_bytes as u64 {
+        if head.offset > prepared.manifest.limits.max_journal_bytes as u64 {
             return Err(RecoveryError::Limit("HEAD offset"));
         }
         let mut journal = file(&dir.join("JOURNAL"), true, false)?;
@@ -192,7 +192,7 @@ impl RunStore {
         }
         let mut prefix = Vec::new();
         (&mut journal).take(head.offset).read_to_end(&mut prefix)?;
-        let bundles = validate_prefix(&bytes, &source, &head_bytes, &prefix)?;
+        let bundles = prepared.validate_prefix(&head_bytes, &prefix)?;
         let repair = (|| {
             let had_tail = journal.metadata()?.len() != head.offset;
             if had_tail {
@@ -222,8 +222,8 @@ impl RunStore {
             dir,
             _lock: guard,
             journal,
-            manifest,
-            dataset,
+            manifest: prepared.manifest,
+            dataset: prepared.dataset,
             head,
             bundles,
             poisoned: false,
