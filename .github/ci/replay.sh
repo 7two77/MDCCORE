@@ -46,5 +46,8 @@ run_check capacity-validator-tests python3 -B -m unittest discover -s tests -p t
 run_check exact-work python3 -B scripts/exact_work.py run --synthetic-day --source-label exact-work-smoke --journal-budget-bytes 32768 --output "$MDC_CI_REPORT_DIR/exact-work"
 export MDC_EXACT_WORK_DIR="$MDC_CI_REPORT_DIR/exact-work"
 run_check exact-work-validator-tests python3 -B -m unittest discover -s tests -p test_exact_work.py
+run_check storage-v2 python3 -B scripts/run_storage_v2.py run --synthetic-day --output "$MDC_CI_REPORT_DIR/storage-v2"
+export MDC_STORAGE_V2_DIR="$MDC_CI_REPORT_DIR/storage-v2"
+run_check storage-v2-validator-tests python3 -B -m unittest discover -s tests -p test_storage_v2.py
 MDC_CI_STEP=complete
 printf 'MDC_BINANCE_REPLAY_VERIFY=PASS reports=%s\n' "$MDC_CI_REPORT_DIR"

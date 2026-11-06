@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.."
+if [[ "${MDC_CAPACITY_STORAGE_V2:-false}" == true ]]; then
+  if [[ "${MDC_CAPACITY_COMPARE_016:-false}" == true ]]; then
+    printf 'Select exactly one comparison mode\n' >&2; exit 2
+  fi
+  export MDC_STORAGE_DATASET=${MDC_CAPACITY_DATASET:-synthetic-1440}
+  export MDC_STORAGE_POINTS=${MDC_CAPACITY_POINTS:-1,64,256,1440}
+  exec bash .github/ci/storage.sh
+fi
 export MDC_CI_PROFILE=capacity-study
 export MDC_CI_REPORT_DIR=${MDC_CI_REPORT_DIR:-ci-evidence}
 mkdir -p "$MDC_CI_REPORT_DIR"

@@ -1,3 +1,5 @@
+> Historical proposal. Superseded by the [implemented v2 contract](MDC-REPLAY-STORAGE-V2-CONTRACT-v0.1.md).
+
 # MDC-REPLAY-STORAGE-002 — Proposed bounded lossless storage v0.1
 
 2026-11-06. Proposed MDC-IMPL-018 after merged 017 main `ac364f8`.

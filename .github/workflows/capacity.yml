@@ -12,6 +12,10 @@ on:
         description: Compare current implementation with pinned verified 016
         type: boolean
         default: false
+      compare_storage_v2:
+        description: Compare unchanged v1 with explicit lossless storage v2
+        type: boolean
+        default: false
       points:
         description: Increasing unique requested decision counts (1..4096)
         type: string
@@ -38,6 +42,7 @@ jobs:
       CARGO_TARGET_DIR: target
       CARGO_TERM_COLOR: never
       MDC_CI_REPORT_DIR: ci-evidence
+      MDC_CAPACITY_STORAGE_V2: ${{ inputs.compare_storage_v2 }}
       MDC_CAPACITY_COMPARE_016: ${{ inputs.compare_016 }}
       MDC_CAPACITY_DATASET: ${{ inputs.dataset }}
       MDC_CAPACITY_POINTS: ${{ inputs.points }}
@@ -73,10 +78,12 @@ jobs:
         with:
           pattern: mdc-capacity-study-*
           path: capacity-artifacts
-      - if: ${{ !inputs.compare_016 }}
+      - if: ${{ !inputs.compare_016 && !inputs.compare_storage_v2 }}
         run: python3 -B scripts/check_capacity.py --compare-root capacity-artifacts --study --output capacity-study-comparison.json
-      - if: ${{ inputs.compare_016 }}
+      - if: ${{ inputs.compare_016 && !inputs.compare_storage_v2 }}
         run: python3 -B scripts/exact_work.py compare-ci --root capacity-artifacts --study --output capacity-study-comparison.json
+      - if: ${{ inputs.compare_storage_v2 }}
+        run: python3 -B scripts/run_storage_v2.py compare --root capacity-artifacts --output capacity-study-comparison.json
       - uses: actions/upload-artifact@v4
         with:
           name: mdc-capacity-study-comparison

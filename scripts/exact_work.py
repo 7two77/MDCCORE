@@ -8,6 +8,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import tomllib
 import zipfile
 from capacity_report import read_json, sha, validate, same_files, run_files
 from ci_metadata import ci_fingerprints
@@ -80,6 +81,22 @@ def compare_folders(base, a, b):
     current_fp,current_files=source_fingerprint(ROOT)
     # Core/store/codec/defaults/old tests remain exact; permitted runtime files are explicit.
     allowed={'adapters/mdc_replay/src/'+n for n in ('lib.rs','core_view.rs','recovery.rs','recovery/store.rs','recovery/store/tests.rs','work_counts.rs')}
+    old_manifest=tomllib.loads((base/'adapters/mdc_replay/Cargo.toml').read_text())
+    new_manifest=tomllib.loads((ROOT/'adapters/mdc_replay/Cargo.toml').read_text())
+    codec=new_manifest['dependencies'].pop('miniz_oxide',None)
+    if codec!={'version':'=0.9.1','default-features':False,'features':['with-alloc']} or old_manifest!=new_manifest:
+        raise ValueError('host dependency change exceeds pinned v2 codec')
+    old_lock=tomllib.loads((base/'adapters/mdc_replay/Cargo.lock').read_text())
+    new_lock=tomllib.loads((ROOT/'adapters/mdc_replay/Cargo.lock').read_text())
+    old_packages={p['name']:p for p in old_lock['package']}
+    new_packages={p['name']:p for p in new_lock['package']}
+    for name in ('miniz_oxide','adler2'):
+        package=new_packages.pop(name)
+        if package['version']!={'miniz_oxide':'0.9.1','adler2':'2.0.1'}[name] or not package.get('checksum'):
+            raise ValueError('unbound codec package')
+    new_packages['mdc_replay']['dependencies'].remove('miniz_oxide')
+    if old_packages!=new_packages:raise ValueError('other locked packages changed')
+    allowed.update({'adapters/mdc_replay/Cargo.toml','adapters/mdc_replay/Cargo.lock'})
     old_files=left['build']['source_files']
     for path, digest in old_files.items():
         if path in allowed or path.startswith('scripts/') or path=='adapters/mdc_replay/README.md': continue

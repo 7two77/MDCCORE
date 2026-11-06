@@ -2,6 +2,7 @@
 use crate::{Dataset, LagAnchor, Limits, Profile, Symbol, TimestampUnit};
 use mdc_core::pipeline::{SnapshotLimits, SnapshotSession};
 use sha2::{Digest, Sha256};
+pub mod v2;
 
 #[cfg(target_os = "linux")]
 mod store;
