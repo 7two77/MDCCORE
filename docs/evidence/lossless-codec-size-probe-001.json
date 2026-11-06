@@ -1,0 +1,821 @@
+{
+  "kind": "offline codec size probe; not a storage implementation or timing benchmark",
+  "date": "2026-11-06",
+  "input": {
+    "outer_zip_sha256": "22842d4858b165f67340508cdd5276435f67048c23fe378303481bc0ac9a0f25",
+    "inner_member": "exact-work/candidate.zip",
+    "journal_member": "cases/n0256-r01/run/JOURNAL",
+    "source_sha256": "eb9a1b452184ea664e86e87f9cba783639163578d0bed9ff2073d25d897dbe1b",
+    "runtime": "MDC-IMPL-017 / 3b884a0",
+    "records": 153,
+    "journal_bytes": 67091458
+  },
+  "method": {
+    "codec": "RFC1950 zlib / DEFLATE, one independent stream per blob, raw fallback if not shorter",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "zlib_build": "1.3.2",
+    "zlib_runtime": "1.3.2",
+    "levels": [
+      1,
+      6,
+      9
+    ],
+    "all_decoded_bytes_checked": true,
+    "not_included": "new frame/manifest/HEAD overhead; Rust encoder output and performance are unverified"
+  },
+  "raw": {
+    "report_bytes": 6179739,
+    "snapshot_bytes": 60873345,
+    "payload_bytes": 67053084
+  },
+  "compressed_payloads": {
+    "1": {
+      "report_bytes": 1965821,
+      "snapshot_bytes": 10529724,
+      "raw_fallback_report": 0,
+      "raw_fallback_snapshot": 0,
+      "selected_payload_bytes": 12495545
+    },
+    "6": {
+      "report_bytes": 1699578,
+      "snapshot_bytes": 9749619,
+      "raw_fallback_report": 0,
+      "raw_fallback_snapshot": 0,
+      "selected_payload_bytes": 11449197
+    },
+    "9": {
+      "report_bytes": 1680925,
+      "snapshot_bytes": 9675058,
+      "raw_fallback_report": 0,
+      "raw_fallback_snapshot": 0,
+      "selected_payload_bytes": 11355983
+    }
+  },
+  "records": [
+    {
+      "index": 1,
+      "report_bytes": 1123,
+      "snapshot_bytes": 9581
+    },
+    {
+      "index": 2,
+      "report_bytes": 1634,
+      "snapshot_bytes": 14690
+    },
+    {
+      "index": 3,
+      "report_bytes": 2151,
+      "snapshot_bytes": 19799
+    },
+    {
+      "index": 4,
+      "report_bytes": 2668,
+      "snapshot_bytes": 24908
+    },
+    {
+      "index": 5,
+      "report_bytes": 3185,
+      "snapshot_bytes": 30017
+    },
+    {
+      "index": 6,
+      "report_bytes": 3702,
+      "snapshot_bytes": 35126
+    },
+    {
+      "index": 7,
+      "report_bytes": 4219,
+      "snapshot_bytes": 40235
+    },
+    {
+      "index": 8,
+      "report_bytes": 4736,
+      "snapshot_bytes": 45344
+    },
+    {
+      "index": 9,
+      "report_bytes": 5254,
+      "snapshot_bytes": 50453
+    },
+    {
+      "index": 10,
+      "report_bytes": 5771,
+      "snapshot_bytes": 55562
+    },
+    {
+      "index": 11,
+      "report_bytes": 6288,
+      "snapshot_bytes": 60671
+    },
+    {
+      "index": 12,
+      "report_bytes": 6805,
+      "snapshot_bytes": 65780
+    },
+    {
+      "index": 13,
+      "report_bytes": 7322,
+      "snapshot_bytes": 70889
+    },
+    {
+      "index": 14,
+      "report_bytes": 7839,
+      "snapshot_bytes": 75998
+    },
+    {
+      "index": 15,
+      "report_bytes": 8356,
+      "snapshot_bytes": 81107
+    },
+    {
+      "index": 16,
+      "report_bytes": 8873,
+      "snapshot_bytes": 86216
+    },
+    {
+      "index": 17,
+      "report_bytes": 9390,
+      "snapshot_bytes": 91325
+    },
+    {
+      "index": 18,
+      "report_bytes": 9907,
+      "snapshot_bytes": 96434
+    },
+    {
+      "index": 19,
+      "report_bytes": 10424,
+      "snapshot_bytes": 101543
+    },
+    {
+      "index": 20,
+      "report_bytes": 10941,
+      "snapshot_bytes": 106652
+    },
+    {
+      "index": 21,
+      "report_bytes": 11458,
+      "snapshot_bytes": 111761
+    },
+    {
+      "index": 22,
+      "report_bytes": 11975,
+      "snapshot_bytes": 116870
+    },
+    {
+      "index": 23,
+      "report_bytes": 12492,
+      "snapshot_bytes": 121979
+    },
+    {
+      "index": 24,
+      "report_bytes": 13009,
+      "snapshot_bytes": 127088
+    },
+    {
+      "index": 25,
+      "report_bytes": 13526,
+      "snapshot_bytes": 132197
+    },
+    {
+      "index": 26,
+      "report_bytes": 14043,
+      "snapshot_bytes": 137306
+    },
+    {
+      "index": 27,
+      "report_bytes": 14560,
+      "snapshot_bytes": 142415
+    },
+    {
+      "index": 28,
+      "report_bytes": 15077,
+      "snapshot_bytes": 147524
+    },
+    {
+      "index": 29,
+      "report_bytes": 15593,
+      "snapshot_bytes": 152633
+    },
+    {
+      "index": 30,
+      "report_bytes": 16110,
+      "snapshot_bytes": 157742
+    },
+    {
+      "index": 31,
+      "report_bytes": 16627,
+      "snapshot_bytes": 162851
+    },
+    {
+      "index": 32,
+      "report_bytes": 17144,
+      "snapshot_bytes": 167960
+    },
+    {
+      "index": 33,
+      "report_bytes": 17661,
+      "snapshot_bytes": 173069
+    },
+    {
+      "index": 34,
+      "report_bytes": 18178,
+      "snapshot_bytes": 178178
+    },
+    {
+      "index": 35,
+      "report_bytes": 18695,
+      "snapshot_bytes": 183287
+    },
+    {
+      "index": 36,
+      "report_bytes": 19212,
+      "snapshot_bytes": 188396
+    },
+    {
+      "index": 37,
+      "report_bytes": 19729,
+      "snapshot_bytes": 193505
+    },
+    {
+      "index": 38,
+      "report_bytes": 20246,
+      "snapshot_bytes": 198614
+    },
+    {
+      "index": 39,
+      "report_bytes": 20763,
+      "snapshot_bytes": 203723
+    },
+    {
+      "index": 40,
+      "report_bytes": 21280,
+      "snapshot_bytes": 208832
+    },
+    {
+      "index": 41,
+      "report_bytes": 21797,
+      "snapshot_bytes": 213941
+    },
+    {
+      "index": 42,
+      "report_bytes": 22314,
+      "snapshot_bytes": 219050
+    },
+    {
+      "index": 43,
+      "report_bytes": 22830,
+      "snapshot_bytes": 224159
+    },
+    {
+      "index": 44,
+      "report_bytes": 23347,
+      "snapshot_bytes": 229268
+    },
+    {
+      "index": 45,
+      "report_bytes": 23864,
+      "snapshot_bytes": 234377
+    },
+    {
+      "index": 46,
+      "report_bytes": 24381,
+      "snapshot_bytes": 239486
+    },
+    {
+      "index": 47,
+      "report_bytes": 24898,
+      "snapshot_bytes": 244595
+    },
+    {
+      "index": 48,
+      "report_bytes": 25415,
+      "snapshot_bytes": 249704
+    },
+    {
+      "index": 49,
+      "report_bytes": 25931,
+      "snapshot_bytes": 254813
+    },
+    {
+      "index": 50,
+      "report_bytes": 26447,
+      "snapshot_bytes": 259922
+    },
+    {
+      "index": 51,
+      "report_bytes": 26963,
+      "snapshot_bytes": 265031
+    },
+    {
+      "index": 52,
+      "report_bytes": 27479,
+      "snapshot_bytes": 270140
+    },
+    {
+      "index": 53,
+      "report_bytes": 27995,
+      "snapshot_bytes": 275249
+    },
+    {
+      "index": 54,
+      "report_bytes": 28511,
+      "snapshot_bytes": 280358
+    },
+    {
+      "index": 55,
+      "report_bytes": 29027,
+      "snapshot_bytes": 285467
+    },
+    {
+      "index": 56,
+      "report_bytes": 29543,
+      "snapshot_bytes": 290576
+    },
+    {
+      "index": 57,
+      "report_bytes": 30059,
+      "snapshot_bytes": 295685
+    },
+    {
+      "index": 58,
+      "report_bytes": 30575,
+      "snapshot_bytes": 300794
+    },
+    {
+      "index": 59,
+      "report_bytes": 31092,
+      "snapshot_bytes": 305903
+    },
+    {
+      "index": 60,
+      "report_bytes": 31608,
+      "snapshot_bytes": 311012
+    },
+    {
+      "index": 61,
+      "report_bytes": 32125,
+      "snapshot_bytes": 316121
+    },
+    {
+      "index": 62,
+      "report_bytes": 32641,
+      "snapshot_bytes": 321230
+    },
+    {
+      "index": 63,
+      "report_bytes": 33158,
+      "snapshot_bytes": 326339
+    },
+    {
+      "index": 64,
+      "report_bytes": 33675,
+      "snapshot_bytes": 331448
+    },
+    {
+      "index": 65,
+      "report_bytes": 34191,
+      "snapshot_bytes": 336557
+    },
+    {
+      "index": 66,
+      "report_bytes": 34707,
+      "snapshot_bytes": 341666
+    },
+    {
+      "index": 67,
+      "report_bytes": 35224,
+      "snapshot_bytes": 346775
+    },
+    {
+      "index": 68,
+      "report_bytes": 35741,
+      "snapshot_bytes": 351884
+    },
+    {
+      "index": 69,
+      "report_bytes": 36257,
+      "snapshot_bytes": 356993
+    },
+    {
+      "index": 70,
+      "report_bytes": 36773,
+      "snapshot_bytes": 362102
+    },
+    {
+      "index": 71,
+      "report_bytes": 37290,
+      "snapshot_bytes": 367211
+    },
+    {
+      "index": 72,
+      "report_bytes": 37806,
+      "snapshot_bytes": 372320
+    },
+    {
+      "index": 73,
+      "report_bytes": 38323,
+      "snapshot_bytes": 377429
+    },
+    {
+      "index": 74,
+      "report_bytes": 38840,
+      "snapshot_bytes": 382538
+    },
+    {
+      "index": 75,
+      "report_bytes": 39356,
+      "snapshot_bytes": 387647
+    },
+    {
+      "index": 76,
+      "report_bytes": 39872,
+      "snapshot_bytes": 392756
+    },
+    {
+      "index": 77,
+      "report_bytes": 40388,
+      "snapshot_bytes": 397865
+    },
+    {
+      "index": 78,
+      "report_bytes": 40904,
+      "snapshot_bytes": 402974
+    },
+    {
+      "index": 79,
+      "report_bytes": 41420,
+      "snapshot_bytes": 408083
+    },
+    {
+      "index": 80,
+      "report_bytes": 41937,
+      "snapshot_bytes": 413192
+    },
+    {
+      "index": 81,
+      "report_bytes": 42453,
+      "snapshot_bytes": 418301
+    },
+    {
+      "index": 82,
+      "report_bytes": 42970,
+      "snapshot_bytes": 423410
+    },
+    {
+      "index": 83,
+      "report_bytes": 43486,
+      "snapshot_bytes": 428519
+    },
+    {
+      "index": 84,
+      "report_bytes": 44002,
+      "snapshot_bytes": 433628
+    },
+    {
+      "index": 85,
+      "report_bytes": 44518,
+      "snapshot_bytes": 438737
+    },
+    {
+      "index": 86,
+      "report_bytes": 45034,
+      "snapshot_bytes": 443846
+    },
+    {
+      "index": 87,
+      "report_bytes": 45551,
+      "snapshot_bytes": 448955
+    },
+    {
+      "index": 88,
+      "report_bytes": 46068,
+      "snapshot_bytes": 454064
+    },
+    {
+      "index": 89,
+      "report_bytes": 46584,
+      "snapshot_bytes": 459173
+    },
+    {
+      "index": 90,
+      "report_bytes": 47101,
+      "snapshot_bytes": 464282
+    },
+    {
+      "index": 91,
+      "report_bytes": 47618,
+      "snapshot_bytes": 469391
+    },
+    {
+      "index": 92,
+      "report_bytes": 48135,
+      "snapshot_bytes": 474500
+    },
+    {
+      "index": 93,
+      "report_bytes": 48652,
+      "snapshot_bytes": 479609
+    },
+    {
+      "index": 94,
+      "report_bytes": 49168,
+      "snapshot_bytes": 484718
+    },
+    {
+      "index": 95,
+      "report_bytes": 49685,
+      "snapshot_bytes": 489827
+    },
+    {
+      "index": 96,
+      "report_bytes": 50203,
+      "snapshot_bytes": 494936
+    },
+    {
+      "index": 97,
+      "report_bytes": 50720,
+      "snapshot_bytes": 500045
+    },
+    {
+      "index": 98,
+      "report_bytes": 51237,
+      "snapshot_bytes": 505154
+    },
+    {
+      "index": 99,
+      "report_bytes": 51755,
+      "snapshot_bytes": 510263
+    },
+    {
+      "index": 100,
+      "report_bytes": 52272,
+      "snapshot_bytes": 515372
+    },
+    {
+      "index": 101,
+      "report_bytes": 52789,
+      "snapshot_bytes": 520481
+    },
+    {
+      "index": 102,
+      "report_bytes": 53306,
+      "snapshot_bytes": 525590
+    },
+    {
+      "index": 103,
+      "report_bytes": 53823,
+      "snapshot_bytes": 530699
+    },
+    {
+      "index": 104,
+      "report_bytes": 54340,
+      "snapshot_bytes": 535808
+    },
+    {
+      "index": 105,
+      "report_bytes": 54857,
+      "snapshot_bytes": 540917
+    },
+    {
+      "index": 106,
+      "report_bytes": 55374,
+      "snapshot_bytes": 546026
+    },
+    {
+      "index": 107,
+      "report_bytes": 55891,
+      "snapshot_bytes": 551135
+    },
+    {
+      "index": 108,
+      "report_bytes": 56408,
+      "snapshot_bytes": 556244
+    },
+    {
+      "index": 109,
+      "report_bytes": 56925,
+      "snapshot_bytes": 561353
+    },
+    {
+      "index": 110,
+      "report_bytes": 57442,
+      "snapshot_bytes": 566462
+    },
+    {
+      "index": 111,
+      "report_bytes": 57959,
+      "snapshot_bytes": 571571
+    },
+    {
+      "index": 112,
+      "report_bytes": 58476,
+      "snapshot_bytes": 576680
+    },
+    {
+      "index": 113,
+      "report_bytes": 58992,
+      "snapshot_bytes": 581789
+    },
+    {
+      "index": 114,
+      "report_bytes": 59508,
+      "snapshot_bytes": 586898
+    },
+    {
+      "index": 115,
+      "report_bytes": 60024,
+      "snapshot_bytes": 592007
+    },
+    {
+      "index": 116,
+      "report_bytes": 60541,
+      "snapshot_bytes": 597116
+    },
+    {
+      "index": 117,
+      "report_bytes": 61058,
+      "snapshot_bytes": 602225
+    },
+    {
+      "index": 118,
+      "report_bytes": 61575,
+      "snapshot_bytes": 607334
+    },
+    {
+      "index": 119,
+      "report_bytes": 62091,
+      "snapshot_bytes": 612443
+    },
+    {
+      "index": 120,
+      "report_bytes": 62608,
+      "snapshot_bytes": 617552
+    },
+    {
+      "index": 121,
+      "report_bytes": 63125,
+      "snapshot_bytes": 622661
+    },
+    {
+      "index": 122,
+      "report_bytes": 63641,
+      "snapshot_bytes": 627770
+    },
+    {
+      "index": 123,
+      "report_bytes": 64157,
+      "snapshot_bytes": 632879
+    },
+    {
+      "index": 124,
+      "report_bytes": 64674,
+      "snapshot_bytes": 637988
+    },
+    {
+      "index": 125,
+      "report_bytes": 65191,
+      "snapshot_bytes": 643097
+    },
+    {
+      "index": 126,
+      "report_bytes": 65708,
+      "snapshot_bytes": 648206
+    },
+    {
+      "index": 127,
+      "report_bytes": 66225,
+      "snapshot_bytes": 653315
+    },
+    {
+      "index": 128,
+      "report_bytes": 66741,
+      "snapshot_bytes": 658424
+    },
+    {
+      "index": 129,
+      "report_bytes": 67258,
+      "snapshot_bytes": 663533
+    },
+    {
+      "index": 130,
+      "report_bytes": 67775,
+      "snapshot_bytes": 668642
+    },
+    {
+      "index": 131,
+      "report_bytes": 68291,
+      "snapshot_bytes": 673751
+    },
+    {
+      "index": 132,
+      "report_bytes": 68808,
+      "snapshot_bytes": 678860
+    },
+    {
+      "index": 133,
+      "report_bytes": 69325,
+      "snapshot_bytes": 683969
+    },
+    {
+      "index": 134,
+      "report_bytes": 69841,
+      "snapshot_bytes": 689078
+    },
+    {
+      "index": 135,
+      "report_bytes": 70358,
+      "snapshot_bytes": 694187
+    },
+    {
+      "index": 136,
+      "report_bytes": 70874,
+      "snapshot_bytes": 699296
+    },
+    {
+      "index": 137,
+      "report_bytes": 71390,
+      "snapshot_bytes": 704405
+    },
+    {
+      "index": 138,
+      "report_bytes": 71907,
+      "snapshot_bytes": 709514
+    },
+    {
+      "index": 139,
+      "report_bytes": 72423,
+      "snapshot_bytes": 714623
+    },
+    {
+      "index": 140,
+      "report_bytes": 72940,
+      "snapshot_bytes": 719732
+    },
+    {
+      "index": 141,
+      "report_bytes": 73457,
+      "snapshot_bytes": 724841
+    },
+    {
+      "index": 142,
+      "report_bytes": 73973,
+      "snapshot_bytes": 729950
+    },
+    {
+      "index": 143,
+      "report_bytes": 74490,
+      "snapshot_bytes": 735059
+    },
+    {
+      "index": 144,
+      "report_bytes": 75006,
+      "snapshot_bytes": 740168
+    },
+    {
+      "index": 145,
+      "report_bytes": 75522,
+      "snapshot_bytes": 745277
+    },
+    {
+      "index": 146,
+      "report_bytes": 76039,
+      "snapshot_bytes": 750386
+    },
+    {
+      "index": 147,
+      "report_bytes": 76555,
+      "snapshot_bytes": 755495
+    },
+    {
+      "index": 148,
+      "report_bytes": 77071,
+      "snapshot_bytes": 760604
+    },
+    {
+      "index": 149,
+      "report_bytes": 77587,
+      "snapshot_bytes": 765713
+    },
+    {
+      "index": 150,
+      "report_bytes": 78104,
+      "snapshot_bytes": 770822
+    },
+    {
+      "index": 151,
+      "report_bytes": 78621,
+      "snapshot_bytes": 775931
+    },
+    {
+      "index": 152,
+      "report_bytes": 79138,
+      "snapshot_bytes": 781040
+    },
+    {
+      "index": 153,
+      "report_bytes": 79655,
+      "snapshot_bytes": 786149
+    }
+  ]
+}

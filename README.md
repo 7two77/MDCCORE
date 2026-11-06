@@ -3,7 +3,7 @@
 История объединения исходной main и проверенного стека baseline → 008 → 009 → 010,
 сохранённые материалы и правила сопровождения описаны в
 [MDC-INTEGRATION-001](docs/MDC-INTEGRATION-v0.1.md).
-Актуальная [матрица v0.18](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.18.md)
+Актуальная [матрица v0.19](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.19.md)
 учитывает опубликованные hosted CI receipts. Подготовка первого Git commit
 сохранена в [MDC-OPS-001](docs/MDC-OPS-001.md).
 
@@ -17,6 +17,10 @@
 Один захват snapshot используется для report/hash/bundle; open повторно использует
 проверенные SOURCE/MANIFEST. Все восстановления, пересчёты, форматы и лимиты сохранены.
 Полный день из 1440 решений по-прежнему не поддерживается.
+
+[Post-merge проверка 017 и size probe](docs/MDC-OPS-008-POST-EXACT-WORK-v0.1.md).
+Следующий [проект контракта 018](docs/MDC-REPLAY-STORAGE-V2-CONTRACT-v0.1-DRAFT.md)
+описывает отдельный lossless storage v2 и потоковое чтение; runtime пока не реализован.
 
 [MDC-IMPL-016: воспроизводимые измерения](docs/MDC-IMPL-016.md) и
 [post-merge проверка](docs/MDC-OPS-007-POST-CAPACITY-v0.1.md) сохранены.
