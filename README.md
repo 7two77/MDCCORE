@@ -3,7 +3,7 @@
 История объединения исходной main и проверенного стека baseline → 008 → 009 → 010,
 сохранённые материалы и правила сопровождения описаны в
 [MDC-INTEGRATION-001](docs/MDC-INTEGRATION-v0.1.md).
-Актуальная [матрица v0.12](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.12.md)
+Актуальная [матрица v0.14](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.14.md)
 учитывает опубликованные hosted CI receipts. Подготовка первого Git commit
 сохранена в [MDC-OPS-001](docs/MDC-OPS-001.md).
 
@@ -11,7 +11,14 @@
 `Cargo.toml`, `src/`, `tests/`. Вложенный каталог `mdc_core/` сохранён как исходный
 материал для сравнения; он не подключён как workspace member.
 
-Последний функциональный пакет — **MDC-IMPL-014: Binance CSV и bounded replay**.
+Последний функциональный пакет — **MDC-IMPL-015: durable replay recovery**.
+[API, проверки и ограничения](docs/MDC-IMPL-015.md),
+[формат журнала и HEAD](docs/MDC-REPLAY-RUN-WIRE-v1.md).
+CSV, модель и план cutoffs сохраняются вместе с префиксом отдельных решений.
+Курсор продвигается после journal sync и atomic HEAD publication/directory sync;
+recovery восстанавливает и пересчитывает каждый изолированный snapshot.
+
+MDC-IMPL-014: Binance CSV и bounded replay.
 [Адаптер и команды](adapters/mdc_replay/README.md),
 [моделируемый временной контракт](docs/MDC-BINANCE-REPLAY-CONTRACT-v0.1.md),
 [проверки и ограничения](docs/MDC-IMPL-014.md).
@@ -50,7 +57,7 @@ Portable identity добавлена в [MDC-IMPL-010](docs/MDC-IMPL-010.md).
 
 **MDC-E2E-CONFORMANCE-001: PASS для объявленного fixture MDC-SCALAR-001.**
 Все 12 assertions E2E-A01…A12 и 11 negative cases N01…N11 выполнены в двух
-раздельных OS-процессах. [Execution evidence](docs/evidence/mdc-e2e-conformance-001-impl-014.json)
+раздельных OS-процессах. [Execution evidence](docs/evidence/mdc-e2e-conformance-001-impl-015.json)
 содержит фактические результаты, canonical bytes, lineage и snapshots. PASS
 применим к записанным source fingerprint, toolchain, features и target; текущую
 применимость отчёта проверяет `check_gate_readiness.py`.
@@ -184,3 +191,9 @@ fixtures покрывают ms и us эпохи; все цены/объёмы т
 в нули. Technical State проверяет доступность свидетельств, а не торговый сигнал.
 Storage PASS и технический replay не доказывают реальное время получения
 исторических данных или готовность полноценной торговой системы.
+
+После PR #9: [проверка main 9f21fe7](docs/MDC-OPS-005-POST-REPLAY-v0.1.md),
+post-merge CI 16/16 PASS. Проект source/plan recovery принят в
+[wire contract v1](docs/MDC-REPLAY-RUN-WIRE-v1.md) и реализован в отдельном RunStore
+профиля 015. Исторический [проект контракта](docs/MDC-REPLAY-RECOVERY-CONTRACT-v0.1-DRAFT.md)
+сохранён; source-run cursor не является состоянием брокера или ордеров.

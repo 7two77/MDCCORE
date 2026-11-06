@@ -202,6 +202,8 @@ jobs:
         run: python3 -B scripts/check_snapshot_roundtrip.py --compare-root portable-artifacts --output snapshot-comparison.json
       - name: Compare modeled Binance replay across six configurations
         run: python3 -B scripts/check_binance_replay.py --compare-root portable-artifacts --output binance-replay-comparison.json
+      - name: Compare durable replay files and resumed outputs across native toolchains
+        run: python3 -B scripts/check_replay_recovery.py --compare-root portable-artifacts --output replay-recovery-comparison.json
       - uses: actions/upload-artifact@v4
         with:
           name: mdc-portable-comparison
@@ -209,4 +211,5 @@ jobs:
             portable-comparison.json
             snapshot-comparison.json
             binance-replay-comparison.json
+            replay-recovery-comparison.json
           retention-days: 14

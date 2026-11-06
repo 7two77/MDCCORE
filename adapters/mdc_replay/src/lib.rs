@@ -1,5 +1,6 @@
 //! Bounded Binance Spot 1m final-bar replay with explicitly MODELED availability.
 mod core_view;
+pub mod recovery;
 pub use core_view::{AdmittedBar, DecisionView, Field};
 use mdc_core::{
     contract::registry::RegistryError,
