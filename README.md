@@ -3,7 +3,7 @@
 История объединения исходной main и проверенного стека baseline → 008 → 009 → 010,
 сохранённые материалы и правила сопровождения описаны в
 [MDC-INTEGRATION-001](docs/MDC-INTEGRATION-v0.1.md).
-Актуальная [матрица v0.20](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.20.md)
+Актуальная [матрица v0.21](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.21.md)
 учитывает опубликованные hosted CI receipts. Подготовка первого Git commit
 сохранена в [MDC-OPS-001](docs/MDC-OPS-001.md).
 
@@ -19,6 +19,12 @@
 V1 и core сохранены. V2 явно выбирается отдельным API/CLI: физический журнал
 64 MiB, decoded history 256 MiB, не более 256 решений. Полный день из 1440
 решений по-прежнему не поддерживается.
+
+[Post-merge проверка 018](docs/MDC-OPS-009-POST-LOSSLESS-STORAGE-v0.1.md)
+подтвердила `main` 5dfd97d, дерево исправленного a9da07b, актуальное evidence и
+post-merge CI 16/16 PASS. Подготовлен [draft профиля на 1440 решений](docs/MDC-REPLAY-FULL-DAY-CONTRACT-v0.1-DRAFT.md):
+накопительная история и все точные snapshots, с отдельно заданными пределами.
+Ресурсные решения ожидают ответа; runtime полного дня пока не реализован.
 
 [MDC-IMPL-017: устранение повторной работы](docs/MDC-IMPL-017.md) и
 [post-merge проверка 017 / size probe](docs/MDC-OPS-008-POST-EXACT-WORK-v0.1.md)
