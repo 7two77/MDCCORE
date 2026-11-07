@@ -241,3 +241,54 @@ Variants run sequentially, with order reversed across toolchains; cache state is
 uncontrolled and the samples are grouped, not randomized. Reports retain all
 samples, source bindings and first constraints. A timing benefit must be measured;
 mechanically reduced work does not itself imply an SLO or larger daily capacity.
+
+
+## Explicit lossless storage v2 (MDC-IMPL-018)
+
+`recovery_v2::{RunManifestV2, StorageLimits, RunStoreV2}` is a separate opt-in
+Linux profile. Existing v1 APIs, files and CLI are unchanged. There is no automatic
+conversion or format detection. A v1 directory is rejected by v2 and vice versa.
+The root core and mdc_store have no new dependencies. Only this host crate adds
+pinned pure Rust miniz_oxide 0.9.1 / locked adler2 2.0.1.
+
+V2 stores independent raw/zlib report and snapshot blobs, exactly preserving
+all decoded bytes. The writer chooses zlib level 6 only when strictly shorter.
+The reader bounds actual output, requires a single complete dictionary-free
+stream and checks decoded SHA-256. Physical hashes bind the actual compressed
+bytes; they are separate from logical/core identities.
+
+The explicit ceilings are 64 MiB physical journal and 256 MiB aggregate decoded
+blobs. Per report 1 MiB, snapshot 16 MiB, encoded decision body 24 MiB, decoded
+blobs + 192 envelope bytes 24 MiB, manifest 16 KiB and plan 256 decisions.
+SOURCE/row/visible-bar/core-operation limits are unchanged. These ceilings are
+not a RAM or recovery-time SLO. A full 1440-entry plan is still rejected.
+
+`RunStoreV2::open` validates every committed frame and recomputes/restores each
+isolated decision before tail repair/sealing. It keeps only SOURCE-derived data
+and a bounded offset/digest index, not all decoded bundles. `lookup_owned(&mut
+self, index)` re-reads the certified frame, verifies its digest against this index,
+and returns an owned DecisionBundle. It does not re-run semantic validation of
+an identical already-certified frame. A read error or changed frame fences
+certified operations until successful reopen. Old-index retry never appends.
+
+Use the separate `mdc-replay-v2` binary with the same create/step/finish/status/
+export arguments as v1. No implicit migration is provided. File durability still
+depends on the declared Linux/local filesystem/device sync boundary.
+
+```bash
+# Small paired release study: every raw sample retained, three repetitions.
+python3 -B scripts/run_storage_v2.py run --synthetic-day \
+  --output /path/to/new-storage-study
+python3 -B scripts/run_storage_v2.py check --folder /path/to/new-storage-study
+```
+
+The runner builds separate production v1/v2 drivers, records CPU, peak RSS,
+wall/API times, physical and decoded bytes, binaries/source/CI fingerprints and
+first constraints. Native CI runs this smoke study; the opt-in `MDC capacity study` workflow (`compare_storage_v2=true`) explicitly downloads a pinned official day when selected.
+Study phases have a 600 s timeout and a 2 GiB output ceiling; prior samples are
+never removed to obtain PASS. The validator checks every actual bounded frame,
+compares complete decoded bytes in the common prefix and full physical files
+between repetitions/toolchains. Measurements are grouped with uncontrolled caches;
+no p95/p99, cold-start RTO or universal speedup is inferred.
+
+[Wire contract and LS01…LS18](../../docs/MDC-REPLAY-STORAGE-V2-CONTRACT-v0.1.md).

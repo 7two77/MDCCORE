@@ -39,6 +39,9 @@ MDC_CI_STEP=binance-replay-tests
 cargo fetch --locked --manifest-path adapters/mdc_replay/Cargo.toml
 cargo test --locked --offline --manifest-path adapters/mdc_replay/Cargo.toml --target "$MDC_PORTABLE_TARGET" --test replay 2>&1 | tee "$MDC_CI_REPORT_DIR/binance-tests.log"
 cargo test --locked --offline --manifest-path adapters/mdc_replay/Cargo.toml --target "$MDC_PORTABLE_TARGET" --test recovery_wire 2>&1 | tee "$MDC_CI_REPORT_DIR/replay-wire-tests.log"
+MDC_CI_STEP=storage-v2-vectors
+cargo test --locked --offline --manifest-path adapters/mdc_replay/Cargo.toml --target "$MDC_PORTABLE_TARGET" --lib recovery::v2::tests 2>&1 | tee "$MDC_CI_REPORT_DIR/storage-v2-wire-tests.log"
+cargo run --quiet --locked --offline --manifest-path adapters/mdc_replay/Cargo.toml --target "$MDC_PORTABLE_TARGET" --bin mdc-replay-v2 -- codec-vectors > "$MDC_CI_REPORT_DIR/storage-v2-writer.tsv"
 MDC_CI_STEP=binance-replay-execution
 for MDC_REPLAY_RUN in 1 2; do
   cargo run --quiet --locked --offline --manifest-path adapters/mdc_replay/Cargo.toml --target "$MDC_PORTABLE_TARGET" --bin mdc-binance-replay -- decision \

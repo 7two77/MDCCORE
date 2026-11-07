@@ -3,7 +3,7 @@
 История объединения исходной main и проверенного стека baseline → 008 → 009 → 010,
 сохранённые материалы и правила сопровождения описаны в
 [MDC-INTEGRATION-001](docs/MDC-INTEGRATION-v0.1.md).
-Актуальная [матрица v0.18](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.18.md)
+Актуальная [матрица v0.20](docs/MDC-CONTRACT-TO-IMPLEMENTATION-MATRIX-v0.20.md)
 учитывает опубликованные hosted CI receipts. Подготовка первого Git commit
 сохранена в [MDC-OPS-001](docs/MDC-OPS-001.md).
 
@@ -11,12 +11,18 @@
 `Cargo.toml`, `src/`, `tests/`. Вложенный каталог `mdc_core/` сохранён как исходный
 материал для сравнения; он не подключён как workspace member.
 
-Последний пакет — **MDC-IMPL-017: устранение повторной работы при exact replay**.
-[Реализация и проверки](docs/MDC-IMPL-017.md),
-[контракт](docs/MDC-REPLAY-EXACT-WORK-CONTRACT-v0.1.md).
-Один захват snapshot используется для report/hash/bundle; open повторно использует
-проверенные SOURCE/MANIFEST. Все восстановления, пересчёты, форматы и лимиты сохранены.
-Полный день из 1440 решений по-прежнему не поддерживается.
+Последний пакет — **MDC-IMPL-018: отдельный lossless replay store v2**.
+[Реализация и проверки](docs/MDC-IMPL-018.md),
+[контракт](docs/MDC-REPLAY-STORAGE-V2-CONTRACT-v0.1.md).
+Точные report/snapshot сохраняются независимо сжатым или raw представлением;
+восстановление пересчитывает каждое решение, owned lookup читает только его frame.
+V1 и core сохранены. V2 явно выбирается отдельным API/CLI: физический журнал
+64 MiB, decoded history 256 MiB, не более 256 решений. Полный день из 1440
+решений по-прежнему не поддерживается.
+
+[MDC-IMPL-017: устранение повторной работы](docs/MDC-IMPL-017.md) и
+[post-merge проверка 017 / size probe](docs/MDC-OPS-008-POST-EXACT-WORK-v0.1.md)
+сохранены как исходная точка сравнения. Одна Python-проба не является замером Rust.
 
 [MDC-IMPL-016: воспроизводимые измерения](docs/MDC-IMPL-016.md) и
 [post-merge проверка](docs/MDC-OPS-007-POST-CAPACITY-v0.1.md) сохранены.

@@ -208,6 +208,8 @@ jobs:
         run: python3 -B scripts/check_capacity.py --compare-root portable-artifacts --output capacity-comparison.json
       - name: Compare pinned 016 and candidate replay work without weakening source checks
         run: python3 -B scripts/exact_work.py compare-ci --root portable-artifacts --output exact-work-comparison.json
+      - name: Compare lossless v2 studies across native compilers
+        run: python3 -B scripts/run_storage_v2.py compare --root portable-artifacts --output storage-v2-comparison.json
       - uses: actions/upload-artifact@v4
         with:
           name: mdc-portable-comparison
@@ -218,4 +220,5 @@ jobs:
             replay-recovery-comparison.json
             capacity-comparison.json
             exact-work-comparison.json
+            storage-v2-comparison.json
           retention-days: 14

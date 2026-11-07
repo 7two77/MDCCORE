@@ -1,6 +1,7 @@
 //! Bounded Binance Spot 1m final-bar replay with explicitly MODELED availability.
 mod core_view;
 pub mod recovery;
+pub use recovery::v2 as recovery_v2;
 #[cfg(test)]
 mod work_counts;
 pub use core_view::{AdmittedBar, DecisionView, Field};

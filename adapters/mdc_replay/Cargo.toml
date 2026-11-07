@@ -11,3 +11,4 @@ fault-injection = []
 [dependencies]
 mdc_core = { path = "../.." }
 sha2 = { version = "=0.10.9", default-features = false }
+miniz_oxide = { version = "=0.9.1", default-features = false, features = ["with-alloc"] }

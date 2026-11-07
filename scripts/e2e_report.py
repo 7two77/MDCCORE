@@ -4,7 +4,7 @@ import hashlib
 from collections import Counter
 import re
 
-DEFAULT_REPORT = "docs/evidence/mdc-e2e-conformance-001-impl-017.json"
+DEFAULT_REPORT = "docs/evidence/mdc-e2e-conformance-001-impl-018-review-001.json"
 
 CASE_IDS = {f"E2E-A{i:02}" for i in range(1, 13)} | {f"N{i:02}" for i in range(1, 12)}
 SEMANTIC = {"E2E-A05": "PASS", "E2E-A06": "UNRESOLVED", "E2E-A07": "FAIL",

@@ -1,0 +1,147 @@
+{
+  "schema": "MDC-IMPL-018-REVIEW-001/1",
+  "kind": "local_review_verification",
+  "acceptance": "PASS",
+  "base_commit": "92e35921ef622efee2fdc5277e59d8474ac99426",
+  "implementation_source_sha256": "9bac573e13f1ee7703cce2e91d94ff022bad3a5de026a199fe1ca5368c2a3e19",
+  "ci_file_sha256": {
+    ".github/ci/capacity.sh": "e24e948bc4b58d92ad8c2bcfa893ea6277751c7e8f14b57e95f1808043f0a461",
+    ".github/ci/check_integration.py": "7de650076149fd3c8c935ffb03c1dd5ec461d7956ceb00cf018deb881b1bee47",
+    ".github/ci/portable.sh": "1b84221ed3961abd4b0b4c6814095fcf1df839b8ba7ac94ec60c3c6d94fcddc0",
+    ".github/ci/record.py": "cff797d3fcee3208be335d3d44952d858f3075040cbf8aaccf9c06b2a1b2f4ff",
+    ".github/ci/replay.sh": "5ca45bdc719e99056c8a09c3fb6244f166b4518309eb208db0666f0202df3c6b",
+    ".github/ci/run.sh": "d2ae44ec693db1b6462441be47f64de84a3e4bd6e7ad90479d65c7dca9675924",
+    ".github/ci/storage.sh": "bf5c1f9b893574568e0b0df54c8b83a937930990eb9a558f83e26b1b7959e632",
+    ".github/ci/store.sh": "2937cdacef6dbc046094614fe1a6118e1b2dd4e6ddb67eefe38ef2c26ee523b2",
+    ".github/workflows/capacity.yml": "7793a5bd58ba0e2f8d303e1251effda9887b4e5cfa233fdadbebc950d87ad0ec",
+    ".github/workflows/ci.yml": "9ae9b1d3461ea29250819aa628d433addf001589abbe1f7390b19e3b65ec19d4"
+  },
+  "native": [
+    {
+      "rust": "1.85.1",
+      "tests": {
+        "tests": {
+          "passed": 88,
+          "suites": [
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            5,
+            7,
+            17,
+            13,
+            13,
+            0
+          ],
+          "log_sha256": "5710fc6ff6774f5ba1b2235ce3fd13f81b7f7049144d7e632f13e6447dca76ef"
+        },
+        "fault-tests": {
+          "passed": 93,
+          "suites": [
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            5,
+            7,
+            17,
+            15,
+            15,
+            0
+          ],
+          "log_sha256": "5a7f178cd7133ef6df0a30e8fc5262acea7c43695a579f943d87b92c393523e8"
+        }
+      },
+      "clippy": {
+        "acceptance": "PASS",
+        "log_sha256": "8ff23e84da1b28e67802413d27147a1c1f2dc2a6bbe20656c9c92725de7b1ca3"
+      },
+      "fault-clippy": {
+        "acceptance": "PASS",
+        "log_sha256": "063ebd3bfc9f684d560897cbe28b3c317f0ecdc0cecb18e74ae2d4a793644ee2"
+      }
+    },
+    {
+      "rust": "1.98.0",
+      "tests": {
+        "tests": {
+          "passed": 88,
+          "suites": [
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            5,
+            7,
+            17,
+            13,
+            13,
+            0
+          ],
+          "log_sha256": "f4c1f8b7c1d5a82aea1190587ca58005f496cc0ce0db461689725c407fd7e227"
+        },
+        "fault-tests": {
+          "passed": 93,
+          "suites": [
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            5,
+            7,
+            17,
+            15,
+            15,
+            0
+          ],
+          "log_sha256": "65c39664a83b6e4cdc63aa9d757247cd6d9c5fdfc37676e682db8ed900b3af46"
+        }
+      },
+      "clippy": {
+        "acceptance": "PASS",
+        "log_sha256": "b0ed1f22515e84d4f0a89fa8b84de07aff82cc4c8b651fdad911591ac0d2b0b4"
+      },
+      "fault-clippy": {
+        "acceptance": "PASS",
+        "log_sha256": "e54ba685ef62d8502e127f095f371b7bb4ef5dbc26a9ec8bdbdc463585207ccd"
+      }
+    }
+  ],
+  "regression": {
+    "original_flow": {
+      "result": "FAIL_EXPECTED",
+      "blob_decoder_entries": 1,
+      "log_sha256": "6588688ba040a6720d2167e91331339f51f73e184f3ab2639b9bfee3448c92a0"
+    },
+    "corrected_flow": {
+      "result": "PASS",
+      "blob_decoder_entries": 0,
+      "error": "v2 owned frame changed",
+      "fenced": true,
+      "log_sha256": "10c401771067928494970aa3eb3ab8bf2f2c60897e1cff405155bcd29a5012f6"
+    }
+  },
+  "e2e": {
+    "default": "PASS",
+    "alloc": "PASS",
+    "cases_per_process": [
+      23,
+      23
+    ],
+    "separate_processes": 2
+  },
+  "full_official_resource_study": "historical_5888df2_not_rerun_for_review_fix"
+}
