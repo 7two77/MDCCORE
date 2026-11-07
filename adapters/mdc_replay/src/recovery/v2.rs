@@ -120,6 +120,14 @@ fn parse2(kind: V2Kind, bytes: &[u8], cap: usize) -> Result<(&[u8], Hash)> {
 /// Pure Rust miniz_oxide 0.9.1, level 6; zlib format, no dictionaries.
 pub mod codec {
     use super::*;
+    #[cfg(test)]
+    thread_local! {
+        static DECODE_CALLS: std::cell::Cell<usize> = const { std::cell::Cell::new(0) };
+    }
+    #[cfg(test)]
+    pub(super) fn take_decode_calls() -> usize {
+        DECODE_CALLS.with(std::cell::Cell::take)
+    }
     pub fn encode_blob(bytes: &[u8], cap: usize) -> Result<Vec<u8>> {
         if cap > StorageLimits::default().max_snapshot_bytes || bytes.len() > cap {
             return Err(RecoveryError::Limit("v2 decoded blob"));
@@ -175,6 +183,8 @@ pub mod codec {
             })
         }
         pub(super) fn decode(&self) -> Result<Vec<u8>> {
+            #[cfg(test)]
+            DECODE_CALLS.with(|calls| calls.set(calls.get() + 1));
             let data = if self.tag == 0 {
                 self.encoded.to_vec()
             } else {
@@ -444,6 +454,16 @@ fn decode_record(
     decoded_before: usize,
 ) -> Result<(DecisionBundle, Hash, usize)> {
     let (body, digest) = parse2(V2Kind::Decision, bytes, l.max_encoded_record_bytes)?;
+    let (bundle, total) = decode_record_body(body, run, previous, l, decoded_before)?;
+    Ok((bundle, digest, total))
+}
+fn decode_record_body(
+    body: &[u8],
+    run: Hash,
+    previous: Hash,
+    l: StorageLimits,
+    decoded_before: usize,
+) -> Result<(DecisionBundle, usize)> {
     let mut r = Reader::new(body);
     if r.hash()? != run {
         return Err(RecoveryError::Integrity("v2 run"));
@@ -472,7 +492,7 @@ fn decode_record(
         report: report.decode()?,
         snapshot: snapshot.decode()?,
     };
-    Ok((b, digest, total))
+    Ok((b, total))
 }
 
 #[cfg(test)]

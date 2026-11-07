@@ -355,15 +355,28 @@ impl RunStoreV2 {
                 entry.offset + entry.length as u64,
                 self.manifest.limits.max_encoded_record_bytes,
             )?;
-            let (bundle, digest, _) = decode_record(
+            // Authenticate the physical frame against the certified index before
+            // parsing blob envelopes or invoking either blob decoder.
+            if record.len() != entry.length {
+                return Err(RecoveryError::Integrity("v2 owned frame changed"));
+            }
+            let (body, digest) = parse2(
+                V2Kind::Decision,
                 &record,
+                self.manifest.limits.max_encoded_record_bytes,
+            )?;
+            if digest != entry.digest {
+                return Err(RecoveryError::Integrity("v2 owned frame changed"));
+            }
+            let (bundle, _) = decode_record_body(
+                body,
                 self.head.run,
                 entry.previous,
                 self.manifest.limits,
                 entry.decoded_before,
             )?;
             // Semantic replay has already certified this exact physical frame.
-            if record.len() != entry.length || digest != entry.digest || bundle.index != n {
+            if bundle.index != n {
                 return Err(RecoveryError::Integrity("v2 owned frame changed"));
             }
             Ok(Some(bundle))

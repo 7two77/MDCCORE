@@ -22,3 +22,7 @@ own exact runtime, source, compiler and input binding.
 
 [Implementation and evidence](MDC-IMPL-018.md),
 [wire, limits and acceptance contract](MDC-REPLAY-STORAGE-V2-CONTRACT-v0.1.md).
+
+[Review correction 001](MDC-IMPL-018-REVIEW-001.md) enforces certified length/digest
+checks before owned decoding. Resource observations remain scoped to their
+recorded `5888df2` implementation; current review checks are recorded separately.

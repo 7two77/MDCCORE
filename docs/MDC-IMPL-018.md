@@ -142,3 +142,11 @@ receipts, first constraints and all original logs/files are retained.
 [CI receipt](evidence/impl-018-hosted-ci.json),
 [complete resource receipt and samples](evidence/impl-018-hosted-storage.json).
 These additions preserve every measured implementation and CI configuration byte.
+
+## Review correction 001
+
+The [2026-11-07 review correction](MDC-IMPL-018-REVIEW-001.md) moves the owned
+frame length/digest gate before blob parsing and decoding. Its resealed,
+same-length malformed-zlib regression checks both the specific error and zero
+decoder entries. Earlier execution/resource receipts above retain their original
+commit/source binding; the correction has separate current execution evidence.

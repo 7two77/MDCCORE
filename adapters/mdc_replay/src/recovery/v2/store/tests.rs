@@ -356,6 +356,72 @@ fn owned_lookup_rejects_a_resealed_replacement_against_the_certified_index() {
     assert!(s.recovery_required());
 }
 #[test]
+fn owned_lookup_authenticates_resealed_corrupt_zlib_before_any_blob_decode() {
+    let t = Temp::new();
+    let mut s = RunStoreV2::create(t.run(), CSV, m()).unwrap();
+    s.step(1).unwrap();
+    let entry = s.index[0].clone();
+    let mut f = OpenOptions::new()
+        .read(true)
+        .write(true)
+        .open(t.run().join("JOURNAL"))
+        .unwrap();
+    f.seek(SeekFrom::Start(entry.offset)).unwrap();
+    let mut record = vec![0; entry.length];
+    f.read_exact(&mut record).unwrap();
+
+    // v2 frame prefix (26), decision fields (112), blob envelope (49).
+    // Preserve both encoded lengths, but make the report's zlib header invalid.
+    let report_blob = 26 + 112;
+    assert_eq!(record[report_blob], 1);
+    record[report_blob + 49] = 0;
+    let end = record.len() - 32;
+    let digest = domain_hash(V2Kind::Decision.domain(), &record[..end]);
+    record[end..].copy_from_slice(&digest);
+    assert_eq!(record.len(), entry.length);
+    assert_eq!(
+        parse2(
+            V2Kind::Decision,
+            &record,
+            s.manifest.limits.max_encoded_record_bytes
+        )
+        .unwrap()
+        .1,
+        digest
+    );
+    assert_ne!(digest, entry.digest);
+
+    // The replacement passes framing, but really fails if given to the codec.
+    codec::take_decode_calls();
+    assert!(matches!(
+        decode_record(
+            &record,
+            s.head.run,
+            entry.previous,
+            s.manifest.limits,
+            entry.decoded_before,
+        ),
+        Err(RecoveryError::Integrity("v2 zlib stream/length"))
+    ));
+    assert_eq!(codec::take_decode_calls(), 1);
+
+    f.seek(SeekFrom::Start(entry.offset)).unwrap();
+    f.write_all(&record).unwrap();
+    let result = s.lookup_owned(1);
+    assert_eq!(
+        codec::take_decode_calls(),
+        0,
+        "uncertified frame reached a blob decoder"
+    );
+    assert!(matches!(
+        result,
+        Err(RecoveryError::Integrity("v2 owned frame changed"))
+    ));
+    assert!(s.recovery_required());
+    assert!(matches!(s.step(2), Err(RecoveryError::RecoveryRequired)));
+}
+
+#[test]
 fn decoded_aggregate_failure_after_a_commit_preserves_the_prior_prefix() {
     let t = Temp::new();
     let template = m();
